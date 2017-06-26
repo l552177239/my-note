@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第一小节：React环境快速配置 · GitBook</title>
+        <title>第八小节：组件的组合、嵌套和组件树 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-create-react-app.html" />
+    <link rel="next" href="9-onclick.html" />
     
+    
+    <link rel="prev" href="7-render.html" />
     
 
     </head>
@@ -399,9 +401,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="1-react-setup.html">
+        <li class="chapter " data-level="1.4.1" data-path="1-react-setup.md">
             
-                <a href="1-react-setup.html">
+                <span>
             
                     
                     第一小节：React环境快速配置
@@ -477,6 +479,149 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.7" data-path="7-render.html">
+            
+                <a href="7-render.html">
+            
+                    
+                    第七小节：组件的Render方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.8" data-path="8-component.html">
+            
+                <a href="8-component.html">
+            
+                    
+                    第八小节：组件的组合、嵌套和组件树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="9-onclick.html">
+            
+                <a href="9-onclick.html">
+            
+                    
+                    第九小节：事件监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="10-state.html">
+            
+                <a href="10-state.html">
+            
+                    
+                    第十小节：组件的State和setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="11-shop.md">
+            
+                <span>
+            
+                    
+                    第十一小节：小案例（购物车）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="12-props.html">
+            
+                <a href="12-props.html">
+            
+                    
+                    第十二小节：组件的props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="13-prop-types.html">
+            
+                <a href="13-prop-types.html">
+            
+                    
+                    第十三小节：数据类型的检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="14-Card.html">
+            
+                <a href="14-Card.html">
+            
+                    
+                    第十四小节：小案例（Card）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="15-dom.html">
+            
+                <a href="15-dom.html">
+            
+                    
+                    第十五小节：React中获取DOM节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="16-lifecycle.html">
+            
+                <a href="16-lifecycle.html">
+            
+                    
+                    第十六小节：生命周期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="17-Context.html">
+            
+                <a href="17-Context.html">
+            
+                    
+                    第十七小节：Context
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -512,7 +657,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >第一小节：React环境快速配置</a>
+        <a href="../.." >第八小节：组件的组合、嵌套和组件树</a>
     </h1>
 </div>
 
@@ -527,35 +672,182 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x5FEB;&#x901F;&#x914D;&#x7F6E;">&#x5FEB;&#x901F;&#x914D;&#x7F6E;</h3>
-<p>&#x7B2C;&#x4E00;&#x6B65;&#x5B89;&#x88C5;<strong>git bash</strong>&#xFF1B;</p>
-<pre><code>https://git-scm.com/download/win
-</code></pre><p>&#x7B2C;&#x4E8C;&#x6B65;&#x5B89;&#x88C5;<strong>node.js</strong>&#xFF1B;</p>
-<pre><code>https://nodejs.org/dist/v6.10.3/node-v6.10.3-x64.msi
-</code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#x5B89;&#x88C5;<strong>npm</strong>&#xFF1B;</p>
-<pre><code>npm install -g cnpm --registry=https://registry.npm.taobao.org
-</code></pre><p>&#x7B2C;&#x56DB;&#x6B65;&#x5B89;&#x88C5;<strong>react</strong>&#xFF1B;</p>
-<pre><code>npm install -g create-react-app
-</code></pre><p>&#x7B2C;&#x4E94;&#x6B65;&#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#xFF1B;</p>
-<p><strong>axios</strong>&#xFF08;ajax&#xFF09;&#xFF1A;</p>
-<pre><code>npm install axios --save
-</code></pre><p><strong>react-router-dom</strong>&#xFF08;&#x8DEF;&#x7531;&#x5E93;&#xFF09;&#xFF1A;</p>
-<pre><code>npm install react-router-dom --save
-</code></pre><p><strong>jquery</strong>&#xFF08;JS&#x5DE5;&#x5177;&#x5E93;&#xFF09;&#xFF1A;</p>
-<pre><code>npm install jquery --save
-</code></pre><p><strong>bootstrap</strong>&#xFF08;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#xFF09;&#xFF1A;</p>
-<pre><code>npm install bootstrap --save
-</code></pre><p><strong>moment</strong>&#xFF08;JS&#x65E5;&#x671F;&#x5904;&#x7406;&#x5E93;&#xFF09;&#xFF1A;</p>
-<pre><code>npm install moment --save
-</code></pre><p><strong>prop-types</strong>&#xFF08;React&#x7EC4;&#x4EF6;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x6821;&#x9A8C;&#xFF09;&#xFF1A;</p>
-<pre><code>npm install prop-types --save
-</code></pre><p><strong>react-addons-css-transition-group</strong>&#xFF08;react-router&#x8FC7;&#x6E21;&#x52A8;&#x753B;&#xFF09;&#xFF1A;</p>
-<pre><code>npm install react-addons-css-transition-group --save
-</code></pre><p><strong>Material-UI</strong>&#xFF08;react UI&#x5E93;&#xFF09;&#xFF1A;</p>
-<pre><code>npm install material-ui react-tap-event-plugin --save
-</code></pre><p><strong>ANT Desgin</strong>&#xFF08;&#x963F;&#x91CC;UI&#xFF09;&#xFF1A;</p>
-<pre><code>npm install antd --save
-</code></pre>
+                                <h2 id="&#x7EC4;&#x4EF6;&#x7684;&#x7EC4;&#x5408;&#x3001;&#x5D4C;&#x5957;&#x548C;&#x7EC4;&#x4EF6;&#x6811;">&#x7EC4;&#x4EF6;&#x7684;&#x7EC4;&#x5408;&#x3001;&#x5D4C;&#x5957;&#x548C;&#x7EC4;&#x4EF6;&#x6811;</h2>
+<h3 id="&#x7EC4;&#x5EFA;&#x7684;&#x521B;&#x5EFA;">&#x7EC4;&#x5EFA;&#x7684;&#x521B;&#x5EFA;</h3>
+<p>&#x7B2C;&#x4E00;&#x79CD;&#x7EC4;&#x4EF6;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F; <strong>function</strong></p>
+<pre><code>import React from &apos;react&apos;
+import ReactDom from &apos;react-dom&apos;
+
+function Hello(){
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;&#x6211;&#x662F;&#x7B2C;&#x4E00;&#x79CD;&#x7EC4;&#x4EF6;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&lt;/h1&gt;
+        &lt;/div&gt;
+    )
+}
+ReactDom.render(&lt;Hello /&gt;,document.querySelector(&apos;#root&apos;))
+</code></pre><p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;</p>
+<ol>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7EC4;&#x4EF6;&#x90FD;&#x5FC5;&#x987B;&#x8981;&#x7528;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#xFF0C;&#x666E;&#x901A;&#x7684; HTML &#x6807;&#x7B7E;&#x90FD;&#x7528;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#x3002;</li>
+<li>&#x5FC5;&#x987B;&#x6709;&#x8FD4;&#x56DE;&#x503C;,&#x800C;&#x4E14;&#x8FD4;&#x56DE;&#x503C;&#x5FC5;&#x987B;&#x662F;JSX elements</li>
+</ol>
+<p>&#x7B2C;&#x4E8C;&#x79CD;&#x7EC4;&#x4EF6;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F; <strong>ES6&#x7C7B;</strong></p>
+<pre><code>import React from &apos;react&apos;
+
+class App extends React.Component{
+  render(){
+    return (
+      &lt;div&gt;
+        App
+      &lt;/div&gt;    
+    )
+  }
+}
+export default App
+</code></pre><p>&#x7EC4;&#x4EF6;&#x5185;&#x53C2;&#x6570;&#x7684;&#x4F20;&#x9012;</p>
+<pre><code>import React from &apos;react&apos;
+import ReactDom from &apos;react-dom&apos;
+
+function Word(props){
+    return (
+    &lt;p&gt;My name is {props.name}&lt;/p&gt;
+    )
+}
+
+function Hello(){
+    return (
+        &lt;div&gt;
+            &lt;Word name=&apos;Liu&apos; /&gt;
+        &lt;/div&gt;
+    )
+}
+
+ReactDom.render(&lt;Word /&gt;,document.querySelector(&apos;#root&apos;))
+</code></pre><h3 id="&#x5BFC;&#x5165;css">&#x5BFC;&#x5165;CSS</h3>
+<pre><code>//&#x63D2;&#x5165;css&#x5916;&#x90E8;&#x6837;&#x5F0F;&#xFF1A;
+import &apos;./App.css&apos;
+
+//&#x884C;&#x5185;&#x6837;&#x5F0F;
+&lt;h1 style={}&gt;&#x6211;&#x662F;H1&lt;/h1&gt;
+//&#x884C;&#x5185;&#x6837;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6837;&#x5F0F;&#x5199;&#x6210;&#x5BF9;&#x8C61;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x5BF9;&#x8C61;&#x662F;js&#x8BED;&#x8A00;&#x6240;&#x4EE5;&#x7528;&#x5927;&#x62EC;&#x53F7;&#x5305;&#x88F9;
+//1.{ backgroundColor:&apos;teal&apos;, fontSize:&apos;20px&apos; }
+//2.&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;
+//3.&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;
+//4.&#x53EA;&#x8981;&#x6837;&#x5F0F;&#x5199;&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;
+styles(){
+  return({
+    box:{
+      background:&apos;green&apos;
+    };
+  })
+}
+&lt;h1 style={this.styles.box}&gt;&#x6211;&#x662F;H1&lt;/h1&gt;
+let styles={
+  h1:{
+    color:&apos;#CCC&apos;,
+    backgroundColor:&apos;teal&apos;
+  },
+  div:{
+    width:&apos;100vw&apos;,
+    height:&apos;200px&apos;
+  }
+}
+
+&lt;h1 style={styles.h1}&gt;&#x6211;&#x4E5F;&#x662F;H1&lt;/h1&gt;
+</code></pre><h3 id="&#x5BFC;&#x5165;&#x56FE;&#x7247;">&#x5BFC;&#x5165;&#x56FE;&#x7247;</h3>
+<p>&#x5F53;&#x4F5C;&#x53D8;&#x91CF;&#x5BFC;&#x5165;</p>
+<pre><code>//&#x5148;&#x5BFC;&#x5165;&#xFF1A;
+import img from &apos;./xxx.jpg&apos;  
+
+//&#x5F15;&#x7528;&#x672C;&#x5730;&#xFF1A;
+&quot;&lt;img src={img} alt=&apos;&apos; /&gt;&quot;  
+
+//&#x7F51;&#x4E0A;&#x56FE;&#x7247;&#x76F4;&#x63A5;&#x5F15;&#x7528;&#xFF1A;
+&quot;&lt;img src=&apos;[&#x5730;&#x5740;]&apos; alt=&apos;&apos; /&gt;&quot;
+</code></pre><h3 id="&#x7EC4;&#x4EF6;&#x7684;&#x5D4C;&#x5957;">&#x7EC4;&#x4EF6;&#x7684;&#x5D4C;&#x5957;</h3>
+<p>&#x5B50;&#x7EC4;&#x4EF6;</p>
+<pre><code>import React from &apos;react&apos;
+import Header from &apos;./Header&apos;
+import Main from &apos;./Main&apos;
+import Footer from &apos;./Footer&apos;
+
+class App extends React.Component{
+  render(){
+    return(
+      &lt;div className=&apos;App&apos;&gt;
+        &lt;Header /&gt;
+        &lt;Main /&gt;
+        &lt;Footer /&gt;
+        &lt;/div&gt;    
+    )
+  }
+}
+export default App
+</code></pre><p>&#x7236;&#x7EC4;&#x4EF6;</p>
+<pre><code>import React from &apos;react&apos;
+import ReactDom from &apos;react-dom&apos;
+import App from &apos;./App&apos;
+
+ReactDom.render(&lt;App /&gt;,document.querySelector(&apos;#root&apos;))
+</code></pre><h3 id="&#x7EC4;&#x4EF6;&#x6811;">&#x7EC4;&#x4EF6;&#x6811;</h3>
+<pre><code>import React from &apos;react&apos;;
+import ReactDOM from &apos;react-dom&apos;;
+
+class Title extends React.Component {
+  render(){
+    return (
+      &lt;h1&gt;React&lt;/h1&gt;
+    )
+  }
+}
+
+class Header extends Component {
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;Title /&gt;
+        &lt;h2&gt;This is Header&lt;/h2&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+class Main extends Component {
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;This is main content&lt;/h2&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+class Footer extends Component {
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;This is footer&lt;/h2&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+class Index extends Component {
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;Header /&gt;
+        &lt;Main /&gt;
+        &lt;Footer /&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+ReactDOM.render(&lt;Index /&gt;,document.getElementById(&apos;root&apos;))
+</code></pre><p>&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x548C;&#x7EC4;&#x4EF6;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x522B;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x5C31;&#x50CF;&#x666E;&#x901A;&#x7684; HTML &#x6807;&#x7B7E;&#x4E00;&#x6837;&#x4F7F;&#x7528;&#x5C31;&#x53EF;&#x4EE5;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x7EC4;&#x5408;&#x5D4C;&#x5957;&#xFF0C;&#x6700;&#x540E;&#x6784;&#x6210;&#x4E00;&#x4E2A;&#x6240;&#x8C13;&#x7684;&#x7EC4;&#x4EF6;&#x6811;&#x3002;</p>
+<p><img src="http://huzidaha.github.io/static/assets/img/posts/19BBE4E2-A12E-4657-BA6A-61484F67FA60.png" alt="&#x7EC4;&#x4EF6;&#x6811;"></p>
+
                                 
                                 </section>
                             
@@ -582,8 +874,12 @@
 
             
                 
+                <a href="7-render.html" class="navigation navigation-prev " aria-label="Previous page: 第七小节：组件的Render方法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="2-create-react-app.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 第二小节：React环境配置">
+                
+                <a href="9-onclick.html" class="navigation navigation-next " aria-label="Next page: 第九小节：事件监听">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -594,7 +890,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一小节：React环境快速配置","level":"1.4.1","depth":2,"next":{"title":"第二小节：React环境配置","level":"1.4.2","depth":2,"path":"git/React/2-create-react-app.md","ref":"./git/React/2-create-react-app.md","articles":[]},"previous":{"title":"第三章 React","level":"1.4","depth":1,"ref":"","articles":[{"title":"第一小节：React环境快速配置","level":"1.4.1","depth":2,"path":"git/React/1-react-setup.md","ref":"./git/React/1-react-setup.md","articles":[]},{"title":"第二小节：React环境配置","level":"1.4.2","depth":2,"path":"git/React/2-create-react-app.md","ref":"./git/React/2-create-react-app.md","articles":[]},{"title":"第三小节：npm语句","level":"1.4.3","depth":2,"path":"git/React/3-npm.md","ref":"./git/React/3-npm.md","articles":[]},{"title":"第四小节：Webpack配置","level":"1.4.4","depth":2,"path":"git/React/4-webpack.md","ref":"./git/React/4-webpack.md","articles":[]},{"title":"第五小节：Hello React","level":"1.4.5","depth":2,"path":"git/React/5-hello-react.md","ref":"./git/React/5-hello-react.md","articles":[]},{"title":"第六小节：JSX语法","level":"1.4.6","depth":2,"path":"git/React/6-JSX.md","ref":"./git/React/6-JSX.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/React/1-react-setup.md","mtime":"2017-06-26T09:45:56.890Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-26T11:07:09.228Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第八小节：组件的组合、嵌套和组件树","level":"1.4.8","depth":2,"next":{"title":"第九小节：事件监听","level":"1.4.9","depth":2,"path":"git/React/9-onclick.md","ref":"./git/React/9-onclick.md","articles":[]},"previous":{"title":"第七小节：组件的Render方法","level":"1.4.7","depth":2,"path":"git/React/7-render.md","ref":"./git/React/7-render.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/React/8-component.md","mtime":"2017-06-26T14:21:20.487Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-26T14:23:42.976Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

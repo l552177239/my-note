@@ -1,8 +1,4 @@
----
-title: npm
----
-
-#npm 命令
+### npm 命令
 
 NPM的全称是Node Package Manager，是随同NodeJS一起安装的包管理和分发工具，它很方便让JavaScript开发者下载、安装、上传以及管理已经安装的包。
 

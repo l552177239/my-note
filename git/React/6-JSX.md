@@ -1,7 +1,3 @@
----
-title: JSX语法
----
-
 ### JSX语法
 
 JSX就是 React.js 描述页面 UI 的方式（JSX 其实就是 JavaScript 对象）

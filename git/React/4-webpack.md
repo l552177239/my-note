@@ -1,7 +1,3 @@
----
-title: Webpack环境配置 
----
-
 ## Webpack环境配置  
 
 ### 创建并进入一个文件夹wepback:

@@ -1,7 +1,3 @@
----
-title: Hello React
----
-
 ### Hello React
 
 #### 初始化一个项目react-hello
