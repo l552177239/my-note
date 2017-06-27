@@ -695,24 +695,24 @@
         }
 }
 export default App
-</code></pre><p><strong>constructor</strong>&#xFF08;&#x81EA;&#x5E26;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x4F20;&#x9012;state&#x548C;props&#xFF09;</p>
+</code></pre><p><strong>constructor</strong>&#xFF08;&#x81EA;&#x5E26;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x4F20;&#x9012;<code>state</code>&#x548C;<code>props</code>&#xFF09;</p>
 <ul>
 <li>&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x6709;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x8C03;&#x7528;&#x8F7D;&#x4E00;&#x6B21;</li>
 </ul>
 <p><strong>comonentWillMount</strong> &#x6302;&#x8F7D;&#x524D;</p>
 <ul>
-<li>&#x5728;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;&#x5982;&#x679C;&#x5728;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x8C03;&#x7528;setState&#xFF0C;&#x672C;&#x6B21;&#x7684;render&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x66F4;&#x65B0;&#x540E;&#x7684;state&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x6E32;&#x67D3;&#x4E00;&#x6B21;&#x3002;</li>
+<li>&#x5728;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;&#x5982;&#x679C;&#x5728;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x8C03;&#x7528;<code>setState</code>&#xFF0C;&#x672C;&#x6B21;&#x7684;<code>render</code>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x66F4;&#x65B0;&#x540E;&#x7684;<code>state</code>&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x6E32;&#x67D3;&#x4E00;&#x6B21;&#x3002;</li>
 </ul>
 <p><strong>render</strong> &#x6302;&#x8F7D;&#xFF08;&#x5FC5;&#x987B;&#xFF09;</p>
 <ul>
-<li>&#x8FD4;&#x56DE;&#x503C;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;React&#x7684;element&#xFF08;JSX&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x4E0D;&#x80FD;&#x5728;render&#x5185;&#x4FEE;&#x6539;state</li>
+<li>&#x8FD4;&#x56DE;&#x503C;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;React&#x7684;<code>element</code>&#xFF08;JSX&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x4E0D;&#x80FD;&#x5728;<code>render</code>&#x5185;&#x4FEE;&#x6539;<code>state</code></li>
 </ul>
 <p><strong>comonentDidMount</strong> &#x6302;&#x8F7D;&#x5B8C;&#x6210;&#x540E;</p>
 <ul>
-<li>&#x5728;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x5B50;&#x4E3B;&#x952E;&#x4E5F;&#x90FD;&#x6302;&#x8F7D;&#x597D;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;refs&#x3002;</li>
+<li>&#x5728;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x5B50;&#x4E3B;&#x952E;&#x4E5F;&#x90FD;&#x6302;&#x8F7D;&#x597D;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;<code>refs</code>&#x3002;</li>
 </ul>
 <h3 id="&#x66F4;&#x65B0;&#x9636;&#x6BB5;&#xFF08;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF09;">&#x66F4;&#x65B0;&#x9636;&#x6BB5;&#xFF08;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF09;</h3>
-<p>state&#x88AB;setState&#x4FEE;&#x6539;&#x6216;props&#x88AB;&#x4FEE;&#x6539;&#x4F1A;&#x89E6;&#x53D1;&#x66F4;&#x65B0;</p>
+<p><code>state</code>&#x88AB;<code>setState</code>&#x4FEE;&#x6539;&#x6216;props&#x88AB;&#x4FEE;&#x6539;&#x4F1A;&#x89E6;&#x53D1;&#x66F4;&#x65B0;</p>
 <pre><code>import React from &apos;react&apos;
 
 class App extends React.Component{
@@ -752,18 +752,18 @@ class App extends React.Component{
 export default App
 </code></pre><p><strong>shouldComponentUpdate</strong> &#xFF08;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#xFF09;</p>
 <ul>
-<li>&#x5FC5;&#x987B;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF08;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x4E00;&#x4E2A;bool&#x503C;&#xFF09;&#x5982;&#x679C;&#x8FD4;&#x56DE;true&#x91CD;&#x65B0;render&#xFF08;&#x6E32;&#x67D3;&#xFF09;&#x3002;</li>
-<li>shouleComponentUpdata(nextProps,nextState)&#x7684;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF08;&#x5F62;&#x53C2;&#xFF09;</li>
+<li>&#x5FC5;&#x987B;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF08;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x4E00;&#x4E2A;bool&#x503C;&#xFF09;&#x5982;&#x679C;&#x8FD4;&#x56DE;<code>true</code>&#x91CD;&#x65B0;<code>render</code>&#xFF08;&#x6E32;&#x67D3;&#xFF09;&#x3002;</li>
+<li><code>shouleComponentUpdata(nextProps,nextState)</code>&#x7684;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF08;&#x5F62;&#x53C2;&#xFF09;</li>
 </ul>
 <p><strong>componentWillUpdate</strong> &#xFF08;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x524D;&#xFF09;</p>
 <ul>
-<li>shouldComponentUpdate&#x8FD4;&#x56DE;true&#x6216;&#x8005;&#x8C03;&#x7528;forceUpdate&#x4E4B;&#x540E;&#xFF0C;componentWillUpdate&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</li>
-<li>&#x9664;&#x4E86;&#x9996;&#x6B21;render&#x4E4B;&#x540E;&#x8C03;&#x7528;componentWillMount&#xFF0C;&#x5176;&#x5B83;render&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x90FD;&#x662F;&#x8C03;&#x7528;componentWillUpdate&#x3002;</li>
+<li><code>shouldComponentUpdate</code>&#x8FD4;&#x56DE;<code>true</code>&#x6216;&#x8005;&#x8C03;&#x7528;<code>forceUpdate</code>&#x4E4B;&#x540E;&#xFF0C;<code>componentWillUpdate</code>&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</li>
+<li>&#x9664;&#x4E86;&#x9996;&#x6B21;<code>render</code>&#x4E4B;&#x540E;&#x8C03;&#x7528;<code>componentWillMount</code>&#xFF0C;&#x5176;&#x5B83;<code>render</code>&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x90FD;&#x662F;&#x8C03;&#x7528;<code>componentWillUpdate</code>&#x3002;</li>
 </ul>
 <p><strong>render</strong>&#xFF08;&#x6E32;&#x67D3;&#xFF09;</p>
 <p><strong>componentDidUpdate</strong>&#xFF08;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#x540E;&#xFF09;</p>
 <ul>
-<li>&#x9664;&#x4E86;&#x9996;&#x6B21;render&#x4E4B;&#x540E;&#x8C03;&#x7528;componentDidMount&#xFF0C;&#x5176;&#x5B83;render&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x90FD;&#x662F;&#x8C03;&#x7528;componentDidUpdate&#x3002;</li>
+<li>&#x9664;&#x4E86;&#x9996;&#x6B21;<code>render</code>&#x4E4B;&#x540E;&#x8C03;&#x7528;<code>componentDidMount</code>&#xFF0C;&#x5176;&#x5B83;<code>render</code>&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x90FD;&#x662F;&#x8C03;&#x7528;<code>componentDidUpdate</code>&#x3002;</li>
 </ul>
 <h3 id="&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x6D41;&#x7A0B;">&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x6D41;&#x7A0B;</h3>
 <p>&#x5B50;&#x7EC4;&#x4EF6;</p>
@@ -850,7 +850,7 @@ class App extends React.Component{
 export default App
 </code></pre><p><strong>componentWillReceiveProps</strong>&#xFF08;props&#x6539;&#x53D8;&#x65F6;&#x89E6;&#x53D1;&#xFF09;</p>
 <ul>
-<li>props&#x662F;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x3002;&#x7236;&#x7EC4;&#x4EF6;&#x53D1;&#x751F;render&#x7684;&#x65F6;&#x5019;&#x5B50;&#x7EC4;&#x4EF6;&#x5C31;&#x4F1A;&#x8C03;&#x7528;componentWillReceiveProps&#xFF08;&#x4E0D;&#x7BA1;props&#x6709;&#x6CA1;&#x6709;&#x66F4;&#x65B0;&#xFF0C;&#x4E5F;&#x4E0D;&#x7BA1;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x6709;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x4EA4;&#x6362;&#xFF09;&#x3002;</li>
+<li><code>props</code>&#x662F;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x3002;&#x7236;&#x7EC4;&#x4EF6;&#x53D1;&#x751F;<code>render</code>&#x7684;&#x65F6;&#x5019;&#x5B50;&#x7EC4;&#x4EF6;&#x5C31;&#x4F1A;&#x8C03;&#x7528;<code>componentWillReceiveProps</code>&#xFF08;&#x4E0D;&#x7BA1;<code>props</code>&#x6709;&#x6CA1;&#x6709;&#x66F4;&#x65B0;&#xFF0C;&#x4E5F;&#x4E0D;&#x7BA1;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x6709;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x4EA4;&#x6362;&#xFF09;&#x3002;</li>
 </ul>
 <h3 id="&#x9500;&#x6BC1;&#x7EC4;&#x4EF6;">&#x9500;&#x6BC1;&#x7EC4;&#x4EF6;</h3>
 <p>&#x5B50;&#x7EC4;&#x4EF6;&#xFF08;&#x8981;&#x9500;&#x6BC1;&#x7684;&#x7EC4;&#x4EF6;&#xFF09;</p>
@@ -941,7 +941,7 @@ class App extends React.Component{
 export default App
 </code></pre><p><strong>componentWillUnmount</strong> &#xFF08;&#x9500;&#x6BC1;&#x7EC4;&#x4EF6;&#xFF09;</p>
 <ul>
-<li>&#x7EC4;&#x4EF6;&#x88AB;&#x5378;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x3002;&#x4E00;&#x822C;&#x5728;componentDidMount&#x91CC;&#x9762;&#x6CE8;&#x518C;&#x7684;&#x4E8B;&#x4EF6;&#x9700;&#x8981;&#x5728;&#x8FD9;&#x91CC;&#x5220;&#x9664;&#x3002;&#x5F88;&#x5C11;&#x5E94;&#x7528;</li>
+<li>&#x7EC4;&#x4EF6;&#x88AB;&#x5378;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x3002;&#x4E00;&#x822C;&#x5728;<code>componentDidMount</code>&#x91CC;&#x9762;&#x6CE8;&#x518C;&#x7684;&#x4E8B;&#x4EF6;&#x9700;&#x8981;&#x5728;&#x8FD9;&#x91CC;&#x5220;&#x9664;&#x3002;&#x5F88;&#x5C11;&#x5E94;&#x7528;</li>
 </ul>
 
                                 
@@ -986,7 +986,7 @@ export default App
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十六小节：生命周期函数","level":"1.4.16","depth":2,"next":{"title":"第十七小节：Context","level":"1.4.17","depth":2,"path":"git/React/17-Context.md","ref":"./git/React/17-Context.md","articles":[]},"previous":{"title":"第十五小节：React中获取DOM节点","level":"1.4.15","depth":2,"path":"git/React/15-dom.md","ref":"./git/React/15-dom.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/React/16-lifecycle.md","mtime":"2017-06-26T14:20:18.533Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-26T14:23:42.976Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十六小节：生命周期函数","level":"1.4.16","depth":2,"next":{"title":"第十七小节：Context","level":"1.4.17","depth":2,"path":"git/React/17-Context.md","ref":"./git/React/17-Context.md","articles":[]},"previous":{"title":"第十五小节：React中获取DOM节点","level":"1.4.15","depth":2,"path":"git/React/15-dom.md","ref":"./git/React/15-dom.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/React/16-lifecycle.md","mtime":"2017-06-27T01:11:34.248Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-27T01:15:04.379Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
