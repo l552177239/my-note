@@ -142,7 +142,7 @@ xml.onreadystatechange=function()
 
 ### 利用组件发AJAX请求
 
-**JQ**的`ajax`方法
+**JQ的`ajax`方法**
 
 ```
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -164,9 +164,9 @@ xml.onreadystatechange=function()
 ```
 <body>
 	<div class="wrap">
-	    <input type="text" id='username' placeholder="请输入帐号" />
-	    <input type="button" id='search' value="搜索" />
-	    <p id='playground'></p>
+			<input type="text" id='username' placeholder="请输入帐号" />
+			<input type="button" id='search' value="搜索" />
+			<p id='playground'></p>
 	</div>
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 	<script>
@@ -189,4 +189,62 @@ xml.onreadystatechange=function()
 </body>
 ```
 
+ - W3C的`ajax`方法：[点击跳转](http://www.w3school.com.cn/jquery/ajax_ajax.asp)
+ - JQ官网的方法：[点击跳转](http://api.jquery.com/category/ajax/global-ajax-event-handlers/)
+ - JQ中文文档地址：[点击跳转](http://www.css88.com/jqapi-1.9/category/ajax/global-ajax-event-handlers/)
 
+**ES6的`Promise`方法**
+
+```
+<script>
+	var test = new Promise( function(resolve, reject){
+		console.log('执行中')
+		setTimeout(function(){
+			console.log('完成')
+			resolve()
+		},5000)
+	}).then(function(){
+		console.log('真慢')
+	}).catch(function(){
+		console.log('完不成了')
+	})
+</script>
+```
+
+ - MDN参考地址：[点击跳转](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+ - ES6入门：[点击跳转](http://es6.ruanyifeng.com/#docs/promise)
+
+**Window新增的`fetch`方法**
+
+```
+<script>
+	fetch('https://api.github.com/users/l552177239')
+		.then(function(data){
+			return data.json()
+		}).then(function(json){
+			console.log(json)
+		}).catch(function(err){
+			console.log(err)
+	})
+</script>
+```
+
+ - MDN参考地址：[点击跳转](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
+
+**axios库**
+
+```
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	axios.get('https://api.github.com/users/l552177239')
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+</script>
+```
+
+ - Github参考地址：[点击跳转](https://github.com/mzabriskie/axios)
+ - 中文文档地址：[点击跳转](https://www.kancloud.cn/yunye/axios/234845)
