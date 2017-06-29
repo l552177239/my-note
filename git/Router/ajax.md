@@ -24,7 +24,6 @@ var xml = new XMLHttpRequest()
 ```
 xml.open('method','url',async);
 ```
-
  - method：请求的类型；GET 或 POST
  - url：文件在服务器上的位置
  - async：true（异步）或 false（同步）
@@ -52,7 +51,6 @@ xml.send()
 ```
 setRequestHeader(header,value)
 ```
-
  - header: 规定头的名称
  - value: 规定头的值
 
@@ -109,7 +107,7 @@ xml.onreadystatechange=function()
 	}
 ```
 
-**例**：在 HTML 内渲染帐号的`id`，和服务器返回的 JSON 数据
+**例**：在 HTML 内渲染帐号的`id`和服务器返回的 JSON 数据
 
 ```html
 <!DOCTYPE html>
