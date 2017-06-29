@@ -60,7 +60,7 @@ setRequestHeader(header,value)
 xml.open('POST','https://cnodejs.org/api/v1/accesstoken',true);
 xml.setRequestHeader("Content-type","application/json");
 let date = {
-    accesstoken:'3f77acb1-d753-4393-b784-44913190e6a8'
+		accesstoken:'3f77acb1-d753-4393-b784-44913190e6a8'
 }
 xml.send(JSON.stringify(date))
 ```
@@ -138,6 +138,55 @@ xml.onreadystatechange=function()
 		</script>
 </body>
 </html>
+```
+
+### 利用组件发AJAX请求
+
+**JQ**的`ajax`方法
+
+```
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$.ajax({
+		url:'https://api.github.com/users/l552177239',
+		success:function(data,state,XHR){
+			console.log(data,state,XHR)
+		},
+		error:function(data,state,XHR){
+			console.log(data,state,XHR)
+		}
+	})
+</script>
+```
+
+**例**：搜索账号
+
+```
+<body>
+	<div class="wrap">
+	    <input type="text" id='username' placeholder="请输入帐号" />
+	    <input type="button" id='search' value="搜索" />
+	    <p id='playground'></p>
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$('#search').click(function(){
+			var username = $('#username').val()
+		})
+		$.ajax({
+			url:'https://api.github.com/users/'+username,
+			success:function(data,state,XHR){
+				//console.log(data,state,XHR)
+				var str = ''
+				 str += `<h3>用户名：${data.login}</h3><img src="${data.avatar_url}" alt="头像" /><p>最近更新时间：${data.updated_at}</p>`
+				$('#playground').html(str)
+			},
+			error:function(data,state,XHR){
+				alert('很抱歉，搜索失败,错误为：'+error)
+			}
+		})
+	</script>
+</body>
 ```
 
 
