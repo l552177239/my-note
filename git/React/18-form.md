@@ -9,7 +9,7 @@
 ```html
 <form action='https://www.baidu.com' method='GET'>
 //action表单提交的地址
-//method表单提交的方式
+//method表单提交的方式（GET比较小的数据提交，POST比较保密的提交）
 	<input type="text" name="hello" placeholder="输入内容">
 	<button>提交</button>
 	//button作为提交按钮使用

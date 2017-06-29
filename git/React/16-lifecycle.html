@@ -654,12 +654,25 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Router/1-hello-router.html">
+        <li class="chapter " data-level="1.5.1" data-path="../Router/hello-router.md">
             
-                <a href="../Router/1-hello-router.html">
+                <span>
             
                     
                     第一小节：Hello React-Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Router/ajax.html">
+            
+                <a href="../Router/ajax.html">
+            
+                    
+                    第五小节：Ajax
             
                 </a>
             
@@ -721,24 +734,24 @@
 <p>&#x5F53;&#x901A;&#x8FC7;&#x8C03;&#x7528; React.createClass() &#x6765;&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5305;&#x542B; render &#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x4E5F;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5176;&#x5B83;&#x7684;&#x5728;&#x8FD9;&#x91CC;&#x63CF;&#x8FF0;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x3002;</p>
 <h3 id="&#x9996;&#x6B21;&#x52A0;&#x8F7D;&#x65F6;&#x89E6;&#x53D1;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;">&#x9996;&#x6B21;&#x52A0;&#x8F7D;&#x65F6;&#x89E6;&#x53D1;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</h3>
 <pre><code>class App extends React.Component{
-        constructor(){
-                super()
-                console.log(&apos;constructor&apos;)
-        }
-        componentWillMount(){
-                console.log(&apos;will Mount&apos;)
-        }
-        componentDidMount(){
-                console.log(&apos;did Mount&apos;)
-        }
-        render(){
-                console.log(&apos;render&apos;)
-                return(
-                        &lt;div&gt;
-                                App
-                        &lt;/div&gt;
-                        )
-        }
+    constructor(){
+        super()
+            console.log(&apos;constructor&apos;)
+    }
+    componentWillMount(){
+        console.log(&apos;will Mount&apos;)
+    }
+    componentDidMount(){
+        console.log(&apos;did Mount&apos;)
+    }
+    render(){
+        console.log(&apos;render&apos;)
+        return(
+            &lt;div&gt;
+                App
+            &lt;/div&gt;
+        )
+    }
 }
 export default App
 </code></pre><p><strong>constructor</strong>&#xFF08;&#x81EA;&#x5E26;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x4F20;&#x9012;<code>state</code>&#x548C;<code>props</code>&#xFF09;</p>
@@ -762,38 +775,38 @@ export default App
 <pre><code>import React from &apos;react&apos;
 
 class App extends React.Component{
-        constructor(){
-                console.log(&apos;constructor&apos;)
-                super()
-                this.state = ({
-                        num:0
-                })  
-        }
-        componentWillMount(){
-                console.log(&apos;will Mount&apos;)
-        }
-        componentDidMount(){
-                console.log(&apos;did Mount&apos;)
-        }
-        shouldComponentUpdate(nextProps,nextState){
-                console.log(&apos;should Update&apos;,nextProps,nextState)
-                return true
-        }
-        componentWillUpdate(){
-                console.log(&apos;will Update&apos;)
-        }
-        componentDidUpdate(){
-                console.log(&apos;did Update&apos;)
-        }
-        render(){
-                console.log(&apos;render&apos;)
-                return(
-                        &lt;div&gt;
-                                &lt;p&gt;{this.state.num}&lt;/p&gt;
-                                &lt;button onClick={() =&gt; this.setState({num:++this.state.num})}&gt;+1&lt;/button&gt;
-                        &lt;/div&gt;
-                        )
-        }
+    constructor(){
+        console.log(&apos;constructor&apos;)
+        super()
+        this.state = ({
+            num:0
+        })  
+    }
+    componentWillMount(){
+        console.log(&apos;will Mount&apos;)
+    }
+    componentDidMount(){
+        console.log(&apos;did Mount&apos;)
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        console.log(&apos;should Update&apos;,nextProps,nextState)
+        return true
+    }
+    componentWillUpdate(){
+        console.log(&apos;will Update&apos;)
+    }
+    componentDidUpdate(){
+        console.log(&apos;did Update&apos;)
+    }
+    render(){
+        console.log(&apos;render&apos;)
+        return(
+            &lt;div&gt;
+                &lt;p&gt;{this.state.num}&lt;/p&gt;
+                &lt;button onClick={() =&gt; this.setState({num:++this.state.num})}&gt;+1&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
 }
 export default App
 </code></pre><p><strong>shouldComponentUpdate</strong> &#xFF08;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#xFF09;</p>
@@ -816,82 +829,81 @@ export default App
 <pre><code>import React from &apos;react&apos;
 
 class Test extends React.Component{
-        constructor(){
-                        super()
-                console.log(&apos;test constructor&apos;)
-        }
-        componentWillMount(){
-                console.log(&apos;test will Mount&apos;)
-        }
-        componentDidMount(){
-                console.log(&apos;test did Mount&apos;)
-        }
-        shouldComponentUpdate(nextProps,nextState){
-                console.log(&apos;test should&apos;)
-                return true
-        }
-        componentWillUpdate(){
-                console.log(&apos;test Update&apos;)
-        }
-        componentDidUpdate(){
-                console.log(&apos;test did Update&apos;)
-        }
-        render(){
-                console.log(&apos;text render&apos;)
-                return (
-                        &lt;div className=&apos;Test&apos;&gt;  
-                                &lt;span&gt;{this.props.num}&lt;/span&gt;
-                        &lt;/div&gt;
-                        )
-        }
+    constructor(){
+        super()
+        console.log(&apos;test constructor&apos;)
+    }
+    componentWillMount(){
+        console.log(&apos;test will Mount&apos;)
+    }
+    componentDidMount(){
+        console.log(&apos;test did Mount&apos;)
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        console.log(&apos;test should&apos;)
+        return true
+    }
+    componentWillUpdate(){
+        console.log(&apos;test Update&apos;)
+    }
+    componentDidUpdate(){
+        console.log(&apos;test did Update&apos;)
+    }
+    render(){
+        console.log(&apos;text render&apos;)
+        return (
+            &lt;div className=&apos;Test&apos;&gt;  
+                &lt;span&gt;{this.props.num}&lt;/span&gt;
+            &lt;/div&gt;
+        )
+    }
 }
-
 export default Test
 </code></pre><p>&#x7236;&#x7EC4;&#x4EF6;</p>
 <pre><code>import React from &apos;react&apos;
 import Test from &apos;./Test&apos;
 
 class App extends React.Component{
-        constructor(){
-                console.log(&apos;constructor&apos;)
-                super()
-                this.state = ({
-                        num:0
-                })  
+    constructor(){
+        console.log(&apos;constructor&apos;)
+        super()
+        this.state = ({
+            num:0
+        })  
+    }
+    componentWillMount(){
+        console.log(&apos;will Mount&apos;)
+    }
+    componentDidMount(){
+        console.log(&apos;did Mount&apos;)
+    }
+    componentWillReceiveProps(nextProps){
+        console.log(&apos;ReceiveProps&apos;,nextProps)
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        console.log(&apos;should&apos;,nextProps,nextState.num)
+        if(nextState.num&gt;10){
+            alert(&apos;&#x8D85;&#x8FC7;&#x4E0A;&#x9650;&apos;)
+            this.btn.disabled = true
+        }else{
+            return true
         }
-        componentWillMount(){
-                console.log(&apos;will Mount&apos;)
-        }
-        componentDidMount(){
-                console.log(&apos;did Mount&apos;)
-        }
-        componentWillReceiveProps(nextProps){
-                console.log(&apos;ReceiveProps&apos;,nextProps)
-        }
-        shouldComponentUpdate(nextProps,nextState){
-                console.log(&apos;should&apos;,nextProps,nextState.num)
-                if(nextState.num&gt;10){
-                        alert(&apos;&#x8D85;&#x8FC7;&#x4E0A;&#x9650;&apos;)
-                        this.btn.disabled = true
-                }else{
-                        return true
-                }
-        }
-        componentWillUpdate(){
-                console.log(&apos;Update&apos;)
-        }
-        componentDidUpdate(){
-                console.log(&apos;did Update&apos;)
-        }
-        render(){
-                console.log(&apos;render&apos;)
-                return(
-                        &lt;div&gt;
-                                &lt;Test num={this.state.num} /&gt;
-                                &lt;input type=&apos;button&apos; value=&apos;+1&apos; ref={btn =&gt; this.btn = btn} onClick={() =&gt; this.setState({num:++this.state.num})} /&gt;
-                        &lt;/div&gt;
-                        )
-        }
+    }
+    componentWillUpdate(){
+        console.log(&apos;Update&apos;)
+    }
+    componentDidUpdate(){
+        console.log(&apos;did Update&apos;)
+    }
+    render(){
+        console.log(&apos;render&apos;)
+        return(
+            &lt;div&gt;
+                &lt;Test num={this.state.num} /&gt;
+                &lt;input type=&apos;button&apos; value=&apos;+1&apos; ref={btn =&gt; this.btn = btn} onClick={() =&gt; this.setState({num:++this.state.num})} /&gt;
+            &lt;/div&gt;
+        )
+    }
 }
 export default App
 </code></pre><p><strong>componentWillReceiveProps</strong>&#xFF08;props&#x6539;&#x53D8;&#x65F6;&#x89E6;&#x53D1;&#xFF09;</p>
@@ -903,37 +915,37 @@ export default App
 <pre><code>import React from &apos;react&apos;
 
 class Test extends React.Component{
-        constructor(){
-                        super()
-                console.log(&apos;test constructor&apos;)
-        }
-        componentWillMount(){
-                console.log(&apos;test will Mount&apos;)
-        }
-        componentDidMount(){
-                console.log(&apos;test did Mount&apos;)
-        }
-        shouldComponentUpdate(nextProps,nextState){
-                console.log(&apos;test should&apos;)
-                return true
-        }
-        componentWillUpdate(){
-                console.log(&apos;test Update&apos;)
-        }
-        componentDidUpdate(){
-                console.log(&apos;test did Update&apos;)
-        }
-        componentWillUnmount(){
-                console.log(&apos;test Un&apos;)
-        }
-        render(){
-                console.log(&apos;text render&apos;)
-                return (
-                        &lt;div className=&apos;Test&apos;&gt;  
-                                &lt;span&gt;{this.props.num}&lt;/span&gt;
-                        &lt;/div&gt;
-                        )
-        }
+    constructor(){
+        super()
+        console.log(&apos;test constructor&apos;)
+    }
+    componentWillMount(){
+        console.log(&apos;test will Mount&apos;)
+    }
+    componentDidMount(){
+        console.log(&apos;test did Mount&apos;)
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        console.log(&apos;test should&apos;)
+        return true
+    }
+    componentWillUpdate(){
+        console.log(&apos;test Update&apos;)
+    }
+    componentDidUpdate(){
+        console.log(&apos;test did Update&apos;)
+    }
+    componentWillUnmount(){
+        console.log(&apos;test Un&apos;)
+    }
+    render(){
+        console.log(&apos;text render&apos;)
+        return (
+            &lt;div className=&apos;Test&apos;&gt;  
+                    &lt;span&gt;{this.props.num}&lt;/span&gt;
+            &lt;/div&gt;
+        )
+    }
 }
 export default Test
 </code></pre><p>&#x7236;&#x7EC4;&#x4EF6;</p>
@@ -941,48 +953,48 @@ export default Test
 import Test from &apos;./Test&apos;
 
 class App extends React.Component{
-        constructor(){
-                console.log(&apos;constructor&apos;)
-                super()
-                this.state = ({
-                        num:0,
-                        show:true
-                })  
+    constructor(){
+        console.log(&apos;constructor&apos;)
+        super()
+        this.state = ({
+            num:0,
+            show:true
+        })  
+    }
+    componentWillMount(){
+        console.log(&apos;will Mount&apos;)
+    }
+    componentDidMount(){
+        console.log(&apos;did Mount&apos;)
+    }
+    componentWillReceiveProps(nextProps){
+        console.log(&apos;ReceiveProps&apos;,nextProps)
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        console.log(&apos;should&apos;,nextProps,nextState.num)
+        if(nextState.num&gt;10){
+            alert(&apos;&#x8D85;&#x8FC7;&#x4E0A;&#x9650;&apos;)
+            this.btn.disabled = true
+        }else{
+            return true
         }
-        componentWillMount(){
-                console.log(&apos;will Mount&apos;)
-        }
-        componentDidMount(){
-                console.log(&apos;did Mount&apos;)
-        }
-        componentWillReceiveProps(nextProps){
-                console.log(&apos;ReceiveProps&apos;,nextProps)
-        }
-        shouldComponentUpdate(nextProps,nextState){
-                console.log(&apos;should&apos;,nextProps,nextState.num)
-                if(nextState.num&gt;10){
-                        alert(&apos;&#x8D85;&#x8FC7;&#x4E0A;&#x9650;&apos;)
-                        this.btn.disabled = true
-                }else{
-                        return true
-                }
-        }
-        componentWillUpdate(){
-                console.log(&apos;Update&apos;)
-        }
-        componentDidUpdate(){
-                console.log(&apos;did Update&apos;)
-        }
-        render(){
-                console.log(&apos;render&apos;)
-                return(
-                        &lt;div&gt;
-                                { this.state.show ? &lt;Test num={this.state.num} /&gt; : null }
-                                &lt;input type=&apos;button&apos; value=&apos;+1&apos; ref={btn =&gt; this.btn = btn} onClick={() =&gt; this.setState({num:++this.state.num})} /&gt;
-                                &lt;input type=&apos;button&apos; value=&apos;&#x9500;&#x6BC1;&apos; onClick={() =&gt; this.setState({show:false})} /&gt;
-                        &lt;/div&gt;
-                        )
-        }
+    }
+    componentWillUpdate(){
+        console.log(&apos;Update&apos;)
+    }
+    componentDidUpdate(){
+        console.log(&apos;did Update&apos;)
+    }
+    render(){
+            console.log(&apos;render&apos;)
+            return(
+                &lt;div&gt;
+                    { this.state.show ? &lt;Test num={this.state.num} /&gt; : null }
+                    &lt;input type=&apos;button&apos; value=&apos;+1&apos; ref={btn =&gt; this.btn = btn} onClick={() =&gt; this.setState({num:++this.state.num})} /&gt;
+                    &lt;input type=&apos;button&apos; value=&apos;&#x9500;&#x6BC1;&apos; onClick={() =&gt; this.setState({show:false})} /&gt;
+                &lt;/div&gt;
+        )
+    }
 }
 export default App
 </code></pre><p><strong>componentWillUnmount</strong> &#xFF08;&#x9500;&#x6BC1;&#x7EC4;&#x4EF6;&#xFF09;</p>
@@ -1032,7 +1044,7 @@ export default App
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十六小节：生命周期函数","level":"1.4.16","depth":2,"next":{"title":"第十七小节：Context","level":"1.4.17","depth":2,"path":"git/React/17-Context.md","ref":"./git/React/17-Context.md","articles":[]},"previous":{"title":"第十五小节：React中获取DOM节点","level":"1.4.15","depth":2,"path":"git/React/15-dom.md","ref":"./git/React/15-dom.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/React/16-lifecycle.md","mtime":"2017-06-27T01:32:23.668Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-27T08:56:28.736Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十六小节：生命周期函数","level":"1.4.16","depth":2,"next":{"title":"第十七小节：Context","level":"1.4.17","depth":2,"path":"git/React/17-Context.md","ref":"./git/React/17-Context.md","articles":[]},"previous":{"title":"第十五小节：React中获取DOM节点","level":"1.4.15","depth":2,"path":"git/React/15-dom.md","ref":"./git/React/15-dom.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/React/16-lifecycle.md","mtime":"2017-06-28T05:45:00.104Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-29T05:00:43.853Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -49,3 +49,5 @@ ReactDOM.render(<h1>Hello React</h1>,document.getElementById('root'))
 ```
 npm start
 ```
+
+参考网站：[React官网](https://facebook.github.io/react/)

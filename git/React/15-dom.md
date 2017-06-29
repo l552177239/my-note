@@ -50,6 +50,10 @@ export default RefDemo
 
 ### 通过React的`ref`来获取DOM节点
 
+`ref`是`Reference`的缩写,拿到一个真实的DOM节点,使参数按引用传递,使用`ref`参数，则方法定义和调用方法都必须显式使用`ref`关键字。
+
+**Key**：唯一一个不重复的值
+
 ```
 import React from 'react'
 
