@@ -171,19 +171,19 @@ xml.onreadystatechange=function()
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 	<script>
 		$('#search').click(function(){
-			var username = $('#username').val()
-		})
-		$.ajax({
-			url:'https://api.github.com/users/'+username,
-			success:function(data,state,XHR){
-				//console.log(data,state,XHR)
-				var str = ''
-				 str += `<h3>用户名：${data.login}</h3><img src="${data.avatar_url}" alt="头像" /><p>最近更新时间：${data.updated_at}</p>`
-				$('#playground').html(str)
-			},
-			error:function(data,state,XHR){
-				alert('很抱歉，搜索失败,错误为：'+error)
-			}
+			var username = $('#username').val()	
+			$.ajax({
+				url:'https://api.github.com/users/'+username,
+				success:function(data,state,XHR){
+					//console.log(data,state,XHR)
+					var str = ''
+					 str += `<h3>用户名：${data.login}</h3><img src="${data.avatar_url}" alt="头像" /><p>最近更新时间：${data.updated_at}</p>`
+					$('#playground').html(str)
+				},
+				error:function(data,state,XHR){
+					alert('很抱歉，搜索失败,错误为：'+error)
+				}
+			})
 		})
 	</script>
 </body>
@@ -237,12 +237,12 @@ xml.onreadystatechange=function()
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 	axios.get('https://api.github.com/users/l552177239')
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
+	.then(function (response) {
+		console.log(response.data);
+	})
+	.catch(function (error) {
+		console.log(error);
+	})
 </script>
 ```
 

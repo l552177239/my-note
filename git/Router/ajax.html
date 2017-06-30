@@ -928,19 +928,19 @@ xml.send(JSON.stringify(date))
     &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script&gt;
         $(&apos;#search&apos;).click(function(){
-            var username = $(&apos;#username&apos;).val()
-        })
-        $.ajax({
-            url:&apos;https://api.github.com/users/&apos;+username,
-            success:function(data,state,XHR){
-                //console.log(data,state,XHR)
-                var str = &apos;&apos;
-                 str += `&lt;h3&gt;&#x7528;&#x6237;&#x540D;&#xFF1A;${data.login}&lt;/h3&gt;&lt;img src=&quot;${data.avatar_url}&quot; alt=&quot;&#x5934;&#x50CF;&quot; /&gt;&lt;p&gt;&#x6700;&#x8FD1;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;${data.updated_at}&lt;/p&gt;`
-                $(&apos;#playground&apos;).html(str)
-            },
-            error:function(data,state,XHR){
-                alert(&apos;&#x5F88;&#x62B1;&#x6B49;&#xFF0C;&#x641C;&#x7D22;&#x5931;&#x8D25;,&#x9519;&#x8BEF;&#x4E3A;&#xFF1A;&apos;+error)
-            }
+            var username = $(&apos;#username&apos;).val()    
+            $.ajax({
+                url:&apos;https://api.github.com/users/&apos;+username,
+                success:function(data,state,XHR){
+                    //console.log(data,state,XHR)
+                    var str = &apos;&apos;
+                     str += `&lt;h3&gt;&#x7528;&#x6237;&#x540D;&#xFF1A;${data.login}&lt;/h3&gt;&lt;img src=&quot;${data.avatar_url}&quot; alt=&quot;&#x5934;&#x50CF;&quot; /&gt;&lt;p&gt;&#x6700;&#x8FD1;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;${data.updated_at}&lt;/p&gt;`
+                    $(&apos;#playground&apos;).html(str)
+                },
+                error:function(data,state,XHR){
+                    alert(&apos;&#x5F88;&#x62B1;&#x6B49;&#xFF0C;&#x641C;&#x7D22;&#x5931;&#x8D25;,&#x9519;&#x8BEF;&#x4E3A;&#xFF1A;&apos;+error)
+                }
+            })
         })
     &lt;/script&gt;
 &lt;/body&gt;
@@ -985,12 +985,12 @@ xml.send(JSON.stringify(date))
 <pre><code>&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
     axios.get(&apos;https://api.github.com/users/l552177239&apos;)
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
+    .then(function (response) {
+        console.log(response.data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
 &lt;/script&gt;
 </code></pre><ul>
 <li>Github&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/mzabriskie/axios" target="_blank">&#x70B9;&#x51FB;&#x8DF3;&#x8F6C;</a></li>
@@ -1031,7 +1031,7 @@ xml.send(JSON.stringify(date))
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ajax基础","level":"1.7.1","depth":2,"previous":{"title":"AJAX","level":"1.7","depth":1,"ref":"","articles":[{"title":"Ajax基础","level":"1.7.1","depth":2,"path":"git/Router/ajax.md","ref":"./git/Router/ajax.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/ajax.md","mtime":"2017-06-29T08:57:28.426Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-29T08:58:19.912Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ajax基础","level":"1.7.1","depth":2,"previous":{"title":"AJAX","level":"1.7","depth":1,"ref":"","articles":[{"title":"Ajax基础","level":"1.7.1","depth":2,"path":"git/Router/ajax.md","ref":"./git/Router/ajax.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/ajax.md","mtime":"2017-06-29T14:50:32.689Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-30T01:10:11.902Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
