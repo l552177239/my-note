@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "start": "gitbook serve ./content ./gh-pages",
-   "build": "gitbook build ./content ./gh-pages",
-   "deploy": "node ./scripts/deploy-gh-pages.js",
-   "publish": "npm run build && npm run deploy",
-   "port": "lsof -i :35729"
+    "start": "gitbook serve ./content ./gh-pages",
+    "build": "gitbook build ./content ./gh-pages",
+    "deploy": "node ./scripts/deploy-gh-pages.js",
+    "publish": "npm run build && npm run deploy",
+    "port": "lsof -i :35729"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^1.0.0"
+  }
 }
