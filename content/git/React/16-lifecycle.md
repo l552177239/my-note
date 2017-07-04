@@ -296,3 +296,8 @@ export default App
 **componentWillUnmount** （销毁组件）
 
  - 组件被卸载的时候调用。一般在`componentDidMount`里面注册的事件需要在这里删除。很少应用
+
+### 生命周期函数进程
+
+![生命周期函数图](../img/life.png)
+
