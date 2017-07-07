@@ -13,7 +13,7 @@ npm i react-router-dom --save
 使用时，路由器Router就是React的一个组件。需要引用
 
 ```
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
+import { BrowserRouter as Router,Route,Link } from 'react-router-dom'
 //as就是把前面的作为后面的使用
 ```
 

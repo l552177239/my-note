@@ -118,6 +118,12 @@ git log -p
 
 >注意，实际中 Peter 查看版本历史从来不用 git log 命令，而是使用一个前端工具叫做 tig 。安装和使用方式可以参考：http://www.haoduoshipin.com/v/49.html
 
+### 查看上游历史
+
+```
+git log --online -3
+```
+
 ### 忽略特定文件或者文件夹
 
 有时候，项目文件夹中有一些文件或者文件夹，并不是我们写的代码，例如 node_modules 。那么我们就没有必要把它们进行版本控制，这样我们可以吧这个文件或者文件夹的名字添加到，项目文件夹内的一个特殊文件，叫做 .gitignore 中。
@@ -130,7 +136,7 @@ atom .gitignore
 然后，.gitignore 中填写如下内容：
 
 ```
-node_modules
+/node_modules
 ```
 
 这样，git 就会忽略 node_modules 文件夹，以及里面的所有文件了。

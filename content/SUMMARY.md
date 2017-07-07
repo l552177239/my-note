@@ -43,7 +43,10 @@
 	- [第十八小节：Form表单](./git/React/18-form.md)
 * 第四章 React-Router
 	- [第一小节：Hello React-Router](./git/Router/1-hello-router.md)
-	- [第二小节：路由嵌套](./git/Router/2-BrowserRouter.md)
+	- [第二小节：Router](./git/Router/2-Router.md)
+	- [第三小节：Link](./git/Router/3-link.md)
+* FLEX
+	- [flex 布局](./git/Other/flex.md)
 * JSON
 	- [Json基础](./git/Other/json.md)
 * AJAX
@@ -52,3 +55,5 @@
 	- [localStorage](./git/Other/localStorage.md)
 * UI
 	- [BootStrap](./git/Other/BootStrap.md)
+	- [Ant Design](./git/Other/Ant-Design.md)
+	- [Material-UI](./git/Other/Material-UI.md)

@@ -194,6 +194,33 @@ git clone <版本库的网址>
 
 clone 的特点就是不仅仅可以得到最新代码，而且可以得到整个改版历史。而普通下载只能得到最新版本。
 
+### git log 命令
+
+### 解决remote origin already exists问题
+
+远程源已经存在问题
+
+1、先删除远程 git 仓库
+
+```
+git remote rm origin
+```
+
+2、再添加远程 Git 仓库
+
+```
+git remote add origin https://github.com/l552177239/webpack.git
+```
+
+如果执行 git remote rm origin 报错的话，我们可以手动修改gitconfig文件的内容
+
+```
+vi .git/config
+```
+
+把 [remote “origin”] 那一行删掉就好了
+
+参考地址：[点击进入](http://blog.csdn.net/top_code/article/details/50381432)
 
 ### git 各个命令的作用
 
