@@ -194,6 +194,31 @@ git clone <版本库的网址>
 
 clone 的特点就是不仅仅可以得到最新代码，而且可以得到整个改版历史。而普通下载只能得到最新版本。
 
+### 解决remote origin already exists问题
+
+远程源已经存在问题
+
+1、先删除远程 git 仓库
+
+```
+git remote rm origin
+```
+
+2、再添加远程 Git 仓库
+
+```
+git remote add origin https://github.com/l552177239/webpack.git
+```
+
+如果执行 git remote rm origin 报错的话，我们可以手动修改gitconfig文件的内容
+
+```
+vi .git/config
+```
+
+把 [remote “origin”] 那一行删掉就好了
+
+参考地址：[点击进入](http://blog.csdn.net/top_code/article/details/50381432)
 
 ### git 各个命令的作用
 
@@ -205,7 +230,7 @@ clone 的特点就是不仅仅可以得到最新代码，而且可以得到整�
 ### 学习 Github/Git 的学习目标
 
 - 知道 git 是**版本控制**工具
-- 每个同学要有一个 github 仓库
+- 要有一个 github 仓库
 - 已经添加 ssh key 互信，也就是可以从本地仓库推送内容（ git push ）到 github 仓库
 - 可以在本地仓库中任意添加，删除，修改文件，并作成版本
 

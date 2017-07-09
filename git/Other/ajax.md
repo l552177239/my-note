@@ -6,6 +6,9 @@
  - AJAX 不是新的编程语言，而是一种使用现有标准的新方法。
  - AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。
 
+### AJAX工作原理
+
+![AJAX工作原理图](../img/ajax.jpg)
 
 ### `XMLHttpRequest`对象
 
@@ -71,10 +74,10 @@ xml.send(JSON.stringify(date))
 
 如需获得来自服务器的响应，请使用`XMLHttpRequest`对象的`responseText`或`responseXML`属性。
 
-属性 						| 描述 
+属性 			| 描述 
 --------------- | ------------------------------------------
-responseText		| 获得字符串形式的响应数据。
-responseXML			| 获得 XML 形式的响应数据。
+responseText	| 获得字符串形式的响应数据。
+responseXML		| 获得 XML 形式的响应数据。
 
 将服务器返回的数据转换为字符串
 
@@ -86,11 +89,11 @@ var text = JSON.parse(xml.responseText)
 
 XMLHttpRequest 对象的三个重要的属性
 
-属性 								 | 描述 
+属性 				 | 描述 
 -------------------- | --------------------------------------------------------
 onreadystatechange	 | 存储函数（或函数名），每当readyState属性改变时，就会调用该函数。
-readyState					 | 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。<br> - 0: 请求未初始化<br> - 1: 服务器连接已建立<br> - 2: 请求已接收<br> - 3: 请求处理中<br> - 4: 请求已完成，且响应已就绪
-status 							 |200: "OK"<br>404: 未找到页面
+readyState			 | 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。<br> - 0: 请求未初始化<br> - 1: 服务器连接已建立<br> - 2: 请求已接收<br> - 3: 请求处理中<br> - 4: 请求已完成，且响应已就绪
+status 				 |200: "OK"<br>404: 未找到页面
 
 **onreadystatechange**
 
