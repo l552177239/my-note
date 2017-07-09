@@ -44,6 +44,42 @@ import Button from 'antd/lib/button'
 </div>
 ```
 
+### 按需加载
+
+#### 首先需要安装依赖的包
+
+```
+npm i babel-plugin-import -D
+```
+
+#### 然后，在自己配置的环境中的`.babelrc`中添加工具插件
+
+```
+// .babelrc or babel-loader option
+{
+  "plugins": [
+    ["import", { libraryName: "antd", style: "css" }] // `style: true` 会加载 less 文件
+  ]
+}
+```
+
+#### 使用
+
+然后只需从 antd 引入模块即可，无需单独引入样式。等同于下面手动引入的方式。
+
+```
+// babel-plugin-import 会帮助你加载 JS 和 CSS
+import { DatePicker } from 'antd';
+```
+
+ + 手动引入
+
+```
+import DatePicker from 'antd/lib/date-picker';  // 加载 JS
+import 'antd/lib/date-picker/style/css';        // 加载 CSS
+// import 'antd/lib/date-picker/style';         // 加载 LESS
+```
+
 ### 栅格组件：[点击查看](https://ant.design/components/grid-cn/)
 
 ANTD的24等分栅格系统，`flex`布局的栅格系统允许子元素在父节点内的水平对齐方式 - 居左、居中、居右、等宽排列、分散排列。子元素与子元素之间，支持顶部对齐、垂直居中对齐、底部对齐的方式。同时，支持使用 order 来定义元素的排列顺序

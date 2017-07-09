@@ -7,13 +7,16 @@
 	- [第三小节：文件操作](./git/Linux/3-file-man.md)
 	- [第四小节：Atom 编辑器](./git/Linux/4-atom.md)
 	- [第五小节：Sublime 编辑器](./git/Linux/5-sublime.md)
-	- [第六小节：学习 Github](./git/Linux/6-github.md)
-	- [第七小节：你好 Git](./git/Linux/7-hello-git.md)
-	- [第八小节：Git本地工作流](./git/Linux/8-local-git.md)
-	- [第九小节：上传代码到Github.com](./git/Linux/9-push.md)
-	- [第十小节：学习 Gitbook](./git/Linux/10-gitbook.md)
-	- [第十一小节：Markdown 语法](./git/Linux/11-markdown.md)
-* 第二章 ES6语法基础
+	- [第六小节：学习 Gitbook](./git/Linux/6-gitbook.md)
+	- [第七小节：Markdown 语法](./git/Linux/7-markdown.md)
+* 第二章 Git基础
+	- [第一小节：Github](./git/Git/1-github.md)
+	- [第二小节：Hello Git](./git/Git/2-hello-git.md)
+	- [第三小节：Git的安装](./git/Git/3-install-git.md)
+	- [第四小节：Git本地工作流](./git/Git/4-local-git.md)
+	- [第五小节：代码上传到Github](./git/Git/5-push.md)
+	- [第六小节：Github分支操作](./git/Git/6-branch.md)
+* 第三章 ES6语法基础
 	- [第一小节：Hello ES6](./git/ES6/1-hello-es6.md)
 	- [第二小节：Let](./git/ES6/2-let.md)    
 	- [第三小节：Const](./git/ES6/3-const.md)
@@ -22,7 +25,7 @@
 	- [第六小节：字符串的扩展](./git/ES6/6-string.md)
 	- [第七小节：Class的基本语法与继承](./git/ES6/7-class.md)
 	- [第八小节：模块的基本语法](./git/ES6/8-Module.md)
-* 第三章 React
+* 第四章 React
 	- [第一小节：React环境快速配置](./git/React/1-react-setup.md)
 	- [第二小节：React环境配置](./git/React/2-create-react-app.md)
 	- [第三小节：npm语句](./git/React/3-npm.md)
@@ -41,7 +44,7 @@
 	- [第十六小节：生命周期函数](./git/React/16-lifecycle.md)
 	- [第十七小节：Context](./git/React/17-Context.md)
 	- [第十八小节：Form表单](./git/React/18-form.md)
-* 第四章 React-Router
+* 第五章 React-Router
 	- [第一小节：Hello React-Router](./git/Router/1-hello-router.md)
 	- [第二小节：Router](./git/Router/2-Router.md)
 	- [第三小节：Link](./git/Router/3-link.md)
