@@ -16,6 +16,7 @@
 	- [第四小节：Git本地工作流](./git/Git/4-local-git.md)
 	- [第五小节：代码上传到Github](./git/Git/5-push.md)
 	- [第六小节：Github分支操作](./git/Git/6-branch.md)
+	- [第七小节：部署静态网页](./git/Git/7-gh-pages.md)
 * 第三章 ES6语法基础
 	- [第一小节：Hello ES6](./git/ES6/1-hello-es6.md)
 	- [第二小节：Let](./git/ES6/2-let.md)    
