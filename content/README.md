@@ -1,4 +1,3 @@
 # 前端大宝书
 ---
-我的web前端学习成长之路
-
+<img src="http://tu.t-cha.com/ctJDA0JDIxL1RCMTFTak5IcFhYWFhjR1hWJDMkNQ.jpg" alt="封面">
