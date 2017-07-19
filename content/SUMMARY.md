@@ -53,7 +53,7 @@
 	- [第一小节：Redux简介](./git/Redux/1-brief-redux.md)
 	- [第二小节：Redux安装](./git/Redux/2-install-redux.md)
 	- [第三小节：温习React](./git/Redux/3-props.md)
-	- [第四小节：Hello Redux](./git/Redux/4-hello-redux.md)
+	- [第四小节：Store](./git/Redux/4-store.md)
 * FLEX
 	- [flex 布局](./git/Other/flex.md)
 * JSON
