@@ -49,6 +49,11 @@
 	- [第一小节：Hello React-Router](./git/Router/1-hello-router.md)
 	- [第二小节：Router](./git/Router/2-Router.md)
 	- [第三小节：Link](./git/Router/3-link.md)
+* 第六章 React-Redux
+	- [第一小节：Redux简介](./git/Redux/1-brief-redux.md)
+	- [第二小节：Redux安装](./git/Redux/2-install-redux.md)
+	- [第三小节：组件间数据传递](./git/Redux/3-props.md)
+	- [第四小节：Hello Redux](./git/Redux/4-hello-redux.md)
 * FLEX
 	- [flex 布局](./git/Other/flex.md)
 * JSON
