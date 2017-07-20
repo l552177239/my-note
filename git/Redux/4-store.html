@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="5-createStore.html" />
+    
     
     <link rel="prev" href="3-props.html" />
     
@@ -820,6 +822,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.5" data-path="5-createStore.html">
+            
+                <a href="5-createStore.html">
+            
+                    
+                    第五小节：createStore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="6-Reducer.html">
+            
+                <a href="6-Reducer.html">
+            
+                    
+                    第六小节：Reducer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="7-action.html">
+            
+                <a href="7-action.html">
+            
+                    
+                    第七小节：Action
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1064,10 +1105,24 @@
 <ol>
 <li><p><code>Store</code>&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7EF4;&#x62A4;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x72B6;&#x6001;&#x7684;&#x5BF9;&#x8C61;</p>
 </li>
-<li><p>&#x63D0;&#x4F9B;&#x63D0;&#x4F9B;<code>getState()</code>&#x65B9;&#x6CD5;&#x83B7;&#x53D6;<code>state</code>&#xFF08;<code>store.getState()</code>: &#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#x3002;&#xFF09;</p>
+<li><p>&#x63D0;&#x4F9B;&#x63D0;&#x4F9B;<code>getState()</code>&#x65B9;&#x6CD5;&#x83B7;&#x53D6;<code>state</code></p>
 </li>
-<li><p>&#x63D0;&#x4F9B;<code>dispatch(action)</code>&#x65B9;&#x6CD5;&#x66F4;&#x65B0;<code>state</code>&#xFF08;<code>store.dispatch(action)</code>: &#x5C06;&#x4E00;&#x4E2A;<code>action</code>&#x5BF9;&#x8C61;&#x53D1;&#x9001;&#x7ED9; <code>reducer</code>&#xFF09;</p>
-</li>
+</ol>
+<pre><code>store.getState(): &#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x5BF9;&#x8C61;
+
+ - &#x8FD4;&#x56DE;&#x5E94;&#x7528;&#x5F53;&#x524D;&#x7684; state &#x6811;
+ - &#x5B83;&#x4E0E; store &#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A; reducer &#x8FD4;&#x56DE;&#x503C;&#x76F8;&#x540C;
+</code></pre><ol>
+<li>&#x63D0;&#x4F9B;<code>dispatch(action)</code>&#x65B9;&#x6CD5;&#x66F4;&#x65B0;<code>state</code></li>
+</ol>
+<pre><code>store.dispatch(action): &#x5C06;&#x4E00;&#x4E2A;`action`&#x5BF9;&#x8C61;&#x53D1;&#x9001;&#x7ED9; reducer
+
+ - &#x5206;&#x53D1; action &#x8FD9;&#x662F;&#x89E6;&#x53D1; state &#x53D8;&#x5316;&#x7684;&#x60DF;&#x4E00;&#x9014;&#x5F84;&#x3002;
+ - &#x4F1A;&#x4F7F;&#x5F53;&#x524D;getState&#x7684;&#x7ED3;&#x679C;&#x548C;&#x4F20;&#x5165;&#x7684;action&#x4EE5;&#x540C;&#x6B65;&#x65B9;&#x5F0F;&#x8C03;&#x7528;reduce&#x51FD;&#x6570;
+ - &#x8FD4;&#x56DE;&#x503C;&#x4F1A;&#x88AB;&#x4F5C;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;state
+ - &#x4ECE;&#x73B0;&#x5728;&#x5F00;&#x59CB;&#xFF0C;&#x8FD9;&#x5C31;&#x6210;&#x4E3A;&#x4E86; getState() &#x7684;&#x8FD4;&#x56DE;&#x503C;
+ - &#x540C;&#x65F6;&#x53D8;&#x5316;&#x76D1;&#x542C;&#x5668;(change listener)&#x4F1A;&#x88AB;&#x89E6;&#x53D1;
+</code></pre><ol>
 <li><p>&#x901A;&#x8FC7;<code>subscribe(listener)</code>&#x6CE8;&#x518C;&#x76D1;&#x542C;&#x5668;</p>
 </li>
 <li><p>&#x901A;&#x8FC7;<code>subscribe(listener)</code>&#x8FD4;&#x56DE;&#x7684;&#x51FD;&#x6570;&#x6CE8;&#x9500;&#x76D1;&#x542C;&#x5668;</p>
@@ -1075,22 +1130,49 @@
 </ol>
 <h3 id="&#x521B;&#x5EFA;store">&#x521B;&#x5EFA;<code>store</code></h3>
 <ol>
-<li><p>&#x521B;&#x5EFA;<code>src</code>&#x4E0B;&#x7684;<code>store.js</code>&#x6587;&#x4EF6;</p>
-</li>
-<li><p>&#x5BFC;&#x5165; Redux &#x7684;<code>createStore</code>&#x51FD;&#x6570;</p>
-</li>
-<li><p>&#x901A;&#x8FC7; <code>Reducer</code> &#x51FD;&#x6570;&#xFF0C;&#x6784;&#x9020; Store &#x5BF9;&#x8C61;</p>
-</li>
-<li><p>&#x5BFC;&#x51FA; Store &#x5BF9;&#x8C61;</p>
-</li>
+<li>&#x521B;&#x5EFA;<code>src</code>&#x4E0B;&#x7684;<code>store.js</code>&#x6587;&#x4EF6;</li>
 </ol>
-<pre><code>import { createStore } from &apos;redux&apos;;
-import rootReducer from &apos;./reducers/&apos;
-
-let store = createStore(rootReducer)
+<pre><code>[&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;] -&gt; src -&gt; store.js
+</code></pre><ol>
+<li>&#x5BFC;&#x5165; Redux &#x7684;<code>createStore</code>&#x51FD;&#x6570;</li>
+</ol>
+<pre><code>import { createStore } from &apos;redux&apos;
+</code></pre><ol>
+<li>&#x901A;&#x8FC7; <code>Reducer</code> &#x51FD;&#x6570;&#xFF0C;&#x6784;&#x9020; Store &#x5BF9;&#x8C61;&#xFF0C;&#x5BFC;&#x5165;<code>reducers</code></li>
+</ol>
+<pre><code>import rootReducer from &apos;./reducers/&apos;
+</code></pre><ol>
+<li>&#x5BFC;&#x51FA; Store &#x5BF9;&#x8C61;</li>
+</ol>
+<pre><code>let store = createStore(rootReducer)
 
 export default store
-</code></pre>
+</code></pre><ol>
+<li>&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x5185;&#x5F15;&#x7528;</li>
+</ol>
+<p><code>&lt;Provider store&gt;</code>&#x4F7F;&#x7EC4;&#x4EF6;&#x5C42;&#x7EA7;&#x4E2D;&#x7684;<code>connect()</code>&#x65B9;&#x6CD5;&#x90FD;&#x80FD;&#x591F;&#x83B7;&#x5F97; Redux store</p>
+<ul>
+<li>&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x7684;&#x6839;&#x7EC4;&#x4EF6;&#x5E94;&#x8BE5;&#x5D4C;&#x5957;&#x5728;<code>&lt;Provider&gt;</code>&#x4E2D;&#x624D;&#x80FD;&#x4F7F;&#x7528;<code>connect()</code>&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code>import store from &apos;./store&apos;
+//&#x5BFC;&#x5165; store
+import { Provider } from &apos;react-redux&apos;
+//&#x5BFC;&#x5165; Provider
+
+Render(){
+  &lt;Provider store={store}&gt;
+  //&#x5C06; store &#x4F20;&#x5165;
+    &lt;&#x7EC4;&#x4EF6; /&gt;  
+  &lt;/provider&gt;
+}
+</code></pre><ul>
+<li>&#x5982;&#x679C;&#x4F60;&#x771F;&#x7684;&#x4E0D;&#x60F3;&#x628A;&#x6839;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x5728; <code>&lt;Provider&gt;</code> &#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A; store &#x4F5C;&#x4E3A; props &#x4F20;&#x9012;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;&#x88AB; connet() &#x5305;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;
+&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x53EA;&#x63A8;&#x8350;&#x60A8;&#x5728;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4E2D;&#x5BF9; store &#x8FDB;&#x884C;&#x4F2A;&#x9020; (stub) &#x6216;&#x8005;&#x5728;&#x975E;&#x5B8C;&#x5168;&#x57FA;&#x4E8E; React &#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x624D;&#x8FD9;&#x6837;&#x505A;&#x3002;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x4F7F;&#x7528; <provider>&#x3002;</provider></li>
+</ul>
+<p>&#x5C5E;&#x6027;</p>
+<p>store (Redux Store): &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x552F;&#x4E00;&#x7684; Redux store &#x5BF9;&#x8C61;
+children (ReactElement) &#x7EC4;&#x4EF6;&#x5C42;&#x7EA7;&#x7684;&#x6839;&#x7EC4;&#x4EF6;&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -1117,10 +1199,14 @@ export default store
 
             
                 
-                <a href="3-props.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第三小节：温习React">
+                <a href="3-props.html" class="navigation navigation-prev " aria-label="Previous page: 第三小节：温习React">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="5-createStore.html" class="navigation navigation-next " aria-label="Next page: 第五小节：createStore">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1129,7 +1215,7 @@ export default store
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第四小节：Store","level":"1.7.4","depth":2,"next":{"title":"FLEX","level":"1.8","depth":1,"ref":"","articles":[{"title":"flex 布局","level":"1.8.1","depth":2,"path":"git/Other/flex.md","ref":"./git/Other/flex.md","articles":[]}]},"previous":{"title":"第三小节：温习React","level":"1.7.3","depth":2,"path":"git/Redux/3-props.md","ref":"./git/Redux/3-props.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/4-store.md","mtime":"2017-07-20T11:10:48.997Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T11:58:18.798Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第四小节：Store","level":"1.7.4","depth":2,"next":{"title":"第五小节：createStore","level":"1.7.5","depth":2,"path":"git/Redux/5-createStore.md","ref":"./git/Redux/5-createStore.md","articles":[]},"previous":{"title":"第三小节：温习React","level":"1.7.3","depth":2,"path":"git/Redux/3-props.md","ref":"./git/Redux/3-props.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/4-store.md","mtime":"2017-07-20T15:11:56.817Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T15:14:29.492Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
