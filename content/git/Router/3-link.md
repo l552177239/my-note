@@ -58,3 +58,16 @@ import { Link } from 'react-router-dom'
    } }
 >FAQs</NavLink>
 ```
+
+### Redirect
+
+`Redirect`（重定向）：<Redirect> 渲染时将导航到一个新地址，这个新地址覆盖在访问历史信息里面的本该访问的那个地址。
+
+```
+<Switch>
+  <Redirect from='/old-path' to='/new-path'/>
+  //from 原来的地址
+  //to 需要跳转的地址
+  <Route path='/new-path' component={Place}/>
+</Switch>
+```

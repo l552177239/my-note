@@ -118,4 +118,17 @@ class Son extends React.Component{
 export default withRouter(Son)
 ```
 
-父组件里直接使用`<Son />`导入就可使用`router`的方法
+父组件里直接使用`<Son />`导入，就可使用`router`的方法
+
+### Switch
+
+Switch，路由跳转时只渲染出第一个与当前访问地址匹配的 <Route> 或 <Redirect>
+
+```
+<Switch>  // 监听空路由，
+ <Route path="/" exact component={Home}/>
+ <Redirect from="/old-match" to="/will-match"/>
+ <Route path="/will-match" component={WillMatch}/>
+ <Route component={NoMatch}/>  // 空路由，
+</Switch>
+```
