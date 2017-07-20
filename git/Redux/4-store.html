@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第四小节：Hello Redux · GitBook</title>
+        <title>第四小节：Store · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -799,7 +799,7 @@
                 <a href="3-props.html">
             
                     
-                    第三小节：组件间数据传递
+                    第三小节：温习React
             
                 </a>
             
@@ -807,12 +807,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7.4" data-path="4-hello-redux.html">
+        <li class="chapter active" data-level="1.7.4" data-path="4-store.html">
             
-                <a href="4-hello-redux.html">
+                <a href="4-store.html">
             
                     
-                    第四小节：Hello Redux
+                    第四小节：Store
             
                 </a>
             
@@ -1041,7 +1041,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >第四小节：Hello Redux</a>
+        <a href="../.." >第四小节：Store</a>
     </h1>
 </div>
 
@@ -1056,8 +1056,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="hello-redux">Hello Redux</h1>
+                                <h1 id="store">Store</h1>
+<blockquote>
+<p>Redux &#x5E94;&#x7528;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x7684;<code>store</code></p>
+</blockquote>
+<h3 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h3>
+<ol>
+<li><p><code>Store</code>&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7EF4;&#x62A4;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x72B6;&#x6001;&#x7684;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>&#x63D0;&#x4F9B;&#x63D0;&#x4F9B;<code>getState()</code>&#x65B9;&#x6CD5;&#x83B7;&#x53D6;<code>state</code>&#xFF08;<code>store.getState()</code>: &#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#x3002;&#xFF09;</p>
+</li>
+<li><p>&#x63D0;&#x4F9B;<code>dispatch(action)</code>&#x65B9;&#x6CD5;&#x66F4;&#x65B0;<code>state</code>&#xFF08;<code>store.dispatch(action)</code>: &#x5C06;&#x4E00;&#x4E2A;<code>action</code>&#x5BF9;&#x8C61;&#x53D1;&#x9001;&#x7ED9; <code>reducer</code>&#xFF09;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;<code>subscribe(listener)</code>&#x6CE8;&#x518C;&#x76D1;&#x542C;&#x5668;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;<code>subscribe(listener)</code>&#x8FD4;&#x56DE;&#x7684;&#x51FD;&#x6570;&#x6CE8;&#x9500;&#x76D1;&#x542C;&#x5668;</p>
+</li>
+</ol>
+<h3 id="&#x521B;&#x5EFA;store">&#x521B;&#x5EFA;<code>store</code></h3>
+<ol>
+<li><p>&#x521B;&#x5EFA;<code>src</code>&#x4E0B;&#x7684;<code>store.js</code>&#x6587;&#x4EF6;</p>
+</li>
+<li><p>&#x5BFC;&#x5165; Redux &#x7684;<code>createStore</code>&#x51FD;&#x6570;</p>
+</li>
+<li><p>&#x901A;&#x8FC7; <code>Reducer</code> &#x51FD;&#x6570;&#xFF0C;&#x6784;&#x9020; Store &#x5BF9;&#x8C61;</p>
+</li>
+<li><p>&#x5BFC;&#x51FA; Store &#x5BF9;&#x8C61;</p>
+</li>
+</ol>
+<pre><code>import { createStore } from &apos;redux&apos;;
+import rootReducer from &apos;./reducers/&apos;
 
+let store = createStore(rootReducer)
+
+export default store
+</code></pre>
                                 
                                 </section>
                             
@@ -1084,7 +1117,7 @@
 
             
                 
-                <a href="3-props.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第三小节：组件间数据传递">
+                <a href="3-props.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第三小节：温习React">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1096,7 +1129,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第四小节：Hello Redux","level":"1.7.4","depth":2,"next":{"title":"FLEX","level":"1.8","depth":1,"ref":"","articles":[{"title":"flex 布局","level":"1.8.1","depth":2,"path":"git/Other/flex.md","ref":"./git/Other/flex.md","articles":[]}]},"previous":{"title":"第三小节：组件间数据传递","level":"1.7.3","depth":2,"path":"git/Redux/3-props.md","ref":"./git/Redux/3-props.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/4-hello-redux.md","mtime":"2017-07-19T06:36:09.407Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-19T06:38:30.203Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第四小节：Store","level":"1.7.4","depth":2,"next":{"title":"FLEX","level":"1.8","depth":1,"ref":"","articles":[{"title":"flex 布局","level":"1.8.1","depth":2,"path":"git/Other/flex.md","ref":"./git/Other/flex.md","articles":[]}]},"previous":{"title":"第三小节：温习React","level":"1.7.3","depth":2,"path":"git/Redux/3-props.md","ref":"./git/Redux/3-props.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/4-store.md","mtime":"2017-07-20T11:10:48.997Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T11:55:27.151Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

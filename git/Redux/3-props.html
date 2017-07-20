@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第三小节：组件间数据传递 · GitBook</title>
+        <title>第三小节：温习React · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="4-hello-redux.html" />
+    <link rel="next" href="4-store.html" />
     
     
     <link rel="prev" href="2-install-redux.html" />
@@ -801,7 +801,7 @@
                 <a href="3-props.html">
             
                     
-                    第三小节：组件间数据传递
+                    第三小节：温习React
             
                 </a>
             
@@ -809,12 +809,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.4" data-path="4-hello-redux.html">
+        <li class="chapter " data-level="1.7.4" data-path="4-store.html">
             
-                <a href="4-hello-redux.html">
+                <a href="4-store.html">
             
                     
-                    第四小节：Hello Redux
+                    第四小节：Store
             
                 </a>
             
@@ -1043,7 +1043,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >第三小节：组件间数据传递</a>
+        <a href="../.." >第三小节：温习React</a>
     </h1>
 </div>
 
@@ -1058,8 +1058,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7EC4;&#x4EF6;&#x95F4;&#x6570;&#x636E;&#x4F20;&#x9012;">&#x7EC4;&#x4EF6;&#x95F4;&#x6570;&#x636E;&#x4F20;&#x9012;</h1>
-<p>&#x590D;&#x4E60;&#x4E00;&#x4E0B;React&#x7684;&#x77E5;&#x8BC6;</p>
+                                <h1 id="&#x6E29;&#x4E60;redux&#x4E2D;&#x76F8;&#x5173;&#x7684;react&#x77E5;&#x8BC6;&#x70B9;">&#x6E29;&#x4E60;Redux&#x4E2D;&#x76F8;&#x5173;&#x7684;React&#x77E5;&#x8BC6;&#x70B9;</h1>
+<h2 id="&#x7EC4;&#x4EF6;&#x95F4;&#x6570;&#x636E;&#x4F20;&#x9012;">&#x7EC4;&#x4EF6;&#x95F4;&#x6570;&#x636E;&#x4F20;&#x9012;</h2>
 <p>React&#x6838;&#x5FC3;&#x601D;&#x60F3;&#x5C31;&#x662F;&#x6570;&#x636E;&#x548C;&#x7A0B;&#x5E8F;&#x5206;&#x79BB;&#xFF0C;&#x7528;state&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x7684;&#x63A7;&#x5236;&#xFF0C;&#x7528;props&#x8FDB;&#x884C;&#x6570;&#x636E;&#x95F4;&#x4F20;&#x9012;&#x3002;</p>
 <h3 id="&#x5229;&#x7528;state&#x548C;props&#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x95F4;&#x6570;&#x636E;&#x4F20;&#x9012;">&#x5229;&#x7528;<code>state</code>&#x548C;<code>props</code>&#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x95F4;&#x6570;&#x636E;&#x4F20;&#x9012;</h3>
 <h4 id="&#x6838;&#x5FC3;&#x601D;&#x60F3;">&#x6838;&#x5FC3;&#x601D;&#x60F3;</h4>
@@ -1073,6 +1073,7 @@
 <li>&#x5199;&#x4E00;&#x4E2A;<code>handleClick</code>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x6570;&#x636E;</li>
 <li>&#x5C06;<code>handleClick</code>&#x65B9;&#x6CD5;&#x4F20;&#x5165;<code>CommentBox</code>&#x7EC4;&#x4EF6;&#x4E2D;</li>
 <li><code>handleClick</code>&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x5B50;&#x7EC4;&#x4EF6;&#x83B7;&#x53D6;&#x7684;&#x503C;</li>
+<li>&#x5C06;<code>state</code>&#x7684;&#x503C;&#x4F20;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;</li>
 </ol>
 <pre><code>import React, { Component } from &apos;react&apos;
 import CommentBox from &apos;./CommentBox&apos;
@@ -1088,7 +1089,7 @@ class App extends Component {
     console.log(&apos;App:&apos;,this.state.data)
     return (
       &lt;div className=&quot;App&quot;&gt;
-        &lt;CommentBox handleClick={this.handleClick.bind(this)} /&gt;
+        &lt;CommentBox data={this.state.data} handleClick={this.handleClick.bind(this)} /&gt;
       &lt;/div&gt;
     )
   }
@@ -1098,26 +1099,105 @@ export default App
 </code></pre><h4 id="&#x5B50;&#x7EC4;&#x4EF6;commentbox">&#x5B50;&#x7EC4;&#x4EF6;<code>CommentBox</code></h4>
 <ol>
 <li>&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;<code>CommentBox</code></li>
+<li>&#x901A;&#x8FC7;<code>ref</code>&#x6293;&#x53D6;&#x865A;&#x62DF;&#x8282;&#x70B9;</li>
 <li>&#x901A;&#x8FC7;<code>this.props.handleClick</code>&#x62FF;&#x5230;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x8FC7;&#x6765;&#x7684;<code>handleClick</code>&#x65B9;&#x6CD5;</li>
 <li>&#x901A;&#x8FC7;&#x5B50;&#x7EC4;&#x5EFA;&#x7684;<code>handleClick</code>&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;<code>input</code>&#x5185;&#x8F93;&#x5165;&#x7684;<code>value</code>&#x4F20;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;</li>
+<li>&#x901A;&#x8FC7;<code>props</code>&#x62FF;&#x5230;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x8FC7;&#x6765;&#x7684;&#x503C;&#xFF08;&#x6839;&#x636E;&#x5BF9;&#x5E94;&#x7684;&#x540D;&#x79F0;&#xFF09;</li>
 </ol>
 <pre><code>import React from &apos;react&apos;
 
 class CommentBox extends React.Component{
+  state = {
+    data: this.props.data
+  }
   handleClick(){
     this.props.handleClick(this.comment.value)
+    this.setState({data:this.props.data})
   }
   render(){
+    let {data} = this.state
+    //Es6&#x5BF9;&#x8C61;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;
     return(
       &lt;div&gt;
-          &lt;input className=&apos;input&apos; type=&apos;text&apos; ref={value=&gt;this.comment=value} /&gt;
-          &lt;input type=&apos;button&apos; value=&apos;&#x4F20;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;&apos; onClick={this.handleClick.bind(this)} /&gt;
+        { data.map(item =&gt; &lt;li&gt;{item}&lt;/li&gt;) }
+        &lt;input className=&apos;input&apos; type=&apos;text&apos; ref={value=&gt;this.comment=value} /&gt;
+        &lt;input type=&apos;button&apos; value=&apos;&#x4F20;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;&apos; onClick={this.handleClick.bind(this)} /&gt;
       &lt;/div&gt;
     )
   }
 }
 
 export default CommentBox
+</code></pre><h2 id="&#x5173;&#x4E8E;&#x89E6;&#x53D1;render&#x7684;&#x6761;&#x4EF6;">&#x5173;&#x4E8E;&#x89E6;&#x53D1;<code>render</code>&#x7684;&#x6761;&#x4EF6;</h2>
+<ol>
+<li>&#x7EC4;&#x4EF6;&#x7684;<code>state</code>&#x53D1;&#x751F;&#x6539;&#x53D8;</li>
+</ol>
+<pre><code>import React from &apos;react&apos;
+
+class App extends React.Component {
+  state = {
+    data:1
+  }
+  handleClick(){
+    this.setState({data:0})
+  }
+  render(){
+    console.log(&apos;render&#x88AB;&#x89E6;&#x53D1;&apos;)
+    return(
+      &lt;div&gt;
+         &lt;button onClick={this.handleClick.bind(this)}&gt;&#x70B9;&#x51FB;&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default App;
+</code></pre><ol>
+<li>&#x7EC4;&#x4EF6;&#x7684;<code>props</code>&#x53D1;&#x751F;&#x6539;&#x53D8;</li>
+</ol>
+<pre><code>//&#x7236;&#x7EC4;&#x4EF6;
+import React, { Component } from &apos;react&apos;;
+import Son from &apos;./Son&apos;;
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: 1
+    }
+  }
+  handleClick(e){
+    e.preventDefault();
+    this.setState({
+      data: this.state.data + 1
+    })
+  }
+  render(){
+    return(
+      &lt;div&gt;
+        &lt;Son num={this.state.data} /&gt;
+        &lt;button onClick={this.handleClick.bind(this)}&gt;Click&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default App;
+</code></pre><pre><code>//&#x5B50;&#x7EC4;&#x4EF6;
+import React, { Component } from &apos;react&apos;;
+
+class Son extends Component {
+  render(){
+    console.log(&apos;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;render&#x88AB;&#x89E6;&#x53D1;&apos;)
+    return(
+      &lt;h1 &gt;
+          { this.props.num }
+      &lt;/h1&gt;
+    )
+  }
+}
+
+export default Son;
 </code></pre>
                                 
                                 </section>
@@ -1150,7 +1230,7 @@ export default CommentBox
                 </a>
                 
                 
-                <a href="4-hello-redux.html" class="navigation navigation-next " aria-label="Next page: 第四小节：Hello Redux">
+                <a href="4-store.html" class="navigation navigation-next " aria-label="Next page: 第四小节：Store">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1161,7 +1241,7 @@ export default CommentBox
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三小节：组件间数据传递","level":"1.7.3","depth":2,"next":{"title":"第四小节：Hello Redux","level":"1.7.4","depth":2,"path":"git/Redux/4-hello-redux.md","ref":"./git/Redux/4-hello-redux.md","articles":[]},"previous":{"title":"第二小节：Redux安装","level":"1.7.2","depth":2,"path":"git/Redux/2-install-redux.md","ref":"./git/Redux/2-install-redux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/3-props.md","mtime":"2017-07-19T06:33:30.802Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-19T06:38:30.203Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三小节：温习React","level":"1.7.3","depth":2,"next":{"title":"第四小节：Store","level":"1.7.4","depth":2,"path":"git/Redux/4-store.md","ref":"./git/Redux/4-store.md","articles":[]},"previous":{"title":"第二小节：Redux安装","level":"1.7.2","depth":2,"path":"git/Redux/2-install-redux.md","ref":"./git/Redux/2-install-redux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/3-props.md","mtime":"2017-07-20T01:50:08.512Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T11:55:27.151Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
