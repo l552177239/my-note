@@ -29,3 +29,11 @@ Elm 是一个基于不可变数据结构和纯函数的强大的反应式函数�
 > 一切数据都要保存的 Store 之中，组件自己不保留自己的 state 数据
 
 后续我们会学的一切的技巧基本服务于一个关系：**组件和 Store 的关系**
+
+### 参考
+
+ - 官网：[点击进入](http://redux.js.org/)
+
+ - 中文官网：[点击进入](http://www.redux.org.cn/index.html)
+
+ - 阮一峰Redux：[点击进入](http://www.redux.org.cn/index.html)

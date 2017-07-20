@@ -57,6 +57,7 @@
 	- [第五小节：createStore](./git/Redux/5-createStore.md)
 	- [第六小节：Reducer](./git/Redux/6-Reducer.md)
 	- [第七小节：Action](./git/Redux/7-action.md)
+	- [第八小节：connect](./git/Redux/8-connect.md)
 * FLEX
 	- [flex 布局](./git/Other/flex.md)
 * JSON
