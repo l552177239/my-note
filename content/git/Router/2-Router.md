@@ -122,7 +122,7 @@ export default withRouter(Son)
 
 ### Switch
 
-Switch，路由跳转时只渲染出第一个与当前访问地址匹配的 <Route> 或 <Redirect>
+Switch，路由跳转时只渲染出第一个与当前访问地址匹配的`Route`或`Redirect`
 
 ```
 <Switch>  // 监听空路由，
