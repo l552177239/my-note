@@ -119,13 +119,3 @@ export default withRouter(Son)
 ```
 
 父组件里直接使用`<Son />`导入就可使用`router`的方法
-
-
-
-
-
-
-
-
-
-
