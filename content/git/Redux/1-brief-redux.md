@@ -1,6 +1,6 @@
 # Redux
 
-### 什么是`Redxu`
+### 什么是`Redux`
 
 Redux作为一个`React`的组件，Redux 是`JavaScript`状态容器，提供可预测化的状态管理。
 Redux在React中主要负责组件间数据传递，是一个数据流管理工具。
