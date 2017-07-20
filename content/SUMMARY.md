@@ -54,6 +54,9 @@
 	- [第二小节：Redux安装](./git/Redux/2-install-redux.md)
 	- [第三小节：温习React](./git/Redux/3-props.md)
 	- [第四小节：Store](./git/Redux/4-store.md)
+	- [第五小节：createStore](./git/Redux/5-createStore.md)
+	- [第六小节：Reducer](./git/Redux/6-Reducer.md)
+	- [第七小节：Action](./git/Redux/7-action.md)
 * FLEX
 	- [flex 布局](./git/Other/flex.md)
 * JSON
