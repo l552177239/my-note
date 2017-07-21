@@ -82,7 +82,7 @@ const mapStateToProps = (state) => ({
 
 **小贴士**：调用 connect() 方法的时候使用了两个括号。这个叫作局部调用，并且这允许开发者使用 ES7 提供的修饰语法：
 
-```
+```js
 // 这是还不稳定的语法！这可能在实际的应用中被修改或摒弃。
 @connect(mapStateToProps)
 export default class CounterContainer { ... }
