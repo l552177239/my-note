@@ -26,9 +26,9 @@
 
 **`input`的`type`属性**
 
-值 					 | 描述 
+值 					 | 描述
 ------------ | ----------------------------------------------------------
-button			 | 定义可点击按钮（多数情况下，用于通过 JavaScript 启动脚本）。 
+button			 | 定义可点击按钮（多数情况下，用于通过 JavaScript 启动脚本）。
 checkbox 		 | 定义复选框。
 file 				 | 定义输入字段和 "浏览"按钮，供文件上传。
 hidden 			 | 定义隐藏的输入字段。
@@ -38,6 +38,7 @@ radio 			 | 定义单选按钮。
 reset 			 | 定义重置按钮。重置按钮会清除表单中的所有数据。
 submit 			 | 定义提交按钮。提交按钮会把表单数据发送到服务器。
 text 				 | 定义单行的输入字段，用户可在其中输入文本。默认宽度为 20 个字符。
+email 			 | 定义邮箱
 
 **表单重置**
 
@@ -52,7 +53,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="app"> 
+      <div className="app">
         <form action='https://www.baidu.com' method='GET' id='form' onSubmit={this.handleSubmit.bind(this)}>
           <input type="text" name="hello" placeholder="输入内容" />
           <button>提交</button>
@@ -78,7 +79,7 @@ import React from 'react'
 class App extends React.Component {
   render() {
     return (
-      <div className="app"> 
+      <div className="app">
           <input type="text" placeholder="输入内容" value='123' />
         </form>
       </div>
@@ -119,7 +120,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="app"> 
+      <div className="app">
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input value={this.state.input} onChange={this.handleChange} />
           <button>提交</button>
@@ -151,7 +152,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="app"> 
+      <div className="app">
         <form onSubmit={this.handleSubmit.bind(this)}>
           <textarea cols="30" rows="10" value={this.state.textarea} onChange={e => this.setState({textarea:e.target.value})}></textarea><br/>
           <select value={this.state.fruits} onChange={e => this.setState({fruits:e.target.value})}>
@@ -193,7 +194,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="app"> 
+      <div className="app">
         <form onSubmit={this.handleSubmit.bind(this)}>
 					男<input type="radio" name='sex' value='male' onChange={e => this.setState({sex:e.target.value})}/>
           女<input type="radio" name='sex' value='female' onChange={e => this.setState({sex:e.target.value})}/><br/>
@@ -230,7 +231,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="app"> 
+      <div className="app">
         <form onSubmit={this.handleSubmit.bind(this)}>
 					男<input type="radio" name='sex' value='male' checked={this.state.sex === 'male' ? true : false} onChange={e => this.setState({sex:e.target.value})}/>
           女<input type="radio" name='sex' value='female' checked={this.state.sex === 'female' ? true : false} onChange={e => this.setState({sex:e.target.value})}/><br/>
@@ -267,7 +268,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="app"> 
+      <div className="app">
         <form onSubmit={this.handleSubmit.bind(this)}>
 					我已阅读并同意<input type="checkbox" value='agree' onChange={e =>this.setState({agree:!this.state.agree})}/><br/>
           <button type='submit'>提交</button>
@@ -316,7 +317,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="app"> 
+      <div className="app">
         <form onSubmit={this.handleSubmit.bind(this)}>
 					兴趣爱好：<br/>
           篮球<input type="checkbox" value='basketball' onChange={this.handleCheck}/><br/>
@@ -389,11 +390,11 @@ class Input extends React.Component {
   }
   render() {
     return (
-      <div> 
-          <textarea 
-	          cols="30" 
-	          rows="10" 
-	          value={this.state.textarea} 
+      <div>
+          <textarea
+	          cols="30"
+	          rows="10"
+	          value={this.state.textarea}
 	          onChange={this.handleChange.bind(this,'textarea')}>
 	        </textarea><br/>
           <select value={this.state.fruits} onChange={this.handleChange.bind(this,'fruits')}>
@@ -416,4 +417,3 @@ export default Input
 1. 支持传入默认值；
 2. 可控：组件外部修改`props`可改变`input`组件的真实值及显示值；
 3. 非可控：输入框中输入值，可同时改变`input`组件的真实值及显示值。
-

@@ -37,48 +37,48 @@ $ git branch -a
 #### 创建分支
 
 ```
-git branch branch-name
+git branch [branch-name]
 ```
 
 #### 切换分支
 
 ```
-git checkout branch-name
+git checkout [branch-name]
 ```
 
 #### 创建并切换分支
 
 ```
-git branch -b branch-name
+git branch -b [branch-name]
 ```
 
-#### 把分支推到远程分支 
+#### 把分支推到远程分支
 
 ```
-git push -u origin branch-name  
+git push -u origin [branch-name]  
 ```
 
 #### 删除本地分支
 
 ```
-Git branch -d branch-name
+Git branch -d [branch-name]
 ```
 
 #### 删除远程版本
 
 ```
-git push origin :branch-name
+git push origin :[branch-name]
 ```
 
 #### 删除远程分支  
 
 ```
-git branch -r -d origin/branch-name
-git push origin :branch-name
+git branch -r -d origin/[branch-name]
+git push origin :[branch-name]
 ```
 
 #### 合并指定分支到当前分支
 
 ```
-git merge branch-name
+git merge [branch-name]
 ```

@@ -16,7 +16,7 @@ npm i react-redux -S
 
 #### `connect`方法声明
 
-connect作用：连接React组件与 Redux store
+connect作用：**连接** React组件 与 Redux store
 
 ```
 //模板函数
