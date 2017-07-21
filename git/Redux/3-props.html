@@ -874,6 +874,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.9" data-path="9-Hello-redux.html">
+            
+                <a href="9-Hello-redux.html">
+            
+                    
+                    第九小节：项目实例：小卡片
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1127,28 +1140,29 @@
 <li><code>handleClick</code>&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x5B50;&#x7EC4;&#x4EF6;&#x83B7;&#x53D6;&#x7684;&#x503C;</li>
 <li>&#x5C06;<code>state</code>&#x7684;&#x503C;&#x4F20;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;</li>
 </ol>
-<pre><code>import React, { Component } from &apos;react&apos;
-import CommentBox from &apos;./CommentBox&apos;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> CommentBox <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./CommentBox&apos;</span>
 
-class App extends Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   state = {
-    data: &apos;&apos;
+    data: <span class="hljs-string">&apos;&apos;</span>
   }
   handleClick(data){
-    this.setState({data:data})
+    <span class="hljs-keyword">this</span>.setState({data:data})
   }
   render() {
-    console.log(&apos;App:&apos;,this.state.data)
-    return (
-      &lt;div className=&quot;App&quot;&gt;
-        &lt;CommentBox data={this.state.data} handleClick={this.handleClick.bind(this)} /&gt;
-      &lt;/div&gt;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;App:&apos;</span>,<span class="hljs-keyword">this</span>.state.data)
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;App&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CommentBox</span> <span class="hljs-attr">data</span>=<span class="hljs-string">{this.state.data}</span> <span class="hljs-attr">handleClick</span>=<span class="hljs-string">{this.handleClick.bind(this)}</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     )
   }
 }
 
 export default App
-</code></pre><h4 id="&#x5B50;&#x7EC4;&#x4EF6;commentbox">&#x5B50;&#x7EC4;&#x4EF6;<code>CommentBox</code></h4>
+</span></code></pre>
+<h4 id="&#x5B50;&#x7EC4;&#x4EF6;commentbox">&#x5B50;&#x7EC4;&#x4EF6;<code>CommentBox</code></h4>
 <ol>
 <li>&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;<code>CommentBox</code></li>
 <li>&#x901A;&#x8FC7;<code>ref</code>&#x6293;&#x53D6;&#x865A;&#x62DF;&#x8282;&#x70B9;</li>
@@ -1156,20 +1170,20 @@ export default App
 <li>&#x901A;&#x8FC7;&#x5B50;&#x7EC4;&#x5EFA;&#x7684;<code>handleClick</code>&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;<code>input</code>&#x5185;&#x8F93;&#x5165;&#x7684;<code>value</code>&#x4F20;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;</li>
 <li>&#x901A;&#x8FC7;<code>props</code>&#x62FF;&#x5230;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x8FC7;&#x6765;&#x7684;&#x503C;&#xFF08;&#x6839;&#x636E;&#x5BF9;&#x5E94;&#x7684;&#x540D;&#x79F0;&#xFF09;</li>
 </ol>
-<pre><code>import React from &apos;react&apos;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
 
-class CommentBox extends React.Component{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommentBox</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
   state = {
-    data: this.props.data
+    data: <span class="hljs-keyword">this</span>.props.data
   }
   handleClick(){
-    this.props.handleClick(this.comment.value)
-    this.setState({data:this.props.data})
+    <span class="hljs-keyword">this</span>.props.handleClick(<span class="hljs-keyword">this</span>.comment.value)
+    <span class="hljs-keyword">this</span>.setState({data:<span class="hljs-keyword">this</span>.props.data})
   }
   render(){
-    let {data} = this.state
-    //Es6&#x5BF9;&#x8C61;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;
-    return(
+    <span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">this</span>.state
+    <span class="hljs-comment">//Es6&#x5BF9;&#x8C61;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;</span>
+    <span class="hljs-keyword">return</span>(
       &lt;div&gt;
         { data.map(item =&gt; &lt;li&gt;{item}&lt;/li&gt;) }
         &lt;input className=&apos;input&apos; type=&apos;text&apos; ref={value=&gt;this.comment=value} /&gt;
@@ -1180,77 +1194,81 @@ class CommentBox extends React.Component{
 }
 
 export default CommentBox
-</code></pre><h2 id="&#x5173;&#x4E8E;&#x89E6;&#x53D1;render&#x7684;&#x6761;&#x4EF6;">&#x5173;&#x4E8E;&#x89E6;&#x53D1;<code>render</code>&#x7684;&#x6761;&#x4EF6;</h2>
+</code></pre>
+<h2 id="&#x5173;&#x4E8E;&#x89E6;&#x53D1;render&#x7684;&#x6761;&#x4EF6;">&#x5173;&#x4E8E;&#x89E6;&#x53D1;<code>render</code>&#x7684;&#x6761;&#x4EF6;</h2>
 <ol>
 <li>&#x7EC4;&#x4EF6;&#x7684;<code>state</code>&#x53D1;&#x751F;&#x6539;&#x53D8;</li>
 </ol>
-<pre><code>import React from &apos;react&apos;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
 
-class App extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
   state = {
-    data:1
+    data:<span class="hljs-number">1</span>
   }
   handleClick(){
-    this.setState({data:0})
+    <span class="hljs-keyword">this</span>.setState({data:<span class="hljs-number">0</span>})
   }
   render(){
-    console.log(&apos;render&#x88AB;&#x89E6;&#x53D1;&apos;)
-    return(
-      &lt;div&gt;
-         &lt;button onClick={this.handleClick.bind(this)}&gt;&#x70B9;&#x51FB;&lt;/button&gt;
-      &lt;/div&gt;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;render&#x88AB;&#x89E6;&#x53D1;&apos;</span>)
+    <span class="hljs-keyword">return</span>(
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.handleClick.bind(this)}</span>&gt;</span>&#x70B9;&#x51FB;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
     )
   }
 }
 
-export default App;
-</code></pre><ol>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App;
+</code></pre>
+<ol>
 <li>&#x7EC4;&#x4EF6;&#x7684;<code>props</code>&#x53D1;&#x751F;&#x6539;&#x53D8;</li>
 </ol>
-<pre><code>//&#x7236;&#x7EC4;&#x4EF6;
-import React, { Component } from &apos;react&apos;;
-import Son from &apos;./Son&apos;;
+<pre><code class="lang-js"><span class="hljs-comment">//&#x7236;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> Son <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Son&apos;</span>;
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: 1
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">super</span>();
+    <span class="hljs-keyword">this</span>.state = {
+      data: <span class="hljs-number">1</span>
     }
   }
   handleClick(e){
     e.preventDefault();
-    this.setState({
-      data: this.state.data + 1
+    <span class="hljs-keyword">this</span>.setState({
+      data: <span class="hljs-keyword">this</span>.state.data + <span class="hljs-number">1</span>
     })
   }
   render(){
-    return(
-      &lt;div&gt;
-        &lt;Son num={this.state.data} /&gt;
-        &lt;button onClick={this.handleClick.bind(this)}&gt;Click&lt;/button&gt;
-      &lt;/div&gt;
+    <span class="hljs-keyword">return</span>(
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Son</span> <span class="hljs-attr">num</span>=<span class="hljs-string">{this.state.data}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.handleClick.bind(this)}</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     )
   }
 }
 
 export default App;
-</code></pre><pre><code>//&#x5B50;&#x7EC4;&#x4EF6;
-import React, { Component } from &apos;react&apos;;
+</span></code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x5B50;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
 
-class Son extends Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Son</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   render(){
-    console.log(&apos;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;render&#x88AB;&#x89E6;&#x53D1;&apos;)
-    return(
-      &lt;h1 &gt;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;render&#x88AB;&#x89E6;&#x53D1;&apos;</span>)
+    <span class="hljs-keyword">return</span>(
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> &gt;</span>
           { this.props.num }
-      &lt;/h1&gt;
+      <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
     )
   }
 }
 
-export default Son;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Son;
 </code></pre>
+
                                 
                                 </section>
                             
@@ -1293,7 +1311,7 @@ export default Son;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三小节：温习React","level":"1.7.3","depth":2,"next":{"title":"第四小节：Store","level":"1.7.4","depth":2,"path":"git/Redux/4-store.md","ref":"./git/Redux/4-store.md","articles":[]},"previous":{"title":"第二小节：Redux安装","level":"1.7.2","depth":2,"path":"git/Redux/2-install-redux.md","ref":"./git/Redux/2-install-redux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/3-props.md","mtime":"2017-07-20T01:50:08.512Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T16:25:51.820Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三小节：温习React","level":"1.7.3","depth":2,"next":{"title":"第四小节：Store","level":"1.7.4","depth":2,"path":"git/Redux/4-store.md","ref":"./git/Redux/4-store.md","articles":[]},"previous":{"title":"第二小节：Redux安装","level":"1.7.2","depth":2,"path":"git/Redux/2-install-redux.md","ref":"./git/Redux/2-install-redux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/3-props.md","mtime":"2017-07-21T13:27:53.440Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T14:54:54.428Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

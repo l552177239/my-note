@@ -874,6 +874,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.9" data-path="9-Hello-redux.html">
+            
+                <a href="9-Hello-redux.html">
+            
+                    
+                    第九小节：项目实例：小卡片
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1125,23 +1138,25 @@
 <h4 id="enhancer">[enhancer]</h4>
 <p>&#x4F7F;&#x7528;redux-dev-tools</p>
 <p>&#x8981;&#x4F7F;&#x7528;redux&#x7684;&#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#x9700;&#x8981;&#x5728;store.js&#x6587;&#x4EF6;&#x4E2D;&#x7684;createStore()&#x6B65;&#x9AA4;&#x4E2D;&#x52A0;&#x5165;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;<code>enhancers</code></p>
-<pre><code>import { createStore, compose} from &apos;redux&apos;;
-//redux-dev-tools
-const enhancers = compose(
-    window.devToolsExtension ? window.devToolsExtension() : f =&gt; f
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { createStore, compose} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
+<span class="hljs-comment">//redux-dev-tools</span>
+<span class="hljs-keyword">const</span> enhancers = compose(
+    <span class="hljs-built_in">window</span>.devToolsExtension ? <span class="hljs-built_in">window</span>.devToolsExtension() : f =&gt; f
 );
 
-const store = createStore(rootReducer, defaultState, enhancers);
-</code></pre><p>&#x8BA9;&#x6539;&#x53D8;reducer&#x540E;&#x80FD;&#x591F;&#x5373;&#x65F6;&#x5237;&#x65B0;&#x9875;&#x9762;</p>
+<span class="hljs-keyword">const</span> store = createStore(rootReducer, defaultState, enhancers);
+</code></pre>
+<p>&#x8BA9;&#x6539;&#x53D8;reducer&#x540E;&#x80FD;&#x591F;&#x5373;&#x65F6;&#x5237;&#x65B0;&#x9875;&#x9762;</p>
 <p>webpack&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x6211;&#x4EEC;&#x7684;&#x7EC4;&#x4EF6;&#x53D8;&#x5316;&#x5E76;&#x505A;&#x51FA;&#x5373;&#x65F6;&#x76F8;&#x5E94;&#xFF0C;&#x4F46;&#x5374;&#x65E0;&#x6CD5;&#x76D1;&#x542C;reducers&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x5728;store.js&#x4E2D;&#x589E;&#x52A0;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;</p>
-<pre><code>//&#x6B64;&#x5904;accepts&#x7684;&#x53C2;&#x6570;&#x662F;reducers&#x7684;&#x5B58;&#x653E;&#x8DEF;&#x5F84;&#xFF0C;require()&#x5185;&#x7684;&#x8DEF;&#x5F84;&#x4E3A;&#x6267;&#x884C;combineReducers()&#x7684;&#x6587;&#x4EF6;
-if(module.hot){
-    module.hot.accept(&quot;./reducers/&quot;, () =&gt; {
-        const nextRootReducer = require(&apos;./reducers/index&apos;).default;
+<pre><code class="lang-js"><span class="hljs-comment">//&#x6B64;&#x5904;accepts&#x7684;&#x53C2;&#x6570;&#x662F;reducers&#x7684;&#x5B58;&#x653E;&#x8DEF;&#x5F84;&#xFF0C;require()&#x5185;&#x7684;&#x8DEF;&#x5F84;&#x4E3A;&#x6267;&#x884C;combineReducers()&#x7684;&#x6587;&#x4EF6;</span>
+<span class="hljs-keyword">if</span>(<span class="hljs-built_in">module</span>.hot){
+    <span class="hljs-built_in">module</span>.hot.accept(<span class="hljs-string">&quot;./reducers/&quot;</span>, () =&gt; {
+        <span class="hljs-keyword">const</span> nextRootReducer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./reducers/index&apos;</span>).default;
         store.replaceReducer(nextRootReducer);
     })
 }
-</code></pre><h4 id="reducer">reducer</h4>
+</code></pre>
+<h4 id="reducer">reducer</h4>
 <p><code>reducer</code>&#xFF08;&#x51FD;&#x6570;&#xFF09;: &#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x5F53;&#x524D;&#x7684;<code>state</code>&#x72B6;&#x6001;&#x6811;&#x548C;&#x8981;&#x5904;&#x7406;&#x7684;<code>action</code>&#xFF0C;&#x8FD4;&#x56DE;&#x65B0;&#x7684;<code>state</code>&#x72B6;&#x6001;&#x6811;</p>
 <h3 id="&#x8FD4;&#x56DE;&#x503C;">&#x8FD4;&#x56DE;&#x503C;</h3>
 <p><code>Store</code>: &#x4FDD;&#x5B58;&#x4E86;&#x5E94;&#x7528;&#x6240;&#x6709;<code>state</code>&#xFF08;&#x5BF9;&#x8C61;&#xFF09;&#x7684;&#x72B6;&#x6001;&#x6811;&#x3002;&#x6539;&#x53D8; state &#x7684;&#x60DF;&#x4E00;&#x65B9;&#x6CD5;&#x662F; dispatch action&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5; subscribe &#x76D1;&#x542C; state &#x7684;&#x53D8;&#x5316;&#xFF0C;&#x7136;&#x540E;&#x66F4;&#x65B0; UI&#x3002;</p>
@@ -1188,7 +1203,7 @@ if(module.hot){
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第五小节：createStore","level":"1.7.5","depth":2,"next":{"title":"第六小节：Reducer","level":"1.7.6","depth":2,"path":"git/Redux/6-Reducer.md","ref":"./git/Redux/6-Reducer.md","articles":[]},"previous":{"title":"第四小节：Store","level":"1.7.4","depth":2,"path":"git/Redux/4-store.md","ref":"./git/Redux/4-store.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/5-createStore.md","mtime":"2017-07-20T13:35:57.145Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T16:25:51.820Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第五小节：createStore","level":"1.7.5","depth":2,"next":{"title":"第六小节：Reducer","level":"1.7.6","depth":2,"path":"git/Redux/6-Reducer.md","ref":"./git/Redux/6-Reducer.md","articles":[]},"previous":{"title":"第四小节：Store","level":"1.7.4","depth":2,"path":"git/Redux/4-store.md","ref":"./git/Redux/4-store.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/5-createStore.md","mtime":"2017-07-21T13:26:43.888Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T14:54:54.428Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

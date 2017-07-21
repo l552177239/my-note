@@ -874,6 +874,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.9" data-path="9-Hello-redux.html">
+            
+                <a href="9-Hello-redux.html">
+            
+                    
+                    第九小节：项目实例：小卡片
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1114,40 +1127,44 @@
 <p>reducer&#x7684;Action&#xFF08;&#x5BF9;&#x8C61;&#xFF09;&#x53C2;&#x6570;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5B83;&#x4E3B;&#x8981;&#x662F;&#x548C;reducer&#x8054;&#x52A8;&#x7684;&#xFF0C;&#x5B83;&#x9ED8;&#x8BA4;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;type&#xFF0C;&#x7528;&#x8FD9;&#x4E2A;type&#x7684;&#x503C;&#x6765;&#x5224;&#x65AD;reducer&#x4E2D;&#x505A;&#x54EA;&#x4E00;&#x6B65;&#x64CD;&#x4F5C;</p>
 <h3 id="&#x521B;&#x5EFA;action">&#x521B;&#x5EFA;Action</h3>
 <p>&#x5229;&#x7528; Action &#x521B;&#x5EFA;&#x51FD;&#x6570;&#x6765;&#x521B;&#x5EFA; Action</p>
-<pre><code>const action = {
-  type: &apos;ADD_TODO&apos;,
-  //type&#x5C5E;&#x6027;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x8868;&#x793A; Action &#x7684;&#x540D;&#x79F0;&#xFF0C;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;
-  payload: &apos;Learn Redux&apos;
-  //payload &#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E2A; action &#x643A;&#x5E26;&#x7684;&#x6570;&#x636E;,&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x8BBE;&#x7F6E;
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> action = {
+  type: <span class="hljs-string">&apos;ADD_TODO&apos;</span>,
+  <span class="hljs-comment">//type&#x5C5E;&#x6027;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x8868;&#x793A; Action &#x7684;&#x540D;&#x79F0;&#xFF0C;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</span>
+  payload: <span class="hljs-string">&apos;Learn Redux&apos;</span>
+  <span class="hljs-comment">//payload &#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E2A; action &#x643A;&#x5E26;&#x7684;&#x6570;&#x636E;,&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x8BBE;&#x7F6E;</span>
 }
-</code></pre><p>&#x4F8B;&#x5B50;&#xFF1A;Reducer&#x5B9E;&#x73B0;&#x52A0;&#x4E00;</p>
-<pre><code>//export default &#x9ED8;&#x8BA4;&#x8F93;&#x51FA;
-export default function likeReducer(state = 0, action) {
-  //likeReducer&#x51FD;&#x6570;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;state &#x548C; action
-  switch (action.type) {
-    //&#x4F20;&#x5165;action&#x7684;type&#x53C2;&#x6570;&#x4F5C;&#x4E3A;switch&#x7684;&#x53C2;&#x6570;
-    case &apos;INCREMENT_NUM&apos;:
-    //&#x627E;&#x5230;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;action&#x64CD;&#x4F5C;
-      console.log(&apos;state&apos;, state)
-      return state + 1
-      //&#x8FD4;&#x56DE;&#x7684;&#x65B0;&#x7684;state
-    default:
-      return state;
-      //&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#x6216;&#x6267;&#x884C;&#x9519;&#x8BEF;&#xFF0C;&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;&#x65E7;&#x7684;state
+</code></pre>
+<p>&#x4F8B;&#x5B50;&#xFF1A;Reducer&#x5B9E;&#x73B0;&#x52A0;&#x4E00;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//export default &#x9ED8;&#x8BA4;&#x8F93;&#x51FA;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">likeReducer</span>(<span class="hljs-params">state = 0, action</span>) </span>{
+  <span class="hljs-comment">//likeReducer&#x51FD;&#x6570;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;state &#x548C; action</span>
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-comment">//&#x4F20;&#x5165;action&#x7684;type&#x53C2;&#x6570;&#x4F5C;&#x4E3A;switch&#x7684;&#x53C2;&#x6570;</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;INCREMENT_NUM&apos;</span>:
+    <span class="hljs-comment">//&#x627E;&#x5230;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;action&#x64CD;&#x4F5C;</span>
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;state&apos;</span>, state)
+      <span class="hljs-keyword">return</span> state + <span class="hljs-number">1</span>
+      <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x7684;&#x65B0;&#x7684;state</span>
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> state;
+      <span class="hljs-comment">//&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#x6216;&#x6267;&#x884C;&#x9519;&#x8BEF;&#xFF0C;&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;&#x65E7;&#x7684;state</span>
   }
 }
-</code></pre><h3 id="&#x8C03;&#x7528;">&#x8C03;&#x7528;</h3>
+</code></pre>
+<h3 id="&#x8C03;&#x7528;">&#x8C03;&#x7528;</h3>
 <ol>
 <li>&#x76F4;&#x63A5;&#x8C03;&#x7528;<code>dispatch</code></li>
 </ol>
-<pre><code>//&#x521B;&#x5EFA;&#x4E00;&#x4E2A; &#x88AB;&#x7ED1;&#x5B9A;&#x7684; action &#x521B;&#x5EFA;&#x51FD;&#x6570; &#x6765;&#x81EA;&#x52A8; dispatch
-const boundAddnum = (num) =&gt; dispatch(addnum(num))
-</code></pre><ol>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A; &#x88AB;&#x7ED1;&#x5B9A;&#x7684; action &#x521B;&#x5EFA;&#x51FD;&#x6570; &#x6765;&#x81EA;&#x52A8; dispatch</span>
+<span class="hljs-keyword">const</span> boundAddnum = (num) =&gt; dispatch(addnum(num))
+</code></pre>
+<ol>
 <li>&#x901A;&#x8FC7;<code>store.dispatch()</code>&#x8C03;&#x7528;</li>
 </ol>
-<pre><code>//&#x5728;&#x7EC4;&#x4EF6;&#x5185;&#x8C03;&#x7528;dispatch&#xFF0C;&#x89E6;&#x53D1; state &#x53D8;&#x5316;&#x3002;&#x91CD;&#x65B0;&#x6E32;&#x67D3;
-store.dispatch({type:&apos;INCREMENT_NUM&apos;})
+<pre><code class="lang-js"><span class="hljs-comment">//&#x5728;&#x7EC4;&#x4EF6;&#x5185;&#x8C03;&#x7528;dispatch&#xFF0C;&#x89E6;&#x53D1; state &#x53D8;&#x5316;&#x3002;&#x91CD;&#x65B0;&#x6E32;&#x67D3;</span>
+store.dispatch({type:<span class="hljs-string">&apos;INCREMENT_NUM&apos;</span>})
 </code></pre>
+
                                 
                                 </section>
                             
@@ -1190,7 +1207,7 @@ store.dispatch({type:&apos;INCREMENT_NUM&apos;})
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第七小节：Action","level":"1.7.7","depth":2,"next":{"title":"第八小节：connect","level":"1.7.8","depth":2,"path":"git/Redux/8-connect.md","ref":"./git/Redux/8-connect.md","articles":[]},"previous":{"title":"第六小节：Reducer","level":"1.7.6","depth":2,"path":"git/Redux/6-Reducer.md","ref":"./git/Redux/6-Reducer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/7-action.md","mtime":"2017-07-20T15:15:18.754Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T16:25:51.820Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第七小节：Action","level":"1.7.7","depth":2,"next":{"title":"第八小节：connect","level":"1.7.8","depth":2,"path":"git/Redux/8-connect.md","ref":"./git/Redux/8-connect.md","articles":[]},"previous":{"title":"第六小节：Reducer","level":"1.7.6","depth":2,"path":"git/Redux/6-Reducer.md","ref":"./git/Redux/6-Reducer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/7-action.md","mtime":"2017-07-21T13:23:10.340Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T14:54:54.428Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

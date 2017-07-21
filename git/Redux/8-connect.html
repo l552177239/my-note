@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="9-Hello-redux.html" />
+    
     
     <link rel="prev" href="7-action.html" />
     
@@ -872,6 +874,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.9" data-path="9-Hello-redux.html">
+            
+                <a href="9-Hello-redux.html">
+            
+                    
+                    第九小节：项目实例：小卡片
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1109,17 +1124,22 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="connect">Connect</h1>
+<blockquote>
+<p>React-Redux&#x53EA;&#x5728;&#x7EC4;&#x4EF6;&#x5185;&#x4F7F;&#x7528;&#xFF0C;&#x7528;&#x6765;&#x8FDE;&#x63A5; <code>store</code> &#x548C; React &#x7EC4;&#x4EF6;</p>
+</blockquote>
 <p>react &#x7EC4;&#x4EF6;&#x548C; redux store &#x4E4B;&#x95F4;&#x662F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5173;&#x7CFB;&#x7684;&#x3002;&#x8FD9;&#x4E00;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x628A;&#x4ED6;&#x4EEC;&#x4E8C;&#x8005; connect &#x8D77;&#x6765;&#x3002;</p>
 <p>&#x8FDE;&#x63A5;&#x4E8C;&#x8005;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7684;&#x5E93;&#xFF0C;&#x53EB;&#x505A; react-redux&#xFF0C;&#x8FD9;&#x4E2A;&#x662F; React &#x5B98;&#x65B9;&#x7684; Redux &#x5BF9; React &#x7684;&#x7ED1;&#x5B9A;&#x3002;</p>
 <h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
-<pre><code>npm i react-redux -S
-</code></pre><h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<pre><code class="lang-npm">npm i react-redux -S
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
 <p>&#x5177;&#x4F53;&#x7684;&#x4F7F;&#x7528;&#x7684;&#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x4E24;&#x4E2A;&#x63A5;&#x53E3;<code>Provider</code>&#x548C;<code>connect</code></p>
 <h4 id="connect&#x65B9;&#x6CD5;&#x58F0;&#x660E;"><code>connect</code>&#x65B9;&#x6CD5;&#x58F0;&#x660E;</h4>
-<p>connect&#x4F5C;&#x7528;&#xFF1A;&#x8FDE;&#x63A5;React&#x7EC4;&#x4EF6;&#x4E0E; Redux store</p>
-<pre><code>//&#x6A21;&#x677F;&#x51FD;&#x6570;
+<p>connect&#x4F5C;&#x7528;&#xFF1A;<strong>&#x8FDE;&#x63A5;</strong> React&#x7EC4;&#x4EF6; &#x4E0E; Redux store</p>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x6A21;&#x677F;&#x51FD;&#x6570;</span>
 connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>mapStateToProps&#xFF1A;&#x628A; store &#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF08;&#x4E00;&#x90E8;&#x5206;&#xFF09;&#x6620;&#x5C04;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684; props<ul>
 <li>map &#x7684;&#x610F;&#x601D;&#x662F;&#x201C;&#x6620;&#x5C04;&#x201D;</li>
 <li>State &#x6307;&#x7684;&#x662F; store &#x72B6;&#x6001;&#x6811;&#xFF08; State Tree &#xFF09;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; store &#x7684;&#x5B9E;&#x9645;&#x6570;&#x636E;</li>
@@ -1128,11 +1148,12 @@ connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])
 </li>
 </ul>
 <p>Store &#x4E2D;&#x6570;&#x636E;&#x5F88;&#x591A;&#xFF0C;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x7684;&#x53EA;&#x662F;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x9009;&#x53D6;&#x5DE5;&#x4F5C;&#x662F;&#x5728; mapStateToProps &#x4E2D;&#x5B8C;&#x6210;&#x7684;</p>
-<pre><code>const mapStateToProps = (state) =&gt; ({
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> mapStateToProps = (state) =&gt; ({
   comments: state.comments
-  //&#x62FF;&#x5230;store&#x4E2D;&#x7684;comments
+  <span class="hljs-comment">//&#x62FF;&#x5230;store&#x4E2D;&#x7684;comments</span>
 })
-</code></pre><p>&#x4E0A;&#x9762;&#x7684; <code>(state)</code> &#x6307;&#x7684;&#x5C31;&#x662F; Store &#x4E2D;&#x7684;comments&#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x5373;&#x662F; store.getState() &#x53EF;&#x4EE5;&#x8BFB;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684; <code>(state)</code> &#x6307;&#x7684;&#x5C31;&#x662F; Store &#x4E2D;&#x7684;comments&#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x5373;&#x662F; store.getState() &#x53EF;&#x4EE5;&#x8BFB;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
 <p>&#x5177;&#x4F53;&#x7684;&#x9009;&#x53D6;&#x5DE5;&#x4F5C;&#x662F;&#x7528; comments: state.comments &#x8FD9;&#x6837;&#x7684;&#x8BED;&#x53E5;&#x7684;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
 <p>connect &#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;PostBody &#x4E4B;&#x4E2D;&#x5C31;&#x591A;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;<code>this.props.comments</code></p>
 <h4 id="provider&#x7EC4;&#x4EF6;"><code>&lt;Provider&gt;</code>&#x7EC4;&#x4EF6;</h4>
@@ -1141,25 +1162,31 @@ connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])
 </blockquote>
 <p>&#x53EA;&#x6709;<code>connect</code>&#x4E0D;&#x80FD;&#x5DE5;&#x4F5C;&#xFF08;&#x56E0;&#x4E3A;&#x627E;&#x4E0D;&#x7740; store&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;<code>connect</code>&#x7684;&#x751F;&#x6548;&#x8303;&#x56F4;&#x662F;&#x7531;<code>&lt;Provider&gt;</code>&#x7EC4;&#x4EF6;&#x51B3;&#x5B9A;&#x7684;</p>
 <p>&#x53EA;&#x6709;&#x88AB; Provider &#x5305;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x624D;&#x80FD;&#x627E;&#x5F97;&#x7740; store&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x624D;&#x80FD;&#x4F7F;&#x7528; <code>connect</code></p>
-<pre><code>import store from &apos;./store&apos;
-//&#x5BFC;&#x5165; store
-import { Provider } from &apos;react-redux&apos;
-//&#x5BFC;&#x5165; Provider
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
+<span class="hljs-comment">//&#x5BFC;&#x5165; store</span>
+<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
+<span class="hljs-comment">//&#x5BFC;&#x5165; Provider</span>
 
 Render(){
-  &lt;Provider store={store}&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
   //&#x5C06; store &#x4F20;&#x5165;
-    &lt;&#x7EC4;&#x4EF6; /&gt;  
-  &lt;/provider&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">&#x7EC4;&#x4EF6;</span> /&gt;</span>  
+  <span class="hljs-tag">&lt;/<span class="hljs-name">provider</span>&gt;</span></span>
 }
-</code></pre><p>&#x5728;&#x6709;&#x52A8;&#x6001;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#x7684;&#x7EC4;&#x4EF6;&#x5185;&#x5F15;&#x7528;<code>connect</code></p>
-<pre><code>import store from &apos;./store&apos;
-import { connect } from &apos;react-redux&apos;
+</code></pre>
+<p>&#x5728;&#x6709;&#x52A8;&#x6001;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#x7684;&#x7EC4;&#x4EF6;&#x5185;&#x5F15;&#x7528;<code>connect</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
+<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
 
-//&#x901A;&#x8FC7;this.props.comments&#x62FF;&#x5230;&#x6570;&#x636E;
-const mapStateToProps = (state) =&gt; ({
+<span class="hljs-comment">//&#x901A;&#x8FC7;this.props.comments&#x62FF;&#x5230;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">const</span> mapStateToProps = (state) =&gt; ({
   comments: state.comments
 })
+</code></pre>
+<p><strong>&#x5C0F;&#x8D34;&#x58EB;</strong>&#xFF1A;&#x8C03;&#x7528; connect() &#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x4E86;&#x4E24;&#x4E2A;&#x62EC;&#x53F7;&#x3002;&#x8FD9;&#x4E2A;&#x53EB;&#x4F5C;&#x5C40;&#x90E8;&#x8C03;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x4F7F;&#x7528; ES7 &#x63D0;&#x4F9B;&#x7684;&#x4FEE;&#x9970;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code>// &#x8FD9;&#x662F;&#x8FD8;&#x4E0D;&#x7A33;&#x5B9A;&#x7684;&#x8BED;&#x6CD5;&#xFF01;&#x8FD9;&#x53EF;&#x80FD;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x88AB;&#x4FEE;&#x6539;&#x6216;&#x6452;&#x5F03;&#x3002;
+@connect(mapStateToProps)
+export default class CounterContainer { ... }
 </code></pre><h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
 <ul>
 <li><p>&#x7B80;&#x4E66;&#x6587;&#x7AE0;&#xFF1A;<a href="http://www.jianshu.com/p/9873d4ccb891" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
@@ -1194,10 +1221,14 @@ const mapStateToProps = (state) =&gt; ({
 
             
                 
-                <a href="7-action.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第七小节：Action">
+                <a href="7-action.html" class="navigation navigation-prev " aria-label="Previous page: 第七小节：Action">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="9-Hello-redux.html" class="navigation navigation-next " aria-label="Next page: 第九小节：项目实例：小卡片">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1206,7 +1237,7 @@ const mapStateToProps = (state) =&gt; ({
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第八小节：connect","level":"1.7.8","depth":2,"next":{"title":"FLEX","level":"1.8","depth":1,"ref":"","articles":[{"title":"flex 布局","level":"1.8.1","depth":2,"path":"git/Other/flex.md","ref":"./git/Other/flex.md","articles":[]}]},"previous":{"title":"第七小节：Action","level":"1.7.7","depth":2,"path":"git/Redux/7-action.md","ref":"./git/Redux/7-action.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/8-connect.md","mtime":"2017-07-20T16:20:36.117Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-20T16:25:51.820Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第八小节：connect","level":"1.7.8","depth":2,"next":{"title":"第九小节：项目实例：小卡片","level":"1.7.9","depth":2,"path":"git/Redux/9-Hello-redux.md","ref":"./git/Redux/9-Hello-redux.md","articles":[]},"previous":{"title":"第七小节：Action","level":"1.7.7","depth":2,"path":"git/Redux/7-action.md","ref":"./git/Redux/7-action.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/8-connect.md","mtime":"2017-07-21T14:34:38.948Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T14:54:54.428Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
