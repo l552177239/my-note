@@ -6,7 +6,7 @@ Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会
 
 ### Reducer模板
 
-```
+```jss
 const reducer = function (state, action) {
 // ...
 return new_state;
@@ -16,7 +16,7 @@ return new_state;
 
 Reducer 是一个函数，它接受 Action 和当前 State 作为参数，返回一个新的 State
 
-```
+```js
 const reducer = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT_NUM':
@@ -36,7 +36,7 @@ const reducer = (state = 0, action) => {
 
  - 为此，Store 需要知道 Reducer 函数，做法就是在生成 Store 的时候，将 Reducer 传入createStore方法。
 
-```
+```js
 import { createStore } from 'redux';
 const store = createStore(reducer);
 ```
@@ -45,11 +45,11 @@ const store = createStore(reducer);
 
 我们可能会分模块和功能写多个 reducer 文件，但最终，我们都需要把它合并到一个里面，这需要使用redex中的`combineReducers`
 
-```
+```js
 import { combineReducers } from "redux"
-import * as reducers from "./reducers"
+import ×× from "./××reducers"
 const rootReducer = combineReducers({
-    ...reducers
+    ××: ××Reducer
 })
 export default rootReducer
 ```

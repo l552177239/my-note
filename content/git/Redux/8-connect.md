@@ -1,12 +1,14 @@
 # Connect
 
+> React-Redux只在组件内使用，用来连接 `store` 和 React 组件
+
 react 组件和 redux store 之间是没有任何关系的。这一节，我们就把他们二者 connect 起来。
 
 连接二者，需要一个专门的库，叫做 react-redux，这个是 React 官方的 Redux 对 React 的绑定。
 
 ### 安装
 
-```
+```npm
 npm i react-redux -S
 ```
 
@@ -18,7 +20,7 @@ npm i react-redux -S
 
 connect作用：**连接** React组件 与 Redux store
 
-```
+```js
 //模板函数
 connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])
 ```
@@ -30,7 +32,7 @@ connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])
 
 Store 中数据很多，当前组件需要的只是一部分，那么选取工作是在 mapStateToProps 中完成的
 
-```
+```js
 const mapStateToProps = (state) => ({
   comments: state.comments
   //拿到store中的comments
@@ -51,7 +53,7 @@ connect 完毕之后，PostBody 之中就多了一个属性：`this.props.commen
 
 只有被 Provider 包括起来的组件中才能找得着 store，也就是才能使用 `connect`
 
-```
+```js
 import store from './store'
 //导入 store
 import { Provider } from 'react-redux'
@@ -67,7 +69,7 @@ Render(){
 
 在有动态数据交互的组件内引用`connect`
 
-```
+```js
 import store from './store'
 import { connect } from 'react-redux'
 
@@ -75,6 +77,15 @@ import { connect } from 'react-redux'
 const mapStateToProps = (state) => ({
   comments: state.comments
 })
+
+```
+
+**小贴士**：调用 connect() 方法的时候使用了两个括号。这个叫作局部调用，并且这允许开发者使用 ES7 提供的修饰语法：
+
+```
+// 这是还不稳定的语法！这可能在实际的应用中被修改或摒弃。
+@connect(mapStateToProps)
+export default class CounterContainer { ... }
 ```
 
 ### 参考

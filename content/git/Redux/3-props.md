@@ -19,7 +19,7 @@ React核心思想就是数据和程序分离，用state进行状态的控制，�
 5. `handleClick`方法的参数为子组件获取的值
 6. 将`state`的值传入子组件
 
-```
+```js
 import React, { Component } from 'react'
 import CommentBox from './CommentBox'
 
@@ -51,7 +51,7 @@ export default App
 4. 通过子组建的`handleClick`方法来获取`input`内输入的`value`传给父组件
 5. 通过`props`拿到父组件传过来的值（根据对应的名称）
 
-```
+```js
 import React from 'react'
 
 class CommentBox extends React.Component{
@@ -82,7 +82,7 @@ export default CommentBox
 
 1. 组件的`state`发生改变
 
-```
+```js
 import React from 'react'
 
 class App extends React.Component {
@@ -107,7 +107,7 @@ export default App;
 
 2. 组件的`props`发生改变
 
-```
+```js
 //父组件
 import React, { Component } from 'react';
 import Son from './Son';
@@ -138,7 +138,7 @@ class App extends Component {
 export default App;
 ```
 
-```
+```js
 //子组件
 import React, { Component } from 'react';
 
@@ -155,4 +155,3 @@ class Son extends Component {
 
 export default Son;
 ```
-

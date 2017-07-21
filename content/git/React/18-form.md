@@ -91,6 +91,13 @@ export default App
 
 一个没有`value`属性的`<input>`就是一个非受控组件。通过渲染的元素，任意的用户输入都会被立即反映出来。非受控的`<input>`只能通过`OnChange`函数来向上层通知自己被用户输入的更改。
 
+可以用`ref`来拿到 输入的 value 值
+
+```
+<input ref={value => this.username = value} />
+//this.username.value 拿到输入的值
+```
+
 **注意**：使用`value`代替`defaultValue`，会发现输入框的值无法改变
 
 **受控组件**
@@ -207,7 +214,7 @@ class App extends React.Component {
 export default App
 ```
 
-表单的`radio`通过受控组件来控制`checked`的状态改变来修改，这种方法比较麻烦，所以我们用 **非受控组件**来写表单的`radio`事件
+表单的`radio`通过受控组件来控制`checked`的状态改变来修改，这种方法比较麻烦，所以我们用 **非受控组件** 来写表单的`radio`事件
 
 ```
 import React from 'react'

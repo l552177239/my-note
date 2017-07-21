@@ -6,7 +6,7 @@ reducer的Action（对象）参数，类似于一个接口，它主要是和redu
 
 利用 Action 创建函数来创建 Action
 
-```
+```js
 const action = {
   type: 'ADD_TODO',
   //type属性是必须的，表示 Action 的名称，值是一个字符串
@@ -17,7 +17,7 @@ const action = {
 
 例子：Reducer实现加一
 
-```
+```js
 //export default 默认输出
 export default function likeReducer(state = 0, action) {
   //likeReducer函数有两个参数state 和 action
@@ -39,14 +39,14 @@ export default function likeReducer(state = 0, action) {
 
 1. 直接调用`dispatch`
 
-```
+```js
 //创建一个 被绑定的 action 创建函数 来自动 dispatch
 const boundAddnum = (num) => dispatch(addnum(num))
 ```
 
 2. 通过`store.dispatch()`调用
 
-```
+```js
 //在组件内调用dispatch，触发 state 变化。重新渲染
 store.dispatch({type:'INCREMENT_NUM'})
 ```

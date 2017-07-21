@@ -41,19 +41,19 @@ store.dispatch(action): 将一个`action`对象发送给 reducer
 
 2. 导入 Redux 的`createStore`函数
 
-```
+```js
 import { createStore } from 'redux'
 ```
 
 3. 通过 `Reducer` 函数，构造 Store 对象，导入`reducers`
 
-```
+```js
 import rootReducer from './reducers/'
 ```
 
 4. 导出 Store 对象
 
-```
+```js
 let store = createStore(rootReducer)
 
 export default store
@@ -65,7 +65,7 @@ export default store
 
  - 正常情况下，你的根组件应该嵌套在`<Provider>`中才能使用`connect()`方法
 
-```
+```js
 import store from './store'
 //导入 store
 import { Provider } from 'react-redux'

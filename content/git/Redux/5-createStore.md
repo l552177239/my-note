@@ -20,7 +20,7 @@
 
 要使用redux的调试工具需要在store.js文件中的createStore()步骤中加入第三个参数，`enhancers`
 
-```
+```js
 import { createStore, compose} from 'redux';
 //redux-dev-tools
 const enhancers = compose(
@@ -34,7 +34,7 @@ const store = createStore(rootReducer, defaultState, enhancers);
 
 webpack可以监听我们的组件变化并做出即时相应，但却无法监听reducers的改变，所以在store.js中增加一下代码
 
-```
+```js
 //此处accepts的参数是reducers的存放路径，require()内的路径为执行combineReducers()的文件
 if(module.hot){
     module.hot.accept("./reducers/", () => {
