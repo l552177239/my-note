@@ -879,7 +879,7 @@
                 <a href="../Redux/9-Hello-redux.html">
             
                     
-                    第九小节：项目实例：
+                    第九小节：项目实例：小博客
             
                 </a>
             
@@ -1168,8 +1168,8 @@ class Btn extends React.Component{
 export default Btn
 </code></pre><p>&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;<code>this.props</code>&#x91CC;&#x8F93;&#x51FA;&#x4E09;&#x4E2A;&#x5BF9;&#x8C61;<code>history</code>&#xFF0C;<code>location</code>&#xFF0C;<code>match</code></p>
 <h4 id="history&#xFF08;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF09;">history&#xFF08;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF09;</h4>
-<p><strong>history</strong>&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x7BA1;&#x7406;&#x5404;&#x79CD;&#x73AF;&#x5883;&#x4E2D;&#x7684;JavaScript&#x4E2D;&#x7684;&#x4F1A;&#x8BDD;&#x5386;&#x53F2;&#xFF0C;&#x901A;&#x8FC7;&#x88AB;&#x5305;&#x88F9;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;<code>this.props.history</code>&#x6765;&#x663E;&#x793A;&#x3002;</p>
-<p><strong>history</strong>&#x5BF9;&#x8C61;&#x901A;&#x5E38;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p><strong>history</strong> &#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x7BA1;&#x7406;&#x5404;&#x79CD;&#x73AF;&#x5883;&#x4E2D;&#x7684;JavaScript&#x4E2D;&#x7684;&#x4F1A;&#x8BDD;&#x5386;&#x53F2;&#xFF0C;&#x901A;&#x8FC7;&#x88AB;&#x5305;&#x88F9;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;<code>this.props.history</code>&#x6765;&#x663E;&#x793A;&#x3002;</p>
+<p><strong>history</strong> &#x5BF9;&#x8C61;&#x901A;&#x5E38;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;</p>
 <ul>
 <li>length - &#xFF08;number&#xFF09;&#x5386;&#x53F2;&#x5806;&#x6808;&#x4E2D;&#x7684;&#x6761;&#x76EE;&#x6570;</li>
 <li>action- &#xFF08;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#x5F53;&#x524D;&#x52A8;&#x4F5C;&#xFF08;PUSH&#xFF0C;REPLACE&#xFF0C;&#x6216;POP&#xFF09;</li>
@@ -1209,7 +1209,7 @@ export default Btn
 <h3 id="withrouter">withRouter</h3>
 <p>&#x5982;&#x679C;&#x60F3;&#x7528;<code>router</code>&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x5728;&#x8DEF;&#x7531;&#x4E0A;&#xFF0C;&#x6240;&#x4EE5;&#x7528;<code>withRouter</code>&#x53BB;&#x5305;&#x88C5;</p>
 <pre><code>import React from &apos;react&apos;
-import {withRouter} from &apos;react-router-app&apos;
+import {withRouter} from &apos;react-router-dom&apos;
 
 class Son extends React.Component{
     render(){
@@ -1274,7 +1274,7 @@ export default withRouter(Son)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二小节：Router","level":"1.6.2","depth":2,"next":{"title":"第三小节：Link","level":"1.6.3","depth":2,"path":"git/Router/3-link.md","ref":"./git/Router/3-link.md","articles":[]},"previous":{"title":"第一小节：Hello React-Router","level":"1.6.1","depth":2,"path":"git/Router/1-hello-router.md","ref":"./git/Router/1-hello-router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/2-Router.md","mtime":"2017-07-20T11:57:44.969Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T15:00:00.063Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二小节：Router","level":"1.6.2","depth":2,"next":{"title":"第三小节：Link","level":"1.6.3","depth":2,"path":"git/Router/3-link.md","ref":"./git/Router/3-link.md","articles":[]},"previous":{"title":"第一小节：Hello React-Router","level":"1.6.1","depth":2,"path":"git/Router/1-hello-router.md","ref":"./git/Router/1-hello-router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/2-Router.md","mtime":"2017-07-21T16:20:39.672Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T16:23:32.682Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
