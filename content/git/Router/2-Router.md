@@ -56,9 +56,9 @@ export default Btn
 
 #### history（历史记录）
 
-**history**它提供了多种不同的方法来管理各种环境中的JavaScript中的会话历史，通过被包裹的子组件的`this.props.history`来显示。
+**history** 它提供了多种不同的方法来管理各种环境中的JavaScript中的会话历史，通过被包裹的子组件的`this.props.history`来显示。
 
-**history**对象通常具有以下属性和方法：
+**history** 对象通常具有以下属性和方法：
 
  - length - （number）历史堆栈中的条目数
  - action- （字符串）当前动作（PUSH，REPLACE，或POP）
@@ -103,7 +103,7 @@ export default Btn
 
 ```
 import React from 'react'
-import {withRouter} from 'react-router-app'
+import {withRouter} from 'react-router-dom'
 
 class Son extends React.Component{
     render(){
