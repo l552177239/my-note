@@ -1,6 +1,7 @@
-## 弹性布局（Flex）
+# 弹性布局（Flex）
 
-Flex（Flexible Box）作为display的一个属性使用，用于设置或检索弹性盒模型对象的子元素如何分配空间。
+Flex（Flexible Box）
+我们这里一般作为display的一个属性使用，用于设置或检索弹性盒模型对象的子元素如何分配空间。
 
 ### Flex 布局的使用
 
@@ -117,11 +118,9 @@ Webkit 内核的浏览器，必须加上-webkit前缀。
 
  - auto（默认值），表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
  - align-items的其他值
- - 
+ -
 ### 参考
 
  - W3Cflex：[点击进入](http://www.w3school.com.cn/cssref/pr_box-flex.asp)
  - MDN官网Flex：[点击进入](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)
  - 阮一峰Flex日志：[点击进入](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
-
-
