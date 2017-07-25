@@ -59,7 +59,9 @@ npm -v
 #### 参考
 
 > `Node.js`官网：[点击进入](https://nodejs.org/en/)
+
 > `Node.js`中文网：[点击进入](http://nodejs.cn/)
+
 > npm 官网：[点击进入](https://www.npmjs.com/)
 
 #### 然后就可以用 npm 进行装包了
