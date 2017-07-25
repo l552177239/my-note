@@ -1078,6 +1078,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    React 组件
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="react-burger-menu.html">
+            
+                <a href="react-burger-menu.html">
+            
+                    
+                    侧边栏组件：react-burger-menu
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -1162,7 +1194,17 @@
     [&quot;import&quot;, { libraryName: &quot;antd&quot;, style: &quot;css&quot; }] // `style: true` &#x4F1A;&#x52A0;&#x8F7D; less &#x6587;&#x4EF6;
   ]
 }
-</code></pre><h4 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h4>
+</code></pre><h4 id="&#x5728;&#x7528;-create-react-app-&#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x4E2D;-&#x6DFB;&#x52A0;&#x5DE5;&#x5177;&#x63D2;&#x4EF6;">&#x5728;&#x7528; <code>create-react-app</code> &#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x4E2D; &#x6DFB;&#x52A0;&#x5DE5;&#x5177;&#x63D2;&#x4EF6;</h4>
+<p>&#x5728;&#x7528;&#x5FEB;&#x901F;&#x521B;&#x5EFA;&#x5DE5;&#x5177;&#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5728;<code>node_modules</code> -&gt; <code>react-scripts</code>&#x4E2D;</p>
+<p><strong>&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;</strong></p>
+<pre><code>node_modules/react-scripts/config/webpack.config.dev.js
+</code></pre><p>&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684; &#x6A21;&#x5757;&#xFF08;Module&#xFF09;&#x4E2D;&#x627E;&#x5230;<code>babel-loader</code>&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;&#x4E0B;&#x9762;&#x914D;&#x7F6E;&#x6DFB;&#x52A0;&#x5728;<code>options</code>&#x4E2D;</p>
+<pre><code class="lang-js">plugins: [
+  [<span class="hljs-string">&quot;import&quot;</span>, { libraryName: <span class="hljs-string">&quot;antd&quot;</span>, style: <span class="hljs-string">&quot;css&quot;</span> }] <span class="hljs-comment">// `style: true` &#x4F1A;&#x52A0;&#x8F7D; less &#x6587;&#x4EF6;</span>
+],
+</code></pre>
+<p><strong>&#x5C0F;&#x8D34;&#x58EB;</strong>&#xFF1A;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;<code>ctrl+F</code>&#x8C03;&#x51FA;&#x641C;&#x7D22;&#x680F;&#xFF0C;&#x5728;&#x641C;&#x7D22;&#x680F;&#x4E0A;&#x8F93;&#x5165;<code>babel-loader</code>&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x627E;&#x5230;</p>
+<h4 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h4>
 <p>&#x7136;&#x540E;&#x53EA;&#x9700;&#x4ECE; antd &#x5F15;&#x5165;&#x6A21;&#x5757;&#x5373;&#x53EF;&#xFF0C;&#x65E0;&#x9700;&#x5355;&#x72EC;&#x5F15;&#x5165;&#x6837;&#x5F0F;&#x3002;&#x7B49;&#x540C;&#x4E8E;&#x4E0B;&#x9762;&#x624B;&#x52A8;&#x5F15;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
 <pre><code>// babel-plugin-import &#x4F1A;&#x5E2E;&#x52A9;&#x4F60;&#x52A0;&#x8F7D; JS &#x548C; CSS
 import { DatePicker } from &apos;antd&apos;;
@@ -1227,7 +1269,7 @@ import &apos;antd/lib/date-picker/style/css&apos;;        // &#x52A0;&#x8F7D; CS
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ant Design","level":"1.12.2","depth":2,"next":{"title":"Material-UI","level":"1.12.3","depth":2,"path":"git/Other/Material-UI.md","ref":"./git/Other/Material-UI.md","articles":[]},"previous":{"title":"BootStrap","level":"1.12.1","depth":2,"path":"git/Other/BootStrap.md","ref":"./git/Other/BootStrap.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Other/Ant-Design.md","mtime":"2017-07-20T01:50:08.508Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T16:23:32.682Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ant Design","level":"1.12.2","depth":2,"next":{"title":"Material-UI","level":"1.12.3","depth":2,"path":"git/Other/Material-UI.md","ref":"./git/Other/Material-UI.md","articles":[]},"previous":{"title":"BootStrap","level":"1.12.1","depth":2,"path":"git/Other/BootStrap.md","ref":"./git/Other/BootStrap.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Other/Ant-Design.md","mtime":"2017-07-25T13:53:13.694Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-25T14:00:09.919Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
