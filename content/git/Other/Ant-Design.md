@@ -63,6 +63,26 @@ npm i babel-plugin-import -D
 }
 ```
 
+#### 在用 `create-react-app` 创建的项目中 添加工具插件
+
+在用快速创建工具创建的项目中，配置文件在`node_modules` -> `react-scripts`中
+
+**文件位置**
+
+```
+node_modules/react-scripts/config/webpack.config.dev.js
+```
+
+在配置文件的 模块（Module）中找到`babel-loader`的配置，将下面配置添加在`options`中
+
+```js
+plugins: [
+  ["import", { libraryName: "antd", style: "css" }] // `style: true` 会加载 less 文件
+],
+```
+
+**小贴士**：可以直接`ctrl+F`调出搜索栏，在搜索栏上输入`babel-loader`可以快速找到
+
 #### 使用
 
 然后只需从 antd 引入模块即可，无需单独引入样式。等同于下面手动引入的方式。
