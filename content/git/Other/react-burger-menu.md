@@ -25,7 +25,7 @@ import { slide as Menu } from 'react-burger-menu'
 </Menu>
 ```
 
-贴入 CSS 样式，将自己需要的样式，进行定制
+#### 贴入 CSS 样式，进行定制自己需要的样式
 
 ```css
 /* Position and sizing of burger button */
@@ -92,6 +92,59 @@ import { slide as Menu } from 'react-burger-menu'
 }
 ```
 
+#### 利用插件自带的属性进行修改
+
+ - Position
+
+> 默认情况下，菜单从左边打开。
+要从右边打开，需要使用正确的道具。
+它只是一个布尔值，所以你不需要指定一个值。
+然后使用CSS设置按钮的位置。
+
+
+```js
+<Menu right />
+```
+
+ - Width
+
+> 可以使用宽度限定符指定菜单的宽，默认值是300
+
+```js
+<Menu width={ 280 } />
+<Menu width={ '280px' } />
+<Menu width={ '20%' } />
+```
+
+ - 是否打开
+
+> 你可以控制侧边栏是否打开或关闭与开放的道具，默认值为false
+
+```js
+<Menu isOpen />
+```
+
+ - 状态的变化
+
+> 你可以检测到侧边栏是否打开或关闭通过回调函数OnStateChange，
+回调将接收一个包含新状态作为第一个参数的对象。
+
+```js
+var isMenuOpen = function(state) {
+  return state.isOpen
+}
+
+<Menu onStateChange={ isMenuOpen } />
+```
+
+ - 覆盖
+
+> 你可以关掉默认覆盖无叠加
+
+```js
+<Menu noOverlay />
+```
+
 ### 怎么解决路由跳转时，侧边栏直接消失的问题
 
 > 利用插件的`isOpen`使侧边栏先消失，再跳转。
@@ -101,10 +154,41 @@ import { slide as Menu } from 'react-burger-menu'
 
 将这个方法绑定到需要跳转的路由上，就可以解决这个问题
 
+```js
+import React from 'react'
+import { slide as Menu } from 'react-burger-menu'
+//导入侧边栏
+
+class Sidebar extends React.Component {
+  state = {
+    isOpen: false
+    //设置一个状态
+  }
+  closeBmMenu = () => {
+    this.setState({
+      isOpen: false
+    })
+  }
+  //设置一个方法来修改 state 的状态值
+  render(){
+    return(
+      <div className="sidebar">
+        <Menu isOpen={this.state.isOpen}>
+        //将状态值绑定给插件的 isOpen 属性
+          <button onClick={this.closeBmMenu} className="bm-close-button">
+          //将改变状态值的方法绑定在你需要触发的节点上
+            关闭
+          </button>
+        </Menu>
+      </div>
+    )
+  }
+}
+
+export default Sidebar
 ```
 
-<Menu isOpen={this.state.isOpen}>
-```
+**没有解决的问题**：跳转没有侧边栏的组件时，侧边栏会直接消失。
 
 ### 参考
 
