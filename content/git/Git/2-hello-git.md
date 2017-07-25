@@ -4,7 +4,7 @@ Git 和 Github 是两个东西。Git 是一个软件，作者是 Linus ，安装
 
 ### Github 的正确使用姿势
 
-直接到 Github.com 上点 `New File` 按钮，**不是**正确的使用方法。要了解正确的 Github 使用方法，首先要知道什么是 Git 。
+直接到 Github.com 上点 `New File` 按钮，**不是** 正确的使用方法。要了解正确的 Github 使用方法，首先要知道什么是 Git 。
 
 Git 是一个版本控制工具，通常我们都是通过本地 Git 和 Github 的互动来完成版本控制工作的。
 
