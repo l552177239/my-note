@@ -1165,7 +1165,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&apos;&apos;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Menu</span>&gt;</span>
 </code></pre>
-<p>&#x8D34;&#x5165; CSS &#x6837;&#x5F0F;&#xFF0C;&#x5C06;&#x81EA;&#x5DF1;&#x9700;&#x8981;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x8FDB;&#x884C;&#x5B9A;&#x5236;</p>
+<h4 id="&#x8D34;&#x5165;-css-&#x6837;&#x5F0F;&#xFF0C;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x9700;&#x8981;&#x7684;&#x6837;&#x5F0F;">&#x8D34;&#x5165; CSS &#x6837;&#x5F0F;&#xFF0C;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x9700;&#x8981;&#x7684;&#x6837;&#x5F0F;</h4>
 <pre><code class="lang-css"><span class="hljs-comment">/* Position and sizing of burger button */</span>
 <span class="hljs-selector-class">.bm-burger-button</span> {
   <span class="hljs-attribute">position</span>: fixed;
@@ -1226,6 +1226,57 @@
   <span class="hljs-attribute">top</span>: <span class="hljs-number">46px</span>;
 }
 </code></pre>
+<h4 id="&#x5229;&#x7528;&#x63D2;&#x4EF6;&#x81EA;&#x5E26;&#x7684;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x4FEE;&#x6539;">&#x5229;&#x7528;&#x63D2;&#x4EF6;&#x81EA;&#x5E26;&#x7684;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x4FEE;&#x6539;</h4>
+<ul>
+<li>Position</li>
+</ul>
+<blockquote>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x83DC;&#x5355;&#x4ECE;&#x5DE6;&#x8FB9;&#x6253;&#x5F00;&#x3002;
+&#x8981;&#x4ECE;&#x53F3;&#x8FB9;&#x6253;&#x5F00;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x6B63;&#x786E;&#x7684;&#x9053;&#x5177;&#x3002;
+&#x5B83;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x503C;&#x3002;
+&#x7136;&#x540E;&#x4F7F;&#x7528;CSS&#x8BBE;&#x7F6E;&#x6309;&#x94AE;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-js">&lt;Menu right /&gt;
+</code></pre>
+<ul>
+<li>Width</li>
+</ul>
+<blockquote>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5BBD;&#x5EA6;&#x9650;&#x5B9A;&#x7B26;&#x6307;&#x5B9A;&#x83DC;&#x5355;&#x7684;&#x5BBD;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;300</p>
+</blockquote>
+<pre><code class="lang-js">&lt;Menu width={ <span class="hljs-number">280</span> } /&gt;
+&lt;Menu width={ &apos;280px&apos; } /&gt;
+&lt;Menu width={ &apos;20%&apos; } /&gt;
+</code></pre>
+<ul>
+<li>&#x662F;&#x5426;&#x6253;&#x5F00;</li>
+</ul>
+<blockquote>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x4FA7;&#x8FB9;&#x680F;&#x662F;&#x5426;&#x6253;&#x5F00;&#x6216;&#x5173;&#x95ED;&#x4E0E;&#x5F00;&#x653E;&#x7684;&#x9053;&#x5177;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;false</p>
+</blockquote>
+<pre><code class="lang-js">&lt;Menu isOpen /&gt;
+</code></pre>
+<ul>
+<li>&#x72B6;&#x6001;&#x7684;&#x53D8;&#x5316;</li>
+</ul>
+<blockquote>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x68C0;&#x6D4B;&#x5230;&#x4FA7;&#x8FB9;&#x680F;&#x662F;&#x5426;&#x6253;&#x5F00;&#x6216;&#x5173;&#x95ED;&#x901A;&#x8FC7;&#x56DE;&#x8C03;&#x51FD;&#x6570;OnStateChange&#xFF0C;
+&#x56DE;&#x8C03;&#x5C06;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x65B0;&#x72B6;&#x6001;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> isMenuOpen = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">state</span>) </span>{
+  <span class="hljs-keyword">return</span> state.isOpen
+}
+
+&lt;Menu onStateChange={ isMenuOpen } /&gt;
+</code></pre>
+<ul>
+<li>&#x8986;&#x76D6;</li>
+</ul>
+<blockquote>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5173;&#x6389;&#x9ED8;&#x8BA4;&#x8986;&#x76D6;&#x65E0;&#x53E0;&#x52A0;</p>
+</blockquote>
+<pre><code class="lang-js">&lt;Menu noOverlay /&gt;
+</code></pre>
 <h3 id="&#x600E;&#x4E48;&#x89E3;&#x51B3;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65F6;&#xFF0C;&#x4FA7;&#x8FB9;&#x680F;&#x76F4;&#x63A5;&#x6D88;&#x5931;&#x7684;&#x95EE;&#x9898;">&#x600E;&#x4E48;&#x89E3;&#x51B3;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65F6;&#xFF0C;&#x4FA7;&#x8FB9;&#x680F;&#x76F4;&#x63A5;&#x6D88;&#x5931;&#x7684;&#x95EE;&#x9898;</h3>
 <blockquote>
 <p>&#x5229;&#x7528;&#x63D2;&#x4EF6;&#x7684;<code>isOpen</code>&#x4F7F;&#x4FA7;&#x8FB9;&#x680F;&#x5148;&#x6D88;&#x5931;&#xFF0C;&#x518D;&#x8DF3;&#x8F6C;&#x3002;</p>
@@ -1233,9 +1284,40 @@
 <p>&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>isOpen</code>&#x72B6;&#x6001;&#x503C;&#xFF0C;&#x5199;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x63A7;&#x5236;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x503C;&#xFF0C;
 &#x6700;&#x540E;&#x7528;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x53BB;&#x63A7;&#x5236;&#x63D2;&#x4EF6;&#x7684; isOpen</p>
 <p>&#x5C06;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;&#x5230;&#x9700;&#x8981;&#x8DF3;&#x8F6C;&#x7684;&#x8DEF;&#x7531;&#x4E0A;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;</p>
-<pre><code>
-&lt;Menu isOpen={this.state.isOpen}&gt;
-</code></pre><h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> { slide <span class="hljs-keyword">as</span> Menu } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-burger-menu&apos;</span>
+<span class="hljs-comment">//&#x5BFC;&#x5165;&#x4FA7;&#x8FB9;&#x680F;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sidebar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  state = {
+    isOpen: <span class="hljs-literal">false</span>
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x72B6;&#x6001;</span>
+  }
+  closeBmMenu = () =&gt; {
+    <span class="hljs-keyword">this</span>.setState({
+      isOpen: <span class="hljs-literal">false</span>
+    })
+  }
+  <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x4FEE;&#x6539; state &#x7684;&#x72B6;&#x6001;&#x503C;</span>
+  render(){
+    <span class="hljs-keyword">return</span>(
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;sidebar&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Menu</span> <span class="hljs-attr">isOpen</span>=<span class="hljs-string">{this.state.isOpen}</span>&gt;</span>
+        //&#x5C06;&#x72B6;&#x6001;&#x503C;&#x7ED1;&#x5B9A;&#x7ED9;&#x63D2;&#x4EF6;&#x7684; isOpen &#x5C5E;&#x6027;
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.closeBmMenu}</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bm-close-button&quot;</span>&gt;</span>
+          //&#x5C06;&#x6539;&#x53D8;&#x72B6;&#x6001;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;&#x5728;&#x4F60;&#x9700;&#x8981;&#x89E6;&#x53D1;&#x7684;&#x8282;&#x70B9;&#x4E0A;
+            &#x5173;&#x95ED;
+          <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Menu</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Sidebar
+</code></pre>
+<p><strong>&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;</strong>&#xFF1A;&#x8DF3;&#x8F6C;&#x6CA1;&#x6709;&#x4FA7;&#x8FB9;&#x680F;&#x7684;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x4FA7;&#x8FB9;&#x680F;&#x4F1A;&#x76F4;&#x63A5;&#x6D88;&#x5931;&#x3002;</p>
+<h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
 <ul>
 <li><p>Github&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/negomi/react-burger-menu" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
 </li>
@@ -1277,7 +1359,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"侧边栏组件：react-burger-menu","level":"1.13.1","depth":2,"previous":{"title":"React 组件","level":"1.13","depth":1,"ref":"","articles":[{"title":"侧边栏组件：react-burger-menu","level":"1.13.1","depth":2,"path":"git/Other/react-burger-menu.md","ref":"./git/Other/react-burger-menu.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Other/react-burger-menu.md","mtime":"2017-07-25T13:59:39.898Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-25T14:00:09.919Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"侧边栏组件：react-burger-menu","level":"1.13.1","depth":2,"previous":{"title":"React 组件","level":"1.13","depth":1,"ref":"","articles":[{"title":"侧边栏组件：react-burger-menu","level":"1.13.1","depth":2,"path":"git/Other/react-burger-menu.md","ref":"./git/Other/react-burger-menu.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Other/react-burger-menu.md","mtime":"2017-07-25T16:45:17.530Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-25T16:46:11.082Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
