@@ -4,10 +4,10 @@ title: Sublime 编辑器
 
 ### 简介
 
-Sublime Text 是一个代码编辑器（Sublime Text 3是收费软件，但可以无限期试用）。
+Sublime Text 是一个代码编辑器（Sublime Text 3是收费软件，但可以无限期试用）
 
 Sublime 支持多种编程语言的语法高亮、拥有优秀的代码自动完成功能，还拥有代码片段（Snippet
-）的功能，可以将常用的代码片段保存起来，在需要时随时调用。
+）的功能，可以将常用的代码片段保存起来，在需要时随时调用
 
 ### 安装
 
@@ -15,7 +15,7 @@ window下百度搜索 `sublime` 进行下载安装
 
 ### 插件
 
-#### 安装 `Package Control` 
+#### 安装 `Package Control`
 
 按 **Ctrl+`** 调出console
 
@@ -27,8 +27,8 @@ window下百度搜索 `sublime` 进行下载安装
 
 如果在Perferences->package settings中看到package control这一项，则安装成功。
 
-可以到 [官网链接](https://packagecontrol.io/) 复制代码或下载 
-`Package Control.sublime-package` 
+可以到 [官网链接](https://packagecontrol.io/) 复制代码或下载
+`Package Control.sublime-package`
 放到 `sublime` 安装目录里的 `data` 里 `installed package` 文件夹（这个文件夹位置可能会不一样）
 
 #### 用Package Control安装其他插件
