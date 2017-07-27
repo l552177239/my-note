@@ -2,26 +2,30 @@
 
 **react-router** 是官方指定和维护的 React 路由库，它通过管理 URL，实现组件间切换，和状态 (state) 的变化。
 
-官网地址：[点击跳转官网](https://reacttraining.com/react-router/web/guides/philosophy)
-
 ### 装包
 
 ```
 npm i react-router-dom --save
 ```
 
-使用时，路由器Router就是React的一个组件。需要引用
+### 使用
 
-```
-import { BrowserRouter as Router,Route,Link } from 'react-router-dom'
-//as就是把前面的作为后面的使用
+使用时，路由Router就是React的一个组件。需要引用
+
+```js
+import {
+	BrowserRouter as Router,
+	//as就是把前面的作为后面的使用
+	Route,
+	Link
+} from 'react-router-dom'
 ```
 
 Router组件本身只是一个容器，真正的路由要通过Route组件定义。
 
-### 创建一个router组件
+#### 创建一个router组件
 
-```
+```js
 import React from 'react'
 import {BrowserRouter,Route,Link} from 'react-router-dom'
 
@@ -55,3 +59,10 @@ class App extends React.Component{
 }
 export default App
 ```
+### 参考
+
+ - 官网地址：[点击进入](https://reacttraining.com/react-router/web/guides/philosophy)
+
+ - 中文文档地址：[点击进入](http://www.uprogrammer.cn/react-router-cn/)
+
+ - 阮一峰日志：[点击进入](http://www.ruanyifeng.com/blog/2016/05/react_router.html)

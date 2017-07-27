@@ -15,7 +15,11 @@ history属性，一共可以设置三种值
 
 `BrowserRouter`放在最高的级别，把你需要的组件放在里面才会有`props`里的一些属性
 
-```
+#### 例子：路由的参数传递
+
+父组件
+
+```js
 import React from   'react'
 import { BrowserRouter,Route,Link } from 'react-router-dom'
 import Btn from './Btn'
@@ -36,7 +40,8 @@ export default App
 ```
 
 子组件
-```
+
+```js
 import React from   'react'
 
 class Btn extends React.Component{
@@ -101,7 +106,7 @@ export default Btn
 
 如果想用`router`的方法，而组件没有在路由上，所以用`withRouter`去包装
 
-```
+```js
 import React from 'react'
 import {withRouter} from 'react-router-dom'
 
@@ -124,11 +129,25 @@ export default withRouter(Son)
 
 Switch，路由跳转时只渲染出第一个与当前访问地址匹配的`Route`或`Redirect`
 
-```
-<Switch>  // 监听空路由，
- <Route path="/" exact component={Home}/>
+```js
+<Switch>  // 监听空路由
+ <Route exact path="/" component={Home}/>
  <Redirect from="/old-match" to="/will-match"/>
  <Route path="/will-match" component={WillMatch}/>
- <Route component={NoMatch}/>  // 空路由，
+ <Route component={NoMatch}/>  // 空路由
 </Switch>
+```
+
+### 路由条件匹配
+
+如果一个路由组件，只在需要的组件中加载。我们就会需要这一技巧
+
+```js
+<Route render={({ location }) => {
+  //location 是从父组件接受到的 this.props.location 对象
+ return location.pathname !== '/' ?
+ //根据 location 的 pathname 属性进行路径的判断
+ (<Sidebar />) : null
+ //通过三步运算来判断显示的路由
+}} />
 ```

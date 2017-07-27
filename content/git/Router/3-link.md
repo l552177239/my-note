@@ -5,13 +5,13 @@ Link组件用于取代`<a>`元素，生成一个链接，允许用户点击后�
 
 ### 使用时需要先引用组件
 
-```
+```js
 import { Link } from 'react-router-dom'
 ```
 
 ### 写入跳转地址
 
-```
+```js
 <Link exact to="/about">About</Link>
 //to：（string）链接到的路径名或位置
 //exact 严格匹配
@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom'
 
 ### 可以`to`一个`location`对象
 
-```
+```js
 <Link to={ {
   pathname: '/courses',
   //URL的路径
@@ -36,20 +36,22 @@ import { Link } from 'react-router-dom'
 
 ### NavLink
 
-### `<NavLink>`可以添加样式，给`class`为`active`添加样式
+> `<NavLink>`是可以添加样式的 Link
 
-### 可以给NavLink添加className
+##### `<NavLink>`直接添加样式，给名为`active`的`class`添加样式
 
-```
+##### 可以给NavLink添加className
+
+```js
 <NavLink
   to="/faq"
   activeClassName="selected"
 >FAQs</NavLink>
 ```
 
-### 可以给NavLink添加activeStyle: object
+##### 可以给NavLink添加activeStyle: object
 
-```
+```js
 <NavLink
   to="/faq"
   activeStyle={ {
@@ -63,7 +65,7 @@ import { Link } from 'react-router-dom'
 
 `Redirect`（重定向）：<Redirect> 渲染时将导航到一个新地址，这个新地址覆盖在访问历史信息里面的本该访问的那个地址。
 
-```
+```js
 <Switch>
   <Redirect from='/old-path' to='/new-path'/>
   //from 原来的地址
