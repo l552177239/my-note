@@ -1094,6 +1094,51 @@
                 <span>
             
                     
+                    数据可视化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Other/echarts.html">
+            
+                <a href="../Other/echarts.html">
+            
+                    
+                    Echarts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Other/recharts.html">
+            
+                <a href="../Other/recharts.html">
+            
+                    
+                    Recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
                     React 组件
             
                 </span>
@@ -1103,7 +1148,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" data-path="../Other/react-burger-menu.html">
+        <li class="chapter " data-level="1.14.1" data-path="../Other/react-burger-menu.html">
             
                 <a href="../Other/react-burger-menu.html">
             
@@ -1170,47 +1215,56 @@
 <p>Link&#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x53D6;&#x4EE3;<code>&lt;a&gt;</code>&#x5143;&#x7D20;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x94FE;&#x63A5;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x540E;&#x8DF3;&#x8F6C;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x3002;
 &#x5B83;&#x57FA;&#x672C;&#x4E0A;&#x5C31;&#x662F;<code>&lt;a&gt;</code>&#x5143;&#x7D20;&#x7684;React &#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x63A5;&#x6536;Router&#x7684;&#x72B6;&#x6001;&#x3002;</p>
 <h3 id="&#x4F7F;&#x7528;&#x65F6;&#x9700;&#x8981;&#x5148;&#x5F15;&#x7528;&#x7EC4;&#x4EF6;">&#x4F7F;&#x7528;&#x65F6;&#x9700;&#x8981;&#x5148;&#x5F15;&#x7528;&#x7EC4;&#x4EF6;</h3>
-<pre><code>import { Link } from &apos;react-router-dom&apos;
-</code></pre><h3 id="&#x5199;&#x5165;&#x8DF3;&#x8F6C;&#x5730;&#x5740;">&#x5199;&#x5165;&#x8DF3;&#x8F6C;&#x5730;&#x5740;</h3>
-<pre><code>&lt;Link exact to=&quot;/about&quot;&gt;About&lt;/Link&gt;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Link } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>
+</code></pre>
+<h3 id="&#x5199;&#x5165;&#x8DF3;&#x8F6C;&#x5730;&#x5740;">&#x5199;&#x5165;&#x8DF3;&#x8F6C;&#x5730;&#x5740;</h3>
+<pre><code class="lang-js">&lt;Link exact to=&quot;/about&quot;&gt;About&lt;/Link&gt;
 //to&#xFF1A;&#xFF08;string&#xFF09;&#x94FE;&#x63A5;&#x5230;&#x7684;&#x8DEF;&#x5F84;&#x540D;&#x6216;&#x4F4D;&#x7F6E;
 //exact &#x4E25;&#x683C;&#x5339;&#x914D;
-</code></pre><h3 id="&#x53EF;&#x4EE5;to&#x4E00;&#x4E2A;location&#x5BF9;&#x8C61;">&#x53EF;&#x4EE5;<code>to</code>&#x4E00;&#x4E2A;<code>location</code>&#x5BF9;&#x8C61;</h3>
-<pre><code>&lt;Link to={ {
-  pathname: &apos;/courses&apos;,
-  //URL&#x7684;&#x8DEF;&#x5F84;
-  search: &apos;?sort=name&apos;,
-  //URL&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;
-  hash: &apos;#the-hash&apos;,
-  //URL&#x54C8;&#x5E0C;&#x7247;&#x6BB5;
-  state: { fromDashboard: true }
-  // state&#x4F7F;&#x7528;&#x65F6;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4F4D;&#x7F6E;&#x7279;&#x5B9A;&#x7684;&#x72B6;&#x6001;
-  //&#x5BF9;&#x8C61;&#x5185;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5199;&#x5185;&#x5BB9;&#x3002;
+</code></pre>
+<h3 id="&#x53EF;&#x4EE5;to&#x4E00;&#x4E2A;location&#x5BF9;&#x8C61;">&#x53EF;&#x4EE5;<code>to</code>&#x4E00;&#x4E2A;<code>location</code>&#x5BF9;&#x8C61;</h3>
+<pre><code class="lang-js">&lt;Link to={ {
+  pathname: <span class="hljs-string">&apos;/courses&apos;</span>,
+  <span class="hljs-comment">//URL&#x7684;&#x8DEF;&#x5F84;</span>
+  search: <span class="hljs-string">&apos;?sort=name&apos;</span>,
+  <span class="hljs-comment">//URL&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;</span>
+  hash: <span class="hljs-string">&apos;#the-hash&apos;</span>,
+  <span class="hljs-comment">//URL&#x54C8;&#x5E0C;&#x7247;&#x6BB5;</span>
+  state: { fromDashboard: <span class="hljs-literal">true</span> }
+  <span class="hljs-comment">// state&#x4F7F;&#x7528;&#x65F6;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4F4D;&#x7F6E;&#x7279;&#x5B9A;&#x7684;&#x72B6;&#x6001;</span>
+  <span class="hljs-comment">//&#x5BF9;&#x8C61;&#x5185;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5199;&#x5185;&#x5BB9;&#x3002;</span>
 } }/&gt;
-</code></pre><h3 id="navlink">NavLink</h3>
-<h3 id="navlink&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;&#xFF0C;&#x7ED9;class&#x4E3A;active&#x6DFB;&#x52A0;&#x6837;&#x5F0F;"><code>&lt;NavLink&gt;</code>&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;&#xFF0C;&#x7ED9;<code>class</code>&#x4E3A;<code>active</code>&#x6DFB;&#x52A0;&#x6837;&#x5F0F;</h3>
-<h3 id="&#x53EF;&#x4EE5;&#x7ED9;navlink&#x6DFB;&#x52A0;classname">&#x53EF;&#x4EE5;&#x7ED9;NavLink&#x6DFB;&#x52A0;className</h3>
-<pre><code>&lt;NavLink
+</code></pre>
+<h3 id="navlink">NavLink</h3>
+<blockquote>
+<p><code>&lt;NavLink&gt;</code>&#x662F;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;&#x7684; Link</p>
+</blockquote>
+<h5 id="navlink&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;&#xFF0C;&#x7ED9;&#x540D;&#x4E3A;active&#x7684;class&#x6DFB;&#x52A0;&#x6837;&#x5F0F;"><code>&lt;NavLink&gt;</code>&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;&#xFF0C;&#x7ED9;&#x540D;&#x4E3A;<code>active</code>&#x7684;<code>class</code>&#x6DFB;&#x52A0;&#x6837;&#x5F0F;</h5>
+<h5 id="&#x53EF;&#x4EE5;&#x7ED9;navlink&#x6DFB;&#x52A0;classname">&#x53EF;&#x4EE5;&#x7ED9;NavLink&#x6DFB;&#x52A0;className</h5>
+<pre><code class="lang-js">&lt;NavLink
   to=&quot;/faq&quot;
   activeClassName=&quot;selected&quot;
 &gt;FAQs&lt;/NavLink&gt;
-</code></pre><h3 id="&#x53EF;&#x4EE5;&#x7ED9;navlink&#x6DFB;&#x52A0;activestyle-object">&#x53EF;&#x4EE5;&#x7ED9;NavLink&#x6DFB;&#x52A0;activeStyle: object</h3>
-<pre><code>&lt;NavLink
+</code></pre>
+<h5 id="&#x53EF;&#x4EE5;&#x7ED9;navlink&#x6DFB;&#x52A0;activestyle-object">&#x53EF;&#x4EE5;&#x7ED9;NavLink&#x6DFB;&#x52A0;activeStyle: object</h5>
+<pre><code class="lang-js">&lt;NavLink
   to=&quot;/faq&quot;
   activeStyle={ {
     fontWeight: &apos;bold&apos;,
     color: &apos;red&apos;
    } }
 &gt;FAQs&lt;/NavLink&gt;
-</code></pre><h3 id="redirect">Redirect</h3>
+</code></pre>
+<h3 id="redirect">Redirect</h3>
 <p><code>Redirect</code>&#xFF08;&#x91CD;&#x5B9A;&#x5411;&#xFF09;&#xFF1A;<redirect> &#x6E32;&#x67D3;&#x65F6;&#x5C06;&#x5BFC;&#x822A;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x5730;&#x5740;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B0;&#x5730;&#x5740;&#x8986;&#x76D6;&#x5728;&#x8BBF;&#x95EE;&#x5386;&#x53F2;&#x4FE1;&#x606F;&#x91CC;&#x9762;&#x7684;&#x672C;&#x8BE5;&#x8BBF;&#x95EE;&#x7684;&#x90A3;&#x4E2A;&#x5730;&#x5740;&#x3002;</redirect></p>
-<pre><code>&lt;Switch&gt;
-  &lt;Redirect from=&apos;/old-path&apos; to=&apos;/new-path&apos;/&gt;
+<pre><code class="lang-js">&lt;Switch&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Redirect</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&apos;/old-path&apos;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&apos;/new-path&apos;</span>/&gt;</span>
   //from &#x539F;&#x6765;&#x7684;&#x5730;&#x5740;
   //to &#x9700;&#x8981;&#x8DF3;&#x8F6C;&#x7684;&#x5730;&#x5740;
-  &lt;Route path=&apos;/new-path&apos; component={Place}/&gt;
-&lt;/Switch&gt;
-</code></pre>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&apos;/new-path&apos;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{Place}</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Switch</span>&gt;</span>
+</span></code></pre>
+
                                 
                                 </section>
                             
@@ -1249,7 +1303,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三小节：Link","level":"1.6.3","depth":2,"next":{"title":"第六章 React-Redux","level":"1.7","depth":1,"ref":"","articles":[{"title":"第一小节：Redux简介","level":"1.7.1","depth":2,"path":"git/Redux/1-brief-redux.md","ref":"./git/Redux/1-brief-redux.md","articles":[]},{"title":"第二小节：Redux安装","level":"1.7.2","depth":2,"path":"git/Redux/2-install-redux.md","ref":"./git/Redux/2-install-redux.md","articles":[]},{"title":"第三小节：温习React","level":"1.7.3","depth":2,"path":"git/Redux/3-props.md","ref":"./git/Redux/3-props.md","articles":[]},{"title":"第四小节：Store","level":"1.7.4","depth":2,"path":"git/Redux/4-store.md","ref":"./git/Redux/4-store.md","articles":[]},{"title":"第五小节：createStore","level":"1.7.5","depth":2,"path":"git/Redux/5-createStore.md","ref":"./git/Redux/5-createStore.md","articles":[]},{"title":"第六小节：Reducer","level":"1.7.6","depth":2,"path":"git/Redux/6-Reducer.md","ref":"./git/Redux/6-Reducer.md","articles":[]},{"title":"第七小节：Action","level":"1.7.7","depth":2,"path":"git/Redux/7-action.md","ref":"./git/Redux/7-action.md","articles":[]},{"title":"第八小节：connect","level":"1.7.8","depth":2,"path":"git/Redux/8-connect.md","ref":"./git/Redux/8-connect.md","articles":[]},{"title":"第九小节：项目实例：小博客","level":"1.7.9","depth":2,"path":"git/Redux/9-Hello-redux.md","ref":"./git/Redux/9-Hello-redux.md","articles":[]}]},"previous":{"title":"第二小节：Router","level":"1.6.2","depth":2,"path":"git/Router/2-Router.md","ref":"./git/Router/2-Router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/3-link.md","mtime":"2017-07-20T11:54:11.038Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T00:02:25.197Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三小节：Link","level":"1.6.3","depth":2,"next":{"title":"第六章 React-Redux","level":"1.7","depth":1,"ref":"","articles":[{"title":"第一小节：Redux简介","level":"1.7.1","depth":2,"path":"git/Redux/1-brief-redux.md","ref":"./git/Redux/1-brief-redux.md","articles":[]},{"title":"第二小节：Redux安装","level":"1.7.2","depth":2,"path":"git/Redux/2-install-redux.md","ref":"./git/Redux/2-install-redux.md","articles":[]},{"title":"第三小节：温习React","level":"1.7.3","depth":2,"path":"git/Redux/3-props.md","ref":"./git/Redux/3-props.md","articles":[]},{"title":"第四小节：Store","level":"1.7.4","depth":2,"path":"git/Redux/4-store.md","ref":"./git/Redux/4-store.md","articles":[]},{"title":"第五小节：createStore","level":"1.7.5","depth":2,"path":"git/Redux/5-createStore.md","ref":"./git/Redux/5-createStore.md","articles":[]},{"title":"第六小节：Reducer","level":"1.7.6","depth":2,"path":"git/Redux/6-Reducer.md","ref":"./git/Redux/6-Reducer.md","articles":[]},{"title":"第七小节：Action","level":"1.7.7","depth":2,"path":"git/Redux/7-action.md","ref":"./git/Redux/7-action.md","articles":[]},{"title":"第八小节：connect","level":"1.7.8","depth":2,"path":"git/Redux/8-connect.md","ref":"./git/Redux/8-connect.md","articles":[]},{"title":"第九小节：项目实例：小博客","level":"1.7.9","depth":2,"path":"git/Redux/9-Hello-redux.md","ref":"./git/Redux/9-Hello-redux.md","articles":[]}]},"previous":{"title":"第二小节：Router","level":"1.6.2","depth":2,"path":"git/Router/2-Router.md","ref":"./git/Router/2-Router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/3-link.md","mtime":"2017-07-27T15:02:37.490Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-27T15:03:42.051Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

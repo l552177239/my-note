@@ -1096,6 +1096,51 @@
                 <span>
             
                     
+                    数据可视化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Other/echarts.html">
+            
+                <a href="../Other/echarts.html">
+            
+                    
+                    Echarts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Other/recharts.html">
+            
+                <a href="../Other/recharts.html">
+            
+                    
+                    Recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
                     React 组件
             
                 </span>
@@ -1105,7 +1150,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" data-path="../Other/react-burger-menu.html">
+        <li class="chapter " data-level="1.14.1" data-path="../Other/react-burger-menu.html">
             
                 <a href="../Other/react-burger-menu.html">
             
@@ -1180,38 +1225,42 @@
 <h3 id="browserrouter">BrowserRouter</h3>
 <p>&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8DEF;&#x7531;&#x5C31;&#x4E0D;&#x518D;&#x901A;&#x8FC7;<code>Hash</code>&#x5B8C;&#x6210;&#x4E86;&#xFF0C;&#x800C;&#x663E;&#x793A;&#x6B63;&#x5E38;&#x7684;&#x8DEF;&#x5F84;<code>example.com/some/path</code>&#xFF0C;&#x80CC;&#x540E;&#x8C03;&#x7528;&#x7684;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x7684;History API&#x3002;</p>
 <p><code>BrowserRouter</code>&#x653E;&#x5728;&#x6700;&#x9AD8;&#x7684;&#x7EA7;&#x522B;&#xFF0C;&#x628A;&#x4F60;&#x9700;&#x8981;&#x7684;&#x7EC4;&#x4EF6;&#x653E;&#x5728;&#x91CC;&#x9762;&#x624D;&#x4F1A;&#x6709;<code>props</code>&#x91CC;&#x7684;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;</p>
-<pre><code>import React from   &apos;react&apos;
-import { BrowserRouter,Route,Link } from &apos;react-router-dom&apos;
-import Btn from &apos;./Btn&apos;
+<h4 id="&#x4F8B;&#x5B50;&#xFF1A;&#x8DEF;&#x7531;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;">&#x4F8B;&#x5B50;&#xFF1A;&#x8DEF;&#x7531;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;</h4>
+<p>&#x7236;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span>   <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> { BrowserRouter,Route,Link } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>
+<span class="hljs-keyword">import</span> Btn <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Btn&apos;</span>
 
-class App extends React.Component{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
     render(){
-        return(
-            &lt;BrowserRouter&gt;
-            &lt;div className=&quot;app&quot;&gt;
-                &lt;Link to=&apos;/btn&apos;&gt;&#x8FDB;&#x5165;Btn&lt;/Link&gt;
-                &lt;Route path=&apos;/btn&apos; component={Btn}/&gt;
-            &lt;/div&gt;
-            &lt;/BrowserRouter&gt;
+        <span class="hljs-keyword">return</span>(
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BrowserRouter</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&apos;/btn&apos;</span>&gt;</span>&#x8FDB;&#x5165;Btn<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&apos;/btn&apos;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{Btn}</span>/&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">BrowserRouter</span>&gt;</span>
         )
     }
 }
 export default App
-</code></pre><p>&#x5B50;&#x7EC4;&#x4EF6;</p>
-<pre><code>import React from   &apos;react&apos;
+</span></code></pre>
+<p>&#x5B50;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span>   <span class="hljs-string">&apos;react&apos;</span>
 
-class Btn extends React.Component{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Btn</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
     render(){
-        console.log(this.props)
-        return(
-            &lt;div className=&quot;btn&quot;&gt;
-                &lt;input type=&quot;button&quot; value=&apos;&#x70B9;&#x51FB;&#x6DFB;&#x52A0;&apos; /&gt;
-            &lt;/div&gt;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.props)
+        <span class="hljs-keyword">return</span>(
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&apos;&#x70B9;&#x51FB;&#x6DFB;&#x52A0;&apos;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         )
     }
 }
 export default Btn
-</code></pre><p>&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;<code>this.props</code>&#x91CC;&#x8F93;&#x51FA;&#x4E09;&#x4E2A;&#x5BF9;&#x8C61;<code>history</code>&#xFF0C;<code>location</code>&#xFF0C;<code>match</code></p>
+</span></code></pre>
+<p>&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;<code>this.props</code>&#x91CC;&#x8F93;&#x51FA;&#x4E09;&#x4E2A;&#x5BF9;&#x8C61;<code>history</code>&#xFF0C;<code>location</code>&#xFF0C;<code>match</code></p>
 <h4 id="history&#xFF08;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF09;">history&#xFF08;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF09;</h4>
 <p><strong>history</strong> &#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x7BA1;&#x7406;&#x5404;&#x79CD;&#x73AF;&#x5883;&#x4E2D;&#x7684;JavaScript&#x4E2D;&#x7684;&#x4F1A;&#x8BDD;&#x5386;&#x53F2;&#xFF0C;&#x901A;&#x8FC7;&#x88AB;&#x5305;&#x88F9;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;<code>this.props.history</code>&#x6765;&#x663E;&#x793A;&#x3002;</p>
 <p><strong>history</strong> &#x5BF9;&#x8C61;&#x901A;&#x5E38;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;</p>
@@ -1253,30 +1302,42 @@ export default Btn
 </ul>
 <h3 id="withrouter">withRouter</h3>
 <p>&#x5982;&#x679C;&#x60F3;&#x7528;<code>router</code>&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x5728;&#x8DEF;&#x7531;&#x4E0A;&#xFF0C;&#x6240;&#x4EE5;&#x7528;<code>withRouter</code>&#x53BB;&#x5305;&#x88C5;</p>
-<pre><code>import React from &apos;react&apos;
-import {withRouter} from &apos;react-router-dom&apos;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> {withRouter} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>
 
-class Son extends React.Component{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Son</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
     render(){
-        console.log(this.props)
-        return(
-            &lt;div className=&apos;son&apos;&gt;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.props)
+        <span class="hljs-keyword">return</span>(
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;son&apos;</span>&gt;</span>
                 Son
-            &lt;/div&gt;
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
         )
     }
 }
-export default withRouter(Son)
-</code></pre><p>&#x7236;&#x7EC4;&#x4EF6;&#x91CC;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>&lt;Son /&gt;</code>&#x5BFC;&#x5165;&#xFF0C;&#x5C31;&#x53EF;&#x4F7F;&#x7528;<code>router</code>&#x7684;&#x65B9;&#x6CD5;</p>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> withRouter(Son)
+</code></pre>
+<p>&#x7236;&#x7EC4;&#x4EF6;&#x91CC;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>&lt;Son /&gt;</code>&#x5BFC;&#x5165;&#xFF0C;&#x5C31;&#x53EF;&#x4F7F;&#x7528;<code>router</code>&#x7684;&#x65B9;&#x6CD5;</p>
 <h3 id="switch">Switch</h3>
 <p>Switch&#xFF0C;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65F6;&#x53EA;&#x6E32;&#x67D3;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0E;&#x5F53;&#x524D;&#x8BBF;&#x95EE;&#x5730;&#x5740;&#x5339;&#x914D;&#x7684;<code>Route</code>&#x6216;<code>Redirect</code></p>
-<pre><code>&lt;Switch&gt;  // &#x76D1;&#x542C;&#x7A7A;&#x8DEF;&#x7531;&#xFF0C;
- &lt;Route path=&quot;/&quot; exact component={Home}/&gt;
+<pre><code class="lang-js">&lt;Switch&gt;  <span class="hljs-comment">// &#x76D1;&#x542C;&#x7A7A;&#x8DEF;&#x7531;</span>
+ &lt;Route exact path=<span class="hljs-string">&quot;/&quot;</span> component={Home}/&gt;
  &lt;Redirect from=&quot;/old-match&quot; to=&quot;/will-match&quot;/&gt;
  &lt;Route path=&quot;/will-match&quot; component={WillMatch}/&gt;
- &lt;Route component={NoMatch}/&gt;  // &#x7A7A;&#x8DEF;&#x7531;&#xFF0C;
+ &lt;Route component={NoMatch}/&gt;  // &#x7A7A;&#x8DEF;&#x7531;
 &lt;/Switch&gt;
 </code></pre>
+<h3 id="&#x8DEF;&#x7531;&#x6761;&#x4EF6;&#x5339;&#x914D;">&#x8DEF;&#x7531;&#x6761;&#x4EF6;&#x5339;&#x914D;</h3>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EA;&#x5728;&#x9700;&#x8981;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x3002;&#x6211;&#x4EEC;&#x5C31;&#x4F1A;&#x9700;&#x8981;&#x8FD9;&#x4E00;&#x6280;&#x5DE7;</p>
+<pre><code class="lang-js">&lt;Route render={({ location }) =&gt; {
+  <span class="hljs-comment">//location &#x662F;&#x4ECE;&#x7236;&#x7EC4;&#x4EF6;&#x63A5;&#x53D7;&#x5230;&#x7684; this.props.location &#x5BF9;&#x8C61;</span>
+ <span class="hljs-keyword">return</span> location.pathname !== <span class="hljs-string">&apos;/&apos;</span> ?
+ <span class="hljs-comment">//&#x6839;&#x636E; location &#x7684; pathname &#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x8DEF;&#x5F84;&#x7684;&#x5224;&#x65AD;</span>
+ (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Sidebar</span> /&gt;</span>) : null
+ //&#x901A;&#x8FC7;&#x4E09;&#x6B65;&#x8FD0;&#x7B97;&#x6765;&#x5224;&#x65AD;&#x663E;&#x793A;&#x7684;&#x8DEF;&#x7531;
+}} /&gt;
+</span></code></pre>
+
                                 
                                 </section>
                             
@@ -1319,7 +1380,7 @@ export default withRouter(Son)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二小节：Router","level":"1.6.2","depth":2,"next":{"title":"第三小节：Link","level":"1.6.3","depth":2,"path":"git/Router/3-link.md","ref":"./git/Router/3-link.md","articles":[]},"previous":{"title":"第一小节：Hello React-Router","level":"1.6.1","depth":2,"path":"git/Router/1-hello-router.md","ref":"./git/Router/1-hello-router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/2-Router.md","mtime":"2017-07-21T16:20:39.672Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T00:02:25.197Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二小节：Router","level":"1.6.2","depth":2,"next":{"title":"第三小节：Link","level":"1.6.3","depth":2,"path":"git/Router/3-link.md","ref":"./git/Router/3-link.md","articles":[]},"previous":{"title":"第一小节：Hello React-Router","level":"1.6.1","depth":2,"path":"git/Router/1-hello-router.md","ref":"./git/Router/1-hello-router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/2-Router.md","mtime":"2017-07-27T14:57:17.442Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-27T15:03:42.051Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

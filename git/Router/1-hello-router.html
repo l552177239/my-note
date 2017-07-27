@@ -1094,6 +1094,51 @@
                 <span>
             
                     
+                    数据可视化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Other/echarts.html">
+            
+                <a href="../Other/echarts.html">
+            
+                    
+                    Echarts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Other/recharts.html">
+            
+                <a href="../Other/recharts.html">
+            
+                    
+                    Recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
                     React 组件
             
                 </span>
@@ -1103,7 +1148,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" data-path="../Other/react-burger-menu.html">
+        <li class="chapter " data-level="1.14.1" data-path="../Other/react-burger-menu.html">
             
                 <a href="../Other/react-burger-menu.html">
             
@@ -1168,47 +1213,62 @@
                                 
                                 <h2 id="react-router">React-Router</h2>
 <p><strong>react-router</strong> &#x662F;&#x5B98;&#x65B9;&#x6307;&#x5B9A;&#x548C;&#x7EF4;&#x62A4;&#x7684; React &#x8DEF;&#x7531;&#x5E93;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x7BA1;&#x7406; URL&#xFF0C;&#x5B9E;&#x73B0;&#x7EC4;&#x4EF6;&#x95F4;&#x5207;&#x6362;&#xFF0C;&#x548C;&#x72B6;&#x6001; (state) &#x7684;&#x53D8;&#x5316;&#x3002;</p>
-<p>&#x5B98;&#x7F51;&#x5730;&#x5740;&#xFF1A;<a href="https://reacttraining.com/react-router/web/guides/philosophy" target="_blank">&#x70B9;&#x51FB;&#x8DF3;&#x8F6C;&#x5B98;&#x7F51;</a></p>
 <h3 id="&#x88C5;&#x5305;">&#x88C5;&#x5305;</h3>
 <pre><code>npm i react-router-dom --save
-</code></pre><p>&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x8DEF;&#x7531;&#x5668;Router&#x5C31;&#x662F;React&#x7684;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x3002;&#x9700;&#x8981;&#x5F15;&#x7528;</p>
-<pre><code>import { BrowserRouter as Router,Route,Link } from &apos;react-router-dom&apos;
-//as&#x5C31;&#x662F;&#x628A;&#x524D;&#x9762;&#x7684;&#x4F5C;&#x4E3A;&#x540E;&#x9762;&#x7684;&#x4F7F;&#x7528;
-</code></pre><p>Router&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x8DEF;&#x7531;&#x8981;&#x901A;&#x8FC7;Route&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x3002;</p>
-<h3 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;router&#x7EC4;&#x4EF6;">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;router&#x7EC4;&#x4EF6;</h3>
-<pre><code>import React from &apos;react&apos;
-import {BrowserRouter,Route,Link} from &apos;react-router-dom&apos;
+</code></pre><h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<p>&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x8DEF;&#x7531;Router&#x5C31;&#x662F;React&#x7684;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x3002;&#x9700;&#x8981;&#x5F15;&#x7528;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {
+    BrowserRouter <span class="hljs-keyword">as</span> Router,
+    <span class="hljs-comment">//as&#x5C31;&#x662F;&#x628A;&#x524D;&#x9762;&#x7684;&#x4F5C;&#x4E3A;&#x540E;&#x9762;&#x7684;&#x4F7F;&#x7528;</span>
+    Route,
+    Link
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>
+</code></pre>
+<p>Router&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x8DEF;&#x7531;&#x8981;&#x901A;&#x8FC7;Route&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x3002;</p>
+<h4 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;router&#x7EC4;&#x4EF6;">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;router&#x7EC4;&#x4EF6;</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> {BrowserRouter,Route,Link} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>
 
-let Home = () =&gt; &lt;h2&gt;Home&lt;/h2&gt;
-let User = () =&gt; &lt;h2&gt;User&lt;/h2&gt;
-//&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;
+<span class="hljs-keyword">let</span> Home = () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>
+<span class="hljs-keyword">let</span> User = () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>User<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>
+<span class="hljs-comment">//&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;</span>
 
-class App extends React.Component{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
     render(){
-        return(
-            &lt;BrowserRouter&gt;
-                &lt;div className=&apos;app&apos;&gt;
-                    &lt;div className=&apos;header&apos;&gt;
-                        &lt;h1&gt;App&lt;/h1&gt;
-                    &lt;/div&gt;
-                    &lt;div className=&apos;main&apos;&gt;
-                        &lt;Route exact path=&apos;/home&apos; component={Home}&gt;&lt;/Route&gt;
-                        &lt;Route path=&apos;/user&apos; component={User}&gt;&lt;/Route&gt;
+        <span class="hljs-keyword">return</span>(
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BrowserRouter</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;app&apos;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;header&apos;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>App<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;main&apos;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">exact</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&apos;/home&apos;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{Home}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&apos;/user&apos;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{User}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
                         //path&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x7684;&#x5339;&#x914D;&#x89C4;&#x5219;&#xFF08;&#x5730;&#x5740;&#xFF09;
                         //component&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x52A0;&#x8F7D;&#x7684;&#x7EC4;&#x4EF6;
-                    &lt;/div&gt;
-                    &lt;div className=&apos;footer&apos;&gt;
-                        &lt;Link to=&apos;/home&apos;&gt;Home&lt;/Link&gt;
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;footer&apos;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&apos;/home&apos;</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
                         //to&#x8DF3;&#x8F6C;&#x5230;&#x5BF9;&#x5E94;&#x8DEF;&#x5F84;&#x7684;&#x7EC4;&#x4EF6;
-                        &lt;Link to=&apos;/user&apos;&gt;User&lt;/Link&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/BrowserRouter&gt;
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&apos;/user&apos;</span>&gt;</span>User<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">BrowserRouter</span>&gt;</span></span>
         )
     }
 }
-export default App
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App
 </code></pre>
+<h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
+<ul>
+<li><p>&#x5B98;&#x7F51;&#x5730;&#x5740;&#xFF1A;<a href="https://reacttraining.com/react-router/web/guides/philosophy" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+<li><p>&#x4E2D;&#x6587;&#x6587;&#x6863;&#x5730;&#x5740;&#xFF1A;<a href="http://www.uprogrammer.cn/react-router-cn/" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+<li><p>&#x962E;&#x4E00;&#x5CF0;&#x65E5;&#x5FD7;&#xFF1A;<a href="http://www.ruanyifeng.com/blog/2016/05/react_router.html" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+</ul>
+
                                 
                                 </section>
                             
@@ -1247,7 +1307,7 @@ export default App
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一小节：Hello React-Router","level":"1.6.1","depth":2,"next":{"title":"第二小节：Router","level":"1.6.2","depth":2,"path":"git/Router/2-Router.md","ref":"./git/Router/2-Router.md","articles":[]},"previous":{"title":"第五章 React-Router","level":"1.6","depth":1,"ref":"","articles":[{"title":"第一小节：Hello React-Router","level":"1.6.1","depth":2,"path":"git/Router/1-hello-router.md","ref":"./git/Router/1-hello-router.md","articles":[]},{"title":"第二小节：Router","level":"1.6.2","depth":2,"path":"git/Router/2-Router.md","ref":"./git/Router/2-Router.md","articles":[]},{"title":"第三小节：Link","level":"1.6.3","depth":2,"path":"git/Router/3-link.md","ref":"./git/Router/3-link.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/1-hello-router.md","mtime":"2017-07-20T01:50:08.512Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T00:02:25.197Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第一小节：Hello React-Router","level":"1.6.1","depth":2,"next":{"title":"第二小节：Router","level":"1.6.2","depth":2,"path":"git/Router/2-Router.md","ref":"./git/Router/2-Router.md","articles":[]},"previous":{"title":"第五章 React-Router","level":"1.6","depth":1,"ref":"","articles":[{"title":"第一小节：Hello React-Router","level":"1.6.1","depth":2,"path":"git/Router/1-hello-router.md","ref":"./git/Router/1-hello-router.md","articles":[]},{"title":"第二小节：Router","level":"1.6.2","depth":2,"path":"git/Router/2-Router.md","ref":"./git/Router/2-Router.md","articles":[]},{"title":"第三小节：Link","level":"1.6.3","depth":2,"path":"git/Router/3-link.md","ref":"./git/Router/3-link.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Router/1-hello-router.md","mtime":"2017-07-27T14:49:11.402Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-27T15:03:42.051Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
