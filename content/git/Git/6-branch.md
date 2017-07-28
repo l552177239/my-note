@@ -82,3 +82,7 @@ git push origin :[branch-name]
 ```
 git merge [branch-name]
 ```
+
+#### git reset --hard HEAD~ 删除最近版本，回到上个版本
+
+#### git reset --hard HEAD 删除新的修改

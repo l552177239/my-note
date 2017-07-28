@@ -88,6 +88,8 @@ const mapStateToProps = (state) => ({
 export default class CounterContainer { ... }
 ```
 
+**小技巧**：发出 action 时，可以不用导入 store 而直接使用 this.props 代替
+
 ### 参考
 
  - 简书文章：[点击进入](http://www.jianshu.com/p/9873d4ccb891)

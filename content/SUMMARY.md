@@ -10,6 +10,7 @@
 	- [第六小节：学习 Gitbook](./git/Linux/6-gitbook.md)
 	- [第七小节：Markdown 语法](./git/Linux/7-markdown.md)
 	- [第八小节：快速配置开发环境](./git/Linux/8-linux-react.md)
+	- [第九小节：Linux 状态行界面](./git/Linux/9-linux-shell.md)
 * 第二章 Git基础
 	- [第一小节：Github](./git/Git/1-github.md)
 	- [第二小节：Hello Git](./git/Git/2-hello-git.md)
