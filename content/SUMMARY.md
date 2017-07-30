@@ -63,7 +63,8 @@
 	- [第八小节：connect](./git/Redux/8-connect.md)
 	- [第九小节：项目实例：小博客](./git/Redux/9-Hello-redux.md)
 * VUE
-	- [vue]()
+	- [vue](./git/vue/1-Hello-vue.md)
+	- [vue-router](./git/vue/2-vue-router.md)
 * FLEX
 	- [flex 布局](./git/Other/flex.md)
 * JSON
