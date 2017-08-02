@@ -1,10 +1,14 @@
 ## AJAX
 
+> 用 JS 实现页面的局部更新
+
 ### 简介
 
- - AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。
- - AJAX 不是新的编程语言，而是一种使用现有标准的新方法。
- - AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。
+ - AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）
+
+ - AJAX 不是新的编程语言，而是一种使用现有标准的新方法
+
+ - AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下
 
 ### AJAX工作原理
 
@@ -74,7 +78,7 @@ xml.send(JSON.stringify(date))
 
 如需获得来自服务器的响应，请使用`XMLHttpRequest`对象的`responseText`或`responseXML`属性。
 
-属性 			| 描述 
+属性 			| 描述
 --------------- | ------------------------------------------
 responseText	| 获得字符串形式的响应数据。
 responseXML		| 获得 XML 形式的响应数据。
@@ -89,7 +93,7 @@ var text = JSON.parse(xml.responseText)
 
 XMLHttpRequest 对象的三个重要的属性
 
-属性 				 | 描述 
+属性 				 | 描述
 -------------------- | --------------------------------------------------------
 onreadystatechange	 | 存储函数（或函数名），每当readyState属性改变时，就会调用该函数。
 readyState			 | 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。<br> - 0: 请求未初始化<br> - 1: 服务器连接已建立<br> - 2: 请求已接收<br> - 3: 请求处理中<br> - 4: 请求已完成，且响应已就绪
@@ -174,7 +178,7 @@ xml.onreadystatechange=function()
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 	<script>
 		$('#search').click(function(){
-			var username = $('#username').val()	
+			var username = $('#username').val()
 			$.ajax({
 				url:'https://api.github.com/users/'+username,
 				success:function(data,state,XHR){
@@ -250,4 +254,9 @@ xml.onreadystatechange=function()
 ```
 
  - Github参考地址：[点击跳转](https://github.com/mzabriskie/axios)
+
  - 中文文档地址：[点击跳转](https://www.kancloud.cn/yunye/axios/234845)
+
+### 参考
+
+ - happypeter的好奇猫：[点击跳转](https://www.haoqicat.com/meteor-express-ajax/1-1-ajax-intro)
