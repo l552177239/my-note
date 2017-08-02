@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第八小节：connect · GitBook</title>
+        <title>第五小节：createStore · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="9-Hello-redux.html" />
+    <link rel="next" href="6-Reducer.html" />
     
     
-    <link rel="prev" href="7-action.html" />
+    <link rel="prev" href="4-store.html" />
     
 
     </head>
@@ -861,7 +861,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.5" data-path="5-createStore.html">
+        <li class="chapter active" data-level="1.7.5" data-path="5-createStore.html">
             
                 <a href="5-createStore.html">
             
@@ -900,7 +900,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7.8" data-path="8-connect.html">
+        <li class="chapter " data-level="1.7.8" data-path="8-connect.html">
             
                 <a href="8-connect.html">
             
@@ -1237,7 +1237,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >第八小节：connect</a>
+        <a href="../.." >第五小节：createStore</a>
     </h1>
 </div>
 
@@ -1252,79 +1252,43 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="connect">Connect</h1>
+                                <h1 id="createstore">createStore</h1>
 <blockquote>
-<p>React-Redux&#x53EA;&#x5728;&#x7EC4;&#x4EF6;&#x5185;&#x4F7F;&#x7528;&#xFF0C;&#x7528;&#x6765;&#x8FDE;&#x63A5; <code>store</code> &#x548C; React &#x7EC4;&#x4EF6;</p>
+<p>Redux&#x7684;&#x6838;&#x5FC3;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Redux store &#x6765;&#x4EE5;&#x5B58;&#x653E;&#x5E94;&#x7528;&#x4E2D;&#x6240;&#x6709;&#x7684; state</p>
+<p>&#x5E94;&#x7528;&#x4E2D;&#x5E94;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4E00;&#x4E2A; store&#x3002;</p>
 </blockquote>
-<p>react &#x7EC4;&#x4EF6;&#x548C; redux store &#x4E4B;&#x95F4;&#x662F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5173;&#x7CFB;&#x7684;&#x3002;&#x8FD9;&#x4E00;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x628A;&#x4ED6;&#x4EEC;&#x4E8C;&#x8005; connect &#x8D77;&#x6765;&#x3002;</p>
-<p>&#x8FDE;&#x63A5;&#x4E8C;&#x8005;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7684;&#x5E93;&#xFF0C;&#x53EB;&#x505A; react-redux&#xFF0C;&#x8FD9;&#x4E2A;&#x662F; React &#x5B98;&#x65B9;&#x7684; Redux &#x5BF9; React &#x7684;&#x7ED1;&#x5B9A;&#x3002;</p>
-<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
-<pre><code class="lang-npm">npm i react-redux -S
-</code></pre>
-<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
-<p>&#x5177;&#x4F53;&#x7684;&#x4F7F;&#x7528;&#x7684;&#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x4E24;&#x4E2A;&#x63A5;&#x53E3;<code>Provider</code>&#x548C;<code>connect</code></p>
-<h4 id="connect&#x65B9;&#x6CD5;&#x58F0;&#x660E;"><code>connect</code>&#x65B9;&#x6CD5;&#x58F0;&#x660E;</h4>
-<p>connect&#x4F5C;&#x7528;&#xFF1A;<strong>&#x8FDE;&#x63A5;</strong> React&#x7EC4;&#x4EF6; &#x4E0E; Redux store</p>
-<pre><code class="lang-js"><span class="hljs-comment">//&#x6A21;&#x677F;&#x51FD;&#x6570;</span>
-connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])
-</code></pre>
-<ul>
-<li>mapStateToProps&#xFF1A;&#x628A; store &#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF08;&#x4E00;&#x90E8;&#x5206;&#xFF09;&#x6620;&#x5C04;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684; props<ul>
-<li>map &#x7684;&#x610F;&#x601D;&#x662F;&#x201C;&#x6620;&#x5C04;&#x201D;</li>
-<li>State &#x6307;&#x7684;&#x662F; store &#x72B6;&#x6001;&#x6811;&#xFF08; State Tree &#xFF09;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; store &#x7684;&#x5B9E;&#x9645;&#x6570;&#x636E;</li>
-<li>Porps &#x5C31;&#x662F;&#x5C5E;&#x6027;</li>
-</ul>
-</li>
-</ul>
-<p>Store &#x4E2D;&#x6570;&#x636E;&#x5F88;&#x591A;&#xFF0C;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x7684;&#x53EA;&#x662F;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x9009;&#x53D6;&#x5DE5;&#x4F5C;&#x662F;&#x5728; mapStateToProps &#x4E2D;&#x5B8C;&#x6210;&#x7684;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> mapStateToProps = (state) =&gt; ({
-  comments: state.comments
-  <span class="hljs-comment">//&#x62FF;&#x5230;store&#x4E2D;&#x7684;comments</span>
-})
-</code></pre>
-<p>&#x4E0A;&#x9762;&#x7684; <code>(state)</code> &#x6307;&#x7684;&#x5C31;&#x662F; Store &#x4E2D;&#x7684;comments&#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x5373;&#x662F; store.getState() &#x53EF;&#x4EE5;&#x8BFB;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
-<p>&#x5177;&#x4F53;&#x7684;&#x9009;&#x53D6;&#x5DE5;&#x4F5C;&#x662F;&#x7528; comments: state.comments &#x8FD9;&#x6837;&#x7684;&#x8BED;&#x53E5;&#x7684;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
-<p>connect &#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;PostBody &#x4E4B;&#x4E2D;&#x5C31;&#x591A;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;<code>this.props.comments</code></p>
-<h4 id="provider&#x7EC4;&#x4EF6;"><code>&lt;Provider&gt;</code>&#x7EC4;&#x4EF6;</h4>
-<blockquote>
-<p><code>&lt;Provider store&gt;</code>&#x4F7F;&#x7EC4;&#x4EF6;&#x5C42;&#x7EA7;&#x4E2D;&#x7684;<code>connect()</code>&#x65B9;&#x6CD5;&#x90FD;&#x80FD;&#x591F;&#x83B7;&#x5F97; Redux store</p>
-</blockquote>
-<p>&#x53EA;&#x6709;<code>connect</code>&#x4E0D;&#x80FD;&#x5DE5;&#x4F5C;&#xFF08;&#x56E0;&#x4E3A;&#x627E;&#x4E0D;&#x7740; store&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;<code>connect</code>&#x7684;&#x751F;&#x6548;&#x8303;&#x56F4;&#x662F;&#x7531;<code>&lt;Provider&gt;</code>&#x7EC4;&#x4EF6;&#x51B3;&#x5B9A;&#x7684;</p>
-<p>&#x53EA;&#x6709;&#x88AB; Provider &#x5305;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x624D;&#x80FD;&#x627E;&#x5F97;&#x7740; store&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x624D;&#x80FD;&#x4F7F;&#x7528; <code>connect</code></p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
-<span class="hljs-comment">//&#x5BFC;&#x5165; store</span>
-<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
-<span class="hljs-comment">//&#x5BFC;&#x5165; Provider</span>
+<h3 id="createstorereducer-preloadedstate-enhancer">createStore(reducer, [preloadedState], [enhancer])</h3>
+<h4 id="preloadedstate">[preloadedState]</h4>
+<p>[preloadedState] (any): &#x521D;&#x59CB;&#x65F6;&#x7684; state&#x3002;
+&#x5728;&#x540C;&#x6784;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x628A;&#x670D;&#x52A1;&#x7AEF;&#x4F20;&#x6765;&#x7684; state &#x6C34;&#x5408;&#xFF08;hydrate&#xFF09;&#x540E;&#x4F20;&#x7ED9;&#x5B83;&#xFF0C;
+&#x6216;&#x8005;&#x4ECE;&#x4E4B;&#x524D;&#x4FDD;&#x5B58;&#x7684;&#x7528;&#x6237;&#x4F1A;&#x8BDD;&#x4E2D;&#x6062;&#x590D;&#x4E00;&#x4E2A;&#x4F20;&#x7ED9;&#x5B83;&#x3002;
+&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; combineReducers &#x521B;&#x5EFA; reducer&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0E;&#x4F20;&#x5165;&#x7684; keys &#x4FDD;&#x6301;&#x540C;&#x6837;&#x7684;&#x7ED3;&#x6784;&#x3002;
+&#x5426;&#x5219;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x4F20;&#x5165;&#x4EFB;&#x4F55; reducer &#x53EF;&#x7406;&#x89E3;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<h4 id="enhancer">[enhancer]</h4>
+<p>&#x4F7F;&#x7528;redux-dev-tools</p>
+<p>&#x8981;&#x4F7F;&#x7528;redux&#x7684;&#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#x9700;&#x8981;&#x5728;store.js&#x6587;&#x4EF6;&#x4E2D;&#x7684;createStore()&#x6B65;&#x9AA4;&#x4E2D;&#x52A0;&#x5165;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;<code>enhancers</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { createStore, compose} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
+<span class="hljs-comment">//redux-dev-tools</span>
+<span class="hljs-keyword">const</span> enhancers = compose(
+    <span class="hljs-built_in">window</span>.devToolsExtension ? <span class="hljs-built_in">window</span>.devToolsExtension() : f =&gt; f
+);
 
-Render(){
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
-  //&#x5C06; store &#x4F20;&#x5165;
-    <span class="hljs-tag">&lt;<span class="hljs-name">&#x7EC4;&#x4EF6;</span> /&gt;</span>  
-  <span class="hljs-tag">&lt;/<span class="hljs-name">provider</span>&gt;</span></span>
+<span class="hljs-keyword">const</span> store = createStore(rootReducer, defaultState, enhancers);
+</code></pre>
+<p>&#x8BA9;&#x6539;&#x53D8;reducer&#x540E;&#x80FD;&#x591F;&#x5373;&#x65F6;&#x5237;&#x65B0;&#x9875;&#x9762;</p>
+<p>webpack&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x6211;&#x4EEC;&#x7684;&#x7EC4;&#x4EF6;&#x53D8;&#x5316;&#x5E76;&#x505A;&#x51FA;&#x5373;&#x65F6;&#x76F8;&#x5E94;&#xFF0C;&#x4F46;&#x5374;&#x65E0;&#x6CD5;&#x76D1;&#x542C;reducers&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x5728;store.js&#x4E2D;&#x589E;&#x52A0;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x6B64;&#x5904;accepts&#x7684;&#x53C2;&#x6570;&#x662F;reducers&#x7684;&#x5B58;&#x653E;&#x8DEF;&#x5F84;&#xFF0C;require()&#x5185;&#x7684;&#x8DEF;&#x5F84;&#x4E3A;&#x6267;&#x884C;combineReducers()&#x7684;&#x6587;&#x4EF6;</span>
+<span class="hljs-keyword">if</span>(<span class="hljs-built_in">module</span>.hot){
+    <span class="hljs-built_in">module</span>.hot.accept(<span class="hljs-string">&quot;./reducers/&quot;</span>, () =&gt; {
+        <span class="hljs-keyword">const</span> nextRootReducer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./reducers/index&apos;</span>).default;
+        store.replaceReducer(nextRootReducer);
+    })
 }
 </code></pre>
-<p>&#x5728;&#x6709;&#x52A8;&#x6001;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#x7684;&#x7EC4;&#x4EF6;&#x5185;&#x5F15;&#x7528;<code>connect</code></p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
-<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
-
-<span class="hljs-comment">//&#x901A;&#x8FC7;this.props.comments&#x62FF;&#x5230;&#x6570;&#x636E;</span>
-<span class="hljs-keyword">const</span> mapStateToProps = (state) =&gt; ({
-  comments: state.comments
-})
-</code></pre>
-<p><strong>&#x5C0F;&#x8D34;&#x58EB;</strong>&#xFF1A;&#x8C03;&#x7528; connect() &#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x4E86;&#x4E24;&#x4E2A;&#x62EC;&#x53F7;&#x3002;&#x8FD9;&#x4E2A;&#x53EB;&#x4F5C;&#x5C40;&#x90E8;&#x8C03;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x4F7F;&#x7528; ES7 &#x63D0;&#x4F9B;&#x7684;&#x4FEE;&#x9970;&#x8BED;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-comment">// &#x8FD9;&#x662F;&#x8FD8;&#x4E0D;&#x7A33;&#x5B9A;&#x7684;&#x8BED;&#x6CD5;&#xFF01;&#x8FD9;&#x53EF;&#x80FD;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x88AB;&#x4FEE;&#x6539;&#x6216;&#x6452;&#x5F03;&#x3002;</span>
-@connect(mapStateToProps)
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CounterContainer</span> </span>{ ... }
-</code></pre>
-<p><strong>&#x5C0F;&#x6280;&#x5DE7;</strong>&#xFF1A;&#x53D1;&#x51FA; action &#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x5BFC;&#x5165; store &#x800C;&#x76F4;&#x63A5;&#x4F7F;&#x7528; this.props &#x4EE3;&#x66FF;</p>
-<h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
-<ul>
-<li><p>&#x7B80;&#x4E66;&#x6587;&#x7AE0;&#xFF1A;<a href="http://www.jianshu.com/p/9873d4ccb891" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
-</li>
-<li><p>&#x4E2D;&#x6587;&#x5B98;&#x7F51;&#xFF1A;<a href="http://www.redux.org.cn/docs/react-redux/index.html" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
-</li>
-</ul>
+<h4 id="reducer">reducer</h4>
+<p><code>reducer</code>&#xFF08;&#x51FD;&#x6570;&#xFF09;: &#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x5F53;&#x524D;&#x7684;<code>state</code>&#x72B6;&#x6001;&#x6811;&#x548C;&#x8981;&#x5904;&#x7406;&#x7684;<code>action</code>&#xFF0C;&#x8FD4;&#x56DE;&#x65B0;&#x7684;<code>state</code>&#x72B6;&#x6001;&#x6811;</p>
+<h3 id="&#x8FD4;&#x56DE;&#x503C;">&#x8FD4;&#x56DE;&#x503C;</h3>
+<p><code>Store</code>: &#x4FDD;&#x5B58;&#x4E86;&#x5E94;&#x7528;&#x6240;&#x6709;<code>state</code>&#xFF08;&#x5BF9;&#x8C61;&#xFF09;&#x7684;&#x72B6;&#x6001;&#x6811;&#x3002;&#x6539;&#x53D8; state &#x7684;&#x60DF;&#x4E00;&#x65B9;&#x6CD5;&#x662F; dispatch action&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5; subscribe &#x76D1;&#x542C; state &#x7684;&#x53D8;&#x5316;&#xFF0C;&#x7136;&#x540E;&#x66F4;&#x65B0; UI&#x3002;</p>
 
                                 
                                 </section>
@@ -1352,12 +1316,12 @@ Render(){
 
             
                 
-                <a href="7-action.html" class="navigation navigation-prev " aria-label="Previous page: 第七小节：Action">
+                <a href="4-store.html" class="navigation navigation-prev " aria-label="Previous page: 第四小节：Store">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="9-Hello-redux.html" class="navigation navigation-next " aria-label="Next page: 第九小节：项目实例：小博客">
+                <a href="6-Reducer.html" class="navigation navigation-next " aria-label="Next page: 第六小节：Reducer">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1368,7 +1332,7 @@ Render(){
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第八小节：connect","level":"1.7.8","depth":2,"next":{"title":"第九小节：项目实例：小博客","level":"1.7.9","depth":2,"path":"git/Redux/9-Hello-redux.md","ref":"./git/Redux/9-Hello-redux.md","articles":[]},"previous":{"title":"第七小节：Action","level":"1.7.7","depth":2,"path":"git/Redux/7-action.md","ref":"./git/Redux/7-action.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/8-connect.md","mtime":"2017-07-28T10:07:43.358Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-02T22:31:45.023Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第五小节：createStore","level":"1.7.5","depth":2,"next":{"title":"第六小节：Reducer","level":"1.7.6","depth":2,"path":"git/Redux/6-Reducer.md","ref":"./git/Redux/6-Reducer.md","articles":[]},"previous":{"title":"第四小节：Store","level":"1.7.4","depth":2,"path":"git/Redux/4-store.md","ref":"./git/Redux/4-store.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Redux/5-createStore.md","mtime":"2017-07-21T13:26:43.888Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-02T22:31:45.023Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
