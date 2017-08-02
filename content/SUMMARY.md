@@ -70,6 +70,7 @@
 	- [Ajax基础](./git/Other/ajax.md)
 * H5
 	- [localStorage](./git/Other/localStorage.md)
+	- [FileReader](./git/Other/FileReader.md)
 * UI
 	- [BootStrap](./git/Other/BootStrap.md)
 	- [Ant Design](./git/Other/Ant-Design.md)
