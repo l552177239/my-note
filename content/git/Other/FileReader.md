@@ -12,19 +12,43 @@ FileReader 用来把文件读入内存，并且读取文件中的数据。FileRe
 let reader = new FileReader()
 ```
 
+### 属性
+
+属性名         |	类型	          | 描述
+------------- |	-------------- | ------------------------------------------------------
+error         |	DOMError	     | 在读取文件时发生的错误. 只读.
+readyState	  |	unsigned short | 表明FileReader对象的当前状态. 值为State constants中的一个. 只读
+result	      |	jsval          | 读取到的文件内容.这个属性只在读取操作完成之后才有效,并且数据的格式取决于读取操作是由哪个方法发起的. 只读.
+
 ### 方法
 
 FileReader接口的方法
 
 方法名               |         参数         | 描述
 ------------------- | ------------------- | -----------------------------
-abort	              | (none)	            | 终端读取操作
+abort	              | (none)	            | 终止读取操作
 readAsBinaryString	| file              	| 将文件读取为二进制编码
 readAsText          | file,[encoding]	    | 将文件读取为文本
 readAsDataURL     	| file	              | 将文件读取为DataURL
 
 
 FileReader接口有4个方法，其中3个用来读取文件，另一个用来中断读取。无论读取成功或失败，方法并不会返回读取结果，这一结果存储在result属性中。
+
+### 事件
+
+FileReader 接口包含了一套完整的事件模型，用于捕获读取文件时的状态
+
+
+事件           | 描述
+------------- | --------------------------------------------------------------------
+onabort	      | 当读取操作被中止时调用
+onerror       |	当读取操作发生错误时调用
+onloadstart	  | 当读取操作将要开始之前调用
+onprogress	  | 在读取数据过程中周期性调用
+onload	      | 当读取操作成功完成时调用
+onloadend	    | 当读取操作完成时调用,不管是成功还是失败.该处理程序在onload或者onerror之后调用
+
+### 使用
 
 一般通过 DOM节点 拿到文件读取的结果
 
@@ -38,8 +62,6 @@ function onChange(event) {
     console.log(event.target.result)
   };
 
-  reader.readAsText(file);
+  reader.readAsDataURL(file);
 }
 ```
-
-### 事件
