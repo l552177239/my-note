@@ -191,7 +191,13 @@ nodemon idnex.js
 
 ### 附: hello World 全部代码
 
-克隆项目到本地
+#### 直接查看
+
+ - [点击查看代码](https://github.com/l552177239/express-hello/blob/master/index.js)
+
+#### 在本地运行代码
+
+首先克隆项目到本地
 
 ```
 git clone https://github.com/l552177239/express-hello.git
@@ -201,7 +207,7 @@ git clone https://github.com/l552177239/express-hello.git
 
 ```
 cd express-hello
-npm i
+npm install
 node index.js
 ```
 
