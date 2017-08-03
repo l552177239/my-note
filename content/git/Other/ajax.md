@@ -14,6 +14,17 @@
 
 ![AJAX工作原理图](../img/ajax.jpg)
 
+### 请求方法
+方法（参数）                          | 描述
+----------------------------------- | ----------------------------------------------------
+axios.request(config)               | 请求
+axios.get(url[, config])            | 索取数据（一般只向服务器发送简单的数据）
+axios.delete(url[, config])         | 删除某一个资源
+axios.head(url[, config])           | 判断资源是否存在（HEAD不含有呈现数据，而仅仅是HTTP头信息）
+axios.post(url[, data[, config]])   | 提交数据（发送用户输入，不是采用7位的ASCII编码数据，URL过长）
+axios.put(url[, data[, config]])    | 更新请求（一般需要一个完整的 UserInfo）
+axios.patch(url[, data[, config]])  | 局部更新（表示该请求是一个局部更新，后端仅更新接收到的字段）
+
 ### `XMLHttpRequest`对象
 
 `XMLHttpRequest`用于在后台与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
