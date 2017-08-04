@@ -64,7 +64,7 @@
 	- [第九小节：项目实例：小博客](./git/Redux/9-Hello-redux.md)
 	- [第十小节：Thunk](./git/Redux/10-thunk.md)
 * 第七章 React-Router-Redux 小功能
-	- [选择上传](./git/React-Router-Redux/1.file-upload.md)
+	- [选择上传](./git/React-Router-Redux/1-file-upload.md)
 * 后端工作
 	- [工作流程](./git/Nodejs/1-web.md)
 	- [Express](./git/Nodejs/Express.md)
