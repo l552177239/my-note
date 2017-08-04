@@ -17,9 +17,9 @@
 ### 请求方法
 方法（参数）                          | 描述
 ----------------------------------- | ----------------------------------------------------
-axios.request(config)               | 请求
+axios.request(config)               | 未指名的请求（请求方法在 config 中指定）
 axios.get(url[, config])            | 索取数据（一般只向服务器发送简单的数据）
-axios.delete(url[, config])         | 删除某一个资源
+axios.delete(url[, config])         | 删除某一个资源（一般很少用到）
 axios.head(url[, config])           | 判断资源是否存在（HEAD不含有呈现数据，而仅仅是HTTP头信息）
 axios.post(url[, data[, config]])   | 提交数据（发送用户输入，不是采用7位的ASCII编码数据，URL过长）
 axios.put(url[, data[, config]])    | 更新请求（一般需要一个完整的 UserInfo）
