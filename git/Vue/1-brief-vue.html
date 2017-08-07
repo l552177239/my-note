@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>选择上传 · GitBook</title>
+        <title>第一小节：VUE简介 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -56,6 +56,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="2-install-vue.html" />
     
     
 
@@ -954,9 +956,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.8.1" data-path="1-file-upload.html">
+        <li class="chapter " data-level="1.8.1" data-path="../React-Router-Redux/1-file-upload.html">
             
-                <a href="1-file-upload.html">
+                <a href="../React-Router-Redux/1-file-upload.html">
             
                     
                     选择上传
@@ -986,9 +988,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../Vue/1-brief-vue.html">
+        <li class="chapter active" data-level="1.9.1" data-path="1-brief-vue.html">
             
-                <a href="../Vue/1-brief-vue.html">
+                <a href="1-brief-vue.html">
             
                     
                     第一小节：VUE简介
@@ -999,9 +1001,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="../Vue/2-install-vue.html">
+        <li class="chapter " data-level="1.9.2" data-path="2-install-vue.html">
             
-                <a href="../Vue/2-install-vue.html">
+                <a href="2-install-vue.html">
             
                     
                     第二小节：Redux安装
@@ -1012,9 +1014,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../Vue/3-hello-vue.html">
+        <li class="chapter " data-level="1.9.3" data-path="3-hello-vue.html">
             
-                <a href="../Vue/3-hello-vue.html">
+                <a href="3-hello-vue.html">
             
                     
                     第三小节：Hello VUE
@@ -1394,7 +1396,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >选择上传</a>
+        <a href="../.." >第一小节：VUE简介</a>
     </h1>
 </div>
 
@@ -1409,60 +1411,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4E0A;&#x4F20;&#x6587;&#x4EF6;">&#x4E0A;&#x4F20;&#x6587;&#x4EF6;</h1>
-<p>&#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE; upload-test</p>
-<h3 id="&#x9009;&#x62E9;&#x6587;&#x4EF6;">&#x9009;&#x62E9;&#x6587;&#x4EF6;</h3>
-<p>&#x5229;&#x7528;<code>input</code>&#x7684; file &#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x9009;&#x62E9;</p>
-<pre><code class="lang-js">handleChange = () =&gt; {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)
-}
-
-&lt;input type=<span class="hljs-string">&apos;file&apos;</span> className=<span class="hljs-string">&apos;file-input&apos;</span> onChange={<span class="hljs-keyword">this</span>.handleChange} /&gt;
-</code></pre>
-<p>&#x5982;&#x679C;&#x9009;&#x62E9;&#x6210;&#x529F;&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;<code>1</code></p>
-<h3 id="&#x62FF;&#x5230;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;">&#x62FF;&#x5230;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</h3>
-<p>&#x5229;&#x7528;<code>event.target.files[0]</code>&#x62FF;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x6587;&#x4EF6;&#x540D;&#x7B49;&#x6570;&#x636E;</p>
-<pre><code class="lang-js">handleChange = (e) =&gt; {
-  <span class="hljs-keyword">const</span> file = e.target.files[<span class="hljs-number">0</span>]
-  <span class="hljs-built_in">console</span>.log(file)
-}
-</code></pre>
-<p>&#x9009;&#x62E9;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x6587;&#x4EF6;&#x540D;&#x7B49;&#x4FE1;&#x606F;</p>
-<h3 id="&#x62FF;&#x5230;&#x6587;&#x4EF6;&#x6570;&#x636E;">&#x62FF;&#x5230;&#x6587;&#x4EF6;&#x6570;&#x636E;</h3>
-<p>&#x5229;&#x7528; HTML5 &#x5B9A;&#x4E49;&#x7684;&#x8BFB;&#x53D6;&#x6587;&#x4EF6; API &#x7684;<code>FileReader</code>&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-js">handleChange = (e) =&gt; {
-  <span class="hljs-keyword">const</span> file = e.target.files[<span class="hljs-number">0</span>]
-  <span class="hljs-keyword">let</span> reader = <span class="hljs-keyword">new</span> FileReader()
-  <span class="hljs-comment">//&#x58F0;&#x660E;&#x4E00;&#x4E2A; FileReader &#x5BF9;&#x8C61;</span>
-  reader.onload = (event) =&gt; {
-  <span class="hljs-comment">//&#x5F53;&#x8D44;&#x6E90;&#x53CA;&#x5176;&#x4F9D;&#x8D56;&#x8D44;&#x6E90;&#x5B8C;&#x6210;&#x52A0;&#x8F7D;&#x65F6;&#xFF0C;&#x89E6;&#x53D1; FileReader.onload &#x5C5E;&#x6027;</span>
-    <span class="hljs-built_in">console</span>.log(event.target.result)
-  }
-  reader.readAsDataURL(file)
-  <span class="hljs-comment">//&#x5C06;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x7F16;&#x7801;&#x6210;Data URL&#xFF0C;&#x5E76;&#x89E6;&#x53D1; onload</span>
-}
-</code></pre>
-<p>&#x5982;&#x679C;&#x52A0;&#x8F7D;&#x6210;&#x529F;&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x4F1A;&#x8F93;&#x51FA;&#x7F16;&#x7801;&#x4E3A;<code>base-64</code>&#x7684;&#x6587;&#x4EF6;</p>
-<h3 id="&#x5C06;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;&#x53EF;&#x4F20;&#x8F93;&#x6570;&#x636E;">&#x5C06;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;&#x53EF;&#x4F20;&#x8F93;&#x6570;&#x636E;</h3>
-<p>&#x901A;&#x8FC7;FormData&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x7EC4;&#x88C5;&#x4E00;&#x7EC4;&#x7528; XMLHttpRequest&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7684;&#x952E;/&#x503C;&#x5BF9;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x66F4;&#x7075;&#x6D3B;&#x65B9;&#x4FBF;&#x7684;&#x53D1;&#x9001;&#x8868;&#x5355;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x4E3A;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x4E8E;&#x8868;&#x5355;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x4F60;&#x628A;&#x8868;&#x5355;&#x7684;&#x7F16;&#x7801;&#x7C7B;&#x578B;&#x8BBE;&#x7F6E;&#x4E3A;multipart/form-data &#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x4F20;&#x8F93;</p>
-<p>&#x56E0;&#x4E3A; axios &#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5229;&#x7528; form &#x6765;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;</p>
-<p>&#x4E3A;&#x4E86;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x53D1;&#x9001;&#x8868;&#x5355;&#x6570;&#x636E;&#xFF08;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;<code>&lt;form&gt;</code>&#x6807;&#x7B7E;&#x8FDB;&#x884C;&#x5305;&#x88F9;&#xFF09;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x65B0;&#x7684; FormData&#x5BF9;&#x8C61;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">let</span> formData = <span class="hljs-keyword">new</span> FormData()
-</code></pre>
-<p>&#x8C03;&#x7528; formData &#x7684; append() &#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;</p>
-<pre><code class="lang-js">formData.append(<span class="hljs-string">&apos;avatar&apos;</span>, file)
-<span class="hljs-comment">//&#x8C03;&#x7528; formData &#x7684; append() &#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;</span>
-</code></pre>
-<p>&#x8FD9;&#x6837;&#x4FDD;&#x8BC1;&#x8868;&#x5355;&#x7684;&#x7F16;&#x7801;&#x7C7B;&#x578B;&#x4E3A; multipart/form-data</p>
-<h3 id="&#x5C06;&#x6570;&#x636E;&#x4E0A;&#x4F20;">&#x5C06;&#x6570;&#x636E;&#x4E0A;&#x4F20;</h3>
-<p>&#x5229;&#x7528; axios &#x5C06;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;</p>
-<pre><code class="lang-js">axios.post(<span class="hljs-string">` http://yummy.haoduoshipin.com/avatar`</span>, formData)
-  .then(res=&gt;{res=&gt;<span class="hljs-built_in">console</span>.log(res.data)})
-  .catch(err =&gt; <span class="hljs-built_in">console</span>.log(err))
-</code></pre>
+                                <h1 id="vue">VUE</h1>
+<p>Vue.js&#xFF08;&#x8BFB;&#x97F3; /vju&#x2D0;/, &#x7C7B;&#x4F3C;&#x4E8E; view&#xFF09;&#x662F;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x7684; web &#x754C;&#x9762;&#x7684;&#x6E10;&#x8FDB;&#x5F0F;&#x6846;&#x67B6;&#x3002;
+Vue.js &#x7684;&#x76EE;&#x6807;&#x662F;&#x901A;&#x8FC7;&#x5C3D;&#x53EF;&#x80FD;&#x7B80;&#x5355;&#x7684; API &#x5B9E;&#x73B0;&#x54CD;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x548C;&#x7EC4;&#x5408;&#x7684;&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;</p>
+<h3 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h3>
+<p>Vue &#x662F;&#x4E00;&#x5957;&#x6784;&#x5EFA;&#x7528;&#x6237;&#x754C;&#x9762;&#x7684;&#x6E10;&#x8FDB;&#x5F0F;&#x6846;&#x67B6;</p>
+<p>Vue &#x53EA;&#x5173;&#x6CE8;&#x89C6;&#x56FE;&#x5C42;&#xFF0C;&#x91C7;&#x7528;&#x81EA;&#x5E95;&#x5411;&#x4E0A;&#x589E;&#x91CF;&#x5F00;&#x53D1;&#x7684;&#x8BBE;&#x8BA1;</p>
+<p>Vue &#x7684;&#x76EE;&#x6807;&#x662F;&#x901A;&#x8FC7;&#x5C3D;&#x53EF;&#x80FD;&#x7B80;&#x5355;&#x7684; API &#x5B9E;&#x73B0;&#x54CD;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x548C;&#x7EC4;&#x5408;&#x7684;&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;</p>
+<p>Vue &#x5B66;&#x4E60;&#x8D77;&#x6765;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x5BF9;&#x4E8E;&#x65B0;&#x624B;&#x975E;&#x5E38;&#x53CB;&#x597D;&#xFF0C;&#x800C;&#x4E14;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x4E2D;&#x6587;&#x6587;&#x6863;,&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x4E0A;&#x624B;</p>
+<h3 id="vue-&#x4F5C;&#x8005;">VUE &#x4F5C;&#x8005;</h3>
+<p>Vue.js&#x7684;&#x4F5C;&#x8005;&#x4E3A;Evan You&#xFF08;&#x5C24;&#x96E8;&#x6EAA;&#xFF09;&#x3002;
+&#x5C24;&#x96E8;&#x6EAA;&#x5728;&#x56FD;&#x5185;&#x8BFB;&#x5B8C;&#x521D;&#x4E2D;&#xFF0C;&#x624D;&#x53BB;&#x7F8E;&#x56FD;&#x5B8C;&#x6210;&#x5927;&#x5B66;&#x5B66;&#x4E1A;&#xFF0C;&#x6240;&#x4EE5;&#x8BF4;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x4E2D;&#x56FD;&#x7684;&#x4E2D;&#x56FD;&#x4EBA;&#x3002;&#x770B;&#x770B;&#x5C24;&#x96E8;&#x6EAA;&#x5BF9;&#x4E8E; VUE &#x7684;&#x770B;&#x6CD5;</p>
+<ul>
+<li><p>&#x77E5;&#x4E4E;&#x8BBF;&#x8C08;&#xFF1A;<a href="https://mp.weixin.qq.com/s?__biz=MzA4NjE3MDg4OQ%3D%3D&amp;mid=2650964658&amp;idx=1&amp;sn=20bffec66f8b45002addb417a51ea92d&amp;chksm=843aeed4b34d67c216f167bef8a1fdf85cc9bc5059007666869909d31ab86a8bd9d005614e4e&amp;mpshare=1&amp;scene=1&amp;srcid=06137IzUoM84mpRfbUu7tDb0" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+<li><p>&#x5927;&#x795E;&#x9762;&#x5BF9;&#x9762;&#xFF1A;<a href="https://zhuanlan.zhihu.com/p/27205354" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+</ul>
+<h3 id="vue-&#x6BD4;-react-&#x66F4;&#x9002;&#x5408;&#xFF1A;&#x6E10;&#x8FDB;&#x5F0F;">Vue &#x6BD4; React &#x66F4;&#x9002;&#x5408;&#xFF1A;&#x6E10;&#x8FDB;&#x5F0F;</h3>
+<p>&#x610F;&#x601D;&#x662F;&#xFF0C;&#x516C;&#x53F8;&#x6709;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x662F;&#x7528; jquery &#x5199;&#x7684;&#xFF0C;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E2A; html &#x9875;&#x9762;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528; script &#x6807;&#x7B7E;&#xFF0C;&#x628A; vue &#x5F15;&#x5165;&#x5230;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x9875;&#x9762;&#x529F;&#x80FD;&#x589E;&#x5F3A;&#x3002;</p>
+<blockquote>
+<p>Vue &#x79BB;&#x5F00;&#x4E86; webpack &#x53EF;&#x4EE5;&#x505A;&#x5F88;&#x591A;&#x4E8B;&#x60C5;&#xFF0C;&#x4F46;&#x662F; React &#x79BB;&#x5F00; webpack &#x7684;&#x786E;&#x5C31;&#x975E;&#x5E38;&#x4E0D;&#x65B9;&#x4FBF;&#x4E86;</p>
+</blockquote>
+<p>&#x6240;&#x4EE5;&#x8BF4;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x57FA;&#x672C;&#x73AF;&#x5883;&#x5C31;&#x662F;&#xFF0C;html &#x4E2D;&#x76F4;&#x63A5;&#x8DDF; jQuery &#x4E00;&#x6837;&#xFF0C;&#x5F15;&#x5165;&#x4F7F;&#x7528;&#x5373;&#x53EF;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x4F5C;&#x4E3A;&#x5B66;&#x8FC7; React &#x7684;&#x4EBA;&#xFF0C;&#x4ECE;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x66F4;&#x4E13;&#x4E1A;&#x5316;&#x7684;&#x89D2;&#x5EA6;&#x5165;&#x95E8;&#x66F4;&#x597D;</p>
 <h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
 <ul>
-<li>&#x67E5;&#x770B;&#x5728;&#x7EBF;&#x4EE3;&#x7801;&#xFF1A;<a href="https://github.com/l552177239/file-upload" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;</a></li>
+<li><p>VUE&#x5B98;&#x7F51;&#xFF1A;<a href="https://cn.vuejs.org/" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+<li><p>&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&#xFF1A;<a href="http://www.runoob.com/vue2/vue-tutorial.html" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
 </ul>
 
                                 
@@ -1492,6 +1470,10 @@
             
                 
                 
+                <a href="2-install-vue.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 第二小节：Redux安装">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
             
         
     </div>
@@ -1499,7 +1481,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"选择上传","level":"1.8.1","depth":2,"next":{"title":"VUE","level":"1.9","depth":1,"ref":"","articles":[{"title":"第一小节：VUE简介","level":"1.9.1","depth":2,"path":"git/Vue/1-brief-vue.md","ref":"./git/Vue/1-brief-vue.md","articles":[]},{"title":"第二小节：Redux安装","level":"1.9.2","depth":2,"path":"git/Vue/2-install-vue.md","ref":"./git/Vue/2-install-vue.md","articles":[]},{"title":"第三小节：Hello VUE","level":"1.9.3","depth":2,"path":"git/Vue/3-hello-vue.md","ref":"./git/Vue/3-hello-vue.md","articles":[]}]},"previous":{"title":"第七章 React-Router-Redux 小功能","level":"1.8","depth":1,"ref":"","articles":[{"title":"选择上传","level":"1.8.1","depth":2,"path":"git/React-Router-Redux/1-file-upload.md","ref":"./git/React-Router-Redux/1-file-upload.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/React-Router-Redux/1-file-upload.md","mtime":"2017-08-04T09:54:04.192Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-07T16:12:26.724Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第一小节：VUE简介","level":"1.9.1","depth":2,"next":{"title":"第二小节：Redux安装","level":"1.9.2","depth":2,"path":"git/Vue/2-install-vue.md","ref":"./git/Vue/2-install-vue.md","articles":[]},"previous":{"title":"VUE","level":"1.9","depth":1,"ref":"","articles":[{"title":"第一小节：VUE简介","level":"1.9.1","depth":2,"path":"git/Vue/1-brief-vue.md","ref":"./git/Vue/1-brief-vue.md","articles":[]},{"title":"第二小节：Redux安装","level":"1.9.2","depth":2,"path":"git/Vue/2-install-vue.md","ref":"./git/Vue/2-install-vue.md","articles":[]},{"title":"第三小节：Hello VUE","level":"1.9.3","depth":2,"path":"git/Vue/3-hello-vue.md","ref":"./git/Vue/3-hello-vue.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vue/1-brief-vue.md","mtime":"2017-08-07T15:51:43.664Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-07T16:12:26.724Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
