@@ -2,7 +2,9 @@
 
 ### histroy 属性
 
-Router组件的history属性，用来监听浏览器地址栏的变化，并将URL解析成一个地址对象，供 React Router 匹配。
+histroy 来自于 es6 的 histroy 机制
+
+Router组件里的history属性，用来监听浏览器地址栏的变化，并将URL解析成一个地址对象，供 React Router 匹配。
 
 history属性，一共可以设置三种值
  - BrowserRouter

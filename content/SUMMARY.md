@@ -65,6 +65,11 @@
 	- [第十小节：Thunk](./git/Redux/10-thunk.md)
 * 第七章 React-Router-Redux 小功能
 	- [选择上传](./git/React-Router-Redux/1-file-upload.md)
+
+* VUE
+	- [第一小节：VUE简介](./git/Vue/1-brief-vue.md)
+	- [第二小节：Redux安装](./git/Vue/2-install-vue.md)
+	- [第三小节：Hello VUE](./git/Vue/3-hello-vue.md)
 * 后端工作
 	- [工作流程](./git/Nodejs/1-web.md)
 	- [Express](./git/Nodejs/Express.md)
