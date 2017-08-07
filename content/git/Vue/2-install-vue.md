@@ -89,13 +89,13 @@ vue init webpack vuex-demo
 liuenqing@liuenqing-PC:~/Documents$ vue init webpack vuex-demo
 
 ? Project name vuex-demo   //项目名默认就是x-caht
-? Project description A Vue.js project // 文档描述，会在README.md文件上生成输入的内容，默认 A Vue.js project
+? Project description A Vue.js project // 文档描述
 ? Author l552177239 <552177239@qq.com> // 作者，如果有git，就是读取git的User信息
-? Vue build standalone // 有两个选项，第一个选项写着recommended for most users果断选了（至于干什么用到并不知道）
+? Vue build standalone // 有两个选项，选第一个 recommended for most users
 ? Use ESLint to lint your code? Yes// 是否使用ESlint 默认是
 ? Pick an ESLint preset Standard // 选这个一个ESlint类型
-? Setup unit tests with Karma + Mocha? Yes //使用单元测试工具karma和mocha 默认是
-? Setup e2e tests with Nightwatch? Yes // 使用e2e测试框架 NightWatch 默认是
+? Setup unit tests with Karma + Mocha? No //使用单元测试工具karma和mocha 默认是
+? Setup e2e tests with Nightwatch? No // 使用e2e测试框架 NightWatch 默认是
 ```
 
 **小贴士**：选项中，比较重要的就是选择使用 ESlint
