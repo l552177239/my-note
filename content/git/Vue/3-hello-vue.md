@@ -43,4 +43,4 @@ http://localhost:8080/
 
 ### 结构调整
 
-参考代码：[点击查看](https://github.com/l552177239/vuex-demo/commit/5f94d309dae7311d39f8b5b7dd8eeb14fb2ec025)
+对 src 文件夹下的文件进行删减及结构调整
