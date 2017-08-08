@@ -36,6 +36,7 @@ var vm = new Vue({
 ### 声明式渲染
 
 Vue.js 的核心是一个允许采用简洁的模板语法来声明式的将数据渲染进 DOM：
+
 ```
 <div id="app">
   {{ message }}
