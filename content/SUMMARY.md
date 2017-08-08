@@ -71,6 +71,8 @@
 	- [第二小节：VUE安装](./git/Vue/2-install-vue.md)
 	- [第三小节：Hello VUE](./git/Vue/3-hello-vue.md)
 	- [第四小节：构造器](./git/Vue/4-constructor.md)
+	- [第五小节：Data](./git/Vue/5-data.md)
+	- [第六小节：Props](/git/Vue/6-props.md)
 	- [基本概念](./git/Vue/concept.md)
 	- [项目：小博客](./git/Vue/blog-vuex-demo.md)
 * 后端工作

@@ -28,6 +28,8 @@ new Vue({
 
 ##### el
 
+> 类似于React里的render
+
  - 类型： string | HTMLElement（CSS 选择器 | HTMLElement 实例）
 
  - 限制： 只在由 new 创建的实例中遵守
