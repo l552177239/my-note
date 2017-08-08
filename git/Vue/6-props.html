@@ -1479,6 +1479,131 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="props">Props</h1>
+<blockquote>
+<p>&#x7528; Props &#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x95F4;&#x6570;&#x636E;&#x4F20;&#x9012;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E; React &#x4E2D;&#x7684; Props&#xFF09;</p>
+</blockquote>
+<h3 id="&#x7236;&#x7EC4;&#x4EF6;&#x5411;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;">&#x7236;&#x7EC4;&#x4EF6;&#x5411;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;</h3>
+<p>&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x90FD;&#x6709;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x5185;&#x76F4;&#x63A5;&#x7528;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x6570;&#x636E;</p>
+<blockquote>
+<p>&#x8981;&#x8BA9;&#x5B50;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;props&#x9009;&#x9879;</p>
+</blockquote>
+<h4 id="&#x9759;&#x6001;-props">&#x9759;&#x6001; Props</h4>
+<blockquote>
+<p>&#x5B50;&#x7EC4;&#x4EF6;&#x8981;&#x663E;&#x5F0F;&#x5730;&#x7528; props &#x9009;&#x9879;&#x58F0;&#x660E;&#x5B83;&#x671F;&#x5F85;&#x83B7;&#x5F97;&#x7684;&#x6570;&#x636E;&#xFF1A;</p>
+</blockquote>
+<p>&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x4F20;&#x5165;</p>
+<pre><code class="lang-js">&lt;child message=<span class="hljs-string">&quot;hello&quot;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span></span>
+</code></pre>
+<p>&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x58F0;&#x660E; props &#x63A5;&#x53D7;&#x4F20;&#x5165;&#x7684;&#x6570;&#x636E;</p>
+<pre><code class="lang-js">Vue.component(<span class="hljs-string">&apos;child&apos;</span>, {
+  <span class="hljs-comment">// &#x58F0;&#x660E; props</span>
+  props: [<span class="hljs-string">&apos;message&apos;</span>],
+  <span class="hljs-comment">// &#x5C31;&#x50CF; data &#x4E00;&#x6837;&#xFF0C;prop &#x53EF;&#x4EE5;&#x7528;&#x5728;&#x6A21;&#x677F;&#x5185;</span>
+  <span class="hljs-comment">// &#x540C;&#x6837;&#x4E5F;&#x53EF;&#x4EE5;&#x5728; vm &#x5B9E;&#x4F8B;&#x4E2D;&#x50CF;&#x201C;this.message&#x201D;&#x8FD9;&#x6837;&#x4F7F;&#x7528;</span>
+  template: <span class="hljs-string">&apos;&lt;span&gt;{{ message }}&lt;/span&gt;&apos;</span>
+})
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x5728;&#x58F0;&#x660E; props &#x548C;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;&#x7528;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#xFF0C;&#x5728;HTML&#x5185;&#x7528;<code>-</code>&#x8FDE;&#x63A5;</p>
+<p><strong>&#x5C0F;&#x8D34;&#x58EB;</strong>&#xFF1A;</p>
+<ul>
+<li>props &#x53EF;&#x4EE5;&#x662F;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x6765;&#x81EA;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x6570;&#x636E;</li>
+<li>props &#x53EF;&#x4EE5;&#x662F;&#x7B80;&#x5355;&#x7684;&#x6570;&#x7EC4;</li>
+<li>props &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x66FF;&#x4EE3;&#xFF0C;&#x5BF9;&#x8C61;&#x5141;&#x8BB8;&#x914D;&#x7F6E;&#x9AD8;&#x7EA7;&#x9009;&#x9879;&#xFF0C;&#x5982;&#x7C7B;&#x578B;&#x68C0;&#x6D4B;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x548C;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;</li>
+</ul>
+<h4 id="&#x52A8;&#x6001;-props">&#x52A8;&#x6001; Props</h4>
+<p>&#x5728; <strong>&#x7236;&#x7EC4;&#x4EF6;</strong> &#x4E2D;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x901A;&#x8FC7; <code>v-bind:msg</code> &#x4F20;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-js">&lt;template&gt;
+  &lt;div id=&quot;post&quot;&gt;
+      &lt;post-body :msg=&quot;msg&quot;&gt;&lt;/post-body&gt;
+      //v-bind:msg &#x7B80;&#x5199;&#x5F62;&#x5F0F;&#xFF0C;&#x5C06; msg&#x6570;&#x636E;&#x4F20;&#x5165;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import PostBody from &apos;./PostBody&apos;
+  export default {
+    name: &apos;post&apos;,
+    data: () =&gt; ({
+      msg: &apos;&#x54C8;&#x54C8;&apos;
+    }),
+    components: { PostBody }
+  }
+&lt;/script&gt;
+</code></pre>
+<p>&#x5728; props &#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x5143;&#x7D20;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x5728; data &#x4E2D;&#x518D;&#x6DFB;&#x52A0;&#x53D8;&#x91CF;&#x4E86;</p>
+<p>&#x5728; <strong>&#x5B50;&#x7EC4;&#x4EF6;</strong> &#x4E2D;&#xFF0C;&#x600E;&#x6837;&#x62FF;&#x5230; &#x4F20;&#x5165;&#x7684;&#x6570;&#x636E;&#xFF1F;</p>
+<p>&#x9996;&#x5148;&#x58F0;&#x660E; Props&#xFF0C;&#x5C06;&#x5F97;&#x5230;&#x7684;&#x6570;&#x636E;&#x8D4B;&#x7ED9; Props &#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6E32;&#x67D3;&#x4E86;</p>
+<pre><code class="lang-js">&lt;template&gt;
+  &lt;div class=&quot;post-body&quot;&gt;
+    {{ msg }}
+    //&#x6E32;&#x67D3;&#x5230;&#x9875;&#x9762;&#x4E0A;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    name: &apos;post-body&apos;,
+    props: [&apos;msg&apos;]
+    // &#x58F0;&#x660E; props
+  }
+&lt;/script&gt;
+</code></pre>
+<h4 id="&#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;">&#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;</h4>
+<blockquote>
+<p>&#x5B50;&#x7EC4;&#x4EF6;&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;</p>
+</blockquote>
+<h5 id="&#x5B50;&#x7EC4;&#x4EF6;">&#x5B50;&#x7EC4;&#x4EF6;</h5>
+<p>&#x9996;&#x5148;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x4E86;&#x65B9;&#x6CD5; setnum&#xFF0C;&#x4F7F;&#x7528;<code>$emit</code>&#x6765;&#x904D;&#x5386;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x8FC7;&#x6765;&#x7684; addnum &#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;<code>&#x6570;&#x91CF;&#xFF1A;</code></p>
+<pre><code>&lt;script&gt;
+export default {
+  name: &apos;post-body&apos;,
+  methods: {
+    setnum: function () {
+      this.$emit(&apos;addnum&apos;, &apos;&#x6570;&#x91CF;&#xFF1A;&apos;)
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre><p>&#x5F53;<input>&#x88AB;&#x70B9;&#x51FB;&#x65F6;&#xFF0C;&#x89E6;&#x53D1;<code>v-on:click</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x8C03;&#x7528;&#x7ED1;&#x5B9A;&#x7684; setnum &#x65B9;&#x6CD5;</p>
+<pre><code class="lang-js">&lt;template&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post-body&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&apos;button&apos;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&apos;+1&apos;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;setnum&apos;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+</code></pre>
+<p>&#x5F53;<input>&#x7684;&#x88AB;&#x70B9;&#x51FB;&#x65F6;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;</p>
+<h5 id="&#x7236;&#x7EC4;&#x4EF6;">&#x7236;&#x7EC4;&#x4EF6;</h5>
+<p>&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x7528; addnum &#x4E8B;&#x4EF6;&#x8C03;&#x7528; getnum &#x65B9;&#x6CD5;&#xFF0C;&#x83B7;&#x53D6;&#x5230;&#x4ECE;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x53C2;&#x6570; string</p>
+<pre><code class="lang-js">&lt;template&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ str }}{{ num }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">post-body</span> @<span class="hljs-attr">addnum</span>=<span class="hljs-string">&apos;getnum&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">post-body</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+</code></pre>
+<p>getnum &#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x53C2;&#x6570; str &#x5C31;&#x662F;&#x4ECE;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x53C2;&#x6570; string</p>
+<pre><code class="lang-js">&lt;script&gt;
+  import PostBody from &apos;./PostBody&apos;
+  export default {
+    name: &apos;post&apos;,
+    data: () =&gt; ({
+      num: 0,
+      str:
+    }),
+    methods: {
+      getnum: function (str) {
+        this.str = str
+        this.num ++
+      }
+    },
+    components: { PostBody }
+  }
+&lt;/script&gt;
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x70B9;&#x51FB;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;<code>+1</code>&#x6309;&#x94AE;&#xFF0C;&#x7236;&#x7EC4;&#x4EF6;&#x663E;&#x793A;&#x7684;&#x503C;&#x5C31;&#x4F1A;&#x6539;&#x53D8;&#xFF0C;&#x5E76;&#x4E14;&#x5B8C;&#x6210;&#x4E00;&#x4E2A; +1 &#x7684;&#x64CD;&#x4F5C;</p>
+<h4 id="&#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;">&#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;</h4>
+<p>Vue &#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x5B50;&#x5BF9;&#x5B50;&#x4F20;&#x53C2;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5EFA;&#x8BAE;&#x5C06;&#x9700;&#x8981;&#x4F20;&#x9012;&#x6570;&#x636E;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x90FD;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#x5B50;&#x5BF9;&#x5B50;&#x4F20;&#x53C2;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x4ECE;&#x4F20;&#x5230;&#x7236;&#x7EC4;&#x4EF6;&#xFF0C;&#x518D;&#x4F20;&#x5230;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x5F00;&#x53D1;&#xFF0C;Vue &#x63A8;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5DE5;&#x5177; Vuex&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5B9E;&#x73B0;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x8BF4;&#x5230;</p>
 
                                 
                                 </section>
@@ -1522,7 +1647,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第六小节：Props","level":"1.9.6","depth":2,"next":{"title":"基本概念","level":"1.9.7","depth":2,"path":"git/Vue/concept.md","ref":"./git/Vue/concept.md","articles":[]},"previous":{"title":"第五小节：Data","level":"1.9.5","depth":2,"path":"git/Vue/5-data.md","ref":"./git/Vue/5-data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vue/6-props.md","mtime":"2017-08-08T16:02:28.101Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-08T16:03:40.153Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第六小节：Props","level":"1.9.6","depth":2,"next":{"title":"基本概念","level":"1.9.7","depth":2,"path":"git/Vue/concept.md","ref":"./git/Vue/concept.md","articles":[]},"previous":{"title":"第五小节：Data","level":"1.9.5","depth":2,"path":"git/Vue/5-data.md","ref":"./git/Vue/5-data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vue/6-props.md","mtime":"2017-08-08T21:31:24.332Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-08T21:32:30.570Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
