@@ -1,8 +1,10 @@
 # Data
 
+> 每个 Vue 实例都会代理其 data 对象里所有的属性，相当于 React 中的 State
+
 ### data
 
-> 每个 Vue 实例都会代理其 data 对象里所有的属性，相当于 React 中的 State
+**注意**：data 必须是函数，这里的 data 只是一个特殊的原始属性
 
 ```js
 var data = { a: 1 }
