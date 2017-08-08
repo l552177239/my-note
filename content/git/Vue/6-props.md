@@ -105,7 +105,7 @@ export default {
 </script>
 ```
 
-当<input>被点击时，触发`v-on:click`事件，调用绑定的 setnum 方法
+当`<input>`被点击时，触发`v-on:click`事件，调用绑定的 setnum 方法，将数据传递给父组件
 
 ```js
 <template>
@@ -114,8 +114,6 @@ export default {
   </div>
 </template>
 ```
-
-当<input>的被点击时，将数据传递给父组件
 
 ##### 父组件
 
