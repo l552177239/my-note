@@ -52,7 +52,7 @@ window下百度搜索 `sublime` 进行下载安装
 
 输入简写，按Tab键可触发效果
 
-**Bable**（React JSX）
+**Babel**（React JSX）
 
 具有React JSX扩展名的ES6 JavaScript的语法定义（语法高亮）
 
