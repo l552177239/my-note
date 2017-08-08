@@ -1553,50 +1553,52 @@ vm.$watch(<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-func
 <p>&#x5C06;&#x9700;&#x8981;&#x8FD0;&#x7B97;&#x7684; data &#x6570;&#x636E;&#x653E;&#x5728; computed &#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x6E32;&#x67D3;</p>
 </blockquote>
 <ul>
-<li><p>&#x7C7B;&#x578B;: { [key: string]: Function | { get: Function, set: Function } }</p>
+<li><p>&#x7C7B;&#x578B;: <code>{ [key: string]: Function | { get: Function, set: Function } }</code></p>
 </li>
 <li><p>&#x8BE6;&#x7EC6;: &#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x5C06;&#x88AB;&#x6DF7;&#x5165;&#x5230; Vue &#x5B9E;&#x4F8B;&#x4E2D;&#x3002;&#x6240;&#x6709; getter &#x548C; setter &#x7684; this &#x4E0A;&#x4E0B;&#x6587;&#x81EA;&#x52A8;&#x5730;&#x7ED1;&#x5B9A;&#x4E3A; Vue &#x5B9E;&#x4F8B;</p>
 </li>
 </ul>
 <p><strong>&#x5C0F;&#x4F8B;&#x5B50;</strong>&#xFF1A;</p>
-<pre><code>export default {
-  name: &apos;comment-box&apos;,
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  name: <span class="hljs-string">&apos;comment-box&apos;</span>,
   data: () =&gt; ({
     comments: [
-      { text: &apos;hello git&apos; },
-      { text: &apos;hello vuejs&apos; }
+      { text: <span class="hljs-string">&apos;hello git&apos;</span> },
+      { text: <span class="hljs-string">&apos;hello vuejs&apos;</span> }
     ]
   }),
   computed: {
-    reversedMessage: function () {
-      return this.comments.slice().reverse()
+    reversedMessage: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.comments.slice().reverse()
     }
   }
 }
-</code></pre><p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x56E0;&#x4E3A;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7ED1;&#x5B9A;&#x4E86;&#x7236;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x6240;&#x4EE5; this &#x6307;&#x5411;&#x4E0D;&#x4F1A;&#x6307;&#x5411; vue &#x5B9E;&#x4F8B;</p>
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x56E0;&#x4E3A;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7ED1;&#x5B9A;&#x4E86;&#x7236;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x6240;&#x4EE5; this &#x6307;&#x5411;&#x4E0D;&#x4F1A;&#x6307;&#x5411; vue &#x5B9E;&#x4F8B;</p>
 <p>&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684;&#x7ED3;&#x679C;&#x4F1A;&#x88AB;&#x7F13;&#x5B58;&#xFF0C;&#x9664;&#x975E;&#x4F9D;&#x8D56;&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x5C5E;&#x6027;&#x53D8;&#x5316;&#x624D;&#x4F1A;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x5B9E;&#x4F8B;&#x8303;&#x7574;&#x4E4B;&#x5916;&#x7684;&#x4F9D;&#x8D56; (&#x6BD4;&#x5982;&#x975E;&#x54CD;&#x5E94;&#x5F0F;&#x7684; not reactive) &#x662F;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x66F4;&#x65B0;&#x7684;</p>
 <h4 id="methods">methods</h4>
 <blockquote>
 <p>&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x65B9;&#x6CD5;&#x5199;&#x5728; methods &#x4E2D;</p>
 </blockquote>
 <ul>
-<li><p>&#x7C7B;&#x578B;: { [key: string]: Function }</p>
+<li><p>&#x7C7B;&#x578B;: <code>{ [key: string]: Function }</code></p>
 </li>
 <li><p>&#x8BE6;&#x7EC6;: methods &#x5C06;&#x88AB;&#x6DF7;&#x5165;&#x5230; Vue &#x5B9E;&#x4F8B;&#x4E2D;&#x3002;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7; VM &#x5B9E;&#x4F8B;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x6307;&#x4EE4;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x3002;&#x65B9;&#x6CD5;&#x4E2D;&#x7684; this &#x81EA;&#x52A8;&#x7ED1;&#x5B9A;&#x4E3A; Vue &#x5B9E;&#x4F8B;</p>
 </li>
 </ul>
 <p><strong>&#x5C0F;&#x4F8B;&#x5B50;</strong>:</p>
-<pre><code>var vm = new Vue({
-  data: { a: 1 },
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+  data: { a: <span class="hljs-number">1</span> },
   methods: {
-    plus: function () {
-      this.a++
+    plus: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">this</span>.a++
     }
   }
 })
 vm.plus()
-vm.a // 2
-</code></pre><p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x4E0D;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x6765;&#x5B9A;&#x4E49; method &#x51FD;&#x6570; &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7ED1;&#x5B9A;&#x4E86;&#x7236;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x6240;&#x4EE5; this &#x5C06;&#x4E0D;&#x4F1A;&#x6309;&#x7167;&#x671F;&#x671B;&#x6307;&#x5411; Vue &#x5B9E;&#x4F8B;</p>
+vm.a <span class="hljs-comment">// 2</span>
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x4E0D;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x6765;&#x5B9A;&#x4E49; method &#x51FD;&#x6570; &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7ED1;&#x5B9A;&#x4E86;&#x7236;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x6240;&#x4EE5; this &#x5C06;&#x4E0D;&#x4F1A;&#x6309;&#x7167;&#x671F;&#x671B;&#x6307;&#x5411; Vue &#x5B9E;&#x4F8B;</p>
 <h3 id="&#x58F0;&#x660E;&#x5F0F;&#x6E32;&#x67D3;">&#x58F0;&#x660E;&#x5F0F;&#x6E32;&#x67D3;</h3>
 <blockquote>
 <p>Vue.js &#x7684;&#x6838;&#x5FC3;&#x662F;&#x4E00;&#x4E2A;&#x5141;&#x8BB8;&#x91C7;&#x7528;&#x7B80;&#x6D01;&#x7684;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x6765;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x5C06;&#x6570;&#x636E;&#x6E32;&#x67D3;&#x8FDB; DOM</p>
@@ -1652,7 +1654,7 @@ vm.a // 2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第五小节：Data","level":"1.9.5","depth":2,"next":{"title":"第六小节：Props","level":"1.9.6","depth":2,"path":"git/Vue/6-props.md","ref":"git/Vue/6-props.md","articles":[]},"previous":{"title":"第四小节：构造器","level":"1.9.4","depth":2,"path":"git/Vue/4-constructor.md","ref":"./git/Vue/4-constructor.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vue/5-data.md","mtime":"2017-08-08T22:06:39.120Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-08T22:06:58.902Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第五小节：Data","level":"1.9.5","depth":2,"next":{"title":"第六小节：Props","level":"1.9.6","depth":2,"path":"git/Vue/6-props.md","ref":"git/Vue/6-props.md","articles":[]},"previous":{"title":"第四小节：构造器","level":"1.9.4","depth":2,"path":"git/Vue/4-constructor.md","ref":"./git/Vue/4-constructor.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vue/5-data.md","mtime":"2017-08-08T22:07:43.188Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-08T22:07:50.186Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
