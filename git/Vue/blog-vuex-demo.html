@@ -1027,12 +1027,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.4" data-path="concept.html">
+        <li class="chapter " data-level="1.9.4" data-path="4-constrcutor.md">
             
-                <a href="concept.html">
+                <span>
             
                     
-                    第四小节：基本概念
+                    第四小节：构造器
             
                 </a>
             
@@ -1040,7 +1040,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9.5" data-path="blog-vuex-demo.html">
+        <li class="chapter " data-level="1.9.5" data-path="concept.html">
+            
+                <a href="concept.html">
+            
+                    
+                    基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.6" data-path="blog-vuex-demo.html">
             
                 <a href="blog-vuex-demo.html">
             
@@ -1448,7 +1461,45 @@ npm run dev
 <p>&#x5220;&#x9664;&#x6CA1;&#x7528;&#x7684;&#x4EE3;&#x7801;</p>
 <h3 id="&#x6DFB;&#x52A0;&#x8DEF;&#x7531;">&#x6DFB;&#x52A0;&#x8DEF;&#x7531;</h3>
 <p>&#x5229;&#x7528; vue-router &#x6DFB;&#x52A0;&#x8DEF;&#x7531; /post &#x53CA; post &#x4E0B;&#x7684; CommentBox &#x4EE5;&#x53CA; PostBody</p>
-<h3 id=""> </h3>
+<h3 id="&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x6570;&#x636E;">&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x6570;&#x636E;</h3>
+<p>&#x5728; CommentBox &#x7EC4;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0; data &#x6570;&#x636E; &#xFF0C;&#x5229;&#x7528;  &#x62FF;&#x5230;&#x6570;&#x636E;</p>
+<pre><code class="lang-js">&lt;template&gt;
+  &lt;div class=&quot;comment-box&quot;&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;comment in comments&quot;&gt;
+        {{ comment.text }}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    name: &apos;comment-box&apos;,
+    data: () =&gt; ({
+      comments: [
+        {
+          text: &apos;hello git&apos;
+        },
+        {
+          text: &apos;hello vuejs&apos;
+        }
+      ]
+    })
+  }
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .comment-box {
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    line-height: 1.8;
+   }
+&lt;/style&gt;
+</code></pre>
 
                                 
                                 </section>
@@ -1476,7 +1527,7 @@ npm run dev
 
             
                 
-                <a href="concept.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第四小节：基本概念">
+                <a href="concept.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 基本概念">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1488,7 +1539,7 @@ npm run dev
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"项目：小博客","level":"1.9.5","depth":2,"next":{"title":"后端工作","level":"1.10","depth":1,"ref":"","articles":[{"title":"工作流程","level":"1.10.1","depth":2,"path":"git/Nodejs/1-web.md","ref":"./git/Nodejs/1-web.md","articles":[]},{"title":"Express","level":"1.10.2","depth":2,"path":"git/Nodejs/Express.md","ref":"./git/Nodejs/Express.md","articles":[]},{"title":"MongoDB","level":"1.10.3","depth":2,"path":"git/Nodejs/MongoDB.md","ref":"./git/Nodejs/MongoDB.md","articles":[]}]},"previous":{"title":"第四小节：基本概念","level":"1.9.4","depth":2,"path":"git/Vue/concept.md","ref":"./git/Vue/concept.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vue/blog-vuex-demo.md","mtime":"2017-08-08T09:17:11.762Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-08T09:20:12.628Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"项目：小博客","level":"1.9.6","depth":2,"next":{"title":"后端工作","level":"1.10","depth":1,"ref":"","articles":[{"title":"工作流程","level":"1.10.1","depth":2,"path":"git/Nodejs/1-web.md","ref":"./git/Nodejs/1-web.md","articles":[]},{"title":"Express","level":"1.10.2","depth":2,"path":"git/Nodejs/Express.md","ref":"./git/Nodejs/Express.md","articles":[]},{"title":"MongoDB","level":"1.10.3","depth":2,"path":"git/Nodejs/MongoDB.md","ref":"./git/Nodejs/MongoDB.md","articles":[]}]},"previous":{"title":"基本概念","level":"1.9.5","depth":2,"path":"git/Vue/concept.md","ref":"./git/Vue/concept.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vue/blog-vuex-demo.md","mtime":"2017-08-08T09:37:47.974Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-08T11:17:42.597Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
