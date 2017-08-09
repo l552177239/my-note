@@ -74,6 +74,7 @@
 	- [第五小节：Data](./git/Vue/5-data.md)
 	- [第六小节：Props](/git/Vue/6-props.md)
 	- [基本概念](./git/Vue/concept.md)
+	- [Vuex](./git/Vuex/vuex.md)
 	- [项目：小博客](./git/Vue/blog-vuex-demo.md)
 * 后端工作
 	- [工作流程](./git/Nodejs/1-web.md)
