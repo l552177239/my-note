@@ -1566,13 +1566,95 @@ export default {
 </code></pre>
 <h3 id="&#x5BF9;-store-&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FEE;&#x6539;">&#x5BF9; store &#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FEE;&#x6539;</h3>
 <p>&#x66F4;&#x6539; Vuex &#x7684; store &#x4E2D;&#x7684;&#x72B6;&#x6001;&#x7684;&#x552F;&#x4E00;&#x65B9;&#x6CD5;&#x662F;&#x63D0;&#x4EA4; mutation&#x3002;Vuex &#x4E2D;&#x7684; mutations &#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E8B;&#x4EF6;&#xFF1A;&#x6BCF;&#x4E2A; mutation &#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684; &#x4E8B;&#x4EF6;&#x7C7B;&#x578B; (type) &#x548C; &#x4E00;&#x4E2A; &#x56DE;&#x8C03;&#x51FD;&#x6570; (handler)&#x3002;&#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4F1A;&#x63A5;&#x53D7; state &#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> mutations = {
+    [&#x51FD;&#x6570;&#x540D;] (state) {
+      <span class="hljs-comment">// &#x53D8;&#x66F4;&#x72B6;&#x6001;</span>
+      state.count++
+    }
+  }
+})
+</code></pre>
+<h3 id="&#x63D0;&#x4EA4;&#x8F7D;&#x8377;&#xFF08;payload&#xFF09;">&#x63D0;&#x4EA4;&#x8F7D;&#x8377;&#xFF08;Payload&#xFF09;</h3>
+<blockquote>
+<p>Payload &#x5C31;&#x662F;&#x63A5;&#x53D7;&#x7684;&#x6570;&#x636E;</p>
+</blockquote>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5411; store.commit &#x4F20;&#x5165;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5373; mutation &#x7684; &#x8F7D;&#x8377;&#xFF08;payload&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> mutations = {
+  [increment] (state, n) {
+  <span class="hljs-comment">//n &#x4E3A;&#x7EC4;&#x4EF6;&#x4F20;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;</span>
+    state.count += n
+  }
+}
+</code></pre>
 <h4 id="&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x66FF;&#x4EE3;-mutation-&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;">&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x66FF;&#x4EE3; Mutation &#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</h4>
 <p>&#x5728; store &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x521B;&#x5EFA; <code>mutation-types.js</code>&#x6587;&#x4EF6;&#xFF0C;&#x5C06; Mutation &#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x5199;&#x5728;&#x91CC;&#x9762;</p>
-<pre><code>export const SOME_MUTATION = &apos;SOME_MUTATION&apos;
-</code></pre><h4 id="mutaion">Mutaion</h4>
-<pre><code>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SOME_MUTATION = <span class="hljs-string">&apos;SOME_MUTATION&apos;</span>
+<span class="hljs-comment">//&#x58F0;&#x660E; &#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x540D;</span>
+</code></pre>
+<h4 id="mutaion-&#x51FD;&#x6570;">Mutaion &#x51FD;&#x6570;</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../mutation-types&apos;</span>
+<span class="hljs-comment">//&#x5BFC;&#x5165; &#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</span>
+<span class="hljs-keyword">const</span> state = {
+  all: [
+    { text: <span class="hljs-string">&apos;fooo&apos;</span> },
+    { text: <span class="hljs-string">&apos;barr&apos;</span> }
+  ]
+}
+<span class="hljs-comment">//&#x6570;&#x636E; state</span>
+<span class="hljs-keyword">const</span> mutations = {
+<span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A; mutations</span>
+  [types.ADD_COMMENT] (state, { text }) {
+    state.all.push({ text })
+  }
+}
 
-</code></pre><p><strong>&#x53C2;&#x8003;</strong>&#xFF1A;<a href="https://vuex.vuejs.org/zh-cn/mutations.html" target="_blank">https://vuex.vuejs.org/zh-cn/mutations.html</a></p>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  state,
+  mutations
+}
+<span class="hljs-comment">//&#x5BFC;&#x51FA; state mutations</span>
+</code></pre>
+<h3 id="&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x63D0;&#x4EA4;-mutations">&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x63D0;&#x4EA4; Mutations</h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; this.$store.commit(&apos;xxx&apos;) &#x63D0;&#x4EA4; mutation&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528; mapMutations &#x8F85;&#x52A9;&#x51FD;&#x6570;&#x5C06;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684; methods &#x6620;&#x5C04;&#x4E3A; store.commit &#x8C03;&#x7528;&#xFF08;&#x9700;&#x8981;&#x5728;&#x6839;&#x8282;&#x70B9;&#x6CE8;&#x5165; store&#xFF09;</p>
+<pre><code class="lang-js">&lt;script&gt;
+  import * as types from &apos;../store/mutation-types&apos;
+  //&#x5BFC;&#x5165; mutation &#x51FD;&#x6570;&#x7C7B;&#x578B;
+  export default {
+    name: &apos;comment-box&apos;,
+    computed: {
+      reversedMessage: function () {
+        return this.comments.slice().reverse()
+      },
+      comments: function () {
+        return this.$store.state.comment.all
+      }
+    },
+    methods: {
+      addComment: function () {
+        const input = document.getElementById(&apos;commentForm&apos;)
+        this.$store.commit(types.ADD_COMMENT, { text: input.value })
+        input.value = &apos;&apos;
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;comment-box&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form&quot;</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;commentForm&quot;</span> /&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;addComment&quot;</span>&gt;</span>&#x53D1;&#x5E03;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;comment in reversedMessage&quot;</span>&gt;</span>
+      {{ comment.text }}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p>&#x5728;<code>&lt;template&gt;</code>&#x4E2D;&#xFF0C;&#x5229;&#x7528; &#x58F0;&#x660E;&#x5F0F;&#x6E32;&#x67D3;&#x76F4;&#x63A5;&#x5C06;<code>comment.text</code>&#x6E32;&#x67D3;&#x5728;&#x9875;&#x9762;&#x4E0A;</p>
+<p><strong>&#x53C2;&#x8003;</strong>&#xFF1A;<a href="https://vuex.vuejs.org/zh-cn/mutations.html" target="_blank">https://vuex.vuejs.org/zh-cn/mutations.html</a></p>
 <h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
 <ul>
 <li><p>Vuex&#x6587;&#x6863;&#xFF1A;<a href="https://vuex.vuejs.org/zh-cn/" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
@@ -1623,7 +1705,7 @@ export default {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vuex","level":"1.9.8","depth":2,"next":{"title":"项目：小博客","level":"1.9.9","depth":2,"path":"git/Vue/blog-vuex-demo.md","ref":"./git/Vue/blog-vuex-demo.md","articles":[]},"previous":{"title":"基本概念","level":"1.9.7","depth":2,"path":"git/Vue/concept.md","ref":"./git/Vue/concept.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vuex/vuex.md","mtime":"2017-08-09T15:42:18.230Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-09T15:52:33.591Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vuex","level":"1.9.8","depth":2,"next":{"title":"项目：小博客","level":"1.9.9","depth":2,"path":"git/Vue/blog-vuex-demo.md","ref":"./git/Vue/blog-vuex-demo.md","articles":[]},"previous":{"title":"基本概念","level":"1.9.7","depth":2,"path":"git/Vue/concept.md","ref":"./git/Vue/concept.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vuex/vuex.md","mtime":"2017-08-09T16:42:20.558Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-09T16:42:55.891Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
