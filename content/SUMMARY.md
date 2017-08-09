@@ -72,8 +72,8 @@
 	- [第三小节：Hello VUE](./git/Vue/3-hello-vue.md)
 	- [第四小节：构造器](./git/Vue/4-constructor.md)
 	- [第五小节：Data](./git/Vue/5-data.md)
-	- [第六小节：Props](/git/Vue/6-props.md)
-	- [基本概念](./git/Vue/concept.md)
+	- [第六小节：Props](./git/Vue/6-props.md)
+	- [第七小节：模板语法](./git/Vue/7-interpolations.md)
 	- [Vuex](./git/Vuex/vuex.md)
 	- [项目：小博客](./git/Vue/blog-vuex-demo.md)
 * 后端工作
