@@ -45,7 +45,27 @@ vm.$watch('a', newVal => this.myMethod())
 // this.myMethod 会是一个 undefined
 ```
 
-#### 选项/数据
+#### 使用
+
+data 数据写在 vue 实例里面，类型是一个 Function
+
+```js
+<script>
+  export default {
+    name: 'comment-box',
+    data: () => ({
+      comments: [
+        { text: 'hello git' },
+        { text: 'hello vuejs' }
+      ]
+    })
+  }
+</script>
+```
+
+### 选项/数据
+
+#### data
 
 - 类型： Object | Function
 
@@ -64,23 +84,61 @@ data: () => { return { a: this.myProp }}
 // this.myProp 将会是 undefined
 ```
 
-#### 使用
+#### computed
 
-data 数据写在 vue 实例里面，类型是一个 Function
+> 将需要运算的 data 数据放在 computed 上，然后进行渲染
+
+ - 类型: `{ [key: string]: Function | { get: Function, set: Function } }`
+
+ - 详细: 计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例
+
+**小例子**：
 
 ```js
-<script>
-  export default {
-    name: 'comment-box',
-    data: () => ({
-      comments: [
-        { text: 'hello git' },
-        { text: 'hello vuejs' }
-      ]
-    })
+export default {
+  name: 'comment-box',
+  data: () => ({
+    comments: [
+      { text: 'hello git' },
+      { text: 'hello vuejs' }
+    ]
+  }),
+  computed: {
+    reversedMessage: function () {
+      return this.comments.slice().reverse()
+    }
   }
-</script>
+}
 ```
+
+**注意**：因为箭头函数绑定了父级作用域的上下文，所以 this 指向不会指向 vue 实例
+
+计算属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。注意，如果实例范畴之外的依赖 (比如非响应式的 not reactive) 是不会触发计算属性更新的
+
+#### methods
+
+> 添加方法，将方法写在 methods 中
+
+ - 类型: `{ [key: string]: Function }`
+
+ - 详细: methods 将被混入到 Vue 实例中。可以直接通过 VM 实例访问这些方法，或者在指令表达式中使用。方法中的 this 自动绑定为 Vue 实例
+
+**小例子**:
+
+```js
+var vm = new Vue({
+  data: { a: 1 },
+  methods: {
+    plus: function () {
+      this.a++
+    }
+  }
+})
+vm.plus()
+vm.a // 2
+```
+
+**注意**：不应该使用箭头函数来定义 method 函数 箭头函数绑定了父级作用域的上下文，所以 this 将不会按照期望指向 Vue 实例
 
 ### 声明式渲染
 
