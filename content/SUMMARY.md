@@ -74,6 +74,7 @@
 	- [第五小节：Data](./git/Vue/5-data.md)
 	- [第六小节：Props](./git/Vue/6-props.md)
 	- [第七小节：模板语法](./git/Vue/7-interpolations.md)
+	- [第八小节：伪造API](./git/Nodejs/api.md)
 	- [Vuex](./git/Vuex/vuex.md)
 	- [项目：小博客](./git/Vue/blog-vuex-demo.md)
 * 后端工作
