@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Vuex · GitBook</title>
+        <title>第九小节：Router · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../Vue/blog-vuex-demo.html" />
+    <link rel="next" href="10-vuex.html" />
     
     
     <link rel="prev" href="../Nodejs/api.html" />
@@ -990,9 +990,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../Vue/1-brief-vue.html">
+        <li class="chapter " data-level="1.9.1" data-path="1-brief-vue.html">
             
-                <a href="../Vue/1-brief-vue.html">
+                <a href="1-brief-vue.html">
             
                     
                     第一小节：VUE简介
@@ -1003,9 +1003,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="../Vue/2-install-vue.html">
+        <li class="chapter " data-level="1.9.2" data-path="2-install-vue.html">
             
-                <a href="../Vue/2-install-vue.html">
+                <a href="2-install-vue.html">
             
                     
                     第二小节：VUE安装
@@ -1016,9 +1016,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../Vue/3-hello-vue.html">
+        <li class="chapter " data-level="1.9.3" data-path="3-hello-vue.html">
             
-                <a href="../Vue/3-hello-vue.html">
+                <a href="3-hello-vue.html">
             
                     
                     第三小节：Hello VUE
@@ -1029,9 +1029,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.4" data-path="../Vue/4-constructor.html">
+        <li class="chapter " data-level="1.9.4" data-path="4-constructor.html">
             
-                <a href="../Vue/4-constructor.html">
+                <a href="4-constructor.html">
             
                     
                     第四小节：构造器
@@ -1042,9 +1042,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.5" data-path="../Vue/5-data.html">
+        <li class="chapter " data-level="1.9.5" data-path="5-data.html">
             
-                <a href="../Vue/5-data.html">
+                <a href="5-data.html">
             
                     
                     第五小节：Data
@@ -1055,9 +1055,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.6" data-path="../Vue/6-props.html">
+        <li class="chapter " data-level="1.9.6" data-path="6-props.html">
             
-                <a href="../Vue/6-props.html">
+                <a href="6-props.html">
             
                     
                     第六小节：Props
@@ -1068,9 +1068,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.7" data-path="../Vue/7-interpolations.html">
+        <li class="chapter " data-level="1.9.7" data-path="7-interpolations.html">
             
-                <a href="../Vue/7-interpolations.html">
+                <a href="7-interpolations.html">
             
                     
                     第七小节：模板语法
@@ -1094,12 +1094,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9.9" data-path="vuex.html">
+        <li class="chapter active" data-level="1.9.9" data-path="9-vue-router.html">
             
-                <a href="vuex.html">
+                <a href="9-vue-router.html">
             
                     
-                    Vuex
+                    第九小节：Router
             
                 </a>
             
@@ -1107,12 +1107,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.10" data-path="../Vue/blog-vuex-demo.html">
+        <li class="chapter " data-level="1.9.10" data-path="10-vuex.html">
             
-                <a href="../Vue/blog-vuex-demo.html">
+                <a href="10-vuex.html">
             
                     
-                    项目：小博客
+                    第十小节：Vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="blog-vuex-demo.html">
+            
+                <a href="blog-vuex-demo.html">
+            
+                    
+                    十一小节：小博客
             
                 </a>
             
@@ -1489,7 +1502,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Vuex</a>
+        <a href="../.." >第九小节：Router</a>
     </h1>
 </div>
 
@@ -1504,328 +1517,135 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="vuex">Vuex</h1>
-<p>Vuex &#x662F;&#x4E00;&#x4E2A;&#x4E13;&#x4E3A; Vue.js &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x7684;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x6A21;&#x5F0F;&#xFF0C;&#x7C7B;&#x4F3C; React &#x4E2D;&#x7684; Redux</p>
+                                <h1 id="vue-router">Vue-Router</h1>
+<p>vue-router &#x662F;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x7531;&#x5E93;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x7BA1;&#x7406; URL&#xFF0C;&#x5B9E;&#x73B0;&#x7EC4;&#x4EF6;&#x95F4;&#x5207;&#x6362;&#xFF0C;&#x548C;&#x72B6;&#x6001; (state) &#x7684;&#x53D8;&#x5316;&#x3002;&#x7C7B;&#x4F3C; React &#x4E2D;&#x7684; react-router</p>
 <h3 id="&#x88C5;&#x5305;">&#x88C5;&#x5305;</h3>
-<pre><code>npm install vuex --save
-</code></pre><h3 id="&#x6CE8;&#x5165;-store">&#x6CE8;&#x5165; store</h3>
-<p>&#x5BFC;&#x5165; store</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
+<pre><code>npm install vue-router --save
+</code></pre><h3 id="&#x6CE8;&#x5165;-router">&#x6CE8;&#x5165; router</h3>
+<p>&#x5BFC;&#x5165; router</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./router&apos;</span>
 </code></pre>
-<p>&#x5C06; store &#x6CE8;&#x5165;&#x5230;&#x7EC4;&#x4EF6;&#x4E2D;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> Vue({
+<p>&#x5C06; router &#x6CE8;&#x5165;&#x5230;&#x7EC4;&#x4EF6;&#x4E2D;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">new</span> Vue({
   el: <span class="hljs-string">&apos;#app&apos;</span>,
-  store,
   router,
   template: <span class="hljs-string">&apos;&lt;App/&gt;&apos;</span>,
   components: { App }
 })
 </code></pre>
-<h3 id="&#x521B;&#x5EFA;-store">&#x521B;&#x5EFA; store</h3>
-<p>&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x6839;&#x636E;&#x5B98;&#x7F51;&#x7ED9;&#x51FA;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x521B;&#x5EFA; store</p>
-<p>&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#xFF1A;</p>
-<p><img src="../img/store.png" alt="&#x6570;&#x636E;&#x7ED3;&#x6784;"></p>
-<p>&#x5176;&#x4E2D;<code>index.js</code> &#x5728; store &#x4E2D;&#x521B;&#x5EFA; store &#x5E76;&#x5C06;&#x6570;&#x636E;&#x7EC4;&#x5408;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x7C7B;&#x4F3C; Redux &#x4E2D;&#x7684; combineReducers</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
-<span class="hljs-keyword">import</span> Vuex <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vuex&apos;</span>
-<span class="hljs-comment">//&#x5F15;&#x7528; vuex</span>
-<span class="hljs-keyword">import</span> comment <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./modules/comment&apos;</span>
-<span class="hljs-comment">// &#x5BFC;&#x5165; comment &#x6570;&#x636E;</span>
-Vue.use(Vuex)
-<span class="hljs-comment">// &#x5B89;&#x88C5;&#x4F7F;&#x7528; vuex &#x63D2;&#x4EF6;</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Vuex.Store({
-  <span class="hljs-comment">// &#x521B;&#x5EFA; store &#x5E76;&#x5BFC;&#x51FA;</span>
-  modules: {
-    comment
-  }
+<h3 id="&#x521B;&#x5EFA;-router">&#x521B;&#x5EFA; Router</h3>
+<p>&#x5982;&#x679C;&#x7528; vue-cli &#x521B;&#x5EFA;&#x9879;&#x76EE;&#x65F6;&#x6DFB;&#x52A0;&#x4E86;&#x8DEF;&#x7531;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;</p>
+<p><strong>&#x6570;&#x636E;&#x7ED3;&#x6784;</strong> &#x4E3A;&#xFF1A;<code>src &#x6587;&#x4EF6;&#x5939;</code> -&gt; <code>router &#x6587;&#x4EF6;&#x5939;</code> -&gt; <code>index.js</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-router&apos;</span>
+<span class="hljs-comment">// &#x5F15;&#x7528; vuex&#x63D2;&#x4EF6;</span>
+<span class="hljs-keyword">import</span> Home <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/components/Home&apos;</span>
+<span class="hljs-comment">// &#x5BFC;&#x5165; Home &#x7EC4;&#x4EF6;</span>
+
+Vue.use(Router)
+<span class="hljs-comment">// &#x5B89;&#x88C5;&#x4F7F;&#x7528; Router &#x63D2;&#x4EF6;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Router({
+<span class="hljs-comment">// &#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Router</span>
+  mode: <span class="hljs-string">&apos;history&apos;</span>,
+  <span class="hljs-comment">//&#x8DEF;&#x7531;&#x6A21;&#x5F0F;&#x4E3A; history</span>
+  routes: [
+    <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;</span>
+    {
+      path: <span class="hljs-string">&apos;/&apos;</span>,
+      <span class="hljs-comment">//&#x8DF3;&#x8F6C;&#x8DEF;&#x5F84;</span>
+      name: <span class="hljs-string">&apos;Home&apos;</span>,
+      <span class="hljs-comment">//&#x540D;&#x79F0;</span>
+      component: Home
+      <span class="hljs-comment">//&#x8DF3;&#x8F6C;&#x5230;&#x7EC4;&#x4EF6;</span>
+    }
+  ]
 })
 </code></pre>
-<p>Vuex &#x901A;&#x8FC7; Vue.use(Vuex) &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x673A;&#x5236;&#x5C06;&#x72B6;&#x6001;&#x4ECE;&#x6839;&#x7EC4;&#x4EF6;&#x300E;&#x6CE8;&#x5165;&#x300F;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D; store &#x9009;&#x9879;&#xFF0C;&#x5728;&#x7EC4;&#x4EF6;&#x9700;&#x8981; store &#x65F6;&#xFF0C;&#x7528; &#xFF08;<code>this.$store.state</code>&#xFF09;&#x8C03;&#x7528;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> state = {
-  all: [
-    { text: <span class="hljs-string">&apos;haha&apos;</span> },
-    { text: <span class="hljs-string">&apos;gege&apos;</span> }
-  ]
-}
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-  state
-}
-</code></pre>
-<p>&#x5728; modules &#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x5199;&#x5165;&#x6570;&#x636E;&#x5E76;&#x5BFC;&#x51FA;</p>
-<p><strong>&#x53C2;&#x8003;</strong>&#xFF1A;<a href="https://vuex.vuejs.org/zh-cn/state.html" target="_blank">https://vuex.vuejs.org/zh-cn/state.html</a></p>
-<h3 id="&#x8BFB;&#x53D6;&#x6570;&#x636E;">&#x8BFB;&#x53D6;&#x6570;&#x636E;</h3>
-<p>Vuex &#x7684;&#x72B6;&#x6001;&#x5B58;&#x50A8;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#xFF0C;&#x4ECE; store &#x5B9E;&#x4F8B;&#x4E2D;&#x8BFB;&#x53D6;&#x72B6;&#x6001;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x5728; <strong>&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E2D;&#x8FD4;&#x56DE;&#x67D0;&#x4E2A;&#x72B6;&#x6001;</strong>&#xFF1A;</p>
-<pre><code class="lang-js">&lt;script&gt;
-export default {
-  name: &apos;comment-box&apos;,
-  // &#x5728;&#x8BA1;&#x7B97;&#x5C5E;&#x6027; computed &#x4E2D;
-  computed: {
-    //comments &#x65B9;&#x6CD5;
-    comments: function () {
-      //&#x901A;&#x8FC7;&#x8FD4;&#x56DE;&#x503C;&#x62FF;&#x5230; store &#x4E2D;&#x7684;&#x6570;&#x636E;
-      return this.$store.state.comment.all
-    }
-  }
-}
-&lt;/script&gt;
-</code></pre>
-<p>&#x901A;&#x8FC7; comments &#x65B9;&#x6CD5; &#x8FD4;&#x56DE;&#x7684;<code>this.$store.state.comment.all</code>&#x62FF;&#x5230; store &#x4E2D;&#x7684;&#x503C;</p>
-<p>&#x5C06;&#x6570;&#x636E;&#x6E32;&#x67D3;&#x5230;&#x9875;&#x9762;&#x4E0A;</p>
+<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<h4 id="router-view"><code>&lt;router-view&gt;</code></h4>
+<p>&#x4E3B;&#x8981;&#x662F;&#x6784;&#x5EFA; SPA (&#x5355;&#x9875;&#x5E94;&#x7528;) &#x65F6;&#xFF0C;&#x65B9;&#x4FBF;&#x6E32;&#x67D3;&#x4F60;&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x4F60;&#x53EF;&#x4EE5; router-view &#x5F53;&#x505A;&#x662F;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x5B83;&#x6E32;&#x67D3;&#x4F60;&#x4F7F;&#x7528; vue-router &#x6307;&#x5B9A;&#x7684;&#x7EC4;&#x4EF6;</p>
+<p>&#x5728;&#x6A21;&#x677F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7528;<code>&lt;router-view&gt;</code>&#x8FDB;&#x884C;&#x5305;&#x88F9;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;comment in reversedMessage&quot;</span>&gt;</span>
-    {{ comment.text }}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-</code></pre>
-<h3 id="&#x5BF9;-store-&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FEE;&#x6539;">&#x5BF9; store &#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FEE;&#x6539;</h3>
-<blockquote>
-<p>&#x66F4;&#x6539; Vuex &#x7684; store &#x4E2D;&#x7684;&#x72B6;&#x6001;&#x7684;&#x552F;&#x4E00;&#x65B9;&#x6CD5;&#x662F;&#x63D0;&#x4EA4; mutation</p>
-</blockquote>
-<p>Vuex &#x4E2D;&#x7684; mutations &#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E8B;&#x4EF6;&#xFF1A;&#x6BCF;&#x4E2A; mutation &#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684; &#x4E8B;&#x4EF6;&#x7C7B;&#x578B; (type) &#x548C; &#x4E00;&#x4E2A; &#x56DE;&#x8C03;&#x51FD;&#x6570; (handler)&#x3002;&#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4F1A;&#x63A5;&#x53D7; state &#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mutations = {
-    [&#x51FD;&#x6570;&#x540D;] (state) {
-      <span class="hljs-comment">// &#x53D8;&#x66F4;&#x72B6;&#x6001;</span>
-      state.count++
-    }
-  }
-})
-</code></pre>
-<h3 id="&#x63D0;&#x4EA4;&#x8F7D;&#x8377;&#xFF08;payload&#xFF09;">&#x63D0;&#x4EA4;&#x8F7D;&#x8377;&#xFF08;Payload&#xFF09;</h3>
-<blockquote>
-<p>Payload &#x5C31;&#x662F;&#x63A5;&#x53D7;&#x7684;&#x6570;&#x636E;</p>
-</blockquote>
-<p>&#x4F60;&#x53EF;&#x4EE5;&#x5411; store.commit &#x4F20;&#x5165;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;(&#x6570;&#x636E;)&#xFF0C;&#x5373; mutation &#x7684; &#x8F7D;&#x8377;&#xFF08;payload&#xFF09;&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mutations = {
-  [increment] (state, n) {
-  <span class="hljs-comment">//n &#x4E3A;&#x7EC4;&#x4EF6;&#x4F20;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;</span>
-    state.count += n
-  }
-}
-</code></pre>
-<h3 id="&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x66FF;&#x4EE3;-mutation-&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;">&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x66FF;&#x4EE3; Mutation &#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</h3>
-<p>&#x5728; store &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x521B;&#x5EFA; <code>mutation-types.js</code>&#x6587;&#x4EF6;&#xFF0C;&#x5C06; Mutation &#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x5199;&#x5728;&#x91CC;&#x9762;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SOME_MUTATION = <span class="hljs-string">&apos;SOME_MUTATION&apos;</span>
-<span class="hljs-comment">//&#x58F0;&#x660E; &#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x540D;</span>
-</code></pre>
-<h3 id="mutaion-&#x51FD;&#x6570;">Mutaion &#x51FD;&#x6570;</h3>
-<blockquote>
-<p>store &#x7C7B;&#x4F3C;&#x4E8E; React &#x4E2D;&#x7684; action</p>
-</blockquote>
-<pre><code class="lang-js"><span class="hljs-comment">//&#x5BFC;&#x5165; &#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../mutation-types&apos;</span>
-<span class="hljs-comment">//&#x6570;&#x636E; state</span>
-<span class="hljs-keyword">const</span> state = {
-  all: [
-    { text: <span class="hljs-string">&apos;fooo&apos;</span> },
-    { text: <span class="hljs-string">&apos;barr&apos;</span> }
-  ]
-}
-<span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A; mutations &#x5C06;&#x63A5;&#x53D7;&#x7684;&#x6570;&#x636E;&#x653E;&#x5165; state &#x4E2D;</span>
-<span class="hljs-keyword">const</span> mutations = {
-  [types.ADD_COMMENT] (state, { text }) {
-    state.all.push({ text })
-  }
-}
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-  state,
-  mutations
-}
-<span class="hljs-comment">//&#x5BFC;&#x51FA; state mutations</span>
-</code></pre>
-<h3 id="&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x63D0;&#x4EA4;-mutations">&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x63D0;&#x4EA4; Mutations</h3>
-<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; this.$store.commit(&apos;xxx&apos;) &#x63D0;&#x4EA4; mutation&#xFF0C;
-&#x6216;&#x8005;&#x4F7F;&#x7528; mapMutations &#x8F85;&#x52A9;&#x51FD;&#x6570;&#x5C06;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684; methods &#x6620;&#x5C04;&#x4E3A; store.commit &#x8C03;&#x7528;&#xFF08;&#x9700;&#x8981;&#x5728;&#x6839;&#x8282;&#x70B9;&#x6CE8;&#x5165; store&#xFF09;</p>
-<pre><code class="lang-js">&lt;script&gt;
-  import * as types from &apos;../store/mutation-types&apos;
-  //&#x5BFC;&#x5165; mutation &#x51FD;&#x6570;&#x7C7B;&#x578B;
-  export default {
-    name: &apos;comment-box&apos;,
-    computed: {
-      reversedMessage: function () {
-        return this.comments.slice().reverse()
-      },
-      comments: function () {
-        return this.$store.state.comment.all
-      }
-    },
-    methods: {
-      addComment: function () {
-        const input = document.getElementById(&apos;commentForm&apos;)
-        this.$store.commit(types.ADD_COMMENT, { text: input.value })
-        input.value = &apos;&apos;
-      }
-    }
-  }
-&lt;/script&gt;
-</code></pre>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;comment-box&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form&quot;</span>&gt;</span>
-     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;commentForm&quot;</span> /&gt;</span>
-     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;addComment&quot;</span>&gt;</span>&#x53D1;&#x5E03;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;comment in reversedMessage&quot;</span>&gt;</span>
-      {{ comment.text }}
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 </code></pre>
-<h3 id="actions">actions</h3>
-<blockquote>
-<p>action &#x7C7B;&#x4F3C;&#x4E8E; React &#x4E2D;&#x7684; Thunk</p>
-</blockquote>
-<p>Action &#x7C7B;&#x4F3C;&#x4E8E; mutation&#xFF0C;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#xFF1A;</p>
-<ul>
-<li><p>Action &#x63D0;&#x4EA4;&#x7684;&#x662F; mutation&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x53D8;&#x66F4;&#x72B6;&#x6001;</p>
-</li>
-<li><p>Action &#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EFB;&#x610F;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</p>
-</li>
-</ul>
-<h3 id="&#x5C0F;&#x4F8B;&#x5B50;">&#x5C0F;&#x4F8B;&#x5B50;</h3>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Vuex.Store({
-  state: {
-    count: <span class="hljs-number">0</span>
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  },
-  <span class="hljs-comment">//&#x53D1;&#x51FA; actions</span>
-  actions: {
-    increment (context) {
-      context.commit(<span class="hljs-string">&apos;increment&apos;</span>)
-      <span class="hljs-comment">//&#x901A;&#x8FC7; commit &#x89E6;&#x53D1; mutations</span>
-    }
-  }
-})
-</code></pre>
-<p>Action &#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x4E0E; store &#x5B9E;&#x4F8B;&#x5177;&#x6709;&#x76F8;&#x540C;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#x7684; context &#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <code>context.commit</code> &#x63D0;&#x4EA4;&#x4E00;&#x4E2A; mutation&#xFF0C;
-&#x6216;&#x8005;&#x901A;&#x8FC7; <code>context.state</code> &#x548C; <code>context.getters</code> &#x6765;&#x83B7;&#x53D6; state &#x548C; getters&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x4E4B;&#x540E;&#x4ECB;&#x7ECD;&#x5230; Modules &#x65F6;&#xFF0C;&#x4F60;&#x5C31;&#x77E5;&#x9053; context &#x5BF9;&#x8C61;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x662F; store &#x5B9E;&#x4F8B;&#x672C;&#x8EAB;&#x4E86;&#x3002;</p>
-<p>&#x5B9E;&#x8DF5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x7ECF;&#x5E38;&#x7528;&#x5230; ES2015 &#x7684; &#x53C2;&#x6570;&#x89E3;&#x6784; &#x6765;&#x7B80;&#x5316;&#x4EE3;&#x7801;&#xFF08;&#x7279;&#x522B;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8C03;&#x7528; commit &#x5F88;&#x591A;&#x6B21;&#x7684;&#x65F6;&#x5019;&#xFF09;&#xFF1A;</p>
-<pre><code class="lang-js">actions: {
-  increment ({ commit }) {
-    commit(<span class="hljs-string">&apos;increment&apos;</span>)
-  }
-}
-</code></pre>
-<p><strong>&#x53C2;&#x8003;</strong>&#xFF1A;<a href="https://vuex.vuejs.org/zh-cn/mutations.html" target="_blank">https://vuex.vuejs.org/zh-cn/mutations.html</a></p>
-<h3 id="&#x5206;&#x53D1;-action">&#x5206;&#x53D1; Action</h3>
-<blockquote>
-<p>Action &#x901A;&#x8FC7; store.dispatch &#x65B9;&#x6CD5;&#x89E6;&#x53D1;&#xFF1A;</p>
-</blockquote>
-<pre><code class="lang-js">store.dispatch(<span class="hljs-string">&apos;increment&apos;</span>)
-</code></pre>
-<p>&#x4E4D;&#x4E00;&#x773C;&#x770B;&#x4E0A;&#x53BB;&#x611F;&#x89C9;&#x591A;&#x6B64;&#x4E00;&#x4E3E;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5206;&#x53D1; mutation &#x5C82;&#x4E0D;&#x66F4;&#x65B9;&#x4FBF;&#xFF1F;</p>
-<p>&#x5B9E;&#x9645;&#x4E0A;&#x5E76;&#x975E;&#x5982;&#x6B64;&#xFF0C;&#x8FD8;&#x8BB0;&#x5F97; mutation &#x5FC5;&#x987B;&#x540C;&#x6B65;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x9650;&#x5236;&#x4E48;&#xFF1F;</p>
-<p>Action &#x5C31;&#x4E0D;&#x53D7;&#x7EA6;&#x675F;&#xFF01;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728; action &#x5185;&#x90E8;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF1A;</p>
-<pre><code class="lang-js">actions: {
-  incrementAsync ({ commit }) {
-    setTimeout(() =&gt; {
-      commit(<span class="hljs-string">&apos;increment&apos;</span>)
-    }, <span class="hljs-number">1000</span>)
-  }
-}
-</code></pre>
-<p>Actions &#x652F;&#x6301;&#x540C;&#x6837;&#x7684; <strong>&#x8F7D;&#x8377;&#x65B9;&#x5F0F;</strong> &#x548C;&#x5BF9;&#x8C61;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x5206;&#x53D1;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-comment">// &#x4EE5;&#x8F7D;&#x8377;&#x5F62;&#x5F0F;&#x5206;&#x53D1;</span>
-store.dispatch(<span class="hljs-string">&apos;incrementAsync&apos;</span>, {
-  amount: <span class="hljs-number">10</span>
-})
+<h4 id="router-link"><code>&lt;router-link&gt;</code></h4>
+<p><code>&lt;router-link&gt;</code>&#x7528;&#x4E8E;&#x53D6;&#x4EE3;<code>&lt;a&gt;</code>&#x5143;&#x7D20;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x94FE;&#x63A5;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x540E;&#x8DF3;&#x8F6C;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x3002;&#x5B83;&#x57FA;&#x672C;&#x4E0A;&#x5C31;&#x662F;<code>&lt;a&gt;</code>&#x5143;&#x7D20;&#x7684; Vue &#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x72B6;&#x6001;&#x503C;&#xFF0C;to &#x8868;&#x793A;&#x8DF3;&#x8F6C;&#x94FE;&#x63A5;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;Home&quot;</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/post&quot;</span>&gt;</span>Post<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-comment">// &#x4EE5;&#x5BF9;&#x8C61;&#x5F62;&#x5F0F;&#x5206;&#x53D1;</span>
-store.dispatch({
-  type: <span class="hljs-string">&apos;incrementAsync&apos;</span>,
-  amount: <span class="hljs-number">10</span>
-})
-</code></pre>
-<h3 id="&#x8D2D;&#x7269;&#x8F66;&#x793A;&#x4F8B;">&#x8D2D;&#x7269;&#x8F66;&#x793A;&#x4F8B;</h3>
-<p>&#x6D89;&#x53CA;&#x5230;&#x8C03;&#x7528;&#x5F02;&#x6B65; API &#x548C; &#x5206;&#x53D1;&#x591A;&#x91CD; mutations&#xFF1A;</p>
-<pre><code class="lang-js">actions: {
-  checkout ({ commit, state }, products) {
-    <span class="hljs-comment">// &#x628A;&#x5F53;&#x524D;&#x8D2D;&#x7269;&#x8F66;&#x7684;&#x7269;&#x54C1;&#x5907;&#x4EFD;&#x8D77;&#x6765;</span>
-    <span class="hljs-keyword">const</span> savedCartItems = [...state.cart.added]
-    <span class="hljs-comment">// &#x53D1;&#x51FA;&#x7ED3;&#x8D26;&#x8BF7;&#x6C42;&#xFF0C;&#x7136;&#x540E;&#x4E50;&#x89C2;&#x5730;&#x6E05;&#x7A7A;&#x8D2D;&#x7269;&#x8F66;</span>
-    commit(types.CHECKOUT_REQUEST)
-    <span class="hljs-comment">// &#x8D2D;&#x7269; API &#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x6210;&#x529F;&#x56DE;&#x8C03;&#x548C;&#x4E00;&#x4E2A;&#x5931;&#x8D25;&#x56DE;&#x8C03;</span>
-    shop.buyProducts(
-      products,
-      <span class="hljs-comment">// &#x6210;&#x529F;&#x64CD;&#x4F5C;</span>
-      () =&gt; commit(types.CHECKOUT_SUCCESS),
-      <span class="hljs-comment">// &#x5931;&#x8D25;&#x64CD;&#x4F5C;</span>
-      () =&gt; commit(types.CHECKOUT_FAILURE, savedCartItems)
-    )
-  }
-}
-</code></pre>
-<p>&#x6CE8;&#x610F;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x63D0;&#x4EA4; mutation &#x6765;&#x8BB0;&#x5F55; action &#x4EA7;&#x751F;&#x7684;&#x526F;&#x4F5C;&#x7528;&#xFF08;&#x5373;&#x72B6;&#x6001;&#x53D8;&#x66F4;&#xFF09;</p>
-<h3 id="&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x5206;&#x53D1;-action">&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x5206;&#x53D1; Action</h3>
-<p>&#x4F60;&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; this.$store.dispatch(&apos;xxx&apos;) &#x5206;&#x53D1; action&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528; mapActions &#x8F85;&#x52A9;&#x51FD;&#x6570;&#x5C06;&#x7EC4;&#x4EF6;&#x7684; methods &#x6620;&#x5C04;&#x4E3A; store.dispatch &#x8C03;&#x7528;&#xFF08;&#x9700;&#x8981;&#x5148;&#x5728;&#x6839;&#x8282;&#x70B9;&#x6CE8;&#x5165; store&#xFF09;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { mapActions } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vuex&apos;</span>
-
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-  <span class="hljs-comment">// ...</span>
-  methods: {
-    ...mapActions([
-      <span class="hljs-string">&apos;increment&apos;</span> <span class="hljs-comment">// &#x6620;&#x5C04; this.increment() &#x4E3A; this.$store.dispatch(&apos;increment&apos;)</span>
-    ]),
-    ...mapActions({
-      add: <span class="hljs-string">&apos;increment&apos;</span> <span class="hljs-comment">// &#x6620;&#x5C04; this.add() &#x4E3A; this.$store.dispatch(&apos;increment&apos;)</span>
-    })
-  }
+  name: <span class="hljs-string">&apos;Home&apos;</span>
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="&#x52A8;&#x6001;&#x8DEF;&#x7531;&#x5339;&#x914D;">&#x52A8;&#x6001;&#x8DEF;&#x7531;&#x5339;&#x914D;</h3>
+<p>&#x5728; Router&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>index.js</code>&#x4E2D;&#xFF0C;&#x5199;&#x8DEF;&#x7531;&#x8DEF;&#x5F84;<code>path</code>&#x65F6;&#x4F7F;&#x7528;&#x300E;&#x52A8;&#x6001;&#x8DEF;&#x5F84;&#x53C2;&#x6570;&#x300F;</p>
+<pre><code class="lang-js">routes: [
+   <span class="hljs-comment">// &#x52A8;&#x6001;&#x8DEF;&#x5F84;&#x53C2;&#x6570; &#x4EE5;&#x5192;&#x53F7;&#x5F00;&#x5934;</span>
+   {
+     path: <span class="hljs-string">&apos;/user/:id&apos;</span>,
+     name: <span class="hljs-string">&apos;user&apos;</span>,
+     component: User
+   }
+ ]
+</code></pre>
+<p>&#x4E00;&#x4E2A;&#x300E;&#x8DEF;&#x5F84;&#x53C2;&#x6570;&#x300F;&#x4F7F;&#x7528;&#x5192;&#x53F7; : &#x6807;&#x8BB0;&#x3002;&#x5F53;&#x5339;&#x914D;&#x5230;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x65F6;&#xFF0C;&#x53C2;&#x6570;&#x503C;&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E;&#x5230; <code>this.$route.params</code>&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x5185;&#x4F7F;&#x7528;&#x3002;
+&#x4E8E;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x66F4;&#x65B0; User &#x7684;&#x6A21;&#x677F;&#xFF0C;&#x8F93;&#x51FA;&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684; ID&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> User = {
+  template: <span class="hljs-string">&apos;&lt;div&gt;User {{ $route.params.id }}&lt;/div&gt;&apos;</span>
 }
 </code></pre>
-<h3 id="&#x7EC4;&#x5408;-actions">&#x7EC4;&#x5408; Actions</h3>
-<p>Action &#x901A;&#x5E38;&#x662F;&#x5F02;&#x6B65;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x77E5;&#x9053; action &#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7ED3;&#x675F;&#x5462;&#xFF1F;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x624D;&#x80FD;&#x7EC4;&#x5408;&#x591A;&#x4E2A; action&#xFF0C;&#x4EE5;&#x5904;&#x7406;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x7684;&#x5F02;&#x6B65;&#x6D41;&#x7A0B;&#xFF1F;</p>
-<p>&#x9996;&#x5148;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x660E;&#x767D; store.dispatch &#x53EF;&#x4EE5;&#x5904;&#x7406;&#x88AB;&#x89E6;&#x53D1;&#x7684;action&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;Promise&#xFF0C;&#x5E76;&#x4E14;store.dispatch&#x4ECD;&#x65E7;&#x8FD4;&#x56DE;Promise&#xFF1A;</p>
-<pre><code class="lang-js">actions: {
-  actionA ({ commit }) {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
-      setTimeout(() =&gt; {
-        commit(<span class="hljs-string">&apos;someMutation&apos;</span>)
-        resolve()
-      }, <span class="hljs-number">1000</span>)
-    })
-  }
-}
-</code></pre>
-<p>&#x73B0;&#x5728;&#x4F60;&#x53EF;&#x4EE5;&#xFF1A;</p>
-<pre><code class="lang-js">store.dispatch(<span class="hljs-string">&apos;actionA&apos;</span>).then(() =&gt; {
-  <span class="hljs-comment">// ...</span>
+<h3 id="&#x91CD;&#x5B9A;&#x5411;">&#x91CD;&#x5B9A;&#x5411;</h3>
+<p>&#x91CD;&#x5B9A;&#x5411;&#x4E5F;&#x662F;&#x901A;&#x8FC7; routes &#x914D;&#x7F6E;&#x6765;&#x5B8C;&#x6210;&#xFF0C;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x662F;&#x4ECE; <code>/a</code> &#x91CD;&#x5B9A;&#x5411;&#x5230; <code>/b</code>&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes: [
+    { path: <span class="hljs-string">&apos;/a&apos;</span>, redirect: <span class="hljs-string">&apos;/b&apos;</span> }
+  ]
 })
-&#x5728;&#x53E6;&#x5916;&#x4E00;&#x4E2A; action &#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#xFF1A;
-
-actions: {
-  <span class="hljs-comment">// ...</span>
-  actionB ({ dispatch, commit }) {
-    <span class="hljs-keyword">return</span> dispatch(<span class="hljs-string">&apos;actionA&apos;</span>).then(() =&gt; {
-      commit(<span class="hljs-string">&apos;someOtherMutation&apos;</span>)
-    })
-  }
-}
 </code></pre>
-<p>&#x6700;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5229;&#x7528; async / await &#x8FD9;&#x4E2A; JavaScript &#x5373;&#x5C06;&#x5230;&#x6765;&#x7684;&#x65B0;&#x7279;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x8FD9;&#x6837;&#x7EC4;&#x5408; action&#xFF1A;</p>
-<pre><code>// &#x5047;&#x8BBE; getData() &#x548C; getOtherData() &#x8FD4;&#x56DE;&#x7684;&#x662F; Promise
-
-actions: {
-  async actionA ({ commit }) {
-    commit(&apos;gotData&apos;, await getData())
-  },
-  async actionB ({ dispatch, commit }) {
-    await dispatch(&apos;actionA&apos;) // &#x7B49;&#x5F85; actionA &#x5B8C;&#x6210;
-    commit(&apos;gotOtherData&apos;, await getOtherData())
-  }
-}
-</code></pre><p>&#x4E00;&#x4E2A; store.dispatch &#x5728;&#x4E0D;&#x540C;&#x6A21;&#x5757;&#x4E2D;&#x53EF;&#x4EE5;&#x89E6;&#x53D1;&#x591A;&#x4E2A; action &#x51FD;&#x6570;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x6240;&#x6709;&#x89E6;&#x53D1;&#x51FD;&#x6570;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x8FD4;&#x56DE;&#x7684; Promise &#x624D;&#x4F1A;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x91CD;&#x5B9A;&#x5411;&#x7684;&#x76EE;&#x6807;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x7684;&#x8DEF;&#x7531;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes: [
+    { path: <span class="hljs-string">&apos;/a&apos;</span>, redirect: { name: <span class="hljs-string">&apos;foo&apos;</span> }}
+  ]
+})
+</code></pre>
+<p>&#x751A;&#x81F3;&#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x52A8;&#x6001;&#x8FD4;&#x56DE;&#x91CD;&#x5B9A;&#x5411;&#x76EE;&#x6807;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes: [
+    { path: <span class="hljs-string">&apos;/a&apos;</span>, redirect: to =&gt; {
+      <span class="hljs-comment">// &#x65B9;&#x6CD5;&#x63A5;&#x6536; &#x76EE;&#x6807;&#x8DEF;&#x7531; &#x4F5C;&#x4E3A;&#x53C2;&#x6570;</span>
+      <span class="hljs-comment">// return &#x91CD;&#x5B9A;&#x5411;&#x7684; &#x5B57;&#x7B26;&#x4E32;&#x8DEF;&#x5F84;/&#x8DEF;&#x5F84;&#x5BF9;&#x8C61;</span>
+    }}
+  ]
+})
+</code></pre>
+<h3 id="&#x522B;&#x540D;">&#x522B;&#x540D;</h3>
+<p>&#x300E;&#x91CD;&#x5B9A;&#x5411;&#x300F;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x8BBF;&#x95EE; <code>/a</code>&#x65F6;&#xFF0C;URL &#x5C06;&#x4F1A;&#x88AB;&#x66FF;&#x6362;&#x6210; <code>/b</code>&#xFF0C;&#x7136;&#x540E;&#x5339;&#x914D;&#x8DEF;&#x7531;&#x4E3A; <code>/b</code>&#xFF0C;&#x90A3;&#x4E48;&#x300E;&#x522B;&#x540D;&#x300F;&#x53C8;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<p><code>/a</code> &#x7684;&#x522B;&#x540D;&#x662F; <code>/b</code>&#xFF0C;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x8BBF;&#x95EE; <code>/b</code> &#x65F6;&#xFF0C;URL &#x4F1A;&#x4FDD;&#x6301;&#x4E3A; <code>/b</code>&#xFF0C;&#x4F46;&#x662F;&#x8DEF;&#x7531;&#x5339;&#x914D;&#x5219;&#x4E3A; <code>/a</code>&#xFF0C;&#x5C31;&#x50CF;&#x7528;&#x6237;&#x8BBF;&#x95EE; <code>/a</code> &#x4E00;&#x6837;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes: [
+    { path: <span class="hljs-string">&apos;/a&apos;</span>, component: A, alias: <span class="hljs-string">&apos;/b&apos;</span> }
+  ]
+})
+</code></pre>
+<p>&#x300E;&#x522B;&#x540D;&#x300F;&#x7684;&#x529F;&#x80FD;&#x8BA9;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x5730;&#x5C06; UI &#x7ED3;&#x6784;&#x6620;&#x5C04;&#x5230;&#x4EFB;&#x610F;&#x7684; URL&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x53D7;&#x9650;&#x4E8E;&#x914D;&#x7F6E;&#x7684;&#x5D4C;&#x5957;&#x8DEF;&#x7531;&#x7ED3;&#x6784;</p>
 <h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
 <ul>
-<li><p>Vuex&#x6587;&#x6863;&#xFF1A;<a href="https://vuex.vuejs.org/zh-cn/" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+<li><p>&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A;<a href="https://router.vuejs.org/zh-cn/" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
 </li>
-<li><p>Vuex&#x5B98;&#x7F51;&#x4F8B;&#x5B50;&#xFF1A;<a href="https://github.com/vuejs/vuex/tree/dev/examples" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+<li><p>CSDN&#x535A;&#x5BA2;&#xFF1A;<a href="http://blog.csdn.net/sinat_17775997/article/category/6457444" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+<li><p>CSDN&#x535A;&#x5BA2;&#xFF1A;[&#x70B9;&#x51FB;&#x8FDB;&#x5165;]<a href="http://blog.csdn.net/column/details/16510.html" target="_blank">http://blog.csdn.net/column/details/16510.html</a>)</p>
 </li>
 </ul>
 
@@ -1860,7 +1680,7 @@ actions: {
                 </a>
                 
                 
-                <a href="../Vue/blog-vuex-demo.html" class="navigation navigation-next " aria-label="Next page: 项目：小博客">
+                <a href="10-vuex.html" class="navigation navigation-next " aria-label="Next page: 第十小节：Vuex">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1871,7 +1691,7 @@ actions: {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vuex","level":"1.9.9","depth":2,"next":{"title":"项目：小博客","level":"1.9.10","depth":2,"path":"git/Vue/blog-vuex-demo.md","ref":"./git/Vue/blog-vuex-demo.md","articles":[]},"previous":{"title":"第八小节：伪造API","level":"1.9.8","depth":2,"path":"git/Nodejs/api.md","ref":"./git/Nodejs/api.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vuex/vuex.md","mtime":"2017-08-10T14:46:26.637Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-10T14:47:03.865Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第九小节：Router","level":"1.9.9","depth":2,"next":{"title":"第十小节：Vuex","level":"1.9.10","depth":2,"path":"git/Vue/10-vuex.md","ref":"./git/Vue/10-vuex.md","articles":[]},"previous":{"title":"第八小节：伪造API","level":"1.9.8","depth":2,"path":"git/Nodejs/api.md","ref":"./git/Nodejs/api.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Vue/9-vue-router.md","mtime":"2017-08-10T16:39:54.593Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-10T16:41:21.152Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
