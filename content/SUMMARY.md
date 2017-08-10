@@ -75,8 +75,9 @@
 	- [第六小节：Props](./git/Vue/6-props.md)
 	- [第七小节：模板语法](./git/Vue/7-interpolations.md)
 	- [第八小节：伪造API](./git/Nodejs/api.md)
-	- [Vuex](./git/Vuex/vuex.md)
-	- [项目：小博客](./git/Vue/blog-vuex-demo.md)
+	- [第九小节：Router](./git/Vue/9-vue-router.md)
+	- [第十小节：Vuex](./git/Vue/10-vuex.md)
+	- [十一小节：小博客](./git/Vue/blog-vuex-demo.md)
 * 后端工作
 	- [工作流程](./git/Nodejs/1-web.md)
 	- [Express](./git/Nodejs/Express.md)

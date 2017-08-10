@@ -35,6 +35,10 @@ Vue.js的作者为Evan You（尤雨溪）。
 
 ### 参考
 
- - VUE官网：[点击进入](https://cn.vuejs.org/)
+ - VUE中文官网：[点击进入](https://cn.vuejs.org/)
+
+ - Vue社区：[点击进入](https://www.vue-js.com/)
+
+ - 博客园博客：[点击进入](http://www.cnblogs.com/zhuzhenwei918/category/938372.html)
 
  - 菜鸟教程：[点击进入](http://www.runoob.com/vue2/vue-tutorial.html)
