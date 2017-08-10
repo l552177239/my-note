@@ -55,7 +55,7 @@ created () {
 
 ### 使用
 
-在项目中我们一般将数据，通过异步的 action 将数据请求到 store 中。
+在项目中我们一般将数据，通过异步的 action 将数据请求到本地中，在通过 mutation 将数据放入 state 中。
 如果在组件中使用，需要发送一个 dispatch 进行触发 action 请求到数据
 
 在 store 中，将数据从 api 请求到 state
