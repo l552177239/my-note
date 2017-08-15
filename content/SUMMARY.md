@@ -97,6 +97,8 @@
 	- [Material-UI](./git/Other/Material-UI.md)
 * 数据可视化
 	- [Echarts](./git/Other/echarts.md)
-	- [Recharts](./git/Other/recharts.md)
-* React 组件
-	- [侧边栏组件：react-burger-menu](./git/Other/react-burger-menu.md)
+	- [Recharts](./git/React-Plugin/recharts.md)
+* React 插件
+	- [图表：Recharts](./git/React-Plugin/recharts.md)
+	- [侧边栏：react-burger-menu](./git/React-Plugin/react-burger-menu.md)
+	- [过渡动画：react-transition-group](./git/React-Plugin/react-transition-group.md)
