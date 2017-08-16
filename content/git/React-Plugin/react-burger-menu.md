@@ -1,4 +1,6 @@
-# React组件：react-burger-menu
+# react-burger-menu
+
+> 目前使用数最多的侧边栏插件
 
 因为我们用 `create-react-app` 创建的 React 环境，
 所以在这里我们使用 React 的组件形式。
