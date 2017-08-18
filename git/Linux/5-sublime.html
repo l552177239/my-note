@@ -1577,53 +1577,267 @@
 <p><strong>Agila</strong>&#xFF08;&#x4E3B;&#x9898;&#xFF09;</p>
 <p>&#x4E00;&#x6B3E;&#x53D7;&#x6B22;&#x8FCE;&#x7684;sublime Theme</p>
 <h3 id="&#x5FEB;&#x6377;&#x952E;">&#x5FEB;&#x6377;&#x952E;</h3>
+<h4 id="&#x914D;&#x7F6E;&#x4EE3;&#x7801;&#x7247;&#x6BB5;">&#x914D;&#x7F6E;&#x4EE3;&#x7801;&#x7247;&#x6BB5;</h4>
+<p>&#x9996;&#x5148;&#x70B9;&#x51FB;<code>Tools</code> -&gt; <code>New Snippet</code></p>
+<p>&#x663E;&#x793A;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">snippet</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">content</span>&gt;</span>&lt;![CDATA[
+Hello, ${1:this} is a ${2:snippet}.
+]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span>
+     <span class="hljs-comment">&lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt;</span>
+     <span class="hljs-comment">&lt;!-- &lt;tabTrigger&gt;hello&lt;/tabTrigger&gt; --&gt;</span>
+     <span class="hljs-comment">&lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt;</span>
+     <span class="hljs-comment">&lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">snippet</span>&gt;</span>
+</code></pre>
+<h5 id="&#x6A21;&#x677F;&#x8BF4;&#x660E;">&#x6A21;&#x677F;&#x8BF4;&#x660E;</h5>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">snippet</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">content</span>&gt;</span>&lt;![CDATA[
+    &#x4F60;&#x9700;&#x8981;&#x63D2;&#x5165;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;${1:name}
+    ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- &#x53EF;&#x9009;&#xFF1A;&#x5FEB;&#x6377;&#x952E;&#xFF0C;&#x5229;&#x7528;Tab&#x81EA;&#x52A8;&#x8865;&#x5168;&#x4EE3;&#x7801;&#x7684;&#x529F;&#x80FD; --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tabTrigger</span>&gt;</span>xyzzy<span class="hljs-tag">&lt;/<span class="hljs-name">tabTrigger</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- &#x53EF;&#x9009;&#xFF1A;&#x4F7F;&#x7528;&#x8303;&#x56F4;&#xFF0C;&#x4E0D;&#x586B;&#x5199;&#x4EE3;&#x8868;&#x5BF9;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x6709;&#x6548;&#x3002;&#x9644;&#xFF1A;source.css&#x548C;test.html&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#x3002; --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>source.python<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- &#x53EF;&#x9009;&#xFF1A;&#x5728;snippet&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x663E;&#x793A;&#x8BF4;&#x660E;&#xFF08;&#x652F;&#x6301;&#x4E2D;&#x6587;&#xFF09;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5B9A;&#x4E49;&#xFF0C;&#x83DC;&#x5355;&#x5219;&#x663E;&#x793A;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002; --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>My Fancy Snippet<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">snippet</span>&gt;</span>
+</code></pre>
+<p><strong>&#x5C0F;&#x8D34;&#x58EB;</strong>&#xFF1A;</p>
+<ol>
+<li>&#x7528;TAB&#x952E;&#x8C03;&#x7528;&#x4EE3;&#x7801;&#x7247;&#x6BB5;</li>
+<li>&#x4F60;&#x53D1;&#x7684;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x8981;&#x6253;&#x4E0A;<code>xyzzy</code>&#x6309;&#x4E0B;TAB&#x952E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;</li>
+<li>&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#x4E2D;&#xFF08;&#x5982;HTML&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#xFF09;&#x662F;&#x4E0D;&#x663E;&#x793A;&#x201C;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x7684;&#x8BF4;&#x660E;&#x201D;&#x7684;&#x3002;&#x76F4;&#x63A5;&#x6309;TAB&#x952E;&#x5C31;&#x53EF;&#x4EE5;</li>
+<li><code>${1:name}</code>&#x8868;&#x793A;&#x4EE3;&#x7801;&#x63D2;&#x5165;&#x540E;&#xFF0C;&#x5149;&#x6807;&#x6240;&#x505C;&#x7559;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EF;&#x540C;&#x65F6;&#x63D2;&#x5165;&#x591A;&#x4E2A;&#x3002;&#x5176;&#x4E2D;:name&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#xFF08;&#x53EF;&#x9009;&#xFF09;</li>
+<li><code>${2}</code>&#x8868;&#x793A;&#x4EE3;&#x7801;&#x63D2;&#x5165;&#x540E;&#xFF0C;&#x6309;Tab&#x952E;&#xFF0C;&#x5149;&#x6807;&#x4F1A;&#x6839;&#x636E;&#x987A;&#x5E8F;&#x8DF3;&#x8F6C;&#x5230;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#xFF08;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF09;</li>
+</ol>
+<h5 id="&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;">&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</h5>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">snippet</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">content</span>&gt;</span>
+  &lt;![CDATA[
+  import React from &apos;react&apos;
+
+  class ${1} extends React.Component{
+  render(){
+    return (
+      &lt;div className=&apos;${2}&apos;&gt;
+        ${1}
+      &lt;/div&gt;    
+    )
+  }
+  }
+  export default ${1}
+  ]]&gt;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tabTrigger</span>&gt;</span>recl<span class="hljs-tag">&lt;/<span class="hljs-name">tabTrigger</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>React<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>source.js<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">snippet</span>&gt;</span>
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x5B8C;&#x6BD5;&#x4EE5;&#x540E;&#xFF0C;&#x4FDD;&#x5B58;&#x5728;<code>\Packages\User</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6587;&#x4EF6;&#x547D;&#x540D;&#x4E3A;<code>react-code</code>&#xFF0C;&#x540E;&#x7F00;&#x540D;<code>.sublime-snippet</code></p>
+<h4 id="&#x5185;&#x7F6E;&#x5FEB;&#x6377;&#x952E;">&#x5185;&#x7F6E;&#x5FEB;&#x6377;&#x952E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x5FEB;&#x6377;&#x952E;</th>
+<th>&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+L</td>
+<td>&#x9009;&#x62E9;&#x6574;&#x884C;&#xFF08;&#x6309;&#x4F4F;-&#x7EE7;&#x7EED;&#x9009;&#x62E9;&#x4E0B;&#x884C;&#xFF09;</td>
+</tr>
+<tr>
+<td>Ctrl+KK</td>
+<td>&#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x884C;&#x5C3E;</td>
+</tr>
+<tr>
+<td>Ctrl+K</td>
+<td>Backspace &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x884C;&#x9996;</td>
+</tr>
+<tr>
+<td>Ctrl+J</td>
+<td>&#x5408;&#x5E76;&#x884C;&#xFF08;&#x5DF2;&#x9009;&#x62E9;&#x9700;&#x8981;&#x5408;&#x5E76;&#x7684;&#x591A;&#x884C;&#x65F6;&#xFF09;</td>
+</tr>
+<tr>
+<td>Ctrl+KU</td>
+<td>&#x6539;&#x4E3A;&#x5927;&#x5199;</td>
+</tr>
+<tr>
+<td>Ctrl+KL</td>
+<td>&#x6539;&#x4E3A;&#x5C0F;&#x5199;</td>
+</tr>
+<tr>
+<td>Ctrl+D</td>
+<td>&#x9009;&#x62E9;&#x5B57;&#x7B26;&#x4E32; &#xFF08;&#x6309;&#x4F4F;-&#x7EE7;&#x7EED;&#x9009;&#x62E9;&#x4E0B;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF09;</td>
+</tr>
+<tr>
+<td>Ctrl+M</td>
+<td>&#x5149;&#x6807;&#x79FB;&#x52A8;&#x81F3;&#x62EC;&#x53F7;&#x5185;&#x5F00;&#x59CB;&#x6216;&#x7ED3;&#x675F;&#x7684;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td>Ctrl+/</td>
+<td>&#x6CE8;&#x91CA;&#x6574;&#x884C;&#xFF08;&#x5982;&#x5DF2;&#x9009;&#x62E9;&#x5185;&#x5BB9;&#xFF0C;&#x540C;&#x201C;Ctrl+Shift+/&#x201D;&#x6548;&#x679C;&#xFF09;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+c</td>
+<td>&#x8F6C;&#x6362;&#x4E3A;utf8</td>
+</tr>
+<tr>
+<td>Ctrl+R</td>
+<td>&#x641C;&#x7D22;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x51FD;&#x6570;&#x6807;&#x7B7E;</td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>&#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x884C;</td>
+</tr>
+<tr>
+<td>Ctrl+KT</td>
+<td>&#x6298;&#x53E0;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>Ctrl+K0</td>
+<td>&#x5C55;&#x5F00;&#x6240;&#x6709;</td>
+</tr>
+<tr>
+<td>Ctrl+U</td>
+<td>&#x8F6F;&#x64A4;&#x9500;</td>
+</tr>
+<tr>
+<td>Ctrl+T</td>
+<td>&#x8BCD;&#x4E92;&#x6362;</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>&#x7F29;&#x8FDB; &#x81EA;&#x52A8;&#x5B8C;&#x6210;</td>
+</tr>
+<tr>
+<td>Shift+Tab</td>
+<td>&#x53BB;&#x9664;&#x7F29;&#x8FDB;</td>
+</tr>
+<tr>
+<td>Ctrl+F2</td>
+<td>&#x8BBE;&#x7F6E;&#x4E66;&#x7B7E;.</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>&#x4E0B;&#x4E00;&#x4E2A;&#x4E66;&#x7B7E;</td>
+</tr>
+<tr>
+<td>Shift+F2</td>
+<td>&#x4E0A;&#x4E00;&#x4E2A;&#x4E66;&#x7B7E;</td>
+</tr>
+<tr>
+<td>Alt+F3</td>
+<td>&#x9009;&#x4E2D;&#x6587;&#x672C;&#x6309;&#x4E0B;&#x5FEB;&#x6377;&#x952E;&#xFF0C;&#x5373;&#x53EF;&#x4E00;&#x6B21;&#x6027;&#x9009;&#x62E9;&#x5168;&#x90E8;&#x7684;&#x76F8;&#x540C;&#x6587;&#x672C;&#x8FDB;&#x884C;&#x540C;&#x65F6;&#x7F16;&#x8F91;</td>
+</tr>
+<tr>
+<td>Alt+.</td>
+<td>&#x95ED;&#x5408;&#x5F53;&#x524D;&#x6807;&#x7B7E;</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>&#x68C0;&#x6D4B;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>F9</td>
+<td>&#x884C;&#x6392;&#x5E8F;(&#x6309;a-z)</td>
+</tr>
+<tr>
+<td>F11</td>
+<td>&#x5168;&#x5C4F;&#x6A21;&#x5F0F;</td>
+</tr>
+<tr>
+<td>Ctrl+Enter</td>
+<td>&#x5149;&#x6807;&#x540E;&#x63D2;&#x5165;&#x884C;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Enter</td>
+<td>&#x5149;&#x6807;&#x524D;&#x63D2;&#x5165;&#x884C;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+[</td>
+<td>&#x6298;&#x53E0;&#x4EE3;&#x7801;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+]</td>
+<td>&#x5C55;&#x5F00;&#x4EE3;&#x7801;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+&#x2191;</td>
+<td>&#x4E0E;&#x4E0A;&#x884C;&#x4E92;&#x6362;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+&#x2193;</td>
+<td>&#x4E0E;&#x4E0B;&#x884C;&#x4E92;&#x6362;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+A</td>
+<td>&#x9009;&#x62E9;&#x5149;&#x6807;&#x4F4D;&#x7F6E;&#x7236;&#x6807;&#x7B7E;&#x5BF9;&#x513F;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+D</td>
+<td>&#x590D;&#x5236;&#x5149;&#x6807;&#x6240;&#x5728;&#x6574;&#x884C;&#xFF0C;&#x63D2;&#x5165;&#x5728;&#x8BE5;&#x884C;&#x4E4B;&#x524D;</td>
+</tr>
+<tr>
+<td>ctrl+shift+F</td>
+<td>&#x5728;&#x6587;&#x4EF6;&#x5939;&#x5185;&#x67E5;&#x627E;&#xFF0C;&#x4E0E;&#x666E;&#x901A;&#x7F16;&#x8F91;&#x5668;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x662F;sublime&#x5141;&#x8BB8;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x8FDB;&#x884C;&#x67E5;&#x627E;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+K</td>
+<td>&#x5220;&#x9664;&#x6574;&#x884C;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+L</td>
+<td>&#x9F20;&#x6807;&#x9009;&#x4E2D;&#x591A;&#x884C;&#xFF08;&#x6309;&#x4E0B;&#x5FEB;&#x6377;&#x952E;&#xFF09;&#xFF0C;&#x5373;&#x53EF;&#x540C;&#x65F6;&#x7F16;&#x8F91;&#x8FD9;&#x4E9B;&#x884C;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+M</td>
+<td>&#x9009;&#x62E9;&#x62EC;&#x53F7;&#x5185;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x6309;&#x4F4F;-&#x7EE7;&#x7EED;&#x9009;&#x62E9;&#x7236;&#x62EC;&#x53F7;&#xFF09;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+P</td>
+<td>&#x6253;&#x5F00;&#x547D;&#x4EE4;&#x9762;&#x677F;</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+/</td>
+<td>&#x6CE8;&#x91CA;&#x5DF2;&#x9009;&#x62E9;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>Ctrl+PageDown(PageUp)</td>
+<td>&#x6587;&#x4EF6;&#x6309;&#x5F00;&#x542F;&#x7684;&#x524D;&#x540E;&#x987A;&#x5E8F;&#x5207;&#x6362;</td>
+</tr>
+<tr>
+<td>Shift+Tab</td>
+<td>&#x53BB;&#x9664;&#x7F29;&#x8FDB;</td>
+</tr>
+<tr>
+<td>Alt+Shift+1~9&#xFF08;&#x975E;&#x5C0F;&#x952E;&#x76D8;&#xFF09;</td>
+<td>&#x5C4F;&#x5E55;&#x663E;&#x793A;&#x76F8;&#x7B49;&#x6570;&#x5B57;&#x7684;&#x5C0F;&#x7A97;&#x53E3;</td>
+</tr>
+<tr>
+<td>Ctrl+&#x9F20;&#x6807;&#x5DE6;&#x952E;</td>
+<td>&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x9009;&#x62E9;&#x8981;&#x7F16;&#x8F91;&#x7684;&#x591A;&#x5904;&#x6587;&#x672C;</td>
+</tr>
+<tr>
+<td>shift+&#x9F20;&#x6807;&#x53F3;&#x952E;</td>
+<td>&#x5217;&#x9009;&#x62E9;</td>
+</tr>
+<tr>
+<td>Shift+&#x9F20;&#x6807;&#x53F3;&#x952E;&#xFF08;&#x9F20;&#x6807;&#x4E2D;&#x952E;&#xFF09;</td>
+<td>&#x53EF;&#x4EE5;&#x7528;&#x9F20;&#x6807;&#x8FDB;&#x884C;&#x7AD6;&#x5411;&#x591A;&#x884C;&#x9009;&#x62E9;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
 <ul>
-<li>Ctrl+L &#x9009;&#x62E9;&#x6574;&#x884C;&#xFF08;&#x6309;&#x4F4F;-&#x7EE7;&#x7EED;&#x9009;&#x62E9;&#x4E0B;&#x884C;&#xFF09;</li>
-<li>Ctrl+KK &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x884C;&#x5C3E;</li>
-<li>Ctrl+K Backspace &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x884C;&#x9996;</li>
-<li>Ctrl+J &#x5408;&#x5E76;&#x884C;&#xFF08;&#x5DF2;&#x9009;&#x62E9;&#x9700;&#x8981;&#x5408;&#x5E76;&#x7684;&#x591A;&#x884C;&#x65F6;&#xFF09;</li>
-<li>Ctrl+KU &#x6539;&#x4E3A;&#x5927;&#x5199;</li>
-<li>Ctrl+KL &#x6539;&#x4E3A;&#x5C0F;&#x5199;</li>
-<li>Ctrl+D &#x9009;&#x62E9;&#x5B57;&#x7B26;&#x4E32; &#xFF08;&#x6309;&#x4F4F;-&#x7EE7;&#x7EED;&#x9009;&#x62E9;&#x4E0B;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF09;</li>
-<li>Ctrl+M &#x5149;&#x6807;&#x79FB;&#x52A8;&#x81F3;&#x62EC;&#x53F7;&#x5185;&#x5F00;&#x59CB;&#x6216;&#x7ED3;&#x675F;&#x7684;&#x4F4D;&#x7F6E;</li>
-<li>Ctrl+/ &#x6CE8;&#x91CA;&#x6574;&#x884C;&#xFF08;&#x5982;&#x5DF2;&#x9009;&#x62E9;&#x5185;&#x5BB9;&#xFF0C;&#x540C;&#x201C;Ctrl+Shift+/&#x201D;&#x6548;&#x679C;&#xFF09;</li>
-<li>Ctrl+Shift+c&#x8F6C;&#x6362;&#x4E3A;utf8</li>
-<li>Ctrl+R &#x641C;&#x7D22;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x51FD;&#x6570;&#x6807;&#x7B7E;</li>
-<li>Ctrl+G &#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x884C;</li>
-<li>Ctrl+KT &#x6298;&#x53E0;&#x5C5E;&#x6027;</li>
-<li>Ctrl+K0 &#x5C55;&#x5F00;&#x6240;&#x6709;</li>
-<li>Ctrl+U &#x8F6F;&#x64A4;&#x9500;</li>
-<li>Ctrl+T &#x8BCD;&#x4E92;&#x6362;</li>
-<li>Tab &#x7F29;&#x8FDB; &#x81EA;&#x52A8;&#x5B8C;&#x6210;</li>
-<li>Shift+Tab &#x53BB;&#x9664;&#x7F29;&#x8FDB;</li>
-<li>Ctrl+F2 &#x8BBE;&#x7F6E;&#x4E66;&#x7B7E;.</li>
-<li>F2 &#x4E0B;&#x4E00;&#x4E2A;&#x4E66;&#x7B7E;</li>
-<li>Shift+F2 &#x4E0A;&#x4E00;&#x4E2A;&#x4E66;&#x7B7E;</li>
-<li>shift+&#x9F20;&#x6807;&#x53F3;&#x952E; &#x5217;&#x9009;&#x62E9;</li>
-<li>Alt+F3 &#x9009;&#x4E2D;&#x6587;&#x672C;&#x6309;&#x4E0B;&#x5FEB;&#x6377;&#x952E;&#xFF0C;&#x5373;&#x53EF;&#x4E00;&#x6B21;&#x6027;&#x9009;&#x62E9;&#x5168;&#x90E8;&#x7684;&#x76F8;&#x540C;&#x6587;&#x672C;&#x8FDB;&#x884C;&#x540C;&#x65F6;&#x7F16;&#x8F91;</li>
-<li>Alt+. &#x95ED;&#x5408;&#x5F53;&#x524D;&#x6807;&#x7B7E;</li>
-<li>F6 &#x68C0;&#x6D4B;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;</li>
-<li>F9 &#x884C;&#x6392;&#x5E8F;(&#x6309;a-z)</li>
-<li>F11 &#x5168;&#x5C4F;&#x6A21;&#x5F0F;</li>
-<li>Ctrl+Enter &#x5149;&#x6807;&#x540E;&#x63D2;&#x5165;&#x884C;</li>
-<li>Ctrl+Shift+Enter &#x5149;&#x6807;&#x524D;&#x63D2;&#x5165;&#x884C;</li>
-<li>Ctrl+Shift+[ &#x6298;&#x53E0;&#x4EE3;&#x7801;</li>
-<li>Ctrl+Shift+] &#x5C55;&#x5F00;&#x4EE3;&#x7801;</li>
-<li>Ctrl+Shift+&#x2191; &#x4E0E;&#x4E0A;&#x884C;&#x4E92;&#x6362;</li>
-<li>Ctrl+Shift+&#x2193; &#x4E0E;&#x4E0B;&#x884C;&#x4E92;&#x6362;</li>
-<li>Ctrl+Shift+A &#x9009;&#x62E9;&#x5149;&#x6807;&#x4F4D;&#x7F6E;&#x7236;&#x6807;&#x7B7E;&#x5BF9;&#x513F;</li>
-<li>Ctrl+Shift+D &#x590D;&#x5236;&#x5149;&#x6807;&#x6240;&#x5728;&#x6574;&#x884C;&#xFF0C;&#x63D2;&#x5165;&#x5728;&#x8BE5;&#x884C;&#x4E4B;&#x524D;</li>
-<li>ctrl+shift+F &#x5728;&#x6587;&#x4EF6;&#x5939;&#x5185;&#x67E5;&#x627E;&#xFF0C;&#x4E0E;&#x666E;&#x901A;&#x7F16;&#x8F91;&#x5668;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x662F;sublime&#x5141;&#x8BB8;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x8FDB;&#x884C;&#x67E5;&#x627E;</li>
-<li>Ctrl+Shift+K &#x5220;&#x9664;&#x6574;&#x884C;</li>
-<li>Ctrl+Shift+L &#x9F20;&#x6807;&#x9009;&#x4E2D;&#x591A;&#x884C;&#xFF08;&#x6309;&#x4E0B;&#x5FEB;&#x6377;&#x952E;&#xFF09;&#xFF0C;&#x5373;&#x53EF;&#x540C;&#x65F6;&#x7F16;&#x8F91;&#x8FD9;&#x4E9B;&#x884C;</li>
-<li>Ctrl+Shift+M &#x9009;&#x62E9;&#x62EC;&#x53F7;&#x5185;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x6309;&#x4F4F;-&#x7EE7;&#x7EED;&#x9009;&#x62E9;&#x7236;&#x62EC;&#x53F7;&#xFF09;</li>
-<li>Ctrl+Shift+P &#x6253;&#x5F00;&#x547D;&#x4EE4;&#x9762;&#x677F;</li>
-<li>Ctrl+Shift+/ &#x6CE8;&#x91CA;&#x5DF2;&#x9009;&#x62E9;&#x5185;&#x5BB9;</li>
-<li>Ctrl+PageDown &#x3001;Ctrl+PageUp &#x6587;&#x4EF6;&#x6309;&#x5F00;&#x542F;&#x7684;&#x524D;&#x540E;&#x987A;&#x5E8F;&#x5207;&#x6362;</li>
-<li>Ctrl+&#x9F20;&#x6807;&#x5DE6;&#x952E; &#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x9009;&#x62E9;&#x8981;&#x7F16;&#x8F91;&#x7684;&#x591A;&#x5904;&#x6587;&#x672C;</li>
-<li>Shift+&#x9F20;&#x6807;&#x53F3;&#x952E;&#xFF08;&#x6216;&#x4F7F;&#x7528;&#x9F20;&#x6807;&#x4E2D;&#x952E;&#xFF09;&#x53EF;&#x4EE5;&#x7528;&#x9F20;&#x6807;&#x8FDB;&#x884C;&#x7AD6;&#x5411;&#x591A;&#x884C;&#x9009;&#x62E9;</li>
-<li>Shift+Tab &#x53BB;&#x9664;&#x7F29;&#x8FDB;</li>
-<li>Alt+Shift+1~9&#xFF08;&#x975E;&#x5C0F;&#x952E;&#x76D8;&#xFF09;&#x5C4F;&#x5E55;&#x663E;&#x793A;&#x76F8;&#x7B49;&#x6570;&#x5B57;&#x7684;&#x5C0F;&#x7A97;&#x53E3;</li>
+<li><p>&#x5B98;&#x7F51;&#xFF1A;<a href="http://www.sublimetext.com/" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+<li><p>Package Control&#xFF1A;<a href="https://packagecontrol.io/installation" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
+<li><p>CSDN&#xFF1A;<a href="http://blog.csdn.net/Oops_Qu/article/details/72811128?locationNum=4&amp;fps=1" target="_blank">&#x70B9;&#x51FB;&#x8FDB;&#x5165;</a></p>
+</li>
 </ul>
 
                                 
@@ -1668,7 +1882,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第五小节：Sublime 编辑器","level":"1.2.5","depth":2,"next":{"title":"第六小节：学习 Gitbook","level":"1.2.6","depth":2,"path":"git/Linux/6-gitbook.md","ref":"./git/Linux/6-gitbook.md","articles":[]},"previous":{"title":"第四小节：Atom 编辑器","level":"1.2.4","depth":2,"path":"git/Linux/4-atom.md","ref":"./git/Linux/4-atom.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Linux/5-sublime.md","mtime":"2017-08-08T21:38:20.108Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-17T16:16:31.923Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第五小节：Sublime 编辑器","level":"1.2.5","depth":2,"next":{"title":"第六小节：学习 Gitbook","level":"1.2.6","depth":2,"path":"git/Linux/6-gitbook.md","ref":"./git/Linux/6-gitbook.md","articles":[]},"previous":{"title":"第四小节：Atom 编辑器","level":"1.2.4","depth":2,"path":"git/Linux/4-atom.md","ref":"./git/Linux/4-atom.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Linux/5-sublime.md","mtime":"2017-08-18T22:24:18.559Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-18T22:25:30.229Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
