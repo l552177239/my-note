@@ -96,10 +96,11 @@ alert("Hello World!")
 ### `<base>`元素
 
 1. `<base>`标签描述了基本的链接地址`/`
-2. 该标签作为HTML文档中所有的链接标签的默认链接
+2. 为页面中所有的链接指定默认地址
 
 ```html
-<base href="http://www.w3school.com.cn/i/" target="_blank" />
+<base href="http://www.w3school.com.cn/i/" target="_self" />
+<!-- _self：指定页面中所有标签都是本页打开 -->
 ```
 
 #### 举个例子
@@ -201,7 +202,7 @@ content的参数有all、none、index、noindex、follow、nofollow(默认：all
 举例：
 
 ```html
-<meta name="author" content="root,root@xxxx.com"> 
+<meta name="author" content="root,root@xxxx.com">
 ```
 
  - generator
@@ -209,7 +210,7 @@ content的参数有all、none、index、noindex、follow、nofollow(默认：all
 > meta标签的generator的信息参数，代表说明网站的采用的什么软件制作
 
 ```html
-<meta name="generator" content="信息参数"/> 
+<meta name="generator" content="信息参数"/>
 ```
 
  - COPYRIGHT
@@ -360,7 +361,7 @@ max-stale指示客户机可以接收超出超时期间的响应消息。如果�
 用法：
 
 ```html
-<meta http-equiv="imagetoolbar" content="false"/> 
+<meta http-equiv="imagetoolbar" content="false"/>
 ```
 
  - Content-Script-Type
