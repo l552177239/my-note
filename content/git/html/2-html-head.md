@@ -67,7 +67,7 @@ xml:space  | preserve   | HTML5 不支持,规定是否保留代码中的空白
   - 如果不使用 async 且 `defer="defer"`：脚本将在页面完成解析时执行
   - 如果既不使用 async 也不使用 defer：在浏览器继续解析页面之前，立即读取并执行脚本
 
-###  <noscript>元素
+###  `<noscript>`元素
 
 1. noscript 元素用来定义在脚本未被执行时的替代内容（文本）
 2. 此标签可被用于可识别`<noscript>`标签但无法支持其中的脚本的浏览器
