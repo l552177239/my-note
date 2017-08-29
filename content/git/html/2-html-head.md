@@ -288,7 +288,8 @@ http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器
 ```html
 <meta http-equiv="Set-Cookie" content="cookie value=xxx;expires=Friday,12-Jan-200118:18:18GMT；path=/"> 
 ```
-注意：必须使用GMT的时间格式。
+
+**注意**：必须使用GMT的时间格式。
 
  - Window-target(显示窗口的设定)
 
@@ -314,17 +315,17 @@ http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器
 
 具体如下：
 
-meta标签的charset的信息参数如GB2312时，代表说明网站是采用的编码是简体中文；
+meta标签的 charset的信息参数如GB2312时，代表说明网站是采用的编码是简体中文；
 
-meta标签的charset的信息参数如BIG5时，代表说明网站是采用的编码是繁体中文；
+meta标签的 charset的信息参数如BIG5时，代表说明网站是采用的编码是繁体中文；
 
-meta标签的charset的信息参数如iso-2022-jp时，代表说明网站是采用的编码是日文；
+meta标签的 charset的信息参数如iso-2022-jp时，代表说明网站是采用的编码是日文；
 
-meta标签的charset的信息参数如ks_c_5601时，代表说明网站是采用的编码是韩文；
+meta标签的 charset的信息参数如ks_c_5601时，代表说明网站是采用的编码是韩文；
 
-meta标签的charset的信息参数如ISO-8859-1时，代表说明网站是采用的编码是英文；
+meta标签的 charset的信息参数如ISO-8859-1时，代表说明网站是采用的编码是英文；
 
-meta标签的charset的信息参数如UTF-8时，代表世界通用的语言编码；
+meta标签的 charset的信息参数如UTF-8时，代表世界通用的语言编码；
 
  - content-Language（显示语言的设定）
 
@@ -377,3 +378,11 @@ max-stale指示客户机可以接收超出超时期间的响应消息。如果�
  - 页面跳转，只用于IE
 
 具体请看 http://www.haorooms.com/post/liulanq_think_ie
+
+### 参考
+
+ - 菜鸟教程：[点击查看](http://www.runoob.com/html/html-head.html)
+
+ - W3school：[点击查看](http://www.w3school.com.cn/html/html_head.asp)
+
+ - FEX：[点击查看](http://fex.baidu.com/blog/2014/10/html-head-tags/)
