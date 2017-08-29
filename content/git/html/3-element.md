@@ -47,7 +47,7 @@
 
 #### 图片
 
-```
+```html
 <img src="图片地址" width="宽度" height="高度" alt="图片无法加载显示" />
 ```
 
@@ -63,6 +63,13 @@
 2. 块级元素不能放在标签 p 里面
 3. li 标签可以包含 div 标签，因为 li 和 div 标签都是装载内容的容器
 4. 有几个特殊的块级元素只能包含内嵌元素，不能再包含块级元素(h1~h6、p、dt)
+5. 块级元素与块级元素平级、内嵌元素与内嵌元素平级
+
+```html
+<div><span></span><p></p></div>
+<!-- span是行内元素，p是块级元素，所以这个是错误的嵌套 -->
+<div><span></span><a></a></div> <!-- 这才是对的 -->
+```
 
 #### 内联元素和块级元素
 
@@ -90,6 +97,18 @@ form、hr、isindex、menu、noframes、noscript、ol、p、pre、table、ul ...
 
 **主要包括**:
 span、a、abbr、acronym、b、bdo、big、br、cite、code、dfn、em、font、i、img、input、kbd、label、q、s、samp、select、small、strike、strong、sub、sup、textarea、tt、u、var ...
+
+#### 关于内联元素和块级元素的文章
+
+ - W3C 块元素：[点击查看](http://www.w3school.com.cn/tags/index.asp)
+
+ - 博客园 行元素与块元素：[点击查看](http://www.cnblogs.com/Jackie0714/p/4923639.html)
+
+ - 网易 行内元素和块级元素：[点击查看](http://blog.163.com/shiliang_001/blog/static/130521806201241862714652)
+
+ - 网易 块级元素与行级元素：[点击查看](http://gkecenter.blog.163.com/blog/static/181380305201291745234195/)
+
+ - Web前端开发 块级元素与行级元素：[点击查看](http://www.css88.com/archives/646)
 
 **注意**：
 
@@ -123,7 +142,7 @@ dir                  | 规定元素中内容的文本方向
 
 ### 参考
 
- - W3C元素：[点击查看](http://www.w3school.com.cn/html/html_elements.asp)
+ - W3C HTML标签：[点击查看](http://www.w3school.com.cn/tags/index.asp)
 
  - W3C全局属性：[点击查看](http://www.w3school.com.cn/tags/html_ref_standardattributes.asp)
 
