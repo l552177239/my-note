@@ -2,10 +2,10 @@
 
 * [前端大宝书](./README.md)
 * HTML
-	- [第一小节：Hello HTML](./git/html/1-hello-html.md)
-	- [第二小节：HTML 头部](./git/html/2-html-head.md)
-	- [第三小节：元素与属性](./git/html/3-element.md)
-	- [第四小节：盒模型](./git/html/4-div.md)
+	- [第一小节：Hello HTML](./git/HTML+CSS/1-hello-html.md)
+	- [第二小节：HTML 头部](./git/HTML+CSS/2-html-head.md)
+	- [第三小节：元素与属性](./git/HTML+CSS/3-element.md)
+	- [第四小节：常用的元素](./git/HTML+CSS/4-elements.md)
 * 第一章 Linux基础
 	- [第一小节：Linux 命令行](./git/Linux/1-linux.md)
 	- [第二小节：文件系统结构](./git/Linux/2-file-sys.md)
