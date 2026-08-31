@@ -1,17 +1,17 @@
 {
-  "name": "vuepress-theme-vdoing",
-  "version": "1.12.9",
-  "description": "Vdoing theme for VuePress. 一个基于VuePress的知识管理兼博客主题。",
+  "name": "lious-blog",
+  "version": "1.0",
+  "description": "知识管理兼博客",
   "author": {
-    "name": "gaoyi(Evan) Xu"
+    "name": "Lious"
   },
-  "homepage": "https://github.com/xugaoyi/vuepress-theme-vdoing#readme",
+  "homepage": "https://l552177239.github.io/my-note/",
   "bugs": {
-    "url": "https://github.com/xugaoyi/vuepress-theme-vdoing/issues"
+    "url": "https://github.com/l552177239/my-note/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xugaoyi/vuepress-theme-vdoing.git"
+    "url": "git+https://github.com/l552177239/my-note.git"
   },
   "keywords": [
     "documentation",
@@ -25,8 +25,8 @@
   "main": "index.js",
   "maintainers": [
     {
-      "name": "Evan xu",
-      "email": "894072666@qq.com"
+      "name": "Lious",
+      "email": "552177239@qq.com"
     }
   ],
   "dependencies": {
