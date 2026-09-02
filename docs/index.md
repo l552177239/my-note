@@ -9,12 +9,12 @@ tagline: 吾生也有涯，而知也无涯。
 
 features: # 可选的
   - title: 前端
-    details: html(5)/css(3)、JavaScript、ES6、Vue框架等前端技术
+    details: html/css、JavaScript、Vue、React框架等前端技术
     link: /web/ # 可选
     imgUrl: /img/frontend.png # 可选
   - title: 后端
-    details: Java、Python、SpringBoot、mySql等后端技术
-    link: /java/ # 可选
+    details: Java、SpringBoot、Python、MySQL、Redis等后端技术
+    link: /backend/ # 可选
     imgUrl: /img/backend.png # 可选
   - title: AI
     details: LLM、MCP、skill、Langchain、LangGraph等AI相关技术

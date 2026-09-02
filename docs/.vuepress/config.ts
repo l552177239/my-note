@@ -59,6 +59,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
                 link: '/note/git/',
               },
               {
+                text: '《前端大宝书》',
+                link: '/note/frontend-book/',
+              },
+              {
                 text: 'TypeScript',
                 link: '/pages/51afd6/',
               },
@@ -72,9 +76,38 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
       {
         text: '后端',
-        link: '/java/',
+        link: '/backend/',
         items: [
-          { text: 'Java基础语法', link: '/pages/java-basic/' },
+          { text: 'Java', link: '/pages/java-basic/',
+            items: [
+            { text: 'Java基础语法', link: '/pages/java-basic/' },
+            { text: 'Java面向对象', link: '/pages/java-object/' },
+            { text: 'Java异常处理', link: '/pages/java-exception/' },
+            { text: 'Java集合框架', link: '/pages/java-collection/' },
+            { text: 'Java多线程', link: '/pages/java-thread/' },
+            { text: 'Java网络编程', link: '/pages/java-network/' },
+            { text: 'Java数据库', link: '/pages/java-database/' },
+            { text: 'JavaWeb', link: '/pages/java-web/' },
+          ] 
+          },
+          { text: 'Python', link: '/pages/python-basic/',
+            items: [
+              { text: 'Python基础', link: '/pages/python-basic/' },
+              { text: 'Python教程', link: '/pages/python-tutorial/' },
+              { text: '输入与输出', link: '/pages/python-io/' },
+              { text: '变量与常量', link: '/pages/python-variables/' },
+              { text: '数据类型', link: '/pages/python-datatypes/' },
+              { text: '条件判断', link: '/pages/python-condition/' },
+              { text: '循环', link: '/pages/python-loop/' },
+              { text: '文件操作', link: '/pages/python-file/' },
+              { text: '函数', link: '/pages/python-function/' },
+              { text: '类', link: '/pages/python-class/' },
+              { text: '面向对象', link: '/pages/python-oop/' },
+              { text: '内置函数速查', link: '/pages/python-builtin/' },
+            ]
+          },
+          { text: 'MySQL', link: '/pages/mysql-basic/', items: [] },
+          { text: 'Redis', link: '/pages/redis-basic/', items: [] },
         ],
       },
       {
@@ -274,10 +307,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           {
             title: '在Bing中搜索',
             frontUrl: 'https://cn.bing.com/search?q=',
-          },
-          {
-            title: '通过百度搜索本站的',
-            frontUrl: `https://www.baidu.com/s?wd=site%3A${DOMAIN_NAME}%20`,
           },
         ],
       }
