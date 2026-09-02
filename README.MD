@@ -15,4 +15,4 @@ pnpm run dev:win
 ## 使用
 
 * [vuepress](https://vuepress.vuejs.org/)
-* [知识库兼博客站](https://xugaoyi.com/)
+* [theme](https://xugaoyi.com/)

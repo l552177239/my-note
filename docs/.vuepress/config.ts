@@ -206,7 +206,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200103123203.jpg',
+      avatar: 'https://pic3.zhimg.com/v2-08e30b27456b739f909c1fc8a5d8c05a_1440w.jpg',
       name: 'Lious',
       slogan: '学无止境',
     },
