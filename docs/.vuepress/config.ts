@@ -92,7 +92,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           },
           { text: 'Python', link: '/pages/python-basic/',
             items: [
-              { text: 'Python基础', link: '/pages/python-basic/' },
+              { text: 'Python解释', link: '/pages/python-basic/' },
               { text: 'Python教程', link: '/pages/python-tutorial/' },
               { text: '输入与输出', link: '/pages/python-io/' },
               { text: '变量与常量', link: '/pages/python-variables/' },
