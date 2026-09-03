@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
 
-const DOMAIN_NAME = 'xugaoyi.com' // 域名 (不带https)
+const DOMAIN_NAME = 'l552177239.github.io/my-note' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
@@ -40,6 +40,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
               { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
               { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
               { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
+              { text: 'TypeScript', link: '/pages/51afd6/' },
+              { text: 'Vue', link: '/note/vue/' },
+              { text: 'React', link: '/note/react/' },
+              { text: 'UI框架', link: '/pages/fdb-1a6845350d/' },
             ],
           },
           {
@@ -48,23 +52,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
               { text: '《JavaScript教程》', link: '/note/javascript/' },
               { text: '《JavaScript高级程序设计》', link: '/note/js/' },
               { text: '《ES6 教程》', link: '/note/es6/' },
-              { text: '《Vue》', link: '/note/vue/' },
-              { text: '《React》', link: '/note/react/' },
               {
                 text: '《TypeScript 从零实现 axios》',
                 link: '/note/typescript-axios/',
-              },
-              {
-                text: '《Git》',
-                link: '/note/git/',
-              },
-              {
-                text: '《前端大宝书》',
-                link: '/note/frontend-book/',
-              },
-              {
-                text: 'TypeScript',
-                link: '/pages/51afd6/',
               },
               {
                 text: 'JS设计模式总结',
@@ -80,30 +70,31 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         items: [
           { text: 'Java', link: '/pages/java-basic/',
             items: [
-            { text: 'Java基础语法', link: '/pages/java-basic/' },
-            { text: 'Java面向对象', link: '/pages/java-object/' },
-            { text: 'Java异常处理', link: '/pages/java-exception/' },
-            { text: 'Java集合框架', link: '/pages/java-collection/' },
-            { text: 'Java多线程', link: '/pages/java-thread/' },
-            { text: 'Java网络编程', link: '/pages/java-network/' },
-            { text: 'Java数据库', link: '/pages/java-database/' },
-            { text: 'JavaWeb', link: '/pages/java-web/' },
+            // { text: 'Java基础语法', link: '/pages/java-basic/' },
+            // { text: 'Java面向对象', link: '/pages/java-object/' },
+            // { text: 'Java异常处理', link: '/pages/java-exception/' },
+            // { text: 'Java集合框架', link: '/pages/java-collection/' },
+            // { text: 'Java多线程', link: '/pages/java-thread/' },
+            // { text: 'Java网络编程', link: '/pages/java-network/' },
+            // { text: 'Java数据库', link: '/pages/java-database/' },
+            // { text: 'JavaWeb', link: '/pages/java-web/' },
           ] 
           },
           { text: 'Python', link: '/pages/python-basic/',
             items: [
-              { text: 'Python解释', link: '/pages/python-basic/' },
-              { text: 'Python教程', link: '/pages/python-tutorial/' },
-              { text: '输入与输出', link: '/pages/python-io/' },
-              { text: '变量与常量', link: '/pages/python-variables/' },
-              { text: '数据类型', link: '/pages/python-datatypes/' },
-              { text: '条件判断', link: '/pages/python-condition/' },
-              { text: '循环', link: '/pages/python-loop/' },
-              { text: '文件操作', link: '/pages/python-file/' },
-              { text: '函数', link: '/pages/python-function/' },
-              { text: '类', link: '/pages/python-class/' },
-              { text: '面向对象', link: '/pages/python-oop/' },
-              { text: '内置函数速查', link: '/pages/python-builtin/' },
+              { text: '《Python进阶教程》', link: '/note/python-advanced/' },
+              // { text: 'Python解释', link: '/pages/python-basic/' },
+              // { text: 'Python教程', link: '/pages/python-tutorial/' },
+              // { text: '输入与输出', link: '/pages/python-io/' },
+              // { text: '变量与常量', link: '/pages/python-variables/' },
+              // { text: '数据类型', link: '/pages/python-datatypes/' },
+              // { text: '条件判断', link: '/pages/python-condition/' },
+              // { text: '循环', link: '/pages/python-loop/' },
+              // { text: '文件操作', link: '/pages/python-file/' },
+              // { text: '函数', link: '/pages/python-function/' },
+              // { text: '类', link: '/pages/python-class/' },
+              // { text: '面向对象', link: '/pages/python-oop/' },
+              // { text: '内置函数速查', link: '/pages/python-builtin/' },
             ]
           },
           { text: 'MySQL', link: '/pages/mysql-basic/', items: [] },
@@ -112,29 +103,33 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: '技术',
+        text: '文档',
         link: '/technology/',
         items: [
-          { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
+          { text: '技术文档',
+            link: '/pages/9a7ee40fc232253e/',
+            items: [
+              { text: 'Markdown使用教程', link: '/pages/markdown-tutorial/' },
+              { text: 'yaml语法教程', link: '/pages/yaml-tutorial/' },
+              { text: 'Json基础教程', link: '/pages/json-tutorial/' },
+            ] 
+          },
           { text: 'Linux', link: '/pages/fdb-3187a9667b/' },
           { text: 'Git', link: '/pages/fdb-7a77510d52/' },
           { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-          { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
           { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
+          {
+            text: '更多',
+            link: '/more/',
+            items: [
+              { text: '学习', link: '/pages/f2a556/' },
+              { text: '面试', link: '/pages/aea6571b7a8bae86/' },
+              { text: '实用技巧', link: '/pages/baaa02/' },
+            ],
+          },
         ],
       },
-      {
-        text: '更多',
-        link: '/more/',
-        items: [
-          { text: '学习', link: '/pages/f2a556/' },
-          { text: '面试', link: '/pages/aea6571b7a8bae86/' },
-          { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
-          { text: '实用技巧', link: '/pages/baaa02/' },
-          { text: '友情链接', link: '/friends/' },
-        ],
-      },
-      { text: '关于', link: '/about/' },
+      
       {
         text: '收藏',
         link: '/pages/beb6c0bd8a66cea6/',
