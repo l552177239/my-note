@@ -116,11 +116,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         text: 'AI',
         link: '/ai/',
-        items: [
-          { text: 'AI基础知识', link: '/pages/ai-basic/',
-            items: [] 
-          },
-        ],
+        items: [],
       },
       {
         text: '文档',
