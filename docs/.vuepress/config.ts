@@ -96,9 +96,30 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
               // { text: '内置函数速查', link: '/pages/python-builtin/' },
             ]
           },
-          { text: 'MySQL', link: '/pages/mysql-basic/', items: [] },
+          { text: 'MySQL', link: '/pages/mysql-basic/',
+            items: [
+              // { text: 'SQL概述', link: '/pages/mysql-basic/' },
+              // { text: '数据类型', link: '/pages/mysql-datatypes/' },
+              // { text: 'DDL数据定义语言', link: '/pages/mysql-ddl/' },
+              // { text: 'DML数据操作语言', link: '/pages/mysql-dml/' },
+              // { text: 'DQL数据查询语言', link: '/pages/mysql-dql/' },
+              // { text: 'DCL数据控制语言', link: '/pages/mysql-dcl/' },
+              // { text: '约束', link: '/pages/mysql-constraints/' },
+              // { text: '常用函数', link: '/pages/mysql-functions/' },
+              // { text: '经典示例数据', link: '/pages/mysql-examples/' },
+            ]
+          },
           { text: 'Redis', link: '/pages/redis-basic/', items: [] },
           { text: 'Nodejs', link: '/pages/fdb-12b2a966a0/' },
+        ],
+      },
+      {
+        text: 'AI',
+        link: '/ai/',
+        items: [
+          { text: 'AI基础知识', link: '/pages/ai-basic/',
+            items: [] 
+          },
         ],
       },
       {
@@ -127,8 +148,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             ],
           },
         ],
-      },
-      
+      }, 
       {
         text: '收藏',
         link: '/pages/beb6c0bd8a66cea6/',
