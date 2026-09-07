@@ -17,7 +17,7 @@ features: # 可选的
     link: /backend/ # 可选
     imgUrl: /img/backend.png # 可选
   - title: AI
-    details: LLM、MCP、skill、Langchain、LangGraph等AI相关技术
+    details: 应用向学习路线：LLM、LangChain、LangGraph、MCP、Skill、Agent
     link: /ai/ # 可选
     imgUrl: /img/ai.png # 可选
   # - title: 技术
