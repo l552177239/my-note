@@ -109,7 +109,20 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
               // { text: '经典示例数据', link: '/pages/mysql-examples/' },
             ]
           },
-          { text: 'Redis', link: '/pages/redis-basic/', items: [] },
+          { text: 'Redis', link: '/pages/redis-basic/',
+            items: [
+              // { text: '概述', link: '/pages/redis-basic/' },
+              // { text: '核心基本原理', link: '/pages/redis-principle/' },
+              // { text: '五大基本数据类型', link: '/pages/redis-datatypes/' },
+              // { text: '全局通用命令', link: '/pages/redis-commands/' },
+              // { text: 'Redis事务', link: '/pages/redis-transaction/' },
+              // { text: '持久化机制', link: '/pages/redis-persistence/' },
+              // { text: '内存淘汰机制', link: '/pages/redis-eviction/' },
+              // { text: '过期Key删除策略', link: '/pages/redis-expire/' },
+              // { text: 'Java操作Redis', link: '/pages/redis-java/' },
+              // { text: '工程实战案例', link: '/pages/redis-practice/' },
+            ]
+          },
           { text: 'Nodejs', link: '/pages/fdb-12b2a966a0/' },
         ],
       },
