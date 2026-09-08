@@ -340,6 +340,19 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
 
     [
+      'mermaidjs', // Mermaid 流程图 / 时序图等渲染
+      {
+        theme: 'default',
+      },
+    ],
+    // 覆盖插件 Mermaid：接住 Promise 拒绝，失败时显示错误而非一直绿块 Loading
+    // 必须写在 mermaidjs 之后；勿 require 本地 CJS（config 会被打成 ESM）
+    {
+      name: 'mermaid-fix',
+      enhanceAppFiles: resolve(__dirname, './plugins/mermaid-fix-enhance.js'),
+    },
+
+    [
       'demo-block', // demo演示模块 https://github.com/xiguaxigua/vuepress-plugin-demo-block
       {
         settings: {
