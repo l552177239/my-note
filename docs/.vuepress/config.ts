@@ -388,23 +388,21 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     [
-      'vuepress-plugin-comment', // 评论
+      // Giscus 评论（需先在 https://giscus.app 配置并安装 GitHub App）
+      resolve(__dirname, './plugins/giscus'),
       {
-        choosen: 'gitalk',
-        options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-          repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'l552177239', // GitHub仓库所有者
-          admin: ['l552177239'], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-          title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-          labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-          body:
-            '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
-        },
+        repo: 'l552177239/blog-gitalk-comment',
+        repoId: 'R_kgDOUS9Hkg',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOUS9Hks4DFMTz',
+        mapping: 'pathname',
+        strict: '0',
+        reactionsEnabled: '1',
+        emitMetadata: '1',
+        inputPosition: 'bottom',
+        theme: 'preferred_color_scheme',
+        lang: 'zh-CN',
+        loading: 'lazy',
       },
     ],
     [
