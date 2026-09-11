@@ -131,7 +131,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: '/ai/',
         items: [
           { text: 'AI应用开发基础', link: '/pages/ai-roadmap/' },
-          { text: 'AI应用开发技术', link: '/ai/' },
+          { text: 'AI应用开发技术', link: '/pages/ai-eng-roadmap/' },
         ],
       },
       {
