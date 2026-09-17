@@ -68,7 +68,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '后端',
         link: '/backend/',
         items: [
-          { text: 'Java', link: '/pages/java-basic/',
+          { text: 'Java', link: '/pages/java-study-roadmap/',
             items: [
             // { text: 'Java基础语法', link: '/pages/java-basic/' },
             // { text: 'Java面向对象', link: '/pages/java-object/' },
