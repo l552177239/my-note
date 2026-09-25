@@ -1,0 +1,96 @@
+{
+  "backend": [
+    {
+      "id": "backend-java-01",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "集合",
+        "HashMap"
+      ],
+      "difficulty": "medium",
+      "title": "HashMap 的底层数据结构是什么？JDK 1.8 做了哪些优化？",
+      "question": "HashMap 的底层数据结构是什么？JDK 1.8 做了哪些优化？",
+      "answer": "JDK 1.8 之前：数组 + 链表；JDK 1.8 起：数组 + 链表 + 红黑树。\n\n主要优化点：\n\n- 当链表长度 ≥ 8 且数组容量 ≥ 64 时，链表转为红黑树，降低最坏查询复杂度\n- 扩容时优化了元素迁移与 hash 计算方式\n- 引入 `Node` / `TreeNode`，头插改为尾插，降低并发下环形链表风险（仍不建议多线程共用 HashMap）\n\n复杂度：平均 O(1)；退化或树化前冲突严重时接近 O(n)，树化后约 O(log n)。",
+      "questionHtml": "<p>HashMap 的底层数据结构是什么？JDK 1.8 做了哪些优化？</p>\n",
+      "answerHtml": "<p>JDK 1.8 之前：数组 + 链表；JDK 1.8 起：数组 + 链表 + 红黑树。</p>\n<p>主要优化点：</p>\n<ul>\n<li>当链表长度 ≥ 8 且数组容量 ≥ 64 时，链表转为红黑树，降低最坏查询复杂度</li>\n<li>扩容时优化了元素迁移与 hash 计算方式</li>\n<li>引入 <code>Node</code> / <code>TreeNode</code>，头插改为尾插，降低并发下环形链表风险（仍不建议多线程共用 HashMap）</li>\n</ul>\n<p>复杂度：平均 O(1)；退化或树化前冲突严重时接近 O(n)，树化后约 O(log n)。</p>\n",
+      "sourcePath": "backend/java/01.HashMap.md",
+      "reference": [
+        "https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html"
+      ]
+    },
+    {
+      "id": "backend-mysql-01",
+      "type": "backend",
+      "category": "mysql",
+      "categoryName": "MySQL",
+      "tags": [
+        "索引",
+        "B+树"
+      ],
+      "difficulty": "medium",
+      "title": "为什么 MySQL InnoDB 使用 B+ 树而不是 B 树或哈希索引？",
+      "question": "为什么 MySQL InnoDB 使用 B+ 树而不是 B 树或哈希索引？",
+      "answer": "InnoDB 聚簇索引与二级索引默认都基于 B+ 树。\n\n相对 B 树：\n\n- B+ 树非叶子节点只存键，扇出更大，树更矮，磁盘 IO 更少\n- 叶子节点形成有序链表，范围查询、排序、`ORDER BY` / 区间扫描更友好\n\n相对哈希索引：\n\n- 哈希等值查询快，但不支持范围查询与排序\n- InnoDB 自适应哈希是缓冲池内优化，不能替代磁盘上的 B+ 树索引结构\n\n因此 OLTP 场景下 B+ 树在等值 + 范围查询之间更均衡。",
+      "questionHtml": "<p>为什么 MySQL InnoDB 使用 B+ 树而不是 B 树或哈希索引？</p>\n",
+      "answerHtml": "<p>InnoDB 聚簇索引与二级索引默认都基于 B+ 树。</p>\n<p>相对 B 树：</p>\n<ul>\n<li>B+ 树非叶子节点只存键，扇出更大，树更矮，磁盘 IO 更少</li>\n<li>叶子节点形成有序链表，范围查询、排序、<code>ORDER BY</code> / 区间扫描更友好</li>\n</ul>\n<p>相对哈希索引：</p>\n<ul>\n<li>哈希等值查询快，但不支持范围查询与排序</li>\n<li>InnoDB 自适应哈希是缓冲池内优化，不能替代磁盘上的 B+ 树索引结构</li>\n</ul>\n<p>因此 OLTP 场景下 B+ 树在等值 + 范围查询之间更均衡。</p>\n",
+      "sourcePath": "backend/mysql/01.B+树索引.md"
+    },
+    {
+      "id": "backend-redis-01",
+      "type": "backend",
+      "category": "redis",
+      "categoryName": "Redis",
+      "tags": [
+        "缓存",
+        "持久化"
+      ],
+      "difficulty": "easy",
+      "title": "Redis 的 RDB 和 AOF 持久化有什么区别？如何选择？",
+      "question": "Redis 的 RDB 和 AOF 持久化有什么区别？如何选择？",
+      "answer": "**RDB**：按策略生成内存快照（`BGSAVE`）。\n\n- 优点：文件紧凑、恢复快、对性能影响相对可控\n- 缺点：可能丢失最近一次快照后的数据\n\n**AOF**：追加写命令日志。\n\n- 优点：数据更安全（尤其 `everysec` / `always`）\n- 缺点：文件更大；需 rewrite；相对 RDB 恢复可能更慢\n\n**如何选择：**\n\n- 可容忍分钟级丢失、偏重恢复速度 → RDB 或主打 RDB\n- 更看重尽量少丢数据 → 开 AOF（常见 `appendfsync everysec`）\n- 生产常见：**RDB + AOF 混合**（或开启 AOF 并保留 RDB 作备份），按业务 RPO/RTO 权衡",
+      "questionHtml": "<p>Redis 的 RDB 和 AOF 持久化有什么区别？如何选择？</p>\n",
+      "answerHtml": "<p><strong>RDB</strong>：按策略生成内存快照（<code>BGSAVE</code>）。</p>\n<ul>\n<li>优点：文件紧凑、恢复快、对性能影响相对可控</li>\n<li>缺点：可能丢失最近一次快照后的数据</li>\n</ul>\n<p><strong>AOF</strong>：追加写命令日志。</p>\n<ul>\n<li>优点：数据更安全（尤其 <code>everysec</code> / <code>always</code>）</li>\n<li>缺点：文件更大；需 rewrite；相对 RDB 恢复可能更慢</li>\n</ul>\n<p><strong>如何选择：</strong></p>\n<ul>\n<li>可容忍分钟级丢失、偏重恢复速度 → RDB 或主打 RDB</li>\n<li>更看重尽量少丢数据 → 开 AOF（常见 <code>appendfsync everysec</code>）</li>\n<li>生产常见：<strong>RDB + AOF 混合</strong>（或开启 AOF 并保留 RDB 作备份），按业务 RPO/RTO 权衡</li>\n</ul>\n",
+      "sourcePath": "backend/redis/01.持久化.md"
+    }
+  ],
+  "frontend": [
+    {
+      "id": "frontend-js-01",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "占位"
+      ],
+      "difficulty": "easy",
+      "title": "（占位）请简述浏览器事件循环（Event Loop）",
+      "question": "（占位）请简述浏览器事件循环（Event Loop）",
+      "answer": "本题为前端题库占位题，后续补充完整答案。\n\n要点预留：宏任务 / 微任务、调用栈、任务队列、`requestAnimationFrame` 与渲染时机。",
+      "questionHtml": "<p>（占位）请简述浏览器事件循环（Event Loop）</p>\n",
+      "answerHtml": "<p>本题为前端题库占位题，后续补充完整答案。</p>\n<p>要点预留：宏任务 / 微任务、调用栈、任务队列、<code>requestAnimationFrame</code> 与渲染时机。</p>\n",
+      "sourcePath": "frontend/js/01.占位-事件循环.md"
+    }
+  ],
+  "ai": [
+    {
+      "id": "ai-llm-01",
+      "type": "ai",
+      "category": "llm",
+      "categoryName": "LLM",
+      "tags": [
+        "LLM",
+        "占位"
+      ],
+      "difficulty": "easy",
+      "title": "（占位）什么是大语言模型（LLM）？常见能力边界有哪些？",
+      "question": "（占位）什么是大语言模型（LLM）？常见能力边界有哪些？",
+      "answer": "本题为 AI 题库占位题，后续补充完整答案。\n\n要点预留：预训练与对齐、幻觉、上下文窗口、工具调用 / Agent 的关系。",
+      "questionHtml": "<p>（占位）什么是大语言模型（LLM）？常见能力边界有哪些？</p>\n",
+      "answerHtml": "<p>本题为 AI 题库占位题，后续补充完整答案。</p>\n<p>要点预留：预训练与对齐、幻觉、上下文窗口、工具调用 / Agent 的关系。</p>\n",
+      "sourcePath": "ai/llm/01.占位-LLM基础.md"
+    }
+  ]
+}

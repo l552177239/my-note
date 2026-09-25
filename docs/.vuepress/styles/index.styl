@@ -1,3 +1,16 @@
+// 面试题页：分类下仅一篇时主题会加 only-sidebarItem 并隐藏左侧栏，
+// 但本页侧栏承载题目三级目录，需强制显示并恢复正文左内边距。
+.theme-container.interview-practice.only-sidebarItem:not(.have-rightmenu)
+  .sidebar, .sidebar-button
+    display block
+  @media (min-width: ($MQMobile + 1px))
+    .page
+      padding-left 0.8rem !important
+    &.sidebar-open
+      .page
+        padding-left ($sidebarWidth + .8rem) !important
+      .sidebar-button
+        left $sidebarWidth
 
 // Giscus 评论区
 .giscus-wrapper
