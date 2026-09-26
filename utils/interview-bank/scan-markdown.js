@@ -2,7 +2,9 @@ const fs = require('fs')
 const path = require('path')
 
 /**
- * 解析文件名：01.HashMap.md → { seq: '01', namePart: 'HashMap' }
+ * 解析文件名：
+ *   01.HashMap.md → { seq: '01', namePart: 'HashMap' }
+ *   09.1.ConcurrentHashMap.md → { seq: '09.1', namePart: 'ConcurrentHashMap' }
  */
 function parseFileName(filename) {
   const base = path.basename(filename)
@@ -10,14 +12,9 @@ function parseFileName(filename) {
     return null
   }
   const withoutExt = base.slice(0, -3)
-  const firstDot = withoutExt.indexOf('.')
-  if (firstDot === -1) {
-    return { seq: null, namePart: withoutExt, raw: withoutExt }
-  }
-  const maybeSeq = withoutExt.slice(0, firstDot)
-  const namePart = withoutExt.slice(firstDot + 1)
-  if (/^\d+$/.test(maybeSeq)) {
-    return { seq: maybeSeq, namePart, raw: withoutExt }
+  const m = withoutExt.match(/^(\d+(?:\.\d+)*)\.(.+)$/)
+  if (m) {
+    return { seq: m[1], namePart: m[2], raw: withoutExt }
   }
   return { seq: null, namePart: withoutExt, raw: withoutExt }
 }
