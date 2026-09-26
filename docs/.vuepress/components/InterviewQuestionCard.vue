@@ -27,8 +27,22 @@
     <div
       v-if="showQuestionBody"
       class="interview-question-card__question md-body"
-      v-html="highlightedQuestionHtml"
-    />
+    >
+      <template v-for="(seg, i) in questionSegments">
+        <div
+          v-if="seg.type === 'html'"
+          :key="'qh-' + i"
+          class="md-segment"
+          v-html="seg.content"
+        />
+        <Mermaid
+          v-else
+          :key="'qm-' + i"
+          :id="'iq-' + question.id + '-q-' + i"
+          :graph="seg.content"
+        />
+      </template>
+    </div>
 
     <div class="interview-question-card__actions">
       <button type="button" class="btn" @click="$emit('toggle', question.id)">
@@ -36,13 +50,24 @@
       </button>
     </div>
 
-    <div v-show="expanded" class="interview-question-card__answer">
+    <div v-if="expanded" class="interview-question-card__answer">
       <div class="interview-question-card__answer-label">答案</div>
-      <div
-        v-if="highlightedAnswerHtml"
-        class="md-body"
-        v-html="highlightedAnswerHtml"
-      />
+      <div v-if="answerSegments.length" class="md-body">
+        <template v-for="(seg, i) in answerSegments">
+          <div
+            v-if="seg.type === 'html'"
+            :key="'ah-' + i"
+            class="md-segment"
+            v-html="seg.content"
+          />
+          <Mermaid
+            v-else
+            :key="'am-' + i"
+            :id="'iq-' + question.id + '-a-' + i"
+            :graph="seg.content"
+          />
+        </template>
+      </div>
       <p v-else class="interview-question-card__empty-answer">暂无答案</p>
       <ul v-if="question.reference && question.reference.length" class="interview-question-card__refs">
         <li v-for="(url, i) in question.reference" :key="i">
@@ -89,6 +114,53 @@ function highlightHtml(html, keyword) {
   })
 }
 
+/** markdown-it 转义后的 mermaid 源码还原 */
+function decodeHtmlEntities(str) {
+  return String(str)
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/g, "'")
+}
+
+/**
+ * 将 answerHtml / questionHtml 拆成 html + mermaid 段。
+ * 面试页用 v-html，vuepress-plugin-mermaidjs 不会介入，需自行挂载 Mermaid。
+ */
+const MERMAID_BLOCK_RE =
+  /<pre[^>]*>\s*<code[^>]*class="[^"]*language-mermaid[^"]*"[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/gi
+
+function splitHtmlWithMermaid(html, keyword) {
+  const src = String(html || '')
+  if (!src) return []
+  const parts = []
+  let last = 0
+  MERMAID_BLOCK_RE.lastIndex = 0
+  let m
+  while ((m = MERMAID_BLOCK_RE.exec(src)) !== null) {
+    if (m.index > last) {
+      parts.push({
+        type: 'html',
+        content: highlightHtml(src.slice(last, m.index), keyword),
+      })
+    }
+    parts.push({
+      type: 'mermaid',
+      content: decodeHtmlEntities(m[1]).trim(),
+    })
+    last = m.index + m[0].length
+  }
+  if (last < src.length) {
+    parts.push({
+      type: 'html',
+      content: highlightHtml(src.slice(last), keyword),
+    })
+  }
+  return parts
+}
+
 export default {
   name: 'InterviewQuestionCard',
   props: {
@@ -126,11 +198,11 @@ export default {
         this.question.question !== this.question.title
       )
     },
-    highlightedQuestionHtml() {
-      return highlightHtml(this.question.questionHtml, this.keyword)
+    questionSegments() {
+      return splitHtmlWithMermaid(this.question.questionHtml, this.keyword)
     },
-    highlightedAnswerHtml() {
-      return highlightHtml(this.question.answerHtml, this.keyword)
+    answerSegments() {
+      return splitHtmlWithMermaid(this.question.answerHtml, this.keyword)
     },
   },
 }
@@ -257,8 +329,24 @@ export default {
   word-break: break-all;
 }
 
-.md-body >>> pre {
+.md-segment {
+  display: contents;
+}
+
+/* 面试答案为裸 <pre><code>，无 VuePress language- 包装；浅色下
+   Prism 的 text-shadow + 主题 $codeBgColor 深色底会叠成空心字 */
+.md-body >>> pre,
+.md-body >>> pre[class*='language-'] {
   overflow-x: auto;
+  background-color: var(--codeBg, #f6f6f6) !important;
+  border-radius: 6px;
+}
+
+.md-body >>> pre code,
+.md-body >>> code[class*='language-'] {
+  color: var(--codeColor, #525252) !important;
+  text-shadow: none !important;
+  background: transparent !important;
 }
 
 .md-body >>> p:first-child {

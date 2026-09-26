@@ -180,12 +180,9 @@ export default {
       padding 1.5rem 1.5rem 0
     &.sidebar-slot-bottom
       padding 0 1.5rem 1.5rem
+  // 滚动交给外层 .sidebar（已有 overflow-y: auto），避免双滚动条
   .interview-sidebar-panel
     padding 0.75rem 0.85rem 1.25rem
-    max-height calc(100vh - 3.6rem)
-    overflow-y auto
-    -webkit-overflow-scrolling touch
-    scrollbar-width thin
 @media (max-width $MQMobile)
   .sidebar
     .blogger
@@ -196,6 +193,4 @@ export default {
         top calc(1rem - 2px)
     & > .sidebar-links
       padding 1rem 0
-    .interview-sidebar-panel
-      max-height none
 </style>
