@@ -6,18 +6,243 @@
       "category": "java",
       "categoryName": "Java",
       "tags": [
-        "集合",
-        "HashMap"
+        "Java",
+        "JVM",
+        "JDK"
       ],
-      "difficulty": "medium",
-      "title": "HashMap 的底层数据结构是什么？JDK 1.8 做了哪些优化？",
-      "question": "HashMap 的底层数据结构是什么？JDK 1.8 做了哪些优化？",
-      "answer": "JDK 1.8 之前：数组 + 链表；JDK 1.8 起：数组 + 链表 + 红黑树。\n\n主要优化点：\n\n- 当链表长度 ≥ 8 且数组容量 ≥ 64 时，链表转为红黑树，降低最坏查询复杂度\n- 扩容时优化了元素迁移与 hash 计算方式\n- 引入 `Node` / `TreeNode`，头插改为尾插，降低并发下环形链表风险（仍不建议多线程共用 HashMap）\n\n复杂度：平均 O(1)；退化或树化前冲突严重时接近 O(n)，树化后约 O(log n)。",
-      "questionHtml": "<p>HashMap 的底层数据结构是什么？JDK 1.8 做了哪些优化？</p>\n",
-      "answerHtml": "<p>JDK 1.8 之前：数组 + 链表；JDK 1.8 起：数组 + 链表 + 红黑树。</p>\n<p>主要优化点：</p>\n<ul>\n<li>当链表长度 ≥ 8 且数组容量 ≥ 64 时，链表转为红黑树，降低最坏查询复杂度</li>\n<li>扩容时优化了元素迁移与 hash 计算方式</li>\n<li>引入 <code>Node</code> / <code>TreeNode</code>，头插改为尾插，降低并发下环形链表风险（仍不建议多线程共用 HashMap）</li>\n</ul>\n<p>复杂度：平均 O(1)；退化或树化前冲突严重时接近 O(n)，树化后约 O(log n)。</p>\n",
-      "sourcePath": "backend/java/01.HashMap.md",
+      "difficulty": "easy",
+      "title": "JDK / JRE / JVM 分别是什么？关系如何？",
+      "question": "JDK / JRE / JVM 分别是什么？关系如何？",
+      "answer": "1. **JVM**：虚拟机，加载并执行 `.class` 字节码（解释 / JIT）；「一次编译，到处运行」靠各平台各自的 JVM。\n2. **JRE**：运行环境 = JVM + 核心类库；只跑程序、不开发时理论上有 JRE 即可。\n3. **JDK**：开发工具包 = JRE + 开发工具（`javac`、`jar`、`javadoc` 等）。\n4. **关系**：JDK ⊃ JRE ⊃ JVM。\n\n### 解释与扩展\n\n- JVM 不关心源码，只认字节码；跨平台的关键是「同一份字节码 + 各平台 JVM」。\n- JRE 提供运行所需的标准库（模块化后的 `java.base` 等）。\n- JDK 在 JRE 之上增加编译、打包、调试与诊断工具，日常写代码必须装 JDK。\n\n### 注意\n\n- JDK 9 起模块化后，官方很少再单独发「独立 JRE」安装包；开发/部署多直接装 JDK。\n- 生产跑应用本质仍是启动 JVM 执行字节码。",
+      "questionHtml": "<p>JDK / JRE / JVM 分别是什么？关系如何？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>JVM</strong>：虚拟机，加载并执行 <code>.class</code> 字节码（解释 / JIT）；「一次编译，到处运行」靠各平台各自的 JVM。</li>\n<li><strong>JRE</strong>：运行环境 = JVM + 核心类库；只跑程序、不开发时理论上有 JRE 即可。</li>\n<li><strong>JDK</strong>：开发工具包 = JRE + 开发工具（<code>javac</code>、<code>jar</code>、<code>javadoc</code> 等）。</li>\n<li><strong>关系</strong>：JDK ⊃ JRE ⊃ JVM。</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>JVM 不关心源码，只认字节码；跨平台的关键是「同一份字节码 + 各平台 JVM」。</li>\n<li>JRE 提供运行所需的标准库（模块化后的 <code>java.base</code> 等）。</li>\n<li>JDK 在 JRE 之上增加编译、打包、调试与诊断工具，日常写代码必须装 JDK。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>JDK 9 起模块化后，官方很少再单独发「独立 JRE」安装包；开发/部署多直接装 JDK。</li>\n<li>生产跑应用本质仍是启动 JVM 执行字节码。</li>\n</ul>\n",
+      "sourcePath": "backend/java/01.JDK-JRE-JVM.md",
       "reference": [
-        "https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html"
+        "https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html"
+      ]
+    },
+    {
+      "id": "backend-java-02",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "OOP"
+      ],
+      "difficulty": "easy",
+      "title": "什么是面向对象？谈谈你对面向对象的理解",
+      "question": "什么是面向对象？谈谈你对面向对象的理解",
+      "answer": "1. 面向对象是一种以「对象」为中心组织程序的编程范式：类是模板，对象是类的实例。\n2. 核心特征通常概括为：封装、继承、多态，再加抽象。\n3. 与面向过程（怎么做）、函数式（不可变与无副作用）、面向切面（横切关注点）等并列，侧重点不同。\n\n### 解释与扩展\n\n- **封装**：隐藏实现细节、保护数据，对外提供接口，降低耦合。实现上常用 `private` + getter/setter；注意封装层级不要过深。\n- **继承**：复用父类能力并做扩展。Java 用 `extends`；单继承。\n- **多态**：同一方法因对象类型不同而行为不同。重载属编译时多态，重写属运行时多态。\n- **抽象**：提取共性、只声明能力。靠 `abstract` 类 / `interface` 实现。\n\n### 注意\n\n- 面试里可顺带对比其他范式，但主体应落在「对象 + 四大特征」。\n- 多态、继承细节常会追问到重载/重写、抽象类/接口，可与后续题串联。",
+      "questionHtml": "<p>什么是面向对象？谈谈你对面向对象的理解</p>\n",
+      "answerHtml": "<ol>\n<li>面向对象是一种以「对象」为中心组织程序的编程范式：类是模板，对象是类的实例。</li>\n<li>核心特征通常概括为：封装、继承、多态，再加抽象。</li>\n<li>与面向过程（怎么做）、函数式（不可变与无副作用）、面向切面（横切关注点）等并列，侧重点不同。</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li><strong>封装</strong>：隐藏实现细节、保护数据，对外提供接口，降低耦合。实现上常用 <code>private</code> + getter/setter；注意封装层级不要过深。</li>\n<li><strong>继承</strong>：复用父类能力并做扩展。Java 用 <code>extends</code>；单继承。</li>\n<li><strong>多态</strong>：同一方法因对象类型不同而行为不同。重载属编译时多态，重写属运行时多态。</li>\n<li><strong>抽象</strong>：提取共性、只声明能力。靠 <code>abstract</code> 类 / <code>interface</code> 实现。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>面试里可顺带对比其他范式，但主体应落在「对象 + 四大特征」。</li>\n<li>多态、继承细节常会追问到重载/重写、抽象类/接口，可与后续题串联。</li>\n</ul>\n",
+      "sourcePath": "backend/java/02.OOP.md",
+      "reference": [
+        "https://docs.oracle.com/javase/tutorial/java/concepts/"
+      ]
+    },
+    {
+      "id": "backend-java-03",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "OOP",
+        "接口",
+        "抽象类"
+      ],
+      "difficulty": "easy",
+      "title": "接口和抽象类的区别",
+      "question": "接口和抽象类的区别",
+      "answer": "1. 两者都用于抽象：声明「能做什么」，不完全给出实现；设计意图不同。\n2. **抽象类**：偏「是什么」（is-a），模板 / 半成品，可承载共享状态与默认行为；单继承。\n3. **接口**：偏「能做什么」（can-do），能力契约；可多实现。\n4. 选用：要共享字段/构造/强父子关系 → 抽象类；只需约定能力、多实现解耦 → 接口。\n\n### 解释与扩展\n\n| | 抽象类 abstract class | 接口 interface |\n|---|---|---|\n| 继承关系 | 单继承（`extends` 一个） | 可多实现（`implements` 多个） |\n| 成员变量 | 可有实例字段、任意修饰符 | 默认 `public static final` 常量 |\n| 方法 | 可有抽象方法 + 普通实例方法 | Java 8+：抽象 / `default` / `static`；Java 9+ 还可 `private` |\n| 构造器 | 有（供子类调用，不能 `new`） | 无 |\n| 访问修饰符 | 方法可用 `public` / `protected` 等 | 抽象方法隐式 `public` |\n| 设计目的 | 复用代码与状态，定义继承层次 | 定义能力契约，解耦实现 |\n\n```mermaid\nclassDiagram\n  class Animal {\n    <<abstract>>\n    #name String\n    +eat()* void\n    +sleep() void\n  }\n  class Dog {\n    +eat() void\n    +bark() void\n  }\n  class Flyable {\n    <<interface>>\n    +fly() void\n  }\n  class Bird {\n    +eat() void\n    +fly() void\n  }\n  Animal <|-- Dog : extends\n  Animal <|-- Bird : extends\n  Flyable <|.. Bird : implements\n```\n\n实践中常组合：抽象类提供模板，接口声明能力（如 `ArrayList` 继承骨架、实现 `List`）。\n\n### 注意\n\n- 抽象类不能被实例化；含抽象方法的类必须声明为 `abstract`。\n- 接口实现类必须实现全部抽象方法（除非自身也是抽象类）。\n- Java 8 起接口可有 `default` 方法，但仍不宜塞业务状态；有状态优先抽象类。",
+      "questionHtml": "<p>接口和抽象类的区别</p>\n",
+      "answerHtml": "<ol>\n<li>两者都用于抽象：声明「能做什么」，不完全给出实现；设计意图不同。</li>\n<li><strong>抽象类</strong>：偏「是什么」（is-a），模板 / 半成品，可承载共享状态与默认行为；单继承。</li>\n<li><strong>接口</strong>：偏「能做什么」（can-do），能力契约；可多实现。</li>\n<li>选用：要共享字段/构造/强父子关系 → 抽象类；只需约定能力、多实现解耦 → 接口。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>抽象类 abstract class</th>\n<th>接口 interface</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>继承关系</td>\n<td>单继承（<code>extends</code> 一个）</td>\n<td>可多实现（<code>implements</code> 多个）</td>\n</tr>\n<tr>\n<td>成员变量</td>\n<td>可有实例字段、任意修饰符</td>\n<td>默认 <code>public static final</code> 常量</td>\n</tr>\n<tr>\n<td>方法</td>\n<td>可有抽象方法 + 普通实例方法</td>\n<td>Java 8+：抽象 / <code>default</code> / <code>static</code>；Java 9+ 还可 <code>private</code></td>\n</tr>\n<tr>\n<td>构造器</td>\n<td>有（供子类调用，不能 <code>new</code>）</td>\n<td>无</td>\n</tr>\n<tr>\n<td>访问修饰符</td>\n<td>方法可用 <code>public</code> / <code>protected</code> 等</td>\n<td>抽象方法隐式 <code>public</code></td>\n</tr>\n<tr>\n<td>设计目的</td>\n<td>复用代码与状态，定义继承层次</td>\n<td>定义能力契约，解耦实现</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-mermaid\">classDiagram\n  class Animal {\n    &lt;&lt;abstract&gt;&gt;\n    #name String\n    +eat()* void\n    +sleep() void\n  }\n  class Dog {\n    +eat() void\n    +bark() void\n  }\n  class Flyable {\n    &lt;&lt;interface&gt;&gt;\n    +fly() void\n  }\n  class Bird {\n    +eat() void\n    +fly() void\n  }\n  Animal &lt;|-- Dog : extends\n  Animal &lt;|-- Bird : extends\n  Flyable &lt;|.. Bird : implements\n</code></pre>\n<p>实践中常组合：抽象类提供模板，接口声明能力（如 <code>ArrayList</code> 继承骨架、实现 <code>List</code>）。</p>\n<h3>注意</h3>\n<ul>\n<li>抽象类不能被实例化；含抽象方法的类必须声明为 <code>abstract</code>。</li>\n<li>接口实现类必须实现全部抽象方法（除非自身也是抽象类）。</li>\n<li>Java 8 起接口可有 <code>default</code> 方法，但仍不宜塞业务状态；有状态优先抽象类。</li>\n</ul>\n",
+      "sourcePath": "backend/java/03.interface-abstract.md",
+      "reference": [
+        "https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html",
+        "https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html"
+      ]
+    },
+    {
+      "id": "backend-java-04",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "final",
+        "内部类"
+      ],
+      "difficulty": "easy",
+      "title": "简述 final 的作用？为什么局部内部类和匿名内部类只能访问局部 final 变量？",
+      "question": "简述 final 的作用？为什么局部内部类和匿名内部类只能访问局部 final 变量？",
+      "answer": "1. `final` 表示「不可变」：\n    - 修饰类 → 不可继承；\n    - 修饰方法 → 不可重写；\n    - 修饰变量 → 基本类型值不可变，引用类型引用不可变。\n2. 局部 / 匿名内部类访问外层局部变量时，只能访问 `final` 或 effectively final 变量。\n3. 原因：内部类编译后是独立 `.class`，会**拷贝**外层局部变量；要求不可变才能保证内外语义一致。\n\n### 解释与扩展\n\n- **修饰类**：如 `String`、`Integer`，防止被继承篡改语义。\n- **修饰方法**：可被继承调用，但不能 Override。\n- **修饰变量**：引用 `final` 只保证指向不变，对象内部字段仍可能被改。\n- 局部内部类、匿名内部类与外层方法**不共享同一栈帧**；编译器把捕获的变量拷进内部类字段。若允许两边各自修改非 final 变量，两份拷贝会不一致。\n- **生命周期被延长**：局部变量本随方法栈帧销毁而结束；一旦被内部类捕获，值落在堆上的内部类实例字段里。方法返回后，只要内部类对象仍存活，就能继续使用这份拷贝——相当于把「局部常量」的可用寿命从栈延长到了堆对象的生命周期。\n\n### 注意\n\n- Java 8 起不必显式写 `final`，只要实际未被重新赋值（effectively final）即可被内部类捕获。",
+      "questionHtml": "<p>简述 final 的作用？为什么局部内部类和匿名内部类只能访问局部 final 变量？</p>\n",
+      "answerHtml": "<ol>\n<li><code>final</code> 表示「不可变」：\n<ul>\n<li>修饰类 → 不可继承；</li>\n<li>修饰方法 → 不可重写；</li>\n<li>修饰变量 → 基本类型值不可变，引用类型引用不可变。</li>\n</ul>\n</li>\n<li>局部 / 匿名内部类访问外层局部变量时，只能访问 <code>final</code> 或 effectively final 变量。</li>\n<li>原因：内部类编译后是独立 <code>.class</code>，会<strong>拷贝</strong>外层局部变量；要求不可变才能保证内外语义一致。</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li><strong>修饰类</strong>：如 <code>String</code>、<code>Integer</code>，防止被继承篡改语义。</li>\n<li><strong>修饰方法</strong>：可被继承调用，但不能 Override。</li>\n<li><strong>修饰变量</strong>：引用 <code>final</code> 只保证指向不变，对象内部字段仍可能被改。</li>\n<li>局部内部类、匿名内部类与外层方法<strong>不共享同一栈帧</strong>；编译器把捕获的变量拷进内部类字段。若允许两边各自修改非 final 变量，两份拷贝会不一致。</li>\n<li><strong>生命周期被延长</strong>：局部变量本随方法栈帧销毁而结束；一旦被内部类捕获，值落在堆上的内部类实例字段里。方法返回后，只要内部类对象仍存活，就能继续使用这份拷贝——相当于把「局部常量」的可用寿命从栈延长到了堆对象的生命周期。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>Java 8 起不必显式写 <code>final</code>，只要实际未被重新赋值（effectively final）即可被内部类捕获。</li>\n</ul>\n",
+      "sourcePath": "backend/java/04.final.md",
+      "reference": [
+        "https://docs.oracle.com/javase/specs/jls/se21/html/jls-8.html#jls-8.1.1.2"
+      ]
+    },
+    {
+      "id": "backend-java-05",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "OOP",
+        "多态"
+      ],
+      "difficulty": "easy",
+      "title": "重载和重写的区别",
+      "question": "重载和重写的区别？编译期/运行期如何选择方法？",
+      "answer": "1. **重载（Overload）**：同名、参数列表不同（个数 / 类型 / 顺序）；返回值不能单独区分。编译期静态绑定，编译时多态。\n2. **重写（Override）**：子类实现父类同签名实例方法。运行期按实际类型动态分发，运行时多态。\n3. 选择过程：编译期按静态类型 + 实参做重载决议 → 运行期按对象真实类型选重写实现。\n\n### 解释与扩展\n\n```mermaid\nflowchart LR\n  subgraph overload [\"重载 Overload\"]\n    A[\"调用 foo(x)\"] --> B[\"编译器看参数类型\"]\n    B --> C[\"选定对应重载版本\"]\n  end\n  subgraph override [\"重写 Override\"]\n    D[\"调用 animal.speak()\"] --> E[\"运行时看真实类型\"]\n    E --> F{\"Dog / Cat / ...\"}\n    F --> G[\"执行子类重写方法\"]\n  end\n```\n\n| | 重载 Overload | 重写 Override |\n|---|---|---|\n| 发生位置 | 同一类（或父子同名不同参） | 父子类之间 |\n| 方法签名 | 方法名同，参数列表**必须不同** | 方法名 + 参数列表**必须相同** |\n| 返回值 | 可同可不同（不能仅靠返回值区分） | 相同或协变（子类型） |\n| 访问修饰符 | 无特殊限制 | 不能更严（父 `protected` → 子不可变 `private`） |\n| 绑定时机 | 编译期静态绑定 | 运行期动态分发（虚方法表） |\n| 异常 | 无继承约束 | 不能抛出比父类更宽的受检异常 |\n\n```mermaid\nclassDiagram\n  class Animal {\n    +speak() void\n  }\n  class Dog {\n    +speak() void\n  }\n  class Printer {\n    +print(int)\n    +print(String)\n  }\n  Animal <|-- Dog : 重写 speak\n  note for Printer \"重载：同名不同参\"\n```\n\n### 注意\n\n- 静态方法、私有方法不能被重写（静态是隐藏 hide，不是 override）。\n- `@Override` 可在编译期校验是否真的重写了父方法。\n- 构造方法可以重载，不能重写。",
+      "questionHtml": "<p>重载和重写的区别？编译期/运行期如何选择方法？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>重载（Overload）</strong>：同名、参数列表不同（个数 / 类型 / 顺序）；返回值不能单独区分。编译期静态绑定，编译时多态。</li>\n<li><strong>重写（Override）</strong>：子类实现父类同签名实例方法。运行期按实际类型动态分发，运行时多态。</li>\n<li>选择过程：编译期按静态类型 + 实参做重载决议 → 运行期按对象真实类型选重写实现。</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-mermaid\">flowchart LR\n  subgraph overload [&quot;重载 Overload&quot;]\n    A[&quot;调用 foo(x)&quot;] --&gt; B[&quot;编译器看参数类型&quot;]\n    B --&gt; C[&quot;选定对应重载版本&quot;]\n  end\n  subgraph override [&quot;重写 Override&quot;]\n    D[&quot;调用 animal.speak()&quot;] --&gt; E[&quot;运行时看真实类型&quot;]\n    E --&gt; F{&quot;Dog / Cat / ...&quot;}\n    F --&gt; G[&quot;执行子类重写方法&quot;]\n  end\n</code></pre>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>重载 Overload</th>\n<th>重写 Override</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>发生位置</td>\n<td>同一类（或父子同名不同参）</td>\n<td>父子类之间</td>\n</tr>\n<tr>\n<td>方法签名</td>\n<td>方法名同，参数列表<strong>必须不同</strong></td>\n<td>方法名 + 参数列表<strong>必须相同</strong></td>\n</tr>\n<tr>\n<td>返回值</td>\n<td>可同可不同（不能仅靠返回值区分）</td>\n<td>相同或协变（子类型）</td>\n</tr>\n<tr>\n<td>访问修饰符</td>\n<td>无特殊限制</td>\n<td>不能更严（父 <code>protected</code> → 子不可变 <code>private</code>）</td>\n</tr>\n<tr>\n<td>绑定时机</td>\n<td>编译期静态绑定</td>\n<td>运行期动态分发（虚方法表）</td>\n</tr>\n<tr>\n<td>异常</td>\n<td>无继承约束</td>\n<td>不能抛出比父类更宽的受检异常</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-mermaid\">classDiagram\n  class Animal {\n    +speak() void\n  }\n  class Dog {\n    +speak() void\n  }\n  class Printer {\n    +print(int)\n    +print(String)\n  }\n  Animal &lt;|-- Dog : 重写 speak\n  note for Printer &quot;重载：同名不同参&quot;\n</code></pre>\n<h3>注意</h3>\n<ul>\n<li>静态方法、私有方法不能被重写（静态是隐藏 hide，不是 override）。</li>\n<li><code>@Override</code> 可在编译期校验是否真的重写了父方法。</li>\n<li>构造方法可以重载，不能重写。</li>\n</ul>\n",
+      "sourcePath": "backend/java/05.override-overload.md",
+      "reference": [
+        "https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html",
+        "https://docs.oracle.com/javase/tutorial/java/IandI/override.html"
+      ]
+    },
+    {
+      "id": "backend-java-06",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "String",
+        "StringBuffer",
+        "StringBuilder"
+      ],
+      "difficulty": "easy",
+      "title": "String、StringBuffer、StringBuilder 的区别及使用场景",
+      "question": "String、StringBuffer、StringBuilder 的区别及使用场景？",
+      "answer": "1. **String**：不可变；修改会生成新对象；本身线程安全，适合常量、共享、少量拼接。\n2. **StringBuilder**：可变缓冲区，无锁；单线程大量拼接性能最好（首选）。\n3. **StringBuffer**：API 类似但方法带 `synchronized`；线程安全、有同步开销，仅多线程共享同一缓冲区时考虑。\n\n### 解释与扩展\n\n| | String | StringBuffer | StringBuilder |\n|---|---|---|---|\n| 可变性 | 不可变（每次拼接产生新对象） | 可变 | 可变 |\n| 线程安全 | 不可变本身线程安全 | `synchronized`，线程安全 | 无锁，非线程安全 |\n| 性能 | 频繁拼接差 | 有同步开销 | 单线程下最快 |\n\n**使用场景：**\n- **String**：常量、少量拼接、作 key / 参数传递\n- **StringBuilder**：单线程循环拼装、动态 SQL 等（首选）\n- **StringBuffer**：多线程共享同一可变缓冲区（现代代码少见；优先局部 `StringBuilder` 或并发方案）\n\n### 注意\n\n- `\"a\" + \"b\"` 等编译期常量会直接折叠；循环里 `+` 在较新 JDK 上也会优化为 `StringBuilder`，但显式使用意图更清晰。\n- 不要为「线程安全」盲目选 `StringBuffer`：多数拼接是局部变量，单线程用 `StringBuilder` 即可。",
+      "questionHtml": "<p>String、StringBuffer、StringBuilder 的区别及使用场景？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>String</strong>：不可变；修改会生成新对象；本身线程安全，适合常量、共享、少量拼接。</li>\n<li><strong>StringBuilder</strong>：可变缓冲区，无锁；单线程大量拼接性能最好（首选）。</li>\n<li><strong>StringBuffer</strong>：API 类似但方法带 <code>synchronized</code>；线程安全、有同步开销，仅多线程共享同一缓冲区时考虑。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>String</th>\n<th>StringBuffer</th>\n<th>StringBuilder</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>可变性</td>\n<td>不可变（每次拼接产生新对象）</td>\n<td>可变</td>\n<td>可变</td>\n</tr>\n<tr>\n<td>线程安全</td>\n<td>不可变本身线程安全</td>\n<td><code>synchronized</code>，线程安全</td>\n<td>无锁，非线程安全</td>\n</tr>\n<tr>\n<td>性能</td>\n<td>频繁拼接差</td>\n<td>有同步开销</td>\n<td>单线程下最快</td>\n</tr>\n</tbody>\n</table>\n<p><strong>使用场景：</strong></p>\n<ul>\n<li><strong>String</strong>：常量、少量拼接、作 key / 参数传递</li>\n<li><strong>StringBuilder</strong>：单线程循环拼装、动态 SQL 等（首选）</li>\n<li><strong>StringBuffer</strong>：多线程共享同一可变缓冲区（现代代码少见；优先局部 <code>StringBuilder</code> 或并发方案）</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li><code>&quot;a&quot; + &quot;b&quot;</code> 等编译期常量会直接折叠；循环里 <code>+</code> 在较新 JDK 上也会优化为 <code>StringBuilder</code>，但显式使用意图更清晰。</li>\n<li>不要为「线程安全」盲目选 <code>StringBuffer</code>：多数拼接是局部变量，单线程用 <code>StringBuilder</code> 即可。</li>\n</ul>\n",
+      "sourcePath": "backend/java/06.String-StringBuffer-StringBuilder.md",
+      "reference": [
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuffer.html"
+      ]
+    },
+    {
+      "id": "backend-java-07",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "集合",
+        "List",
+        "Set"
+      ],
+      "difficulty": "easy",
+      "title": "List 和 Set 的区别",
+      "question": "List 和 Set 的区别",
+      "answer": "1. 两者都是 `Collection` 子接口，存「一堆元素」；与 `Map`（键值对）并列。\n2. **List**：有序（按插入/下标）、**可重复**，支持 `get(i)` 按下标访问。\n3. **Set**：元素**不可重复**（判重靠 `equals` / `hashCode`，Tree 靠比较器）；默认实现不保证顺序。\n4. 选用：要下标、允许重复 → `List`（默认 `ArrayList`）；要去重 → `Set`（默认 `HashSet`）。\n\n### 解释与扩展\n\n| | List | Set |\n|---|---|---|\n| 顺序 | 有序（下标 / 插入序） | `HashSet` 无保证；`LinkedHashSet` 插入序；`TreeSet` 排序序 |\n| 重复 | 允许 | 不允许 |\n| 访问 | `get(index)` 等下标 API | 无下标，靠迭代 / `contains` |\n| 判等 | 可存多个相等元素 | 相同元素只保留一个 |\n| 常用实现 | `ArrayList`、`LinkedList` | `HashSet`、`LinkedHashSet`、`TreeSet` |\n\n```mermaid\nflowchart TB\n  C[\"Collection\"]\n  C --> L[\"List 有序可重复\"]\n  C --> S[\"Set 不可重复\"]\n  C --> Q[\"Queue\"]\n  L --> AL[\"ArrayList\"]\n  L --> LL[\"LinkedList\"]\n  S --> HS[\"HashSet\"]\n  S --> LHS[\"LinkedHashSet\"]\n  S --> TS[\"TreeSet\"]\n```\n\n```java\nList<String> list = new ArrayList<>();\nlist.add(\"a\");\nlist.add(\"a\"); // 允许：[\"a\", \"a\"]\n\nSet<String> set = new HashSet<>();\nset.add(\"a\");\nset.add(\"a\"); // 忽略，仍只有一个 \"a\"\n```\n\n### 注意\n\n- 「Set 无序」常指 `HashSet`；要稳定遍历序用 `LinkedHashSet`，要排序用 `TreeSet`。\n- 自定义对象放进 `Set`（或当 `HashMap` 键）必须正确重写 `equals` 与 `hashCode`。\n- List 的「有序」≠「排序」；要排序可 `Collections.sort` / `list.sort`，或用 `TreeSet`。",
+      "questionHtml": "<p>List 和 Set 的区别</p>\n",
+      "answerHtml": "<ol>\n<li>两者都是 <code>Collection</code> 子接口，存「一堆元素」；与 <code>Map</code>（键值对）并列。</li>\n<li><strong>List</strong>：有序（按插入/下标）、<strong>可重复</strong>，支持 <code>get(i)</code> 按下标访问。</li>\n<li><strong>Set</strong>：元素<strong>不可重复</strong>（判重靠 <code>equals</code> / <code>hashCode</code>，Tree 靠比较器）；默认实现不保证顺序。</li>\n<li>选用：要下标、允许重复 → <code>List</code>（默认 <code>ArrayList</code>）；要去重 → <code>Set</code>（默认 <code>HashSet</code>）。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>List</th>\n<th>Set</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>顺序</td>\n<td>有序（下标 / 插入序）</td>\n<td><code>HashSet</code> 无保证；<code>LinkedHashSet</code> 插入序；<code>TreeSet</code> 排序序</td>\n</tr>\n<tr>\n<td>重复</td>\n<td>允许</td>\n<td>不允许</td>\n</tr>\n<tr>\n<td>访问</td>\n<td><code>get(index)</code> 等下标 API</td>\n<td>无下标，靠迭代 / <code>contains</code></td>\n</tr>\n<tr>\n<td>判等</td>\n<td>可存多个相等元素</td>\n<td>相同元素只保留一个</td>\n</tr>\n<tr>\n<td>常用实现</td>\n<td><code>ArrayList</code>、<code>LinkedList</code></td>\n<td><code>HashSet</code>、<code>LinkedHashSet</code>、<code>TreeSet</code></td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-mermaid\">flowchart TB\n  C[&quot;Collection&quot;]\n  C --&gt; L[&quot;List 有序可重复&quot;]\n  C --&gt; S[&quot;Set 不可重复&quot;]\n  C --&gt; Q[&quot;Queue&quot;]\n  L --&gt; AL[&quot;ArrayList&quot;]\n  L --&gt; LL[&quot;LinkedList&quot;]\n  S --&gt; HS[&quot;HashSet&quot;]\n  S --&gt; LHS[&quot;LinkedHashSet&quot;]\n  S --&gt; TS[&quot;TreeSet&quot;]\n</code></pre>\n<pre><code class=\"language-java\">List&lt;String&gt; list = new ArrayList&lt;&gt;();\nlist.add(&quot;a&quot;);\nlist.add(&quot;a&quot;); // 允许：[&quot;a&quot;, &quot;a&quot;]\n\nSet&lt;String&gt; set = new HashSet&lt;&gt;();\nset.add(&quot;a&quot;);\nset.add(&quot;a&quot;); // 忽略，仍只有一个 &quot;a&quot;\n</code></pre>\n<h3>注意</h3>\n<ul>\n<li>「Set 无序」常指 <code>HashSet</code>；要稳定遍历序用 <code>LinkedHashSet</code>，要排序用 <code>TreeSet</code>。</li>\n<li>自定义对象放进 <code>Set</code>（或当 <code>HashMap</code> 键）必须正确重写 <code>equals</code> 与 <code>hashCode</code>。</li>\n<li>List 的「有序」≠「排序」；要排序可 <code>Collections.sort</code> / <code>list.sort</code>，或用 <code>TreeSet</code>。</li>\n</ul>\n",
+      "sourcePath": "backend/java/07.List-Set.md",
+      "reference": [
+        "https://docs.oracle.com/javase/8/docs/api/java/util/List.html",
+        "https://docs.oracle.com/javase/8/docs/api/java/util/Set.html"
+      ]
+    },
+    {
+      "id": "backend-java-08",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "集合",
+        "ArrayList",
+        "LinkedList",
+        "List"
+      ],
+      "difficulty": "easy",
+      "title": "ArrayList 和 LinkedList 的区别",
+      "question": "`ArrayList` 和 `LinkedList` 的区别？",
+      "answer": "1. 两者都实现 `List`：有序、可重复、有下标。\n2. **ArrayList**：底层**动态数组**；随机访问 O(1)，尾部增删快，中间增删要搬移元素。\n3. **LinkedList**：底层**双向链表**；按索引访问要遍历 O(n)，首尾增删 O(1)，中间增删还要先定位。\n4. 日常默认用 `ArrayList`；只有频繁在两端插删、且几乎不按下标随机访问时才考虑 `LinkedList`。\n\n### 解释与扩展\n\n| | ArrayList | LinkedList |\n|---|---|---|\n| 结构 | 动态数组（`Object[]`） | 双向链表（节点 + prev/next） |\n| 随机访问 `get(i)` | O(1) | O(n) |\n| 尾部 `add` | 均摊 O(1)（扩容偶发 O(n)） | O(1) |\n| 头部 / 中间增删 | 需搬移，O(n) | 定位 O(n)，改指针 O(1) |\n| 内存 | 连续、开销小 | 每节点额外指针，更占内存 |\n| 实现的接口 | `List`、`RandomAccess` | `List`、`Deque`（可当队列/栈） |\n\n```mermaid\nflowchart LR\n  subgraph AL[\"ArrayList 数组\"]\n    a0[\"0\"] --- a1[\"1\"] --- a2[\"2\"] --- a3[\"3\"]\n  end\n  subgraph LL[\"LinkedList 双向链表\"]\n    n0[\"node0\"] <--> n1[\"node1\"] <--> n2[\"node2\"]\n  end\n```\n\n```java\nList<String> arr = new ArrayList<>();   // 查多、按下标 → 首选\narr.add(\"a\");\narr.get(0); // O(1)\n\nList<String> link = new LinkedList<>(); // 或 Deque\nlink.addFirst(\"head\");\nlink.addLast(\"tail\");\n```\n\n**选用建议：**\n- 遍历、随机访问、绝大多数业务 List → `ArrayList`\n- 只要队列语义（头删尾加）→ 优先 `ArrayDeque`，一般不必上 `LinkedList`\n- `LinkedList` 作 `List` 在真实场景里很少比 `ArrayList` 更快\n\n### 注意\n\n- 两者都**非线程安全**；并发用 `CopyOnWriteArrayList` 或外部同步。\n- `ArrayList` 扩容约 1.5 倍；已知容量可 `new ArrayList<>(n)` 减少扩容。\n- `LinkedList` 实现了 `Deque`，但作双端队列时 `ArrayDeque` 通常更优（无节点开销、缓存友好）。\n- 面试别死记「LinkedList 增删一定快」：中间增删仍要先 `get` 到节点，常是 O(n)。",
+      "questionHtml": "<p><code>ArrayList</code> 和 <code>LinkedList</code> 的区别？</p>\n",
+      "answerHtml": "<ol>\n<li>两者都实现 <code>List</code>：有序、可重复、有下标。</li>\n<li><strong>ArrayList</strong>：底层<strong>动态数组</strong>；随机访问 O(1)，尾部增删快，中间增删要搬移元素。</li>\n<li><strong>LinkedList</strong>：底层<strong>双向链表</strong>；按索引访问要遍历 O(n)，首尾增删 O(1)，中间增删还要先定位。</li>\n<li>日常默认用 <code>ArrayList</code>；只有频繁在两端插删、且几乎不按下标随机访问时才考虑 <code>LinkedList</code>。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>ArrayList</th>\n<th>LinkedList</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>结构</td>\n<td>动态数组（<code>Object[]</code>）</td>\n<td>双向链表（节点 + prev/next）</td>\n</tr>\n<tr>\n<td>随机访问 <code>get(i)</code></td>\n<td>O(1)</td>\n<td>O(n)</td>\n</tr>\n<tr>\n<td>尾部 <code>add</code></td>\n<td>均摊 O(1)（扩容偶发 O(n)）</td>\n<td>O(1)</td>\n</tr>\n<tr>\n<td>头部 / 中间增删</td>\n<td>需搬移，O(n)</td>\n<td>定位 O(n)，改指针 O(1)</td>\n</tr>\n<tr>\n<td>内存</td>\n<td>连续、开销小</td>\n<td>每节点额外指针，更占内存</td>\n</tr>\n<tr>\n<td>实现的接口</td>\n<td><code>List</code>、<code>RandomAccess</code></td>\n<td><code>List</code>、<code>Deque</code>（可当队列/栈）</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-mermaid\">flowchart LR\n  subgraph AL[&quot;ArrayList 数组&quot;]\n    a0[&quot;0&quot;] --- a1[&quot;1&quot;] --- a2[&quot;2&quot;] --- a3[&quot;3&quot;]\n  end\n  subgraph LL[&quot;LinkedList 双向链表&quot;]\n    n0[&quot;node0&quot;] &lt;--&gt; n1[&quot;node1&quot;] &lt;--&gt; n2[&quot;node2&quot;]\n  end\n</code></pre>\n<pre><code class=\"language-java\">List&lt;String&gt; arr = new ArrayList&lt;&gt;();   // 查多、按下标 → 首选\narr.add(&quot;a&quot;);\narr.get(0); // O(1)\n\nList&lt;String&gt; link = new LinkedList&lt;&gt;(); // 或 Deque\nlink.addFirst(&quot;head&quot;);\nlink.addLast(&quot;tail&quot;);\n</code></pre>\n<p><strong>选用建议：</strong></p>\n<ul>\n<li>遍历、随机访问、绝大多数业务 List → <code>ArrayList</code></li>\n<li>只要队列语义（头删尾加）→ 优先 <code>ArrayDeque</code>，一般不必上 <code>LinkedList</code></li>\n<li><code>LinkedList</code> 作 <code>List</code> 在真实场景里很少比 <code>ArrayList</code> 更快</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>两者都<strong>非线程安全</strong>；并发用 <code>CopyOnWriteArrayList</code> 或外部同步。</li>\n<li><code>ArrayList</code> 扩容约 1.5 倍；已知容量可 <code>new ArrayList&lt;&gt;(n)</code> 减少扩容。</li>\n<li><code>LinkedList</code> 实现了 <code>Deque</code>，但作双端队列时 <code>ArrayDeque</code> 通常更优（无节点开销、缓存友好）。</li>\n<li>面试别死记「LinkedList 增删一定快」：中间增删仍要先 <code>get</code> 到节点，常是 O(n)。</li>\n</ul>\n",
+      "sourcePath": "backend/java/08.ArrayList-LinkedList.md",
+      "reference": [
+        "https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html",
+        "https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html"
+      ]
+    },
+    {
+      "id": "backend-java-09",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "集合",
+        "Collection",
+        "Map"
+      ],
+      "difficulty": "easy",
+      "title": "Java 集合体系",
+      "question": "说一下 Java 集合体系？",
+      "answer": "1. 两大根接口：`Collection`（单列，存元素）、`Map`（双列，存 key-value）。\n2. **List**：有序、可重复、有索引；常用 `ArrayList` / `LinkedList`（`Vector` 基本淘汰）。\n3. **Set**：不可重复；`HashSet` 无序、`LinkedHashSet` 插序、`TreeSet` 排序。\n4. **Map**：key 唯一；日常 `HashMap`，并发用 `ConcurrentHashMap`（`Hashtable` 过时）。\n\n### 解释与扩展\n\n```mermaid\nflowchart TB\n  root[\"集合框架\"]\n  root --> C[\"Collection 单列\"]\n  root --> M[\"Map 双列\"]\n  C --> L[\"List 有序可重复\"]\n  C --> S[\"Set 不可重复\"]\n  L --> AL[\"ArrayList 数组\"]\n  L --> LL[\"LinkedList 双向链表\"]\n  L --> V[\"Vector 已淘汰\"]\n  S --> HS[\"HashSet\"]\n  S --> LHS[\"LinkedHashSet\"]\n  S --> TS[\"TreeSet\"]\n  M --> HM[\"HashMap\"]\n  M --> LHM[\"LinkedHashMap\"]\n  M --> TM[\"TreeMap\"]\n  M --> HT[\"Hashtable 过时\"]\n  M --> CHM[\"ConcurrentHashMap\"]\n```\n\n| 分支 | 特点 | 常用实现 |\n|---|---|---|\n| List | 有序、可重复、有索引 | `ArrayList`（查快增删相对慢）、`LinkedList`（首尾增删快）、`Vector`（同步，淘汰） |\n| Set | 不可重复 | `HashSet`（靠 hashCode+equals 去重）、`LinkedHashSet`（插序）、`TreeSet`（Comparable/Comparator） |\n| Map | key 唯一，value 可重复 | `HashMap`（数组+链表+红黑树）、`LinkedHashMap`、`TreeMap`、`ConcurrentHashMap` |\n\n**选用建议：**\n- 普通增删查 → `ArrayList`\n- 键值对 → `HashMap`\n- 高并发 Map → `ConcurrentHashMap`\n\n**HashMap（JDK 8+）：** 链表长度 > 8 转红黑树，树节点 < 6 退回链表；线程不安全。\n\n### 注意\n\n- 用 `Iterator` 遍历时不要直接对集合 `add`/`remove`，会触发 `ConcurrentModificationException`；应使用迭代器的 `remove`，或 `CopyOnWrite` / 并发集合。\n- 线程安全：`Vector`、`Hashtable` 老旧；高并发推荐 `ConcurrentHashMap`；其余 `List` / `Set` / `HashMap` 默认都不安全。\n- 一句话：List 有序可重复，Set 不重复；HashMap 不安全，ConcurrentHashMap 并发安全。",
+      "questionHtml": "<p>说一下 Java 集合体系？</p>\n",
+      "answerHtml": "<ol>\n<li>两大根接口：<code>Collection</code>（单列，存元素）、<code>Map</code>（双列，存 key-value）。</li>\n<li><strong>List</strong>：有序、可重复、有索引；常用 <code>ArrayList</code> / <code>LinkedList</code>（<code>Vector</code> 基本淘汰）。</li>\n<li><strong>Set</strong>：不可重复；<code>HashSet</code> 无序、<code>LinkedHashSet</code> 插序、<code>TreeSet</code> 排序。</li>\n<li><strong>Map</strong>：key 唯一；日常 <code>HashMap</code>，并发用 <code>ConcurrentHashMap</code>（<code>Hashtable</code> 过时）。</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-mermaid\">flowchart TB\n  root[&quot;集合框架&quot;]\n  root --&gt; C[&quot;Collection 单列&quot;]\n  root --&gt; M[&quot;Map 双列&quot;]\n  C --&gt; L[&quot;List 有序可重复&quot;]\n  C --&gt; S[&quot;Set 不可重复&quot;]\n  L --&gt; AL[&quot;ArrayList 数组&quot;]\n  L --&gt; LL[&quot;LinkedList 双向链表&quot;]\n  L --&gt; V[&quot;Vector 已淘汰&quot;]\n  S --&gt; HS[&quot;HashSet&quot;]\n  S --&gt; LHS[&quot;LinkedHashSet&quot;]\n  S --&gt; TS[&quot;TreeSet&quot;]\n  M --&gt; HM[&quot;HashMap&quot;]\n  M --&gt; LHM[&quot;LinkedHashMap&quot;]\n  M --&gt; TM[&quot;TreeMap&quot;]\n  M --&gt; HT[&quot;Hashtable 过时&quot;]\n  M --&gt; CHM[&quot;ConcurrentHashMap&quot;]\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>分支</th>\n<th>特点</th>\n<th>常用实现</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>List</td>\n<td>有序、可重复、有索引</td>\n<td><code>ArrayList</code>（查快增删相对慢）、<code>LinkedList</code>（首尾增删快）、<code>Vector</code>（同步，淘汰）</td>\n</tr>\n<tr>\n<td>Set</td>\n<td>不可重复</td>\n<td><code>HashSet</code>（靠 hashCode+equals 去重）、<code>LinkedHashSet</code>（插序）、<code>TreeSet</code>（Comparable/Comparator）</td>\n</tr>\n<tr>\n<td>Map</td>\n<td>key 唯一，value 可重复</td>\n<td><code>HashMap</code>（数组+链表+红黑树）、<code>LinkedHashMap</code>、<code>TreeMap</code>、<code>ConcurrentHashMap</code></td>\n</tr>\n</tbody>\n</table>\n<p><strong>选用建议：</strong></p>\n<ul>\n<li>普通增删查 → <code>ArrayList</code></li>\n<li>键值对 → <code>HashMap</code></li>\n<li>高并发 Map → <code>ConcurrentHashMap</code></li>\n</ul>\n<p><strong>HashMap（JDK 8+）：</strong> 链表长度 &gt; 8 转红黑树，树节点 &lt; 6 退回链表；线程不安全。</p>\n<h3>注意</h3>\n<ul>\n<li>用 <code>Iterator</code> 遍历时不要直接对集合 <code>add</code>/<code>remove</code>，会触发 <code>ConcurrentModificationException</code>；应使用迭代器的 <code>remove</code>，或 <code>CopyOnWrite</code> / 并发集合。</li>\n<li>线程安全：<code>Vector</code>、<code>Hashtable</code> 老旧；高并发推荐 <code>ConcurrentHashMap</code>；其余 <code>List</code> / <code>Set</code> / <code>HashMap</code> 默认都不安全。</li>\n<li>一句话：List 有序可重复，Set 不重复；HashMap 不安全，ConcurrentHashMap 并发安全。</li>\n</ul>\n",
+      "sourcePath": "backend/java/09.collection.md",
+      "reference": [
+        "https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html",
+        "https://docs.oracle.com/javase/8/docs/api/java/util/Map.html"
+      ]
+    },
+    {
+      "id": "backend-java-10",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "equals",
+        "Object"
+      ],
+      "difficulty": "easy",
+      "title": "== 和 equals 有什么区别？",
+      "question": "== 和 equals 有什么区别？",
+      "answer": "1. `==`：比较栈里存的东西——基本类型比**值**，引用类型比**地址**。\n2. `equals`：`Object` 默认实现等价于 `==`；子类常重写为比**内容**（如 `String`、`Integer`）。\n3. 重写了 `equals` 必须按契约同步重写 `hashCode`，否则哈希集合（`HashMap` / `HashSet`）会出 bug。\n\n### 解释与扩展\n\n- 基本类型：栈中存变量值；引用类型：栈中存地址，对象内容在堆中。\n- `String` 等值对象已重写 `equals`，内容相同即为 `true`，即便不是同一对象。\n- 常见陷阱：\n  - 字符串池：`\"a\" == \"a\"` → `true`（字面量入池）；`new String(\"a\")` 则 `false`\n  - Integer 缓存：`-128 ~ 127` 内 `==` 可能为 `true`，超出为 `false`\n  - `BigDecimal`：业务比较优先 `compareTo`；`equals` 连精度一起比（`1.0 ≠ 1.00`）\n\n### 注意\n\n- `a.equals(b)` 在 `a` 为 `null` 时会 NPE；可用 `Objects.equals(a, b)`。\n- 业务代码比字符串内容应优先用 `equals`，不要依赖常量池或缓存行为。",
+      "questionHtml": "<p>== 和 equals 有什么区别？</p>\n",
+      "answerHtml": "<ol>\n<li><code>==</code>：比较栈里存的东西——基本类型比<strong>值</strong>，引用类型比<strong>地址</strong>。</li>\n<li><code>equals</code>：<code>Object</code> 默认实现等价于 <code>==</code>；子类常重写为比<strong>内容</strong>（如 <code>String</code>、<code>Integer</code>）。</li>\n<li>重写了 <code>equals</code> 必须按契约同步重写 <code>hashCode</code>，否则哈希集合（<code>HashMap</code> / <code>HashSet</code>）会出 bug。</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>基本类型：栈中存变量值；引用类型：栈中存地址，对象内容在堆中。</li>\n<li><code>String</code> 等值对象已重写 <code>equals</code>，内容相同即为 <code>true</code>，即便不是同一对象。</li>\n<li>常见陷阱：\n<ul>\n<li>字符串池：<code>&quot;a&quot; == &quot;a&quot;</code> → <code>true</code>（字面量入池）；<code>new String(&quot;a&quot;)</code> 则 <code>false</code></li>\n<li>Integer 缓存：<code>-128 ~ 127</code> 内 <code>==</code> 可能为 <code>true</code>，超出为 <code>false</code></li>\n<li><code>BigDecimal</code>：业务比较优先 <code>compareTo</code>；<code>equals</code> 连精度一起比（<code>1.0 ≠ 1.00</code>）</li>\n</ul>\n</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li><code>a.equals(b)</code> 在 <code>a</code> 为 <code>null</code> 时会 NPE；可用 <code>Objects.equals(a, b)</code>。</li>\n<li>业务代码比字符串内容应优先用 <code>equals</code>，不要依赖常量池或缓存行为。</li>\n</ul>\n",
+      "sourcePath": "backend/java/10.==&equals.md",
+      "reference": [
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)"
+      ]
+    },
+    {
+      "id": "backend-java-11",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "equals",
+        "hashCode",
+        "Object"
+      ],
+      "difficulty": "easy",
+      "title": "说一下 equals 和 hashCode",
+      "question": "说一下 `equals` 和 `hashCode`",
+      "answer": "1. `equals`：判两个对象是否「相等」；`Object` 默认比地址，子类常重写为比内容。\n2. `hashCode`：返回对象的哈希值（`int`），供哈希表定位桶；`Object` 默认多与内存地址相关。\n3. **契约**：`equals` 为 `true` → `hashCode` 必须相同；`hashCode` 相同 ≠ `equals` 一定为 `true`（允许碰撞）。\n4. 重写了 `equals` 就必须同步重写 `hashCode`，否则 `HashMap` / `HashSet` 会丢元素或查不到。\n\n### 解释与扩展\n\n| | equals | hashCode |\n|---|---|---|\n| 作用 | 逻辑相等 | 哈希定位 |\n| 默认 | `==`（同引用） | 与对象身份相关 |\n| 相等时 | — | 必须相同 |\n| 碰撞时 | 再调 `equals` 确认 | 可相同 |\n\n哈希集合用法（如 `HashMap`）：\n\n```text\nput / get → hashCode 定桶 → 桶内再用 equals 比 key\n```\n\n```java\n@Override\npublic boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof User)) return false;\n    User u = (User) o;\n    return Objects.equals(id, u.id);\n}\n\n@Override\npublic int hashCode() {\n    return Objects.hash(id); // 参与 equals 的字段都要参与\n}\n```\n\n### 注意\n\n- 参与 `equals` 的字段集合 = 参与 `hashCode` 的字段集合，否则违反契约。\n- 放入哈希集合后不要改会参与 `equals`/`hashCode` 的字段（可变 key 会丢数据）。\n- 可用 IDE / Lombok/`Objects.equals` + `Objects.hash` 生成，减少手写出错。\n- `equals` 契约：自反、对称、传递、一致；对 `null` 返回 `false`。",
+      "questionHtml": "<p>说一下 <code>equals</code> 和 <code>hashCode</code></p>\n",
+      "answerHtml": "<ol>\n<li><code>equals</code>：判两个对象是否「相等」；<code>Object</code> 默认比地址，子类常重写为比内容。</li>\n<li><code>hashCode</code>：返回对象的哈希值（<code>int</code>），供哈希表定位桶；<code>Object</code> 默认多与内存地址相关。</li>\n<li><strong>契约</strong>：<code>equals</code> 为 <code>true</code> → <code>hashCode</code> 必须相同；<code>hashCode</code> 相同 ≠ <code>equals</code> 一定为 <code>true</code>（允许碰撞）。</li>\n<li>重写了 <code>equals</code> 就必须同步重写 <code>hashCode</code>，否则 <code>HashMap</code> / <code>HashSet</code> 会丢元素或查不到。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>equals</th>\n<th>hashCode</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>作用</td>\n<td>逻辑相等</td>\n<td>哈希定位</td>\n</tr>\n<tr>\n<td>默认</td>\n<td><code>==</code>（同引用）</td>\n<td>与对象身份相关</td>\n</tr>\n<tr>\n<td>相等时</td>\n<td>—</td>\n<td>必须相同</td>\n</tr>\n<tr>\n<td>碰撞时</td>\n<td>再调 <code>equals</code> 确认</td>\n<td>可相同</td>\n</tr>\n</tbody>\n</table>\n<p>哈希集合用法（如 <code>HashMap</code>）：</p>\n<pre><code class=\"language-text\">put / get → hashCode 定桶 → 桶内再用 equals 比 key\n</code></pre>\n<pre><code class=\"language-java\">@Override\npublic boolean equals(Object o) {\n    if (this == o) return true;\n    if (!(o instanceof User)) return false;\n    User u = (User) o;\n    return Objects.equals(id, u.id);\n}\n\n@Override\npublic int hashCode() {\n    return Objects.hash(id); // 参与 equals 的字段都要参与\n}\n</code></pre>\n<h3>注意</h3>\n<ul>\n<li>参与 <code>equals</code> 的字段集合 = 参与 <code>hashCode</code> 的字段集合，否则违反契约。</li>\n<li>放入哈希集合后不要改会参与 <code>equals</code>/<code>hashCode</code> 的字段（可变 key 会丢数据）。</li>\n<li>可用 IDE / Lombok/<code>Objects.equals</code> + <code>Objects.hash</code> 生成，减少手写出错。</li>\n<li><code>equals</code> 契约：自反、对称、传递、一致；对 <code>null</code> 返回 <code>false</code>。</li>\n</ul>\n",
+      "sourcePath": "backend/java/11.hashCode-equals.md",
+      "reference": [
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()"
       ]
     },
     {
