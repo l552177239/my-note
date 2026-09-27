@@ -65,6 +65,27 @@
       ]
     },
     {
+      "id": "backend-java-03.1",
+      "type": "backend",
+      "category": "java",
+      "categoryName": "Java",
+      "tags": [
+        "Java",
+        "OOP",
+        "抽象类"
+      ],
+      "difficulty": "easy",
+      "title": "抽象类和普通类的区别",
+      "question": "抽象类和普通类的区别",
+      "answer": "1. **抽象类**：不能 `new`；既能有完整方法体，也能有 `abstract` 抽象方法（无方法体）。\n2. **普通子类**继承抽象类：强制实现所有抽象方法，普通方法直接继承不用管。\n3. 如果子类也加 `abstract`：可以不实现抽象方法，继续向下传递。\n4. 抽象类可以有构造器，供子类 `super` 调用；接口没有构造器。\n\n### 解释与扩展\n\n| | 抽象类 abstract class | 普通类（具体类） |\n|---|---|---|\n| 实例化 | 不能 `new` | 可以 `new` |\n| 抽象方法 | 允许；有则类必须 `abstract` | 不允许 |\n| 普通方法 / 字段 | 都可以有 | 都可以有 |\n| 构造器 | 有（初始化子类时由 `super` 调用） | 有 |\n| 继承义务 | 具体子类须实现全部抽象方法 | 无「必须实现」约束 |\n| 设计角色 | 半成品模板，锁定共性、推迟差异 | 可直接使用的完整实现 |\n\n```mermaid\nclassDiagram\n  class Shape {\n    <<abstract>>\n    #color String\n    +Shape(color)\n    +area()* double\n    +describe() String\n  }\n  class Polygon {\n    <<abstract>>\n    +area()* double\n  }\n  class Circle {\n    +area() double\n  }\n  class Rectangle {\n    +area() double\n  }\n  Shape <|-- Circle : 具体子类须实现 area\n  Shape <|-- Polygon : 仍 abstract，可暂不实现\n  Polygon <|-- Rectangle : 落到具体类时实现\n```\n\n- **模板方法常见用法**：抽象类里写好流程骨架（普通方法），差异步骤留给子类抽象方法实现。\n- 抽象类也可以**零个**抽象方法：仅禁止直接实例化（如部分工具基类），但更常见是「共享实现 + 强制子类补齐差异」。\n\n### 注意\n\n- 含抽象方法的类必须声明为 `abstract`，否则编译失败。\n- `abstract` 与 `final` 不能同时修饰类（一个要被继承补齐，一个禁止继承）。\n- 抽象类构造器存在，是为了初始化共享字段；对外仍不能 `new` 抽象类本身。\n- 与「接口 vs 抽象类」区分开：本题侧重能否实例化、子类实现义务；能力契约 / 多实现见上一题。",
+      "questionHtml": "<p>抽象类和普通类的区别</p>\n",
+      "answerHtml": "<ol>\n<li><strong>抽象类</strong>：不能 <code>new</code>；既能有完整方法体，也能有 <code>abstract</code> 抽象方法（无方法体）。</li>\n<li><strong>普通子类</strong>继承抽象类：强制实现所有抽象方法，普通方法直接继承不用管。</li>\n<li>如果子类也加 <code>abstract</code>：可以不实现抽象方法，继续向下传递。</li>\n<li>抽象类可以有构造器，供子类 <code>super</code> 调用；接口没有构造器。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>抽象类 abstract class</th>\n<th>普通类（具体类）</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>实例化</td>\n<td>不能 <code>new</code></td>\n<td>可以 <code>new</code></td>\n</tr>\n<tr>\n<td>抽象方法</td>\n<td>允许；有则类必须 <code>abstract</code></td>\n<td>不允许</td>\n</tr>\n<tr>\n<td>普通方法 / 字段</td>\n<td>都可以有</td>\n<td>都可以有</td>\n</tr>\n<tr>\n<td>构造器</td>\n<td>有（初始化子类时由 <code>super</code> 调用）</td>\n<td>有</td>\n</tr>\n<tr>\n<td>继承义务</td>\n<td>具体子类须实现全部抽象方法</td>\n<td>无「必须实现」约束</td>\n</tr>\n<tr>\n<td>设计角色</td>\n<td>半成品模板，锁定共性、推迟差异</td>\n<td>可直接使用的完整实现</td>\n</tr>\n</tbody>\n</table>\n<pre><code class=\"language-mermaid\">classDiagram\n  class Shape {\n    &lt;&lt;abstract&gt;&gt;\n    #color String\n    +Shape(color)\n    +area()* double\n    +describe() String\n  }\n  class Polygon {\n    &lt;&lt;abstract&gt;&gt;\n    +area()* double\n  }\n  class Circle {\n    +area() double\n  }\n  class Rectangle {\n    +area() double\n  }\n  Shape &lt;|-- Circle : 具体子类须实现 area\n  Shape &lt;|-- Polygon : 仍 abstract，可暂不实现\n  Polygon &lt;|-- Rectangle : 落到具体类时实现\n</code></pre>\n<ul>\n<li><strong>模板方法常见用法</strong>：抽象类里写好流程骨架（普通方法），差异步骤留给子类抽象方法实现。</li>\n<li>抽象类也可以<strong>零个</strong>抽象方法：仅禁止直接实例化（如部分工具基类），但更常见是「共享实现 + 强制子类补齐差异」。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>含抽象方法的类必须声明为 <code>abstract</code>，否则编译失败。</li>\n<li><code>abstract</code> 与 <code>final</code> 不能同时修饰类（一个要被继承补齐，一个禁止继承）。</li>\n<li>抽象类构造器存在，是为了初始化共享字段；对外仍不能 <code>new</code> 抽象类本身。</li>\n<li>与「接口 vs 抽象类」区分开：本题侧重能否实例化、子类实现义务；能力契约 / 多实现见上一题。</li>\n</ul>\n",
+      "sourcePath": "backend/java/03.1.abstract-vs-class.md",
+      "reference": [
+        "https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html"
+      ]
+    },
+    {
       "id": "backend-java-04",
       "type": "backend",
       "category": "java",
@@ -190,7 +211,7 @@
         "Hashtable",
         "Map"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "title": "HashMap 和 Hashtable 的区别",
       "question": "`HashMap` 和 `Hashtable` 的区别和底层实现？",
       "answer": "1. 两者都实现 `Map`：存 key-value，key 唯一。\n2. **HashMap**：非线程安全；允许 **一个 `null` key** 和多个 `null` value；JDK 8+ 底层为 **数组 + 链表 / 红黑树**。\n3. **Hashtable**：方法级 `synchronized`，线程安全但粗粒度、性能差；**不允许 `null`**；数组 + 链表，无树化；遗留类。\n4. 日常用 `HashMap`；并发用 `ConcurrentHashMap`，不要再用 `Hashtable`。\n\n### 解释与扩展\n\n| | HashMap | Hashtable |\n|---|---|---|\n| 线程安全 | 否 | 是（方法级 `synchronized`） |\n| `null` | 1 个 null key、多个 null value | key / value 均不可 null（NPE） |\n| 父类 | `AbstractMap` | 遗留 `Dictionary`（兼实现 `Map`） |\n| 结构 | 数组 + 链表 / 红黑树（JDK 8+） | 数组 + 链表 |\n| 遍历 | `Iterator`（fail-fast） | 另有 `Enumeration` |\n| 性能 | 无锁，单线程更快 | 全局锁，争用大 |\n\n**HashMap 底层（JDK 8+）：**\n\n1. **定桶**：`hash = key.hashCode()` 再扰动（高位异或），`i = (n - 1) & hash`（容量为 2 的幂）。\n2. **put**：桶空则直接放；否则链表 / 树里用 `equals` 比 key，相同则覆盖 value，不同则追加；链表长度 ≥ 8 且容量 ≥ 64 时树化。\n3. **get**：同样定桶 → 链表 / 树里 `equals` 找 key。\n4. **扩容**：`size > capacity * 0.75` 时容量翻倍（16 → 32…），节点按新掩码迁移（高位为 0 留原桶，为 1 进 `oldCap + i`）。\n5. **退化**：树节点过少（约 ≤ 6）在扩容等时机退回链表。\n\n```mermaid\nflowchart TB\n  put[\"put(key, value)\"] --> h[\"hash 扰动\"]\n  h --> idx[\"(n-1) & hash 定桶\"]\n  idx --> empty{\"桶空？\"}\n  empty -->|是| set[\"新建 Node\"]\n  empty -->|否| eq{\"equals 相同 key？\"}\n  eq -->|是| overwrite[\"覆盖 value\"]\n  eq -->|否| append[\"链表追加 / 树插入\"]\n  append --> tree{\"链表长 ≥ 8 且 n ≥ 64？\"}\n  tree -->|是| rb[\"转红黑树\"]\n  tree -->|否| done[\"结束\"]\n  set --> resize{\"超过负载因子？\"}\n  overwrite --> resize\n  rb --> resize\n  done --> resize\n  resize -->|是| grow[\"容量 ×2，重新分布\"]\n```\n\n```java\nMap<String, String> map = new HashMap<>();\nmap.put(null, \"v\");      // OK\nmap.put(\"k\", null);      // OK\n\nHashtable<String, String> table = new Hashtable<>();\n// table.put(null, \"v\"); // NPE\n// table.put(\"k\", null); // NPE\n```\n\n**并发选型：**\n- 单线程 → `HashMap`\n- 高并发 → `ConcurrentHashMap`（远好于 `Hashtable`）\n- `Hashtable` / `Collections.synchronizedMap` 基本过时\n\n### 注意\n\n- 类名是 `Hashtable`（t 小写），不是 `HashTable`。\n- 多线程共享 `HashMap` 可能丢数据甚至死循环（JDK 7 头插扩容）；优先 `ConcurrentHashMap`。\n- 默认容量 16、负载因子 0.75；已知规模可 `new HashMap<>(n)` 减少扩容。\n- 自定义 key 必须正确重写 `equals` / `hashCode`；放入后勿改参与哈希的字段。",
