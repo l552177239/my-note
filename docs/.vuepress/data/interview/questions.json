@@ -34,9 +34,9 @@
       "difficulty": "easy",
       "title": "什么是字节码？采用字节码的好处是什么？",
       "question": "什么是字节码？采用字节码的好处是什么？",
-      "answer": "1. **字节码**：`javac` 编译 `.java` 源码得到 `.class` 中间指令；JVM 再解释成机器码 / JIT 执行。它不是某台 CPU 的本地机器码。\n2. **好处**：\n   - **跨平台**：同一份字节码 + 各平台 JVM →「一次编译，到处运行」；\n   - **安全**：加载前可做字节码校验，降低非法指令、越权访问风险；\n   - **可优化**：运行时由解释器 / JIT 按热点再优化，兼顾启动与峰值性能；\n   - **语言无关**：Kotlin、Scala 等也可编译到 JVM 字节码，共享生态。\n\n### 解释与扩展\n\n- JVM 只认字节码，不关心源码语言；跨平台的关键是「统一字节码格式 + 各 OS 上的 JVM 实现」。\n- `.class` 里是操作码（opcode）+ 操作数的指令流，可用 `javap -c` 反汇编查看。\n- 相对直接编译成原生机器码：换平台不必重编源码，只要有对应 JVM。\n\n### 注意\n\n- 字节码跨的是「装了 JVM 的平台」，不是无 JVM 也能跑。\n- 性能最终仍依赖具体 JVM（解释 / C1 / C2、GC 等），字节码本身不等于已经最优的机器码。",
+      "answer": "1. **字节码**：\n   - `javac` 编译 `.java` 源码得到 `.class` 文件中的中间指令；\n   - 程序运行时，JVM 读取 `.class` 由解释器翻译为对应平台的机器码执行；\n   - 运行过程中 JIT 会监测热点代码，将其编译优化为高性能机器码，提升运行效率；\n2. **好处**：\n   - **跨平台**：同一份字节码 + 各平台 JVM →「一次编译，到处运行」；\n   - **安全**：加载前可做字节码校验，降低非法指令、越权访问风险；\n   - **可优化**：运行时由解释器 / JIT 按热点再优化，兼顾启动与峰值性能；\n   - **语言无关**：Kotlin、Scala 等也可编译到 JVM 字节码，共享生态。\n\n### 解释与扩展\n\n- JVM 只认字节码，不关心源码语言；跨平台的关键是「统一字节码格式 + 各 OS 上的 JVM 实现」。\n- `.class` 里是操作码（opcode）+ 操作数的指令流，可用 `javap -c` 反汇编查看。\n- 相对直接编译成原生机器码：换平台不必重编源码，只要有对应 JVM。\n\n### 注意\n\n- 字节码跨的是「装了 JVM 的平台」，不是无 JVM 也能跑。\n- 性能最终仍依赖具体 JVM（解释 / C1 / C2、GC 等），字节码本身不等于已经最优的机器码。",
       "questionHtml": "<p>什么是字节码？采用字节码的好处是什么？</p>\n",
-      "answerHtml": "<ol>\n<li><strong>字节码</strong>：<code>javac</code> 编译 <code>.java</code> 源码得到 <code>.class</code> 中间指令；JVM 再解释成机器码 / JIT 执行。它不是某台 CPU 的本地机器码。</li>\n<li><strong>好处</strong>：\n<ul>\n<li><strong>跨平台</strong>：同一份字节码 + 各平台 JVM →「一次编译，到处运行」；</li>\n<li><strong>安全</strong>：加载前可做字节码校验，降低非法指令、越权访问风险；</li>\n<li><strong>可优化</strong>：运行时由解释器 / JIT 按热点再优化，兼顾启动与峰值性能；</li>\n<li><strong>语言无关</strong>：Kotlin、Scala 等也可编译到 JVM 字节码，共享生态。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>JVM 只认字节码，不关心源码语言；跨平台的关键是「统一字节码格式 + 各 OS 上的 JVM 实现」。</li>\n<li><code>.class</code> 里是操作码（opcode）+ 操作数的指令流，可用 <code>javap -c</code> 反汇编查看。</li>\n<li>相对直接编译成原生机器码：换平台不必重编源码，只要有对应 JVM。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>字节码跨的是「装了 JVM 的平台」，不是无 JVM 也能跑。</li>\n<li>性能最终仍依赖具体 JVM（解释 / C1 / C2、GC 等），字节码本身不等于已经最优的机器码。</li>\n</ul>\n",
+      "answerHtml": "<ol>\n<li><strong>字节码</strong>：\n<ul>\n<li><code>javac</code> 编译 <code>.java</code> 源码得到 <code>.class</code> 文件中的中间指令；</li>\n<li>程序运行时，JVM 读取 <code>.class</code> 由解释器翻译为对应平台的机器码执行；</li>\n<li>运行过程中 JIT 会监测热点代码，将其编译优化为高性能机器码，提升运行效率；</li>\n</ul>\n</li>\n<li><strong>好处</strong>：\n<ul>\n<li><strong>跨平台</strong>：同一份字节码 + 各平台 JVM →「一次编译，到处运行」；</li>\n<li><strong>安全</strong>：加载前可做字节码校验，降低非法指令、越权访问风险；</li>\n<li><strong>可优化</strong>：运行时由解释器 / JIT 按热点再优化，兼顾启动与峰值性能；</li>\n<li><strong>语言无关</strong>：Kotlin、Scala 等也可编译到 JVM 字节码，共享生态。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>JVM 只认字节码，不关心源码语言；跨平台的关键是「统一字节码格式 + 各 OS 上的 JVM 实现」。</li>\n<li><code>.class</code> 里是操作码（opcode）+ 操作数的指令流，可用 <code>javap -c</code> 反汇编查看。</li>\n<li>相对直接编译成原生机器码：换平台不必重编源码，只要有对应 JVM。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>字节码跨的是「装了 JVM 的平台」，不是无 JVM 也能跑。</li>\n<li>性能最终仍依赖具体 JVM（解释 / C1 / C2、GC 等），字节码本身不等于已经最优的机器码。</li>\n</ul>\n",
       "sourcePath": "backend/java/01.1.bytecode.md",
       "reference": [
         "https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-1.html#jvms-1.2"
@@ -55,9 +55,9 @@
       "difficulty": "medium",
       "title": "什么是 Java 类加载器？",
       "question": "什么是 Java 类加载器？常见有哪些？",
-      "answer": "1. **类加载器（ClassLoader）**：负责把 `.class` 字节码加载进 JVM，生成对应的 `Class` 对象；是「字节码 → 可执行类型」的入口。\n2. **常见层级**（JDK 9+）：\n   - **Bootstrap ClassLoader**：由 JVM 原生实现，加载核心类（如 `java.lang.*`，来自模块 / 原 `rt.jar`）；\n   - **Platform ClassLoader**（原 Extension）：加载平台扩展模块；\n   - **Application ClassLoader**（App / System）：加载 classpath / 应用模块上的类；\n   - **自定义 ClassLoader**：可按需从网络、加密文件、热部署目录等加载。\n3. 三者构成父子链：Application → Platform → Bootstrap；应用类默认由 Application ClassLoader 加载。\n\n### 解释与扩展\n\n| 加载器 | 大致职责 | 典型来源 |\n|---|---|---|\n| Bootstrap | 核心 JDK 类 | JVM 内置 / `java.base` 等 |\n| Platform | 平台扩展 | 平台模块 |\n| Application | 应用代码与依赖 | classpath / 应用模块 |\n| Custom | 插件、热更、隔离 | 自定义路径 / 字节流 |\n\n- 类的唯一标识是 **「全限定名 + 加载它的 ClassLoader」**：不同加载器加载的同名类，彼此不等价（`ClassCastException` 常见根因）。\n- 加载器之间如何协作（先找父还是先找自己）见下一题「双亲委派模型」。\n\n### 注意\n\n- JDK 9 起 Extension ClassLoader 更名为 Platform ClassLoader，模块化后路径不再是简单的 `ext/` 目录。\n- Bootstrap 在 Java 里常表现为 `null`（`String.class.getClassLoader() == null`），不是 bug。\n- 面试若追问「类加载过程」：加载 → 验证 → 准备 → 解析 → 初始化；本题重点在「谁来加载」。",
+      "answer": "1. **类加载器（ClassLoader）**：负责把 `.class` 字节码加载进 JVM，生成对应的 `Class` 对象；是「字节码 → 可执行类型」的入口。\n2. **常见层级**（JDK 9+）：\n   - **Bootstrap ClassLoader**：由 JVM 原生实现，加载核心类（如 `java.lang.*`，来自模块 / 原 `rt.jar`）；\n   - **Platform ClassLoader**（原 Extension）：加载平台扩展模块；\n   - **Application ClassLoader**（App / System）：加载 classpath / 应用模块上的类；\n   - **Custom ClassLoader**：可按需从网络、加密文件、热部署目录等加载。\n3. 三者构成父子链：Application → Platform → Bootstrap；应用类默认由 Application ClassLoader 加载。\n\n### 解释与扩展\n\n| 加载器 | 大致职责 | 典型来源 |\n|---|---|---|\n| Bootstrap | 核心 JDK 类 | JVM 内置 / `java.base` 等 |\n| Platform | 平台扩展 | 平台模块 |\n| Application | 应用代码与依赖 | classpath / 应用模块 |\n| Custom | 插件、热更、隔离 | 自定义路径 / 字节流 |\n\n- 类的唯一标识是 **「全限定名 + 加载它的 ClassLoader」**：不同加载器加载的同名类，彼此不等价（`ClassCastException` 常见根因）。\n- 加载器之间如何协作（先找父还是先找自己）见下一题「双亲委派模型」。\n\n类加载全过程五步骤\n  1. **加载**：类加载器读取 class 字节码，在堆生成 Class 对象。\n  2. **验证**：字节码校验，格式、合法性（字节码安全校验，字节码好处里提到的安全）。\n  3. **准备**：给静态变量分配内存，赋**默认初始值**。\n  4. **解析**：符号引用转直接引用（把常量池的符号，指向真实内存地址）。\n  5. **初始化**：执行静态代码块、给静态变量赋予真正代码写的值。\n\n> 注意：\n> 3中不是赋值业务值，`public static int a=10;` 准备阶段 a=0；初始化阶段才赋值 10。\n> 5中什么时候触发初始化（主动引用）：new 对象、调用静态方法 / 静态变量、反射、main 方法入口、子类初始化。\n\n### 注意\n\n- JDK 9 起 Extension ClassLoader 更名为 Platform ClassLoader，模块化后路径不再是简单的 `ext/` 目录。\n- Bootstrap 在 Java 里常表现为 `null`（`String.class.getClassLoader() == null`），不是 bug。\n- 面试若追问「类加载过程」：加载 → 验证 → 准备 → 解析 → 初始化；本题重点在「谁来加载」。",
       "questionHtml": "<p>什么是 Java 类加载器？常见有哪些？</p>\n",
-      "answerHtml": "<ol>\n<li><strong>类加载器（ClassLoader）</strong>：负责把 <code>.class</code> 字节码加载进 JVM，生成对应的 <code>Class</code> 对象；是「字节码 → 可执行类型」的入口。</li>\n<li><strong>常见层级</strong>（JDK 9+）：\n<ul>\n<li><strong>Bootstrap ClassLoader</strong>：由 JVM 原生实现，加载核心类（如 <code>java.lang.*</code>，来自模块 / 原 <code>rt.jar</code>）；</li>\n<li><strong>Platform ClassLoader</strong>（原 Extension）：加载平台扩展模块；</li>\n<li><strong>Application ClassLoader</strong>（App / System）：加载 classpath / 应用模块上的类；</li>\n<li><strong>自定义 ClassLoader</strong>：可按需从网络、加密文件、热部署目录等加载。</li>\n</ul>\n</li>\n<li>三者构成父子链：Application → Platform → Bootstrap；应用类默认由 Application ClassLoader 加载。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th>加载器</th>\n<th>大致职责</th>\n<th>典型来源</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Bootstrap</td>\n<td>核心 JDK 类</td>\n<td>JVM 内置 / <code>java.base</code> 等</td>\n</tr>\n<tr>\n<td>Platform</td>\n<td>平台扩展</td>\n<td>平台模块</td>\n</tr>\n<tr>\n<td>Application</td>\n<td>应用代码与依赖</td>\n<td>classpath / 应用模块</td>\n</tr>\n<tr>\n<td>Custom</td>\n<td>插件、热更、隔离</td>\n<td>自定义路径 / 字节流</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>类的唯一标识是 <strong>「全限定名 + 加载它的 ClassLoader」</strong>：不同加载器加载的同名类，彼此不等价（<code>ClassCastException</code> 常见根因）。</li>\n<li>加载器之间如何协作（先找父还是先找自己）见下一题「双亲委派模型」。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>JDK 9 起 Extension ClassLoader 更名为 Platform ClassLoader，模块化后路径不再是简单的 <code>ext/</code> 目录。</li>\n<li>Bootstrap 在 Java 里常表现为 <code>null</code>（<code>String.class.getClassLoader() == null</code>），不是 bug。</li>\n<li>面试若追问「类加载过程」：加载 → 验证 → 准备 → 解析 → 初始化；本题重点在「谁来加载」。</li>\n</ul>\n",
+      "answerHtml": "<ol>\n<li><strong>类加载器（ClassLoader）</strong>：负责把 <code>.class</code> 字节码加载进 JVM，生成对应的 <code>Class</code> 对象；是「字节码 → 可执行类型」的入口。</li>\n<li><strong>常见层级</strong>（JDK 9+）：\n<ul>\n<li><strong>Bootstrap ClassLoader</strong>：由 JVM 原生实现，加载核心类（如 <code>java.lang.*</code>，来自模块 / 原 <code>rt.jar</code>）；</li>\n<li><strong>Platform ClassLoader</strong>（原 Extension）：加载平台扩展模块；</li>\n<li><strong>Application ClassLoader</strong>（App / System）：加载 classpath / 应用模块上的类；</li>\n<li><strong>Custom ClassLoader</strong>：可按需从网络、加密文件、热部署目录等加载。</li>\n</ul>\n</li>\n<li>三者构成父子链：Application → Platform → Bootstrap；应用类默认由 Application ClassLoader 加载。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th>加载器</th>\n<th>大致职责</th>\n<th>典型来源</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Bootstrap</td>\n<td>核心 JDK 类</td>\n<td>JVM 内置 / <code>java.base</code> 等</td>\n</tr>\n<tr>\n<td>Platform</td>\n<td>平台扩展</td>\n<td>平台模块</td>\n</tr>\n<tr>\n<td>Application</td>\n<td>应用代码与依赖</td>\n<td>classpath / 应用模块</td>\n</tr>\n<tr>\n<td>Custom</td>\n<td>插件、热更、隔离</td>\n<td>自定义路径 / 字节流</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>类的唯一标识是 <strong>「全限定名 + 加载它的 ClassLoader」</strong>：不同加载器加载的同名类，彼此不等价（<code>ClassCastException</code> 常见根因）。</li>\n<li>加载器之间如何协作（先找父还是先找自己）见下一题「双亲委派模型」。</li>\n</ul>\n<p>类加载全过程五步骤</p>\n<ol>\n<li><strong>加载</strong>：类加载器读取 class 字节码，在堆生成 Class 对象。</li>\n<li><strong>验证</strong>：字节码校验，格式、合法性（字节码安全校验，字节码好处里提到的安全）。</li>\n<li><strong>准备</strong>：给静态变量分配内存，赋<strong>默认初始值</strong>。</li>\n<li><strong>解析</strong>：符号引用转直接引用（把常量池的符号，指向真实内存地址）。</li>\n<li><strong>初始化</strong>：执行静态代码块、给静态变量赋予真正代码写的值。</li>\n</ol>\n<blockquote>\n<p>注意：\n3中不是赋值业务值，<code>public static int a=10;</code> 准备阶段 a=0；初始化阶段才赋值 10。\n5中什么时候触发初始化（主动引用）：new 对象、调用静态方法 / 静态变量、反射、main 方法入口、子类初始化。</p>\n</blockquote>\n<h3>注意</h3>\n<ul>\n<li>JDK 9 起 Extension ClassLoader 更名为 Platform ClassLoader，模块化后路径不再是简单的 <code>ext/</code> 目录。</li>\n<li>Bootstrap 在 Java 里常表现为 <code>null</code>（<code>String.class.getClassLoader() == null</code>），不是 bug。</li>\n<li>面试若追问「类加载过程」：加载 → 验证 → 准备 → 解析 → 初始化；本题重点在「谁来加载」。</li>\n</ul>\n",
       "sourcePath": "backend/java/01.2.classloader.md",
       "reference": [
         "https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-5.html#jvms-5.3",
@@ -92,22 +92,14 @@
       "type": "backend",
       "category": "java",
       "categoryName": "Java",
-      "tags": [
-        "Java",
-        "JVM",
-        "GC"
-      ],
+      "tags": [],
       "difficulty": "medium",
-      "title": "谈谈 GC 垃圾回收机制",
+      "title": "谈谈 Java 的 GC 垃圾回收机制：如何判断对象可回收？常见算法与收集器有哪些？",
       "question": "谈谈 Java 的 GC 垃圾回收机制：如何判断对象可回收？常见算法与收集器有哪些？",
-      "answer": "1. **GC 做什么**：自动回收堆上不再被引用的对象，释放内存；程序员一般不必手动 `free`，但要避免无用引用导致泄漏。\n2. **如何判断可回收**（主流：**可达性分析**）：\n   - 从 **GC Roots**（栈帧局部变量、静态变量、JNI 引用等）出发向下搜索；\n   - 不可达对象先标记，经一次或多次确认后回收；\n   - `finalize()` 几乎不再推荐依赖，现代 JVM 以可达性为准。\n3. **分代假说**：多数对象朝生夕灭 → 堆常分 **新生代 / 老年代**；年轻代多用复制，老年代多用标记-整理或分区收集。\n4. **常见算法**：\n   - **标记-清除**：快，易碎片；\n   - **复制**：年轻代常用，存活少时高效，浪费一半空间；\n   - **标记-整理**：老年代常用，消除碎片但要移动对象。\n5. **常见收集器**（HotSpot）：Serial / Parallel（吞吐优先）、CMS（低停顿、已过时）、**G1**（JDK 9+ 默认）、ZGC / Shenandoah（超低延迟）。\n\n### 解释与扩展\n\n```mermaid\nflowchart LR\n  roots[\"GC Roots\"] --> young[\"新生代 Eden / Survivor\"]\n  young -->|晋升| old[\"老年代\"]\n  young -->|Minor GC| reclaimY[\"回收短命对象\"]\n  old -->|Major / Mixed / Full| reclaimO[\"回收长寿 / 整堆\"]\n```\n\n| 概念 | 含义 |\n|---|---|\n| Minor GC | 主要回收新生代 |\n| Major GC | 主要针对老年代（说法因收集器而异） |\n| Full GC | 整堆（含元空间等）停顿通常更长，需警惕频繁 Full GC |\n| STW | Stop-The-World：GC 时暂停应用线程 |\n\n- **G1 要点**：把堆划成若干 Region；按「回收收益」选 Region，可设停顿目标（如 `-XX:MaxGCPauseMillis`）；年轻代回收 + Mixed GC 清理部分老年代。\n- **触发与调优直觉**：分配失败、晋升失败、显式 `System.gc()`（可禁用）、Metaspace 不足等都会引发 GC；先看 GC 日志 / GCCause，再调堆大小与收集器，而不是盲目加大 `-Xmx`。\n- 引用类型与回收关系：强引用不回收；软 / 弱 / 虚引用可在内存紧张或下次 GC 时被清除，常用于缓存与清理回调。\n\n### 注意\n\n- 「引用计数」有循环引用问题，HotSpot 用可达性分析，不是计数法。\n- 收集器选择看场景：吞吐选 Parallel / G1；低延迟看 G1 / ZGC；CMS 已废弃，新项目别再主推。\n- GC 只管堆上对象；栈上局部、方法区 / 元空间泄漏（类加载器泄漏）是另一类问题。\n- `System.gc()` 只是建议，生产常加 `-XX:+DisableExplicitGC`，排查时用正式 GC 日志与工具。",
+      "answer": "1. **GC 的作用**：自动识别并回收堆中不再被使用的对象，释放内存。Java开发者不需要手动释放内存，但需要避免长生命周期无用引用造成内存泄漏。\n\n2. **如何判断对象是否可以回收**\nHotSpot JVM **不使用引用计数法（存在循环引用缺陷），采用可达性分析算法**。\n从 **GC Roots** 作为起点遍历所有引用链：\n- 引用链可达：对象存活；\n- 引用链不可达：标记为垃圾对象，等待回收。\n> GC Roots包含：虚拟机栈局部变量引用对象、元空间静态变量引用对象、常量引用对象、JNI本地方法引用对象、synchronized锁持有的对象、JVM内部引用对象。\n> 注意：`finalize()` 方法可靠性很差，现代开发不建议依赖它做资源释放。\n\n3. **分代收集理论（分代假说）**\n分代假说是垃圾回收优化理论，不是判断对象存活的算法。两条核心假说：\n- 弱分代假说：绝大多数对象朝生夕灭；\n- 强分代假说：存活越久的对象，越难被回收。\n\n基于假说，传统分代收集器把堆划分为**新生代、老年代**：\n- 新生代：存放新创建、短生命周期对象，分为 Eden、S0、S1 两个Survivor区；对象熬过多次GC年龄增长，到达阈值后晋升老年代。\n- 老年代：存放存活时间长的对象。\n> 注意：ZGC、Shenandoah 属于不分代收集器，没有新生代、老年代划分。\n\n4. **三种基础垃圾回收算法**\n- **标记-清除**：先标记垃圾，再统一清除。实现简单，但是容易产生内存碎片。\n- **复制算法**：将存活对象复制到另一块空闲区域，清空原区域。新生代Minor GC主流算法；缺点是需要预留一半内存空间，有内存开销。\n- **标记-整理**：标记垃圾后，把存活对象向内存一端移动压缩，消除内存碎片。老年代常用，缺点是移动对象开销大。\n\n5. **HotSpot 常见垃圾收集器**\n- Serial：单线程收集，STW时间长，适合客户端小内存场景；\n- Parallel：多线程，**优先高吞吐量**，适合后台任务；\n- CMS：并发低停顿收集器，JDK9后废弃，老版本用于低延迟场景，存在内存碎片；\n- G1（JDK9默认）：把堆切分成多个Region，可设置预期停顿时间，兼顾吞吐量和延迟，支持Mixed GC；\n- ZGC / Shenandoah：低延迟收集器，几乎无STW，大堆场景优选，不分代。\n\n### 解释与扩展\n\n```mermaid\nflowchart LR\n  roots[\"GC Roots\"] --> young[\"新生代 Eden / Survivor\"]\n  young -->|对象年龄达标，晋升| old[\"老年代\"]\n  young -->|Minor GC| reclaimY[\"回收短命对象\"]\n  old -->|Major / Mixed / Full GC| reclaimO[\"回收长寿对象 / 整堆回收\"]\n```\n\n| 概念 | 含义 |\n|---|---|\n| Minor GC | 只回收新生代，触发频率高，STW较短 |\n| Major GC | 只回收老年代，触发次数较少；不同收集器定义略有差异 |\n| Full GC | 全堆回收（新生代+老年代+元空间），STW时间很长，生产环境尽量避免 |\n| STW Stop-The-World | GC执行标记/复制整理阶段，暂停全部用户业务线程 |\n\n#### G1 核心要点\n将堆拆分为大小相同的Region，Region可以动态充当新生代或者老年代；GC时优先选择回收垃圾最多的Region，可通过 `-XX:MaxGCPauseMillis` 设置预期最大停顿时间；除了普通新生代GC，还支持Mixed GC，一次性回收部分老年代Region。\n\n#### GC 触发条件与调优思路\n堆内存分配失败、对象晋升失败、元空间内存不足、主动调用`System.gc()`都会触发GC。\n> `System.gc()`只是一个建议，不能强制触发Full GC；生产环境一般配置 `-XX:+DisableExplicitGC` 禁用显式GC。\n调优优先查看GC日志，定位GC原因，不要盲目调大堆最大内存`-Xmx`。\n\n#### Java四种引用和回收规则\n- 强引用：普通对象引用，GC Roots可达，永远不会回收；\n- 软引用 SoftReference：内存充足不回收，内存不足时回收，适合做缓存；\n- 弱引用 WeakReference：只要GC发生就回收，典型应用WeakHashMap；\n- 虚引用 PhantomReference：无法获取对象实例，仅用于监听对象回收、释放堆外内存。\n\n### 注意\n1. 引用计数法存在循环引用无法回收的缺陷，HotSpot没有采用；\n2. 收集器选型：追求高吞吐量选Parallel/G1；追求超低延迟选ZGC/Shenandoah；CMS已经废弃，新项目不再使用；\n3. GC只负责堆内对象回收；栈内存、元空间类加载器泄漏不属于堆GC管理范围；\n4. Minor GC存在跨代引用问题，使用CardTable卡表优化，避免Minor GC扫描全部老年代。",
       "questionHtml": "<p>谈谈 Java 的 GC 垃圾回收机制：如何判断对象可回收？常见算法与收集器有哪些？</p>\n",
-      "answerHtml": "<ol>\n<li><strong>GC 做什么</strong>：自动回收堆上不再被引用的对象，释放内存；程序员一般不必手动 <code>free</code>，但要避免无用引用导致泄漏。</li>\n<li><strong>如何判断可回收</strong>（主流：<strong>可达性分析</strong>）：\n<ul>\n<li>从 <strong>GC Roots</strong>（栈帧局部变量、静态变量、JNI 引用等）出发向下搜索；</li>\n<li>不可达对象先标记，经一次或多次确认后回收；</li>\n<li><code>finalize()</code> 几乎不再推荐依赖，现代 JVM 以可达性为准。</li>\n</ul>\n</li>\n<li><strong>分代假说</strong>：多数对象朝生夕灭 → 堆常分 <strong>新生代 / 老年代</strong>；年轻代多用复制，老年代多用标记-整理或分区收集。</li>\n<li><strong>常见算法</strong>：\n<ul>\n<li><strong>标记-清除</strong>：快，易碎片；</li>\n<li><strong>复制</strong>：年轻代常用，存活少时高效，浪费一半空间；</li>\n<li><strong>标记-整理</strong>：老年代常用，消除碎片但要移动对象。</li>\n</ul>\n</li>\n<li><strong>常见收集器</strong>（HotSpot）：Serial / Parallel（吞吐优先）、CMS（低停顿、已过时）、<strong>G1</strong>（JDK 9+ 默认）、ZGC / Shenandoah（超低延迟）。</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-mermaid\">flowchart LR\n  roots[&quot;GC Roots&quot;] --&gt; young[&quot;新生代 Eden / Survivor&quot;]\n  young --&gt;|晋升| old[&quot;老年代&quot;]\n  young --&gt;|Minor GC| reclaimY[&quot;回收短命对象&quot;]\n  old --&gt;|Major / Mixed / Full| reclaimO[&quot;回收长寿 / 整堆&quot;]\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>概念</th>\n<th>含义</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Minor GC</td>\n<td>主要回收新生代</td>\n</tr>\n<tr>\n<td>Major GC</td>\n<td>主要针对老年代（说法因收集器而异）</td>\n</tr>\n<tr>\n<td>Full GC</td>\n<td>整堆（含元空间等）停顿通常更长，需警惕频繁 Full GC</td>\n</tr>\n<tr>\n<td>STW</td>\n<td>Stop-The-World：GC 时暂停应用线程</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li><strong>G1 要点</strong>：把堆划成若干 Region；按「回收收益」选 Region，可设停顿目标（如 <code>-XX:MaxGCPauseMillis</code>）；年轻代回收 + Mixed GC 清理部分老年代。</li>\n<li><strong>触发与调优直觉</strong>：分配失败、晋升失败、显式 <code>System.gc()</code>（可禁用）、Metaspace 不足等都会引发 GC；先看 GC 日志 / GCCause，再调堆大小与收集器，而不是盲目加大 <code>-Xmx</code>。</li>\n<li>引用类型与回收关系：强引用不回收；软 / 弱 / 虚引用可在内存紧张或下次 GC 时被清除，常用于缓存与清理回调。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>「引用计数」有循环引用问题，HotSpot 用可达性分析，不是计数法。</li>\n<li>收集器选择看场景：吞吐选 Parallel / G1；低延迟看 G1 / ZGC；CMS 已废弃，新项目别再主推。</li>\n<li>GC 只管堆上对象；栈上局部、方法区 / 元空间泄漏（类加载器泄漏）是另一类问题。</li>\n<li><code>System.gc()</code> 只是建议，生产常加 <code>-XX:+DisableExplicitGC</code>，排查时用正式 GC 日志与工具。</li>\n</ul>\n",
-      "sourcePath": "backend/java/01.4.GC.md",
-      "reference": [
-        "https://docs.oracle.com/en/java/javase/21/gctuning/introduction-garbage-collection-tuning.html",
-        "https://docs.oracle.com/en/java/javase/21/gctuning/garbage-first-g1-garbage-collector-tuning.html"
-      ]
+      "answerHtml": "<ol>\n<li>\n<p><strong>GC 的作用</strong>：自动识别并回收堆中不再被使用的对象，释放内存。Java开发者不需要手动释放内存，但需要避免长生命周期无用引用造成内存泄漏。</p>\n</li>\n<li>\n<p><strong>如何判断对象是否可以回收</strong>\nHotSpot JVM <strong>不使用引用计数法（存在循环引用缺陷），采用可达性分析算法</strong>。\n从 <strong>GC Roots</strong> 作为起点遍历所有引用链：</p>\n</li>\n</ol>\n<ul>\n<li>引用链可达：对象存活；</li>\n<li>引用链不可达：标记为垃圾对象，等待回收。</li>\n</ul>\n<blockquote>\n<p>GC Roots包含：虚拟机栈局部变量引用对象、元空间静态变量引用对象、常量引用对象、JNI本地方法引用对象、synchronized锁持有的对象、JVM内部引用对象。\n注意：<code>finalize()</code> 方法可靠性很差，现代开发不建议依赖它做资源释放。</p>\n</blockquote>\n<ol start=\"3\">\n<li><strong>分代收集理论（分代假说）</strong>\n分代假说是垃圾回收优化理论，不是判断对象存活的算法。两条核心假说：</li>\n</ol>\n<ul>\n<li>弱分代假说：绝大多数对象朝生夕灭；</li>\n<li>强分代假说：存活越久的对象，越难被回收。</li>\n</ul>\n<p>基于假说，传统分代收集器把堆划分为<strong>新生代、老年代</strong>：</p>\n<ul>\n<li>新生代：存放新创建、短生命周期对象，分为 Eden、S0、S1 两个Survivor区；对象熬过多次GC年龄增长，到达阈值后晋升老年代。</li>\n<li>老年代：存放存活时间长的对象。</li>\n</ul>\n<blockquote>\n<p>注意：ZGC、Shenandoah 属于不分代收集器，没有新生代、老年代划分。</p>\n</blockquote>\n<ol start=\"4\">\n<li><strong>三种基础垃圾回收算法</strong></li>\n</ol>\n<ul>\n<li><strong>标记-清除</strong>：先标记垃圾，再统一清除。实现简单，但是容易产生内存碎片。</li>\n<li><strong>复制算法</strong>：将存活对象复制到另一块空闲区域，清空原区域。新生代Minor GC主流算法；缺点是需要预留一半内存空间，有内存开销。</li>\n<li><strong>标记-整理</strong>：标记垃圾后，把存活对象向内存一端移动压缩，消除内存碎片。老年代常用，缺点是移动对象开销大。</li>\n</ul>\n<ol start=\"5\">\n<li><strong>HotSpot 常见垃圾收集器</strong></li>\n</ol>\n<ul>\n<li>Serial：单线程收集，STW时间长，适合客户端小内存场景；</li>\n<li>Parallel：多线程，<strong>优先高吞吐量</strong>，适合后台任务；</li>\n<li>CMS：并发低停顿收集器，JDK9后废弃，老版本用于低延迟场景，存在内存碎片；</li>\n<li>G1（JDK9默认）：把堆切分成多个Region，可设置预期停顿时间，兼顾吞吐量和延迟，支持Mixed GC；</li>\n<li>ZGC / Shenandoah：低延迟收集器，几乎无STW，大堆场景优选，不分代。</li>\n</ul>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-mermaid\">flowchart LR\n  roots[&quot;GC Roots&quot;] --&gt; young[&quot;新生代 Eden / Survivor&quot;]\n  young --&gt;|对象年龄达标，晋升| old[&quot;老年代&quot;]\n  young --&gt;|Minor GC| reclaimY[&quot;回收短命对象&quot;]\n  old --&gt;|Major / Mixed / Full GC| reclaimO[&quot;回收长寿对象 / 整堆回收&quot;]\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>概念</th>\n<th>含义</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Minor GC</td>\n<td>只回收新生代，触发频率高，STW较短</td>\n</tr>\n<tr>\n<td>Major GC</td>\n<td>只回收老年代，触发次数较少；不同收集器定义略有差异</td>\n</tr>\n<tr>\n<td>Full GC</td>\n<td>全堆回收（新生代+老年代+元空间），STW时间很长，生产环境尽量避免</td>\n</tr>\n<tr>\n<td>STW Stop-The-World</td>\n<td>GC执行标记/复制整理阶段，暂停全部用户业务线程</td>\n</tr>\n</tbody>\n</table>\n<h4>G1 核心要点</h4>\n<p>将堆拆分为大小相同的Region，Region可以动态充当新生代或者老年代；GC时优先选择回收垃圾最多的Region，可通过 <code>-XX:MaxGCPauseMillis</code> 设置预期最大停顿时间；除了普通新生代GC，还支持Mixed GC，一次性回收部分老年代Region。</p>\n<h4>GC 触发条件与调优思路</h4>\n<p>堆内存分配失败、对象晋升失败、元空间内存不足、主动调用<code>System.gc()</code>都会触发GC。</p>\n<blockquote>\n<p><code>System.gc()</code>只是一个建议，不能强制触发Full GC；生产环境一般配置 <code>-XX:+DisableExplicitGC</code> 禁用显式GC。\n调优优先查看GC日志，定位GC原因，不要盲目调大堆最大内存<code>-Xmx</code>。</p>\n</blockquote>\n<h4>Java四种引用和回收规则</h4>\n<ul>\n<li>强引用：普通对象引用，GC Roots可达，永远不会回收；</li>\n<li>软引用 SoftReference：内存充足不回收，内存不足时回收，适合做缓存；</li>\n<li>弱引用 WeakReference：只要GC发生就回收，典型应用WeakHashMap；</li>\n<li>虚引用 PhantomReference：无法获取对象实例，仅用于监听对象回收、释放堆外内存。</li>\n</ul>\n<h3>注意</h3>\n<ol>\n<li>引用计数法存在循环引用无法回收的缺陷，HotSpot没有采用；</li>\n<li>收集器选型：追求高吞吐量选Parallel/G1；追求超低延迟选ZGC/Shenandoah；CMS已经废弃，新项目不再使用；</li>\n<li>GC只负责堆内对象回收；栈内存、元空间类加载器泄漏不属于堆GC管理范围；</li>\n<li>Minor GC存在跨代引用问题，使用CardTable卡表优化，避免Minor GC扫描全部老年代。</li>\n</ol>\n",
+      "sourcePath": "backend/java/01.4.GC.md"
     },
     {
       "id": "backend-java-02",
@@ -417,21 +409,1067 @@
   ],
   "frontend": [
     {
+      "id": "frontend-css-01",
+      "type": "frontend",
+      "category": "css",
+      "categoryName": "CSS",
+      "tags": [
+        "CSS",
+        "盒模型"
+      ],
+      "difficulty": "medium",
+      "title": "标准盒模型与 IE 盒模型及 box-sizing",
+      "question": "标准盒模型与 IE（替代）盒模型有什么区别？`box-sizing` 如何切换？为什么百分比宽度加像素 padding 会溢出？",
+      "answer": "1. **组成**：元素由 **content、padding、border、margin** 组成盒模型。`margin` **不计入**元素自身 width/height，只占用外部空间。\n\n2. **标准盒模型（`content-box`，默认）**：`width` / `height` **只等于内容区**。绘制到屏幕上的总宽 = 内容 + 左右 padding + 左右 border。\n\n   例：`width:100px; padding:25px; border:5px` → 可见宽 = 100+25+25+5+5 = **160px**。\n\n3. **IE / 替代盒模型（`border-box`）**：`width` / `height` 是**可见宽高**，已包含 padding 和 border。同样样式下总宽就是 **100px**，内容区被压缩。\n\n4. **`box-sizing`**\n   - `content-box`：`width` = 内容宽。\n   - `border-box`：`width` = 内容 + padding + border。\n\n5. **溢出场景**：自适应布局里宽度用 **百分比**（如 100%），padding/border 用 **px**。标准模型下 100% 已占满父宽，再加 px 内边距/边框就会超出父容器。设 `box-sizing: border-box` 后，百分比宽度包含 padding 和 border，总宽仍为 100%。\n\n### 解释与扩展\n\n```css\n.box {\n  box-sizing: border-box;\n  width: 100%;\n  padding: 16px;\n  border: 1px solid #000;\n}\n```\n\n工程上常对全局设 `*, *::before, *::after { box-sizing: border-box; }`，方便算宽。\n\n### 注意\n\n1. **margin 从不计入 width**，无论哪种盒模型。\n2. 默认是标准模型，要 IE 行为必须显式 `border-box`。\n3. 口试可记：content-box 加料会变胖；border-box 的 width 是「箱子外沿」。",
+      "questionHtml": "<p>标准盒模型与 IE（替代）盒模型有什么区别？<code>box-sizing</code> 如何切换？为什么百分比宽度加像素 padding 会溢出？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>组成</strong>：元素由 <strong>content、padding、border、margin</strong> 组成盒模型。<code>margin</code> <strong>不计入</strong>元素自身 width/height，只占用外部空间。</p>\n</li>\n<li>\n<p><strong>标准盒模型（<code>content-box</code>，默认）</strong>：<code>width</code> / <code>height</code> <strong>只等于内容区</strong>。绘制到屏幕上的总宽 = 内容 + 左右 padding + 左右 border。</p>\n<p>例：<code>width:100px; padding:25px; border:5px</code> → 可见宽 = 100+25+25+5+5 = <strong>160px</strong>。</p>\n</li>\n<li>\n<p><strong>IE / 替代盒模型（<code>border-box</code>）</strong>：<code>width</code> / <code>height</code> 是<strong>可见宽高</strong>，已包含 padding 和 border。同样样式下总宽就是 <strong>100px</strong>，内容区被压缩。</p>\n</li>\n<li>\n<p><strong><code>box-sizing</code></strong></p>\n<ul>\n<li><code>content-box</code>：<code>width</code> = 内容宽。</li>\n<li><code>border-box</code>：<code>width</code> = 内容 + padding + border。</li>\n</ul>\n</li>\n<li>\n<p><strong>溢出场景</strong>：自适应布局里宽度用 <strong>百分比</strong>（如 100%），padding/border 用 <strong>px</strong>。标准模型下 100% 已占满父宽，再加 px 内边距/边框就会超出父容器。设 <code>box-sizing: border-box</code> 后，百分比宽度包含 padding 和 border，总宽仍为 100%。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-css\">.box {\n  box-sizing: border-box;\n  width: 100%;\n  padding: 16px;\n  border: 1px solid #000;\n}\n</code></pre>\n<p>工程上常对全局设 <code>*, *::before, *::after { box-sizing: border-box; }</code>，方便算宽。</p>\n<h3>注意</h3>\n<ol>\n<li><strong>margin 从不计入 width</strong>，无论哪种盒模型。</li>\n<li>默认是标准模型，要 IE 行为必须显式 <code>border-box</code>。</li>\n<li>口试可记：content-box 加料会变胖；border-box 的 width 是「箱子外沿」。</li>\n</ol>\n",
+      "sourcePath": "frontend/css/01.box-model.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing"
+      ]
+    },
+    {
+      "id": "frontend-css-02",
+      "type": "frontend",
+      "category": "css",
+      "categoryName": "CSS",
+      "tags": [
+        "CSS",
+        "Flex"
+      ],
+      "difficulty": "medium",
+      "title": "Flex 布局：容器属性与项目属性",
+      "question": "什么是 Flex 布局？容器和项目分别有哪些常用属性？",
+      "answer": "1. **定义**：Flex（Flexible Box）弹性布局。任意容器 `display: flex`，行内元素可用 `inline-flex`。子元素自动成为 **flex 项目**。设为 Flex 后，子项的 `float`、`clear`、`vertical-align` **失效**。\n\n2. **两根轴**：默认主轴水平（main axis）、交叉轴垂直（cross axis）。项目默认沿主轴排列。\n\n3. **容器属性（6 个）**\n   - **`flex-direction`**：主轴方向。`row`（默认）/ `row-reverse` / `column` / `column-reverse`。\n   - **`flex-wrap`**：换行。`nowrap`（默认，挤压缩）/ `wrap` / `wrap-reverse`。\n   - **`flex-flow`**：以上二者简写，默认 `row nowrap`。\n   - **`justify-content`**：主轴对齐。`flex-start` / `flex-end` / `center` / `space-between` / `space-around`。\n   - **`align-items`**：交叉轴对齐。`stretch`（默认）/ `flex-start` / `flex-end` / `center` / `baseline`。\n   - **`align-content`**：多根轴线对齐；**只有一行时无效**。\n\n4. **项目属性（6 个）**\n   - **`order`**：排序，越小越靠前，默认 0。\n   - **`flex-grow`**：放大比例，默认 **0**（有剩余空间也不涨）。\n   - **`flex-shrink`**：缩小比例，默认 **1**（空间不够会缩）；设 0 则不缩。\n   - **`flex-basis`**：分配多余空间前的主轴尺寸，默认 `auto`。\n   - **`flex`**：`grow shrink basis` 简写，默认 `0 1 auto`；常用 `auto`（`1 1 auto`）、`none`（`0 0 auto`）。**优先写 `flex` 简写**。\n   - **`align-self`**：覆盖单个项目的 `align-items`。\n\n### 解释与扩展\n\n```css\n.box { display: flex; justify-content: center; align-items: center; }\n.item { flex: 1; } /* 等分剩余空间，且可收缩 */\n```\n\n`flex-grow` 全为 1 则平分剩余；某项为 2、其它为 1，则该项多分一倍剩余空间。\n\n### 注意\n\n1. WebKit 旧内核曾需 `-webkit-flex`。\n2. `align-content` 与 `align-items` 不要混：前者管**多行轴线**，后者管**一行内交叉轴**。\n3. `flex-shrink` 负值无效。",
+      "questionHtml": "<p>什么是 Flex 布局？容器和项目分别有哪些常用属性？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>定义</strong>：Flex（Flexible Box）弹性布局。任意容器 <code>display: flex</code>，行内元素可用 <code>inline-flex</code>。子元素自动成为 <strong>flex 项目</strong>。设为 Flex 后，子项的 <code>float</code>、<code>clear</code>、<code>vertical-align</code> <strong>失效</strong>。</p>\n</li>\n<li>\n<p><strong>两根轴</strong>：默认主轴水平（main axis）、交叉轴垂直（cross axis）。项目默认沿主轴排列。</p>\n</li>\n<li>\n<p><strong>容器属性（6 个）</strong></p>\n<ul>\n<li><strong><code>flex-direction</code></strong>：主轴方向。<code>row</code>（默认）/ <code>row-reverse</code> / <code>column</code> / <code>column-reverse</code>。</li>\n<li><strong><code>flex-wrap</code></strong>：换行。<code>nowrap</code>（默认，挤压缩）/ <code>wrap</code> / <code>wrap-reverse</code>。</li>\n<li><strong><code>flex-flow</code></strong>：以上二者简写，默认 <code>row nowrap</code>。</li>\n<li><strong><code>justify-content</code></strong>：主轴对齐。<code>flex-start</code> / <code>flex-end</code> / <code>center</code> / <code>space-between</code> / <code>space-around</code>。</li>\n<li><strong><code>align-items</code></strong>：交叉轴对齐。<code>stretch</code>（默认）/ <code>flex-start</code> / <code>flex-end</code> / <code>center</code> / <code>baseline</code>。</li>\n<li><strong><code>align-content</code></strong>：多根轴线对齐；<strong>只有一行时无效</strong>。</li>\n</ul>\n</li>\n<li>\n<p><strong>项目属性（6 个）</strong></p>\n<ul>\n<li><strong><code>order</code></strong>：排序，越小越靠前，默认 0。</li>\n<li><strong><code>flex-grow</code></strong>：放大比例，默认 <strong>0</strong>（有剩余空间也不涨）。</li>\n<li><strong><code>flex-shrink</code></strong>：缩小比例，默认 <strong>1</strong>（空间不够会缩）；设 0 则不缩。</li>\n<li><strong><code>flex-basis</code></strong>：分配多余空间前的主轴尺寸，默认 <code>auto</code>。</li>\n<li><strong><code>flex</code></strong>：<code>grow shrink basis</code> 简写，默认 <code>0 1 auto</code>；常用 <code>auto</code>（<code>1 1 auto</code>）、<code>none</code>（<code>0 0 auto</code>）。<strong>优先写 <code>flex</code> 简写</strong>。</li>\n<li><strong><code>align-self</code></strong>：覆盖单个项目的 <code>align-items</code>。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-css\">.box { display: flex; justify-content: center; align-items: center; }\n.item { flex: 1; } /* 等分剩余空间，且可收缩 */\n</code></pre>\n<p><code>flex-grow</code> 全为 1 则平分剩余；某项为 2、其它为 1，则该项多分一倍剩余空间。</p>\n<h3>注意</h3>\n<ol>\n<li>WebKit 旧内核曾需 <code>-webkit-flex</code>。</li>\n<li><code>align-content</code> 与 <code>align-items</code> 不要混：前者管<strong>多行轴线</strong>，后者管<strong>一行内交叉轴</strong>。</li>\n<li><code>flex-shrink</code> 负值无效。</li>\n</ol>\n",
+      "sourcePath": "frontend/css/02.flex-layout.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flexible_box_layout",
+        "http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html"
+      ]
+    },
+    {
+      "id": "frontend-css-03",
+      "type": "frontend",
+      "category": "css",
+      "categoryName": "CSS",
+      "tags": [
+        "CSS",
+        "布局",
+        "居中"
+      ],
+      "difficulty": "medium",
+      "title": "CSS 水平垂直居中的常见方式",
+      "question": "如何实现元素的水平垂直居中？请给出几种面试常用方案及适用条件。",
+      "answer": "1. **Flex（最常用）**：父级 `display: flex; justify-content: center; align-items: center;`。子项未知宽高也可。也可 `margin: auto` 配合 flex 子项。\n\n2. **Grid**：父级 `display: grid; place-items: center;`（或 `place-content: center`）。\n\n3. **绝对定位 + transform**：父 `position: relative`；子 `position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);`。不依赖子元素固定宽高。\n\n4. **绝对定位 + 负 margin**：子元素**宽高已知**时，`left/top: 50%` 再 `margin-left/top` 为宽高的一半负值。\n\n5. **绝对定位 + 四向 0 + margin: auto**：子元素有明确宽高：`top/right/bottom/left: 0; margin: auto;`。\n\n6. **行内/行内块 + 行高**：单行文本可用 `text-align: center` + `line-height` 等于容器高度（仅单行）。\n\n7. **table-cell**：父 `display: table-cell; vertical-align: middle; text-align: center;`。\n\n### 解释与扩展\n\n| 方案 | 子宽高未知 | 备注 |\n|---|---|---|\n| Flex / Grid | 可以 | 现代首选 |\n| transform | 可以 | 脱离文档流 |\n| 负 margin | 需要已知 | 旧方案 |\n| line-height | 单行文本 | 多行失效 |\n\n水平单独居中：块级定宽可用 `margin: 0 auto`；行内用 `text-align: center`。\n\n### 注意\n\n1. 先确认是「块在块里」还是「文本在块里」，方案不同。\n2. 绝对定位会脱离文档流，可能影响后续布局。\n3. 面试优先讲 Flex，再补 1～2 种兜底。",
+      "questionHtml": "<p>如何实现元素的水平垂直居中？请给出几种面试常用方案及适用条件。</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>Flex（最常用）</strong>：父级 <code>display: flex; justify-content: center; align-items: center;</code>。子项未知宽高也可。也可 <code>margin: auto</code> 配合 flex 子项。</p>\n</li>\n<li>\n<p><strong>Grid</strong>：父级 <code>display: grid; place-items: center;</code>（或 <code>place-content: center</code>）。</p>\n</li>\n<li>\n<p><strong>绝对定位 + transform</strong>：父 <code>position: relative</code>；子 <code>position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);</code>。不依赖子元素固定宽高。</p>\n</li>\n<li>\n<p><strong>绝对定位 + 负 margin</strong>：子元素<strong>宽高已知</strong>时，<code>left/top: 50%</code> 再 <code>margin-left/top</code> 为宽高的一半负值。</p>\n</li>\n<li>\n<p><strong>绝对定位 + 四向 0 + margin: auto</strong>：子元素有明确宽高：<code>top/right/bottom/left: 0; margin: auto;</code>。</p>\n</li>\n<li>\n<p><strong>行内/行内块 + 行高</strong>：单行文本可用 <code>text-align: center</code> + <code>line-height</code> 等于容器高度（仅单行）。</p>\n</li>\n<li>\n<p><strong>table-cell</strong>：父 <code>display: table-cell; vertical-align: middle; text-align: center;</code>。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th>方案</th>\n<th>子宽高未知</th>\n<th>备注</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Flex / Grid</td>\n<td>可以</td>\n<td>现代首选</td>\n</tr>\n<tr>\n<td>transform</td>\n<td>可以</td>\n<td>脱离文档流</td>\n</tr>\n<tr>\n<td>负 margin</td>\n<td>需要已知</td>\n<td>旧方案</td>\n</tr>\n<tr>\n<td>line-height</td>\n<td>单行文本</td>\n<td>多行失效</td>\n</tr>\n</tbody>\n</table>\n<p>水平单独居中：块级定宽可用 <code>margin: 0 auto</code>；行内用 <code>text-align: center</code>。</p>\n<h3>注意</h3>\n<ol>\n<li>先确认是「块在块里」还是「文本在块里」，方案不同。</li>\n<li>绝对定位会脱离文档流，可能影响后续布局。</li>\n<li>面试优先讲 Flex，再补 1～2 种兜底。</li>\n</ol>\n",
+      "sourcePath": "frontend/css/03.centering.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/CSS/Layout_cookbook/Center_an_element"
+      ]
+    },
+    {
+      "id": "frontend-css-04",
+      "type": "frontend",
+      "category": "css",
+      "categoryName": "CSS",
+      "tags": [
+        "CSS",
+        "动画"
+      ],
+      "difficulty": "medium",
+      "title": "CSS transition 与 animation 的区别",
+      "question": "`transition` 和 `animation` 有什么区别？各自适合什么场景？",
+      "answer": "1. **transition（过渡）**：在**属性值变化**时（如 `:hover`）从旧值平滑过渡到新值。需指定过渡的属性、时长，可选延迟和缓动（含 `cubic-bezier`）。\n\n```css\n.box { transition: all 0.3s; }\n.box:hover { width: 150px; }\n```\n\n2. **animation（动画）**：用 **`@keyframes`** 定义多关键帧，元素可自动播放、循环、暂停，不依赖用户把样式改到「终态」。\n\n```css\n.rotate { animation: rotate 5s linear infinite; }\n.rotate:hover { animation-play-state: paused; }\n@keyframes rotate {\n  0% { transform: rotate(0); }\n  100% { transform: rotate(360deg); }\n}\n```\n\n3. **对比**\n   - 触发：transition 靠状态变化；animation 可自动跑。\n   - 关键帧：transition 实质两端；animation 可中间多帧。\n   - 循环：animation 有 `infinite`、`animation-play-state`；transition 一般一次。\n   - 控制：animation 可设 delay、次数、方向（`alternate`）等。\n\n### 解释与扩展\n\n`transition: all .3s` 方便，但会过渡所有可动画属性，性能上更宜写具体属性（如 `transform`、`opacity`）。缓动除 `linear`/`ease` 外可用贝塞尔，X 轴 0~1，Y 可略超出做回弹。\n\n### 注意\n\n1. 并非所有属性都能高性能过渡，优先 **transform / opacity**。\n2. 无限旋转、弹性进出用 animation；按钮 hover 变色变宽用 transition。\n3. 旧浏览器可能需要 `-webkit-` 前缀。",
+      "questionHtml": "<p><code>transition</code> 和 <code>animation</code> 有什么区别？各自适合什么场景？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>transition（过渡）</strong>：在<strong>属性值变化</strong>时（如 <code>:hover</code>）从旧值平滑过渡到新值。需指定过渡的属性、时长，可选延迟和缓动（含 <code>cubic-bezier</code>）。</li>\n</ol>\n<pre><code class=\"language-css\">.box { transition: all 0.3s; }\n.box:hover { width: 150px; }\n</code></pre>\n<ol start=\"2\">\n<li><strong>animation（动画）</strong>：用 <strong><code>@keyframes</code></strong> 定义多关键帧，元素可自动播放、循环、暂停，不依赖用户把样式改到「终态」。</li>\n</ol>\n<pre><code class=\"language-css\">.rotate { animation: rotate 5s linear infinite; }\n.rotate:hover { animation-play-state: paused; }\n@keyframes rotate {\n  0% { transform: rotate(0); }\n  100% { transform: rotate(360deg); }\n}\n</code></pre>\n<ol start=\"3\">\n<li><strong>对比</strong>\n<ul>\n<li>触发：transition 靠状态变化；animation 可自动跑。</li>\n<li>关键帧：transition 实质两端；animation 可中间多帧。</li>\n<li>循环：animation 有 <code>infinite</code>、<code>animation-play-state</code>；transition 一般一次。</li>\n<li>控制：animation 可设 delay、次数、方向（<code>alternate</code>）等。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<p><code>transition: all .3s</code> 方便，但会过渡所有可动画属性，性能上更宜写具体属性（如 <code>transform</code>、<code>opacity</code>）。缓动除 <code>linear</code>/<code>ease</code> 外可用贝塞尔，X 轴 0~1，Y 可略超出做回弹。</p>\n<h3>注意</h3>\n<ol>\n<li>并非所有属性都能高性能过渡，优先 <strong>transform / opacity</strong>。</li>\n<li>无限旋转、弹性进出用 animation；按钮 hover 变色变宽用 transition。</li>\n<li>旧浏览器可能需要 <code>-webkit-</code> 前缀。</li>\n</ol>\n",
+      "sourcePath": "frontend/css/04.transition-animation.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_transitions",
+        "https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_animations"
+      ]
+    },
+    {
+      "id": "frontend-css-05",
+      "type": "frontend",
+      "category": "css",
+      "categoryName": "CSS",
+      "tags": [
+        "CSS",
+        "文本"
+      ],
+      "difficulty": "easy",
+      "title": "单行与多行文本超出显示省略号",
+      "question": "如何用 CSS 实现单行、多行文本溢出省略号？如何用 JS 判断是否已经溢出？",
+      "answer": "1. **单行省略**（三件套）\n\n```css\noverflow: hidden;\nwhite-space: nowrap;\ntext-overflow: ellipsis;\n```\n\n容器需有确定宽度（或处于会限制宽度的布局中）。\n\n2. **多行省略**（WebKit 方案，行数由 `-webkit-line-clamp` 决定）\n\n```css\noverflow: hidden;\nwhite-space: normal;\ntext-overflow: ellipsis;\ndisplay: -webkit-box;\n-webkit-line-clamp: 2;\n-webkit-box-orient: vertical;\n```\n\n3. **JS 判断是否出现省略**：比较 **`scrollHeight` 与 `clientHeight`**，前者大于后者说明内容溢出。\n\n```js\nif (el.scrollHeight > el.clientHeight) {\n  // 已溢出，可显示「展开」\n}\n```\n\n### 解释与扩展\n\n| 属性 | 含义 |\n|---|---|\n| scrollHeight | 内容总高度（含溢出不可见部分），不含边框、margin |\n| clientHeight | 可视内容高度（含 padding），不含边框、水平滚动条 |\n| offsetHeight | 含 padding + 边框的像素高度 |\n\n标准方面，较新浏览器也支持 `line-clamp`，面试仍常写 `-webkit-line-clamp` 组合。\n\n### 注意\n\n1. 单行必须 `white-space: nowrap`，多行要改回 `normal`。\n2. flex 子项上省略有时要加 `min-width: 0` 或 `overflow: hidden` 才生效。\n3. 省略号出现后，纯 CSS 无法可靠「点击展开」，通常配合上述高度比较。",
+      "questionHtml": "<p>如何用 CSS 实现单行、多行文本溢出省略号？如何用 JS 判断是否已经溢出？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>单行省略</strong>（三件套）</li>\n</ol>\n<pre><code class=\"language-css\">overflow: hidden;\nwhite-space: nowrap;\ntext-overflow: ellipsis;\n</code></pre>\n<p>容器需有确定宽度（或处于会限制宽度的布局中）。</p>\n<ol start=\"2\">\n<li><strong>多行省略</strong>（WebKit 方案，行数由 <code>-webkit-line-clamp</code> 决定）</li>\n</ol>\n<pre><code class=\"language-css\">overflow: hidden;\nwhite-space: normal;\ntext-overflow: ellipsis;\ndisplay: -webkit-box;\n-webkit-line-clamp: 2;\n-webkit-box-orient: vertical;\n</code></pre>\n<ol start=\"3\">\n<li><strong>JS 判断是否出现省略</strong>：比较 <strong><code>scrollHeight</code> 与 <code>clientHeight</code></strong>，前者大于后者说明内容溢出。</li>\n</ol>\n<pre><code class=\"language-js\">if (el.scrollHeight &gt; el.clientHeight) {\n  // 已溢出，可显示「展开」\n}\n</code></pre>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th>属性</th>\n<th>含义</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>scrollHeight</td>\n<td>内容总高度（含溢出不可见部分），不含边框、margin</td>\n</tr>\n<tr>\n<td>clientHeight</td>\n<td>可视内容高度（含 padding），不含边框、水平滚动条</td>\n</tr>\n<tr>\n<td>offsetHeight</td>\n<td>含 padding + 边框的像素高度</td>\n</tr>\n</tbody>\n</table>\n<p>标准方面，较新浏览器也支持 <code>line-clamp</code>，面试仍常写 <code>-webkit-line-clamp</code> 组合。</p>\n<h3>注意</h3>\n<ol>\n<li>单行必须 <code>white-space: nowrap</code>，多行要改回 <code>normal</code>。</li>\n<li>flex 子项上省略有时要加 <code>min-width: 0</code> 或 <code>overflow: hidden</code> 才生效。</li>\n<li>省略号出现后，纯 CSS 无法可靠「点击展开」，通常配合上述高度比较。</li>\n</ol>\n",
+      "sourcePath": "frontend/css/05.text-ellipsis.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow"
+      ]
+    },
+    {
+      "id": "frontend-css-06",
+      "type": "frontend",
+      "category": "css",
+      "categoryName": "CSS",
+      "tags": [
+        "CSS",
+        "深色模式"
+      ],
+      "difficulty": "medium",
+      "title": "使用 prefers-color-scheme 实现深色模式",
+      "question": "如何根据系统主题用 CSS 自动切换深色模式？JS 如何检测和监听？",
+      "answer": "1. **思路**：在 `:root` 用 **CSS 变量**定义浅色主题色；用媒体查询 **`prefers-color-scheme: dark`** 覆盖为深色变量。组件只使用 `var(--bg)` 等，不必到处写两套选择器。\n\n```css\n:root {\n  --bg: #fff;\n  --textColor: #004050;\n  --borderColor: rgba(0, 0, 0, 0.15);\n}\n@media (prefers-color-scheme: dark) {\n  :root {\n    --bg: rgb(30, 30, 34);\n    --textColor: rgb(150, 150, 154);\n    --borderColor: #2c2c3a;\n  }\n}\nbody {\n  background: var(--bg);\n  color: var(--textColor);\n}\n```\n\n2. **`:root`**：匹配文档根（HTML 里即 `html`），选择器优先级高于普通 `html`。\n\n3. **JS 检测**\n\n```js\nif (window.matchMedia('(prefers-color-scheme: dark)').matches) {\n  // 当前是深色\n}\n```\n\n4. **监听系统切换**：`matchMedia(...).addListener`（新 API 为 `addEventListener('change', ...)`），分别监听 dark / light。\n\n### 解释与扩展\n\n`matchMedia` 返回 `MediaQueryList`，含 `matches`、`media`。仅跟系统偏好走时这样即可；若产品要「用户手动开关」，还需本地存储覆盖，不能只靠媒体查询。\n\n### 注意\n\n1. 桌面系统若不支持深色，可用手机系统深色模式验证。\n2. 深浅两套对比度要够，别只改背景忘了边框/链接色。\n3. `addListener` 已逐渐被 `addEventListener` 取代，新项目用后者。",
+      "questionHtml": "<p>如何根据系统主题用 CSS 自动切换深色模式？JS 如何检测和监听？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>思路</strong>：在 <code>:root</code> 用 <strong>CSS 变量</strong>定义浅色主题色；用媒体查询 <strong><code>prefers-color-scheme: dark</code></strong> 覆盖为深色变量。组件只使用 <code>var(--bg)</code> 等，不必到处写两套选择器。</li>\n</ol>\n<pre><code class=\"language-css\">:root {\n  --bg: #fff;\n  --textColor: #004050;\n  --borderColor: rgba(0, 0, 0, 0.15);\n}\n@media (prefers-color-scheme: dark) {\n  :root {\n    --bg: rgb(30, 30, 34);\n    --textColor: rgb(150, 150, 154);\n    --borderColor: #2c2c3a;\n  }\n}\nbody {\n  background: var(--bg);\n  color: var(--textColor);\n}\n</code></pre>\n<ol start=\"2\">\n<li>\n<p><strong><code>:root</code></strong>：匹配文档根（HTML 里即 <code>html</code>），选择器优先级高于普通 <code>html</code>。</p>\n</li>\n<li>\n<p><strong>JS 检测</strong></p>\n</li>\n</ol>\n<pre><code class=\"language-js\">if (window.matchMedia('(prefers-color-scheme: dark)').matches) {\n  // 当前是深色\n}\n</code></pre>\n<ol start=\"4\">\n<li><strong>监听系统切换</strong>：<code>matchMedia(...).addListener</code>（新 API 为 <code>addEventListener('change', ...)</code>），分别监听 dark / light。</li>\n</ol>\n<h3>解释与扩展</h3>\n<p><code>matchMedia</code> 返回 <code>MediaQueryList</code>，含 <code>matches</code>、<code>media</code>。仅跟系统偏好走时这样即可；若产品要「用户手动开关」，还需本地存储覆盖，不能只靠媒体查询。</p>\n<h3>注意</h3>\n<ol>\n<li>桌面系统若不支持深色，可用手机系统深色模式验证。</li>\n<li>深浅两套对比度要够，别只改背景忘了边框/链接色。</li>\n<li><code>addListener</code> 已逐渐被 <code>addEventListener</code> 取代，新项目用后者。</li>\n</ol>\n",
+      "sourcePath": "frontend/css/06.dark-mode.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-color-scheme"
+      ]
+    },
+    {
+      "id": "frontend-html-01",
+      "type": "frontend",
+      "category": "html",
+      "categoryName": "HTML",
+      "tags": [
+        "HTML",
+        "布局"
+      ],
+      "difficulty": "easy",
+      "title": "块级元素与行内元素的区别及嵌套规则",
+      "question": "请说明 HTML 块级元素与行内（内联）元素的区别，以及常见嵌套规则。",
+      "answer": "1. **块级元素**：默认独占一行，宽度默认撑满父容器（除非指定 `width`），高度、行高、上下外边距均可控制。主要用于搭页面骨架、承载内容。常见：`div`、`h1~h6`、`p`、`ul`/`ol`/`li`、`table`、`form`、`hr` 等。\n\n2. **行内元素**：默认与相邻元素同一行，宽高由内容决定，一般不能直接改宽高和上下 margin。主要用于修饰文本、控制细节。常见：`span`、`a`、`img`、`input`、`strong`、`em`、`br` 等。\n\n3. **嵌套规则**\n   - 块级可包含行内，以及**部分**块级；行内一般只能包含行内。\n   - **`p`、`h1~h6`、`dt` 等**只能包含行内，不能再包块级（例如 `p` 里不能放 `div`）。\n   - `li` 可以包含 `div`（二者都是内容容器）。\n   - 块级与块级平级、行内与行内平级；不要用行内去包块级，例如 `<span><p></p></span>` 是错误嵌套。\n\n### 解释与扩展\n\n| | 块级 | 行内 |\n|---|---|---|\n| 换行 | 默认新行开始 | 同行排列 |\n| 宽高 | 可设 | 默认由内容决定 |\n| 典型用途 | 布局、区块 | 文本、控件 |\n\nHTML5 更常用 **content model**（flow / phrasing）描述，但面试仍常按块级 / 行内口述。可用 CSS `display: block / inline / inline-block` 改变表现，语义标签本身不变。\n\n### 注意\n\n1. 浏览器会自动纠正非法嵌套（如 `p` 内的 `div` 会被提前闭合），DOM 结构可能和源码不一致。\n2. `img`、`input` 虽是行内，但可用 CSS 设宽高；空元素如 `br`、`hr` 无内容。\n3. 书写习惯：小写标签、成对闭合、空元素可写成 `<br />`。",
+      "questionHtml": "<p>请说明 HTML 块级元素与行内（内联）元素的区别，以及常见嵌套规则。</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>块级元素</strong>：默认独占一行，宽度默认撑满父容器（除非指定 <code>width</code>），高度、行高、上下外边距均可控制。主要用于搭页面骨架、承载内容。常见：<code>div</code>、<code>h1~h6</code>、<code>p</code>、<code>ul</code>/<code>ol</code>/<code>li</code>、<code>table</code>、<code>form</code>、<code>hr</code> 等。</p>\n</li>\n<li>\n<p><strong>行内元素</strong>：默认与相邻元素同一行，宽高由内容决定，一般不能直接改宽高和上下 margin。主要用于修饰文本、控制细节。常见：<code>span</code>、<code>a</code>、<code>img</code>、<code>input</code>、<code>strong</code>、<code>em</code>、<code>br</code> 等。</p>\n</li>\n<li>\n<p><strong>嵌套规则</strong></p>\n<ul>\n<li>块级可包含行内，以及<strong>部分</strong>块级；行内一般只能包含行内。</li>\n<li><strong><code>p</code>、<code>h1~h6</code>、<code>dt</code> 等</strong>只能包含行内，不能再包块级（例如 <code>p</code> 里不能放 <code>div</code>）。</li>\n<li><code>li</code> 可以包含 <code>div</code>（二者都是内容容器）。</li>\n<li>块级与块级平级、行内与行内平级；不要用行内去包块级，例如 <code>&lt;span&gt;&lt;p&gt;&lt;/p&gt;&lt;/span&gt;</code> 是错误嵌套。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>块级</th>\n<th>行内</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>换行</td>\n<td>默认新行开始</td>\n<td>同行排列</td>\n</tr>\n<tr>\n<td>宽高</td>\n<td>可设</td>\n<td>默认由内容决定</td>\n</tr>\n<tr>\n<td>典型用途</td>\n<td>布局、区块</td>\n<td>文本、控件</td>\n</tr>\n</tbody>\n</table>\n<p>HTML5 更常用 <strong>content model</strong>（flow / phrasing）描述，但面试仍常按块级 / 行内口述。可用 CSS <code>display: block / inline / inline-block</code> 改变表现，语义标签本身不变。</p>\n<h3>注意</h3>\n<ol>\n<li>浏览器会自动纠正非法嵌套（如 <code>p</code> 内的 <code>div</code> 会被提前闭合），DOM 结构可能和源码不一致。</li>\n<li><code>img</code>、<code>input</code> 虽是行内，但可用 CSS 设宽高；空元素如 <code>br</code>、<code>hr</code> 无内容。</li>\n<li>书写习惯：小写标签、成对闭合、空元素可写成 <code>&lt;br /&gt;</code>。</li>\n</ol>\n",
+      "sourcePath": "frontend/html/01.block-inline-elements.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/HTML/Block-level_elements",
+        "https://developer.mozilla.org/zh-CN/docs/Web/HTML/Inline_elements"
+      ]
+    },
+    {
+      "id": "frontend-html-02",
+      "type": "frontend",
+      "category": "html",
+      "categoryName": "HTML",
+      "tags": [
+        "HTML",
+        "属性"
+      ],
+      "difficulty": "easy",
+      "title": "HTML 全局属性有哪些",
+      "question": "什么是 HTML 全局属性？请列举常用全局属性及其作用。",
+      "answer": "1. **全局属性**：几乎所有 HTML 元素都可使用的属性，写在开始标签上，形式为 `name=\"value\"`，用来补充元素信息。\n\n2. **常用全局属性**\n   - **`id`**：文档内唯一标识，用于锚点、`getElementById`、样式选择器。\n   - **`class`**：一个或多个类名，用于样式和批量选择。\n   - **`style`**：行内 CSS。\n   - **`title`**：额外说明，常见为鼠标悬停提示。\n   - **`accesskey`**：快捷键（如 `Alt+字母`）。\n   - **`tabindex`**：Tab 键切换顺序。\n   - **`dir`**：文本方向（`ltr` / `rtl`）。\n\n3. **书写规范**：属性名推荐小写；属性值加引号（一般双引号）；值本身含双引号时改用单引号。\n\n### 解释与扩展\n\nHTML5 还常见：`hidden`、`data-*` 自定义数据、`lang`、`contenteditable`、`draggable`、事件属性如 `onclick`。`id` 必须唯一，`class` 可复用。\n\n### 注意\n\n1. 不要用 `id` 当大量样式钩子，优先 `class`。\n2. 行内 `style` 优先级高、难维护，生产更宜写在样式表。\n3. `accesskey` 可能与系统/浏览器快捷键冲突，慎用。",
+      "questionHtml": "<p>什么是 HTML 全局属性？请列举常用全局属性及其作用。</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>全局属性</strong>：几乎所有 HTML 元素都可使用的属性，写在开始标签上，形式为 <code>name=&quot;value&quot;</code>，用来补充元素信息。</p>\n</li>\n<li>\n<p><strong>常用全局属性</strong></p>\n<ul>\n<li><strong><code>id</code></strong>：文档内唯一标识，用于锚点、<code>getElementById</code>、样式选择器。</li>\n<li><strong><code>class</code></strong>：一个或多个类名，用于样式和批量选择。</li>\n<li><strong><code>style</code></strong>：行内 CSS。</li>\n<li><strong><code>title</code></strong>：额外说明，常见为鼠标悬停提示。</li>\n<li><strong><code>accesskey</code></strong>：快捷键（如 <code>Alt+字母</code>）。</li>\n<li><strong><code>tabindex</code></strong>：Tab 键切换顺序。</li>\n<li><strong><code>dir</code></strong>：文本方向（<code>ltr</code> / <code>rtl</code>）。</li>\n</ul>\n</li>\n<li>\n<p><strong>书写规范</strong>：属性名推荐小写；属性值加引号（一般双引号）；值本身含双引号时改用单引号。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<p>HTML5 还常见：<code>hidden</code>、<code>data-*</code> 自定义数据、<code>lang</code>、<code>contenteditable</code>、<code>draggable</code>、事件属性如 <code>onclick</code>。<code>id</code> 必须唯一，<code>class</code> 可复用。</p>\n<h3>注意</h3>\n<ol>\n<li>不要用 <code>id</code> 当大量样式钩子，优先 <code>class</code>。</li>\n<li>行内 <code>style</code> 优先级高、难维护，生产更宜写在样式表。</li>\n<li><code>accesskey</code> 可能与系统/浏览器快捷键冲突，慎用。</li>\n</ol>\n",
+      "sourcePath": "frontend/html/02.global-attributes.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes"
+      ]
+    },
+    {
+      "id": "frontend-html-03",
+      "type": "frontend",
+      "category": "html",
+      "categoryName": "HTML",
+      "tags": [
+        "HTML",
+        "head"
+      ],
+      "difficulty": "easy",
+      "title": "HTML head 中 title、link、script 等标签的作用",
+      "question": "`<head>` 里可以放哪些标签？分别说明 `title`、`style`、`link`、`script`、`noscript`、`base`、`meta` 的作用。",
+      "answer": "1. **`<head>`**：存放文档元信息，不直接渲染正文。常见子元素：`title`、`style`、`meta`、`link`、`script`、`noscript`、`base`。\n\n2. **`<title>`**：文档标题（规范上必需）。影响浏览器标签栏、收藏夹名称、搜索引擎结果标题。\n\n3. **`<style>`**：内嵌 CSS。\n\n4. **`<link>`**：声明文档与外部资源关系，最常见是外链样式表：`<link rel=\"stylesheet\" href=\"...\">`。\n\n5. **`<script>`**：内嵌或通过 `src` 加载 JS。带 `src` 时元素应为空。\n   - 无 `async`/`defer`：解析到该标签立刻下载并执行，**阻塞**后续解析。\n   - **`async`**：异步下载，下载完尽快执行（顺序不保证，仅外部脚本）。\n   - **`defer`**：异步下载，等文档解析完成再按顺序执行（仅外部脚本）。\n\n6. **`<noscript>`**：浏览器不执行脚本时的替代文案。\n\n7. **`<base>`**：为页面相对 URL 指定默认基地址，可设默认 `target`。\n\n8. **`<meta>`**：元数据（编码、SEO、viewport 等），页面上不可见，由浏览器/爬虫读取。\n\n### 解释与扩展\n\n```html\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Document</title>\n  <link rel=\"stylesheet\" href=\"mystyle.css\">\n  <script src=\"app.js\" defer></script>\n</head>\n```\n\n现代页面 JS 多用 `defer`，避免阻塞首屏；模块脚本 `<script type=\"module\">` 默认延迟、按依赖顺序执行。\n\n### 注意\n\n1. `title` 对 SEO 和标签识别很重要，应简洁且能概括页面。\n2. `base` 会影响所有相对路径，一处写错全站链接错乱。\n3. `async` 脚本之间无执行顺序保证，不要依赖先后关系。",
+      "questionHtml": "<p><code>&lt;head&gt;</code> 里可以放哪些标签？分别说明 <code>title</code>、<code>style</code>、<code>link</code>、<code>script</code>、<code>noscript</code>、<code>base</code>、<code>meta</code> 的作用。</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong><code>&lt;head&gt;</code></strong>：存放文档元信息，不直接渲染正文。常见子元素：<code>title</code>、<code>style</code>、<code>meta</code>、<code>link</code>、<code>script</code>、<code>noscript</code>、<code>base</code>。</p>\n</li>\n<li>\n<p><strong><code>&lt;title&gt;</code></strong>：文档标题（规范上必需）。影响浏览器标签栏、收藏夹名称、搜索引擎结果标题。</p>\n</li>\n<li>\n<p><strong><code>&lt;style&gt;</code></strong>：内嵌 CSS。</p>\n</li>\n<li>\n<p><strong><code>&lt;link&gt;</code></strong>：声明文档与外部资源关系，最常见是外链样式表：<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;...&quot;&gt;</code>。</p>\n</li>\n<li>\n<p><strong><code>&lt;script&gt;</code></strong>：内嵌或通过 <code>src</code> 加载 JS。带 <code>src</code> 时元素应为空。</p>\n<ul>\n<li>无 <code>async</code>/<code>defer</code>：解析到该标签立刻下载并执行，<strong>阻塞</strong>后续解析。</li>\n<li><strong><code>async</code></strong>：异步下载，下载完尽快执行（顺序不保证，仅外部脚本）。</li>\n<li><strong><code>defer</code></strong>：异步下载，等文档解析完成再按顺序执行（仅外部脚本）。</li>\n</ul>\n</li>\n<li>\n<p><strong><code>&lt;noscript&gt;</code></strong>：浏览器不执行脚本时的替代文案。</p>\n</li>\n<li>\n<p><strong><code>&lt;base&gt;</code></strong>：为页面相对 URL 指定默认基地址，可设默认 <code>target</code>。</p>\n</li>\n<li>\n<p><strong><code>&lt;meta&gt;</code></strong>：元数据（编码、SEO、viewport 等），页面上不可见，由浏览器/爬虫读取。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-html\">&lt;head&gt;\n  &lt;meta charset=&quot;UTF-8&quot;&gt;\n  &lt;title&gt;Document&lt;/title&gt;\n  &lt;link rel=&quot;stylesheet&quot; href=&quot;mystyle.css&quot;&gt;\n  &lt;script src=&quot;app.js&quot; defer&gt;&lt;/script&gt;\n&lt;/head&gt;\n</code></pre>\n<p>现代页面 JS 多用 <code>defer</code>，避免阻塞首屏；模块脚本 <code>&lt;script type=&quot;module&quot;&gt;</code> 默认延迟、按依赖顺序执行。</p>\n<h3>注意</h3>\n<ol>\n<li><code>title</code> 对 SEO 和标签识别很重要，应简洁且能概括页面。</li>\n<li><code>base</code> 会影响所有相对路径，一处写错全站链接错乱。</li>\n<li><code>async</code> 脚本之间无执行顺序保证，不要依赖先后关系。</li>\n</ol>\n",
+      "sourcePath": "frontend/html/03.html-head.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/head"
+      ]
+    },
+    {
+      "id": "frontend-html-04",
+      "type": "frontend",
+      "category": "html",
+      "categoryName": "HTML",
+      "tags": [
+        "HTML",
+        "移动端",
+        "viewport"
+      ],
+      "difficulty": "medium",
+      "title": "viewport meta 的作用与常用属性",
+      "question": "移动端为什么要设置 viewport meta？常用属性有哪些？有什么注意点？",
+      "answer": "1. **作用**：告诉移动浏览器如何控制**布局视口**（宽度、初始缩放等），避免页面按约 980px 桌面宽度渲染后再缩小，从而适配手机屏。\n\n2. **常用写法**（响应式站点）\n\n```html\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n```\n\n3. **content 常见指令**\n   - **`width`**：视口宽度，常用 `device-width`，也可写像素（约 200~10000，旧默认约 980）。\n   - **`height`**：视口高度（较少用）。\n   - **`initial-scale`**：初始缩放（大于 0 到 10）。\n   - **`minimum-scale` / `maximum-scale`**：允许缩放的最小/最大比例。\n   - **`user-scalable`**：是否允许用户缩放（`yes` / `no`）。\n\n### 解释与扩展\n\n布局视口决定 CSS 布局所用宽度；视觉视口是用户当前看到的区域。`width=device-width` 让 CSS 像素宽度等于设备宽度，配合媒体查询做响应式。\n\n无障碍上一般**不要禁用缩放**（`user-scalable=no` 或 `maximum-scale=1`），否则弱视用户无法放大。\n\n### 注意\n\n1. **非响应式站点不要乱加 `initial-scale=1`**：会按 100% 宽度渲染，用户只能左右拖或缩放才能看全。\n2. 若同时 `initial-scale=1` 且禁止缩放，用户可能永远看不全内容。\n3. 属性名是 **`minimum-scale`**，常见笔误 `minimun-scale` 无效。",
+      "questionHtml": "<p>移动端为什么要设置 viewport meta？常用属性有哪些？有什么注意点？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>作用</strong>：告诉移动浏览器如何控制<strong>布局视口</strong>（宽度、初始缩放等），避免页面按约 980px 桌面宽度渲染后再缩小，从而适配手机屏。</p>\n</li>\n<li>\n<p><strong>常用写法</strong>（响应式站点）</p>\n</li>\n</ol>\n<pre><code class=\"language-html\">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;\n</code></pre>\n<ol start=\"3\">\n<li><strong>content 常见指令</strong>\n<ul>\n<li><strong><code>width</code></strong>：视口宽度，常用 <code>device-width</code>，也可写像素（约 200~10000，旧默认约 980）。</li>\n<li><strong><code>height</code></strong>：视口高度（较少用）。</li>\n<li><strong><code>initial-scale</code></strong>：初始缩放（大于 0 到 10）。</li>\n<li><strong><code>minimum-scale</code> / <code>maximum-scale</code></strong>：允许缩放的最小/最大比例。</li>\n<li><strong><code>user-scalable</code></strong>：是否允许用户缩放（<code>yes</code> / <code>no</code>）。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<p>布局视口决定 CSS 布局所用宽度；视觉视口是用户当前看到的区域。<code>width=device-width</code> 让 CSS 像素宽度等于设备宽度，配合媒体查询做响应式。</p>\n<p>无障碍上一般<strong>不要禁用缩放</strong>（<code>user-scalable=no</code> 或 <code>maximum-scale=1</code>），否则弱视用户无法放大。</p>\n<h3>注意</h3>\n<ol>\n<li><strong>非响应式站点不要乱加 <code>initial-scale=1</code></strong>：会按 100% 宽度渲染，用户只能左右拖或缩放才能看全。</li>\n<li>若同时 <code>initial-scale=1</code> 且禁止缩放，用户可能永远看不全内容。</li>\n<li>属性名是 <strong><code>minimum-scale</code></strong>，常见笔误 <code>minimun-scale</code> 无效。</li>\n</ol>\n",
+      "sourcePath": "frontend/html/04.viewport-meta.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/HTML/Viewport_meta_tag"
+      ]
+    },
+    {
+      "id": "frontend-html-05",
+      "type": "frontend",
+      "category": "html",
+      "categoryName": "HTML",
+      "tags": [
+        "HTML",
+        "SEO",
+        "meta"
+      ],
+      "difficulty": "easy",
+      "title": "与 SEO 相关的 meta 标签",
+      "question": "请介绍常用的 SEO 相关 meta（keywords、description、robots 等），以及使用时要注意什么。",
+      "answer": "1. **`meta` 的角色**：提供机器可读的元数据，不显示在页面上；搜索引擎会读取部分字段辅助理解页面。\n\n2. **`keywords`**：页面关键词短语。应能准确描述内容；过短引擎可能不认，也不宜过长（笔记中提到不宜超过约 874 字符）。现代主流搜索引擎对 keywords **权重很低甚至忽略**，不能当作核心 SEO 手段。\n\n```html\n<meta name=\"keywords\" content=\"your tags\" />\n```\n\n3. **`description`**：页面摘要，建议约 **150 字以内**、准确概括内容。可能出现在搜索结果摘要。\n\n```html\n<meta name=\"description\" content=\"150 words\" />\n```\n\n4. **`robots`**：控制爬虫是否索引本页、是否跟踪链接。常见值：`all`（默认可理解为索引+跟踪）、`none`、`index`/`noindex`、`follow`/`nofollow`。\n\n```html\n<meta name=\"robots\" content=\"index,follow\" />\n```\n\n5. **其它**：`author` 标注作者；`googlebot` 等针对特定爬虫。`http-equiv=\"refresh\"` 可延时跳转，但容易被引擎视为误导而惩罚，SEO 场景慎用。\n\n### 解释与扩展\n\n| name | 作用 |\n|---|---|\n| keywords | 关键词（权重已很低） |\n| description | 摘要，影响展示多于排名 |\n| robots | 索引/跟踪策略 |\n| author | 作者信息 |\n\n真正影响 SEO 的还有：`title`、语义化结构、正文质量、`h1`、链接、性能与移动适配等。\n\n### 注意\n\n1. 每个页面 keywords / description 应**独特**，不要整站复制。\n2. `noindex` 与 `nofollow` 含义不同，组合要按产品需求选。\n3. 用 refresh 做跳转不如 301/302 HTTP 重定向规范。",
+      "questionHtml": "<p>请介绍常用的 SEO 相关 meta（keywords、description、robots 等），以及使用时要注意什么。</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong><code>meta</code> 的角色</strong>：提供机器可读的元数据，不显示在页面上；搜索引擎会读取部分字段辅助理解页面。</p>\n</li>\n<li>\n<p><strong><code>keywords</code></strong>：页面关键词短语。应能准确描述内容；过短引擎可能不认，也不宜过长（笔记中提到不宜超过约 874 字符）。现代主流搜索引擎对 keywords <strong>权重很低甚至忽略</strong>，不能当作核心 SEO 手段。</p>\n</li>\n</ol>\n<pre><code class=\"language-html\">&lt;meta name=&quot;keywords&quot; content=&quot;your tags&quot; /&gt;\n</code></pre>\n<ol start=\"3\">\n<li><strong><code>description</code></strong>：页面摘要，建议约 <strong>150 字以内</strong>、准确概括内容。可能出现在搜索结果摘要。</li>\n</ol>\n<pre><code class=\"language-html\">&lt;meta name=&quot;description&quot; content=&quot;150 words&quot; /&gt;\n</code></pre>\n<ol start=\"4\">\n<li><strong><code>robots</code></strong>：控制爬虫是否索引本页、是否跟踪链接。常见值：<code>all</code>（默认可理解为索引+跟踪）、<code>none</code>、<code>index</code>/<code>noindex</code>、<code>follow</code>/<code>nofollow</code>。</li>\n</ol>\n<pre><code class=\"language-html\">&lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot; /&gt;\n</code></pre>\n<ol start=\"5\">\n<li><strong>其它</strong>：<code>author</code> 标注作者；<code>googlebot</code> 等针对特定爬虫。<code>http-equiv=&quot;refresh&quot;</code> 可延时跳转，但容易被引擎视为误导而惩罚，SEO 场景慎用。</li>\n</ol>\n<h3>解释与扩展</h3>\n<table>\n<thead>\n<tr>\n<th>name</th>\n<th>作用</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>keywords</td>\n<td>关键词（权重已很低）</td>\n</tr>\n<tr>\n<td>description</td>\n<td>摘要，影响展示多于排名</td>\n</tr>\n<tr>\n<td>robots</td>\n<td>索引/跟踪策略</td>\n</tr>\n<tr>\n<td>author</td>\n<td>作者信息</td>\n</tr>\n</tbody>\n</table>\n<p>真正影响 SEO 的还有：<code>title</code>、语义化结构、正文质量、<code>h1</code>、链接、性能与移动适配等。</p>\n<h3>注意</h3>\n<ol>\n<li>每个页面 keywords / description 应<strong>独特</strong>，不要整站复制。</li>\n<li><code>noindex</code> 与 <code>nofollow</code> 含义不同，组合要按产品需求选。</li>\n<li>用 refresh 做跳转不如 301/302 HTTP 重定向规范。</li>\n</ol>\n",
+      "sourcePath": "frontend/html/05.seo-meta.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta"
+      ]
+    },
+    {
+      "id": "frontend-html-06",
+      "type": "frontend",
+      "category": "html",
+      "categoryName": "HTML",
+      "tags": [
+        "HTML",
+        "DOCTYPE"
+      ],
+      "difficulty": "easy",
+      "title": "DOCTYPE 声明的作用",
+      "question": "`<!DOCTYPE>` 是什么？为什么要写？HTML5 和 HTML4 有何不同？",
+      "answer": "1. **不是标签**：`<!DOCTYPE>` 是文档类型声明，必须放在文档**最前面**、`<html>` 之前。\n\n2. **作用**：告知浏览器按哪种 HTML 规范解析，避免进入**怪异模式（quirks mode）**，从而按接近标准的方式渲染。\n\n3. **HTML5**：不基于 SGML，**不需要引用 DTD**，写法极简：\n\n```html\n<!DOCTYPE html>\n```\n\n4. **HTML 4.01**：基于 SGML，声明需指向 DTD。例如 Strict（不含过时表现元素、不允许 frameset）：\n\n```html\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n```\n\n还有 Transitional、Frameset，以及 XHTML 的对应 DTD。\n\n### 解释与扩展\n\n缺失或错误的 DOCTYPE 时，浏览器可能按旧 IE 怪异盒模型等行为排版，同一套 CSS 在不同浏览器差异放大。现代项目一律写 HTML5 的 `<!DOCTYPE html>` 即可，大小写不敏感但习惯大写 DOCTYPE。\n\n### 注意\n\n1. 声明前不要有 BOM、注释之外的输出，否则可能触发怪异模式。\n2. 不要背一堆 HTML4 DTD，面试说清「触发标准模式 + HTML5 简写」即可。\n3. 合法元素集合会随 Doctype 变化，旧文档需对照对应 DTD。",
+      "questionHtml": "<p><code>&lt;!DOCTYPE&gt;</code> 是什么？为什么要写？HTML5 和 HTML4 有何不同？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>不是标签</strong>：<code>&lt;!DOCTYPE&gt;</code> 是文档类型声明，必须放在文档<strong>最前面</strong>、<code>&lt;html&gt;</code> 之前。</p>\n</li>\n<li>\n<p><strong>作用</strong>：告知浏览器按哪种 HTML 规范解析，避免进入<strong>怪异模式（quirks mode）</strong>，从而按接近标准的方式渲染。</p>\n</li>\n<li>\n<p><strong>HTML5</strong>：不基于 SGML，<strong>不需要引用 DTD</strong>，写法极简：</p>\n</li>\n</ol>\n<pre><code class=\"language-html\">&lt;!DOCTYPE html&gt;\n</code></pre>\n<ol start=\"4\">\n<li><strong>HTML 4.01</strong>：基于 SGML，声明需指向 DTD。例如 Strict（不含过时表现元素、不允许 frameset）：</li>\n</ol>\n<pre><code class=\"language-html\">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;\n</code></pre>\n<p>还有 Transitional、Frameset，以及 XHTML 的对应 DTD。</p>\n<h3>解释与扩展</h3>\n<p>缺失或错误的 DOCTYPE 时，浏览器可能按旧 IE 怪异盒模型等行为排版，同一套 CSS 在不同浏览器差异放大。现代项目一律写 HTML5 的 <code>&lt;!DOCTYPE html&gt;</code> 即可，大小写不敏感但习惯大写 DOCTYPE。</p>\n<h3>注意</h3>\n<ol>\n<li>声明前不要有 BOM、注释之外的输出，否则可能触发怪异模式。</li>\n<li>不要背一堆 HTML4 DTD，面试说清「触发标准模式 + HTML5 简写」即可。</li>\n<li>合法元素集合会随 Doctype 变化，旧文档需对照对应 DTD。</li>\n</ol>\n",
+      "sourcePath": "frontend/html/06.doctype.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Glossary/Doctype"
+      ]
+    },
+    {
       "id": "frontend-js-01",
       "type": "frontend",
       "category": "js",
       "categoryName": "JavaScript",
       "tags": [
         "JavaScript",
-        "占位"
+        "ES6"
       ],
       "difficulty": "easy",
-      "title": "（占位）请简述浏览器事件循环（Event Loop）",
-      "question": "（占位）请简述浏览器事件循环（Event Loop）",
-      "answer": "本题为前端题库占位题，后续补充完整答案。\n\n要点预留：宏任务 / 微任务、调用栈、任务队列、`requestAnimationFrame` 与渲染时机。",
-      "questionHtml": "<p>（占位）请简述浏览器事件循环（Event Loop）</p>\n",
-      "answerHtml": "<p>本题为前端题库占位题，后续补充完整答案。</p>\n<p>要点预留：宏任务 / 微任务、调用栈、任务队列、<code>requestAnimationFrame</code> 与渲染时机。</p>\n",
-      "sourcePath": "frontend/js/01.占位-事件循环.md"
+      "title": "let、const 与 var 的区别",
+      "question": "`let` / `const` 相对 `var` 有哪些关键差异？`const` 声明的对象为什么还能改属性？",
+      "answer": "1. **块级作用域**：`let`/`const` 只在所在 `{}` 内有效；`var` 是函数作用域或全局。外层读不到内层 `let`；内层可声明同名变量。\n\n2. **无变量提升（表现上）**：`var` 声明会提升，使用前是 `undefined`；`let`/`const` 提升到块顶但处于 **TDZ（暂时性死区）**，声明前访问会 `ReferenceError`。\n\n3. **不可重复声明**：同一作用域不能用 `let`/`const` 重复声明（也不能与 `var` 重复同一名）。函数参数也不能在函数体顶层再用 `let` 声明同名。\n\n4. **`const` 必须初始化**：只声明不赋值会 `SyntaxError`。绑定的**绑定本身**不能再赋值，再赋会 `TypeError`。\n\n5. **`const` 对象可变属性**：`const` 保证的是**变量指向不能换**，对象/数组内部属性仍可改。\n\n```js\nconst a = [];\na.push('Hello'); // 可以\na = ['Dave'];    // 报错\n```\n\n### 解释与扩展\n\nES6 声明变量方式还包括 `import`、`class`，加上 `var`/`function`/`let`/`const` 共六种。循环、`if` 里用 `let` 可避免 `var` 的循环闭包问题。\n\n### 注意\n\n1. 面试常问 TDZ：从进入块到 `let/const` 那一行之前都不能碰该变量。\n2. 基本类型用 `const` 真只读；引用类型要冻结需 `Object.freeze`（浅冻结）。\n3. 优先 `const`，需要重新赋值再用 `let`，少用 `var`。",
+      "questionHtml": "<p><code>let</code> / <code>const</code> 相对 <code>var</code> 有哪些关键差异？<code>const</code> 声明的对象为什么还能改属性？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>块级作用域</strong>：<code>let</code>/<code>const</code> 只在所在 <code>{}</code> 内有效；<code>var</code> 是函数作用域或全局。外层读不到内层 <code>let</code>；内层可声明同名变量。</p>\n</li>\n<li>\n<p><strong>无变量提升（表现上）</strong>：<code>var</code> 声明会提升，使用前是 <code>undefined</code>；<code>let</code>/<code>const</code> 提升到块顶但处于 <strong>TDZ（暂时性死区）</strong>，声明前访问会 <code>ReferenceError</code>。</p>\n</li>\n<li>\n<p><strong>不可重复声明</strong>：同一作用域不能用 <code>let</code>/<code>const</code> 重复声明（也不能与 <code>var</code> 重复同一名）。函数参数也不能在函数体顶层再用 <code>let</code> 声明同名。</p>\n</li>\n<li>\n<p><strong><code>const</code> 必须初始化</strong>：只声明不赋值会 <code>SyntaxError</code>。绑定的<strong>绑定本身</strong>不能再赋值，再赋会 <code>TypeError</code>。</p>\n</li>\n<li>\n<p><strong><code>const</code> 对象可变属性</strong>：<code>const</code> 保证的是<strong>变量指向不能换</strong>，对象/数组内部属性仍可改。</p>\n</li>\n</ol>\n<pre><code class=\"language-js\">const a = [];\na.push('Hello'); // 可以\na = ['Dave'];    // 报错\n</code></pre>\n<h3>解释与扩展</h3>\n<p>ES6 声明变量方式还包括 <code>import</code>、<code>class</code>，加上 <code>var</code>/<code>function</code>/<code>let</code>/<code>const</code> 共六种。循环、<code>if</code> 里用 <code>let</code> 可避免 <code>var</code> 的循环闭包问题。</p>\n<h3>注意</h3>\n<ol>\n<li>面试常问 TDZ：从进入块到 <code>let/const</code> 那一行之前都不能碰该变量。</li>\n<li>基本类型用 <code>const</code> 真只读；引用类型要冻结需 <code>Object.freeze</code>（浅冻结）。</li>\n<li>优先 <code>const</code>，需要重新赋值再用 <code>let</code>，少用 <code>var</code>。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/01.let-const.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let",
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/const"
+      ]
+    },
+    {
+      "id": "frontend-js-02",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "ES6"
+      ],
+      "difficulty": "easy",
+      "title": "ES6 解构赋值",
+      "question": "什么是解构赋值？数组解构和对象解构有何不同？默认值何时生效？",
+      "answer": "1. **定义**：按模式从数组或对象中取出值赋给变量。\n\n```js\nlet [a, b, c] = [1, 2, 3];\n```\n\n2. **数组解构**：按**位置**取值；可用空位跳过；可嵌套。\n\n3. **对象解构**：属性**无序**，变量名需与属性**同名**才能取到；改名写成 `foo: baz`。\n\n```js\nlet { first: f, last: l } = { first: 'hello', last: 'world' };\nlet { title, children } = this.props; // 同名简写\n```\n\n函数参数也可解构：`({ name, age }) => {}`。\n\n4. **默认值**：某位置**严格等于 `undefined`** 时才用默认值（内部用 `===`）。`null` 不会触发默认值。\n\n5. **与 rest / 展开**：`...rest` 收剩余项（须放最后，且是真数组）；`...arr` 可展开数组合并。\n\n### 解释与扩展\n\n对象解构实质是 `let { foo: foo } = obj` 的简写。嵌套对象可 `let { foo: { bar } } = obj`。失败或不匹配时对应变量为 `undefined`（无默认值时）。\n\n### 注意\n\n1. 不能对 `undefined`/`null` 做对象解构，会 TypeError。\n2. 数组空位不是 `undefined` 的「有值成员」，跳过写法是连续逗号。\n3. rest 与 `arguments`：rest 是真数组；`arguments` 含全部参数且不是数组。",
+      "questionHtml": "<p>什么是解构赋值？数组解构和对象解构有何不同？默认值何时生效？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>定义</strong>：按模式从数组或对象中取出值赋给变量。</li>\n</ol>\n<pre><code class=\"language-js\">let [a, b, c] = [1, 2, 3];\n</code></pre>\n<ol start=\"2\">\n<li>\n<p><strong>数组解构</strong>：按<strong>位置</strong>取值；可用空位跳过；可嵌套。</p>\n</li>\n<li>\n<p><strong>对象解构</strong>：属性<strong>无序</strong>，变量名需与属性<strong>同名</strong>才能取到；改名写成 <code>foo: baz</code>。</p>\n</li>\n</ol>\n<pre><code class=\"language-js\">let { first: f, last: l } = { first: 'hello', last: 'world' };\nlet { title, children } = this.props; // 同名简写\n</code></pre>\n<p>函数参数也可解构：<code>({ name, age }) =&gt; {}</code>。</p>\n<ol start=\"4\">\n<li>\n<p><strong>默认值</strong>：某位置<strong>严格等于 <code>undefined</code></strong> 时才用默认值（内部用 <code>===</code>）。<code>null</code> 不会触发默认值。</p>\n</li>\n<li>\n<p><strong>与 rest / 展开</strong>：<code>...rest</code> 收剩余项（须放最后，且是真数组）；<code>...arr</code> 可展开数组合并。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<p>对象解构实质是 <code>let { foo: foo } = obj</code> 的简写。嵌套对象可 <code>let { foo: { bar } } = obj</code>。失败或不匹配时对应变量为 <code>undefined</code>（无默认值时）。</p>\n<h3>注意</h3>\n<ol>\n<li>不能对 <code>undefined</code>/<code>null</code> 做对象解构，会 TypeError。</li>\n<li>数组空位不是 <code>undefined</code> 的「有值成员」，跳过写法是连续逗号。</li>\n<li>rest 与 <code>arguments</code>：rest 是真数组；<code>arguments</code> 含全部参数且不是数组。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/02.destructuring.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring"
+      ]
+    },
+    {
+      "id": "frontend-js-03",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "ES6",
+        "this"
+      ],
+      "difficulty": "medium",
+      "title": "箭头函数的 this 指向",
+      "question": "箭头函数和普通函数的 `this` 有何不同？为什么常用于 `setTimeout` 回调？",
+      "answer": "1. **箭头函数**：`this` 在**定义时**绑定为外层（词法）作用域的 `this`，**不是**调用时动态决定。之后不会因 `call`/`apply`/`bind` 改变箭头函数自身的 `this`（绑定发生在外层普通函数上才间接影响）。\n\n2. **普通函数**：`this` 由**调用方式**决定。作为普通函数调用，非严格模式指向全局对象（浏览器 `window`），严格模式为 `undefined`。\n\n3. **典型例子**\n\n```js\nfunction foo() {\n  setTimeout(() => {\n    console.log('id:', this.id);\n  }, 100);\n}\nfoo.call({ id: 42 }); // 输出 42\n```\n\n箭头函数定义在 `foo` 内，捕获的是 `foo` 被 `call` 后的 `this`（`{ id: 42 }`）。若回调写成普通 `function`，定时器里 `this` 通常是全局，会打出全局的 `id`（如 21）。\n\n### 解释与扩展\n\n语法：单参数可省 `()`；多语句用 `{}` 且需 `return`；返回对象字面量用 `({})` 包起来。箭头函数没有自己的 `arguments`、不能作构造函数（不能 `new`）、没有 `prototype`。\n\n### 注意\n\n1. 不要用箭头函数定义对象方法（若依赖 `obj.method()` 的 `this`）、也不要当 Vue 2 选项式 `methods`（会丢组件实例）。\n2. 类字段里的箭头方法会绑定实例，和原型方法行为不同。\n3. 口试金句：**「定义时的 this，而不是使用时的 this」**。",
+      "questionHtml": "<p>箭头函数和普通函数的 <code>this</code> 有何不同？为什么常用于 <code>setTimeout</code> 回调？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>箭头函数</strong>：<code>this</code> 在<strong>定义时</strong>绑定为外层（词法）作用域的 <code>this</code>，<strong>不是</strong>调用时动态决定。之后不会因 <code>call</code>/<code>apply</code>/<code>bind</code> 改变箭头函数自身的 <code>this</code>（绑定发生在外层普通函数上才间接影响）。</p>\n</li>\n<li>\n<p><strong>普通函数</strong>：<code>this</code> 由<strong>调用方式</strong>决定。作为普通函数调用，非严格模式指向全局对象（浏览器 <code>window</code>），严格模式为 <code>undefined</code>。</p>\n</li>\n<li>\n<p><strong>典型例子</strong></p>\n</li>\n</ol>\n<pre><code class=\"language-js\">function foo() {\n  setTimeout(() =&gt; {\n    console.log('id:', this.id);\n  }, 100);\n}\nfoo.call({ id: 42 }); // 输出 42\n</code></pre>\n<p>箭头函数定义在 <code>foo</code> 内，捕获的是 <code>foo</code> 被 <code>call</code> 后的 <code>this</code>（<code>{ id: 42 }</code>）。若回调写成普通 <code>function</code>，定时器里 <code>this</code> 通常是全局，会打出全局的 <code>id</code>（如 21）。</p>\n<h3>解释与扩展</h3>\n<p>语法：单参数可省 <code>()</code>；多语句用 <code>{}</code> 且需 <code>return</code>；返回对象字面量用 <code>({})</code> 包起来。箭头函数没有自己的 <code>arguments</code>、不能作构造函数（不能 <code>new</code>）、没有 <code>prototype</code>。</p>\n<h3>注意</h3>\n<ol>\n<li>不要用箭头函数定义对象方法（若依赖 <code>obj.method()</code> 的 <code>this</code>）、也不要当 Vue 2 选项式 <code>methods</code>（会丢组件实例）。</li>\n<li>类字段里的箭头方法会绑定实例，和原型方法行为不同。</li>\n<li>口试金句：<strong>「定义时的 this，而不是使用时的 this」</strong>。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/03.arrow-function-this.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+      ]
+    },
+    {
+      "id": "frontend-js-04",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "OOP",
+        "ES6"
+      ],
+      "difficulty": "medium",
+      "title": "ES5 与 ES6 面向对象（构造函数 vs class）",
+      "question": "用 ES5 构造函数和 ES6 `class` 如何实现封装与继承？二者关系是什么？",
+      "answer": "1. **ES5**：构造函数里定义实例属性（函数名习惯大写）；**方法挂在 `prototype`** 上以便共享。可用工厂函数包一层 `new`，参数更灵活。\n\n```js\nfunction Student(props) {\n  this.name = props.name || '匿名';\n  this.grade = props.grade || 1;\n}\nStudent.prototype.hello = function () { /* ... */ };\n```\n\n2. **ES5 继承**：子构造里 `Parent.call(this, props)` 继承属性；原型用空函数中转避免共享实例状态，再修正 `constructor`。\n\n```js\nfunction inherits(Child, Parent) {\n  var F = function () {};\n  F.prototype = Parent.prototype;\n  Child.prototype = new F();\n  Child.prototype.constructor = Child;\n}\n```\n\n3. **ES6**：`class` + `constructor` 定义属性；方法写在类体中（仍在原型上）。继承：`class Child extends Parent`，构造里必须 **`super(props)`** 再写子类字段。\n\n```js\nclass PrimaryStudent extends Student {\n  constructor(props) {\n    super(props);\n    this.age = props.age || 8;\n  }\n  getAge() { /* ... */ }\n}\n```\n\n### 解释与扩展\n\n`class` 是原型继承的语法糖，本质仍是构造函数 + prototype。ES6 写法更清晰，且 `extends` 会正确设置 `[[Prototype]]`，避免手写 `inherits` 出错。\n\n### 注意\n\n1. 子类构造里先 `super` 再访问 `this`，否则报错。\n2. 类方法之间不要互相逗号分隔（不是对象字面量）。\n3. `class` 声明不提升，且默认严格模式。",
+      "questionHtml": "<p>用 ES5 构造函数和 ES6 <code>class</code> 如何实现封装与继承？二者关系是什么？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>ES5</strong>：构造函数里定义实例属性（函数名习惯大写）；<strong>方法挂在 <code>prototype</code></strong> 上以便共享。可用工厂函数包一层 <code>new</code>，参数更灵活。</li>\n</ol>\n<pre><code class=\"language-js\">function Student(props) {\n  this.name = props.name || '匿名';\n  this.grade = props.grade || 1;\n}\nStudent.prototype.hello = function () { /* ... */ };\n</code></pre>\n<ol start=\"2\">\n<li><strong>ES5 继承</strong>：子构造里 <code>Parent.call(this, props)</code> 继承属性；原型用空函数中转避免共享实例状态，再修正 <code>constructor</code>。</li>\n</ol>\n<pre><code class=\"language-js\">function inherits(Child, Parent) {\n  var F = function () {};\n  F.prototype = Parent.prototype;\n  Child.prototype = new F();\n  Child.prototype.constructor = Child;\n}\n</code></pre>\n<ol start=\"3\">\n<li><strong>ES6</strong>：<code>class</code> + <code>constructor</code> 定义属性；方法写在类体中（仍在原型上）。继承：<code>class Child extends Parent</code>，构造里必须 <strong><code>super(props)</code></strong> 再写子类字段。</li>\n</ol>\n<pre><code class=\"language-js\">class PrimaryStudent extends Student {\n  constructor(props) {\n    super(props);\n    this.age = props.age || 8;\n  }\n  getAge() { /* ... */ }\n}\n</code></pre>\n<h3>解释与扩展</h3>\n<p><code>class</code> 是原型继承的语法糖，本质仍是构造函数 + prototype。ES6 写法更清晰，且 <code>extends</code> 会正确设置 <code>[[Prototype]]</code>，避免手写 <code>inherits</code> 出错。</p>\n<h3>注意</h3>\n<ol>\n<li>子类构造里先 <code>super</code> 再访问 <code>this</code>，否则报错。</li>\n<li>类方法之间不要互相逗号分隔（不是对象字面量）。</li>\n<li><code>class</code> 声明不提升，且默认严格模式。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/04.oop-es5-es6.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes"
+      ]
+    },
+    {
+      "id": "frontend-js-05",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "原型"
+      ],
+      "difficulty": "medium",
+      "title": "new 操作符做了什么",
+      "question": "执行 `new Constructor(args)` 时引擎依次做了哪些事？构造函数 `return` 对象会怎样？",
+      "answer": "1. **创建一个空对象**，作为将要返回的实例。\n2. **链接原型**：该对象的 `[[Prototype]]` 指向构造函数的 `prototype`。\n3. **绑定 `this`**：用该对象作为 `this` 执行构造函数（相当于 `apply`）。\n4. **返回值规则**：若构造函数返回值是**对象类型**（且非 `null`），则返回该对象；否则返回刚创建的实例。\n\n### 解释与扩展\n\n简化实现：\n\n```js\nfunction _new(constructor, ...args) {\n  var context = Object.create(constructor.prototype);\n  var result = constructor.apply(context, args);\n  return (typeof result === 'object' && result != null) ? result : context;\n}\n```\n\n步骤口诀：**建对象 → 连原型 → 执行构造 → 返回对象则用返回值，否则用实例**。\n\n### 注意\n\n1. `return null` 仍走实例（`typeof null === 'object'` 但笔记实现用 `!= null` 排除）。\n2. `return` 数字/字符串等原始值会被忽略，仍返回实例。\n3. 箭头函数没有 `[[Construct]]`，不能 `new`。",
+      "questionHtml": "<p>执行 <code>new Constructor(args)</code> 时引擎依次做了哪些事？构造函数 <code>return</code> 对象会怎样？</p>\n",
+      "answerHtml": "<ol>\n<li><strong>创建一个空对象</strong>，作为将要返回的实例。</li>\n<li><strong>链接原型</strong>：该对象的 <code>[[Prototype]]</code> 指向构造函数的 <code>prototype</code>。</li>\n<li><strong>绑定 <code>this</code></strong>：用该对象作为 <code>this</code> 执行构造函数（相当于 <code>apply</code>）。</li>\n<li><strong>返回值规则</strong>：若构造函数返回值是<strong>对象类型</strong>（且非 <code>null</code>），则返回该对象；否则返回刚创建的实例。</li>\n</ol>\n<h3>解释与扩展</h3>\n<p>简化实现：</p>\n<pre><code class=\"language-js\">function _new(constructor, ...args) {\n  var context = Object.create(constructor.prototype);\n  var result = constructor.apply(context, args);\n  return (typeof result === 'object' &amp;&amp; result != null) ? result : context;\n}\n</code></pre>\n<p>步骤口诀：<strong>建对象 → 连原型 → 执行构造 → 返回对象则用返回值，否则用实例</strong>。</p>\n<h3>注意</h3>\n<ol>\n<li><code>return null</code> 仍走实例（<code>typeof null === 'object'</code> 但笔记实现用 <code>!= null</code> 排除）。</li>\n<li><code>return</code> 数字/字符串等原始值会被忽略，仍返回实例。</li>\n<li>箭头函数没有 <code>[[Construct]]</code>，不能 <code>new</code>。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/05.new-operator.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new"
+      ]
+    },
+    {
+      "id": "frontend-js-06",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "ES6",
+        "模块"
+      ],
+      "difficulty": "easy",
+      "title": "ES Module 的 import / export",
+      "question": "ES Module 如何命名导出、默认导出和导入？有哪些注意点？",
+      "answer": "1. **命名导出**：`export { a, b, person }` 或声明时 `export const a = 1`。\n\n2. **默认导出**：`export default App`（一个模块最多一个 default）。\n\n3. **命名导入**：`import { a as c, b, person } from './app'`。`as` 改名后原名可在本模块另作他用。\n\n4. **命名空间导入**：`import * as c from './app'`，`c` 上挂全部导出。\n\n5. **副作用导入**：`import './app'`，执行模块顶层代码（相当于把该模块跑一遍）。\n\n6. **静态性**：`import`/`export` 必须在模块**顶层**，不能放在块级/`if` 里，以便编译期静态分析。\n\n### 解释与扩展\n\n浏览器中需 `<script type=\"module\">`。模块默认严格模式、有各自作用域、`this` 为 `undefined`。相对路径一般写 `./` 或 `../`。与 CommonJS（`require` 运行时加载、值拷贝）对比：ESM 是静态的、导出的是**绑定的实时映射**（live binding）。\n\n### 注意\n\n1. 默认导出导入：`import App from './app'`，不要写成 `{ App }`（除非它是命名导出）。\n2. 带 `src` 的 script 若同时内嵌代码，行为以规范为准，习惯上外链脚本标签保持为空。\n3. 循环依赖时 ESM 可能得到未初始化的绑定，需避免在顶层立刻用对方导出。",
+      "questionHtml": "<p>ES Module 如何命名导出、默认导出和导入？有哪些注意点？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>命名导出</strong>：<code>export { a, b, person }</code> 或声明时 <code>export const a = 1</code>。</p>\n</li>\n<li>\n<p><strong>默认导出</strong>：<code>export default App</code>（一个模块最多一个 default）。</p>\n</li>\n<li>\n<p><strong>命名导入</strong>：<code>import { a as c, b, person } from './app'</code>。<code>as</code> 改名后原名可在本模块另作他用。</p>\n</li>\n<li>\n<p><strong>命名空间导入</strong>：<code>import * as c from './app'</code>，<code>c</code> 上挂全部导出。</p>\n</li>\n<li>\n<p><strong>副作用导入</strong>：<code>import './app'</code>，执行模块顶层代码（相当于把该模块跑一遍）。</p>\n</li>\n<li>\n<p><strong>静态性</strong>：<code>import</code>/<code>export</code> 必须在模块<strong>顶层</strong>，不能放在块级/<code>if</code> 里，以便编译期静态分析。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<p>浏览器中需 <code>&lt;script type=&quot;module&quot;&gt;</code>。模块默认严格模式、有各自作用域、<code>this</code> 为 <code>undefined</code>。相对路径一般写 <code>./</code> 或 <code>../</code>。与 CommonJS（<code>require</code> 运行时加载、值拷贝）对比：ESM 是静态的、导出的是<strong>绑定的实时映射</strong>（live binding）。</p>\n<h3>注意</h3>\n<ol>\n<li>默认导出导入：<code>import App from './app'</code>，不要写成 <code>{ App }</code>（除非它是命名导出）。</li>\n<li>带 <code>src</code> 的 script 若同时内嵌代码，行为以规范为准，习惯上外链脚本标签保持为空。</li>\n<li>循环依赖时 ESM 可能得到未初始化的绑定，需避免在顶层立刻用对方导出。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/06.es-module.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules"
+      ]
+    },
+    {
+      "id": "frontend-js-07",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "Ajax"
+      ],
+      "difficulty": "medium",
+      "title": "用 XMLHttpRequest 实现 Ajax",
+      "question": "什么是 Ajax？如何用 `XMLHttpRequest` 发 GET/POST 并处理响应？",
+      "answer": "1. **Ajax**：Asynchronous JavaScript and XML。用 JS 与服务器交换数据，**局部更新页面**，不必整页刷新。不是新语言，是用法。\n\n2. **创建与发送**\n\n```js\nvar xml = new XMLHttpRequest();\nxml.open('GET', url, true); // method, url, async\nxml.send();                 // POST 时 send(body)\n```\n\n- `open` 第三参 `true` 为异步（常用）。\n- POST 若按表单/JSON 提交，需 `setRequestHeader`，再 `send` 字符串。\n\n```js\nxml.open('POST', url, true);\nxml.setRequestHeader('Content-type', 'application/json');\nxml.send(JSON.stringify(data));\n```\n\n3. **响应**：`responseText` 字符串；`responseXML` 为 XML。JSON 用 `JSON.parse(xml.responseText)`。\n\n4. **`onreadystatechange`**：`readyState` 从 0 到 4。**4 且 `status === 200`** 表示成功可处理。\n\n| readyState | 含义 |\n|---|---|\n| 0 | 未初始化 |\n| 1 | 已 `open` |\n| 2 | 已收到响应头 |\n| 3 | 下载中 |\n| 4 | 完成 |\n\n### 解释与扩展\n\n工作流程：JS 创建 XHR → 后台请求 → 回调里改 DOM。现代更多用 `fetch` / axios，但面试仍要求会手写 XHR。GET 适合简单查询；POST 适合提交较大或非 ASCII 数据。\n\n### 注意\n\n1. 应在 `send` 之前绑定 `onreadystatechange`（同步时顺序更敏感）。\n2. 只判断 `readyState === 4` 不够，还要看 `status`（201 等也可视为成功，按接口约定）。\n3. 跨域受同源策略限制，需 CORS。",
+      "questionHtml": "<p>什么是 Ajax？如何用 <code>XMLHttpRequest</code> 发 GET/POST 并处理响应？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>Ajax</strong>：Asynchronous JavaScript and XML。用 JS 与服务器交换数据，<strong>局部更新页面</strong>，不必整页刷新。不是新语言，是用法。</p>\n</li>\n<li>\n<p><strong>创建与发送</strong></p>\n</li>\n</ol>\n<pre><code class=\"language-js\">var xml = new XMLHttpRequest();\nxml.open('GET', url, true); // method, url, async\nxml.send();                 // POST 时 send(body)\n</code></pre>\n<ul>\n<li><code>open</code> 第三参 <code>true</code> 为异步（常用）。</li>\n<li>POST 若按表单/JSON 提交，需 <code>setRequestHeader</code>，再 <code>send</code> 字符串。</li>\n</ul>\n<pre><code class=\"language-js\">xml.open('POST', url, true);\nxml.setRequestHeader('Content-type', 'application/json');\nxml.send(JSON.stringify(data));\n</code></pre>\n<ol start=\"3\">\n<li>\n<p><strong>响应</strong>：<code>responseText</code> 字符串；<code>responseXML</code> 为 XML。JSON 用 <code>JSON.parse(xml.responseText)</code>。</p>\n</li>\n<li>\n<p><strong><code>onreadystatechange</code></strong>：<code>readyState</code> 从 0 到 4。<strong>4 且 <code>status === 200</code></strong> 表示成功可处理。</p>\n</li>\n</ol>\n<table>\n<thead>\n<tr>\n<th>readyState</th>\n<th>含义</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>未初始化</td>\n</tr>\n<tr>\n<td>1</td>\n<td>已 <code>open</code></td>\n</tr>\n<tr>\n<td>2</td>\n<td>已收到响应头</td>\n</tr>\n<tr>\n<td>3</td>\n<td>下载中</td>\n</tr>\n<tr>\n<td>4</td>\n<td>完成</td>\n</tr>\n</tbody>\n</table>\n<h3>解释与扩展</h3>\n<p>工作流程：JS 创建 XHR → 后台请求 → 回调里改 DOM。现代更多用 <code>fetch</code> / axios，但面试仍要求会手写 XHR。GET 适合简单查询；POST 适合提交较大或非 ASCII 数据。</p>\n<h3>注意</h3>\n<ol>\n<li>应在 <code>send</code> 之前绑定 <code>onreadystatechange</code>（同步时顺序更敏感）。</li>\n<li>只判断 <code>readyState === 4</code> 不够，还要看 <code>status</code>（201 等也可视为成功，按接口约定）。</li>\n<li>跨域受同源策略限制，需 CORS。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/07.ajax-xhr.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest"
+      ]
+    },
+    {
+      "id": "frontend-js-08",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "Web存储"
+      ],
+      "difficulty": "easy",
+      "title": "localStorage 与 sessionStorage",
+      "question": "`localStorage` 和 `sessionStorage` 有什么区别？常用 API 有哪些？相对 Cookie 的优势？",
+      "answer": "1. **都是 Web Storage**：在客户端存字符串；**按源（协议+域名+端口）隔离**，站点只能读自己的数据。数据**不会**随每次 HTTP 请求自动带上。\n\n2. **`localStorage`**：持久化，无过期时间（除非用户清缓存或代码删除）。容量约 **5MB** 量级（因浏览器而异），远大于 Cookie 的约 4KB。\n\n3. **`sessionStorage`**：仅当前**标签页会话**有效，关标签即清。\n\n4. **常用 API**：`setItem(k, v)`、`getItem(k)`、`removeItem(k)`、`clear()`、`key(i)`、`length`。也可用属性写法 `localStorage.a = '3'`。\n\n5. **相对 Cookie**：Cookie 每次请求都带给服务器，不适合存大量数据；Storage 只在需要时用 JS 读写，减轻带宽、提升性能。\n\n### 解释与扩展\n\n只能存字符串，对象需 `JSON.stringify` / `parse`。同源的多个标签页共享 `localStorage`，可用 `storage` 事件监听其它文档的改动（本页自己的写入不会触发该事件）。\n\n### 注意\n\n1. 敏感信息（token）存在 Storage 有 XSS 风险，需权衡。\n2. 隐私模式 / 用户禁用可能抛错，读写要 try-catch。\n3. `sessionStorage` 刷新还在，新开标签是新会话。",
+      "questionHtml": "<p><code>localStorage</code> 和 <code>sessionStorage</code> 有什么区别？常用 API 有哪些？相对 Cookie 的优势？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>都是 Web Storage</strong>：在客户端存字符串；<strong>按源（协议+域名+端口）隔离</strong>，站点只能读自己的数据。数据<strong>不会</strong>随每次 HTTP 请求自动带上。</p>\n</li>\n<li>\n<p><strong><code>localStorage</code></strong>：持久化，无过期时间（除非用户清缓存或代码删除）。容量约 <strong>5MB</strong> 量级（因浏览器而异），远大于 Cookie 的约 4KB。</p>\n</li>\n<li>\n<p><strong><code>sessionStorage</code></strong>：仅当前<strong>标签页会话</strong>有效，关标签即清。</p>\n</li>\n<li>\n<p><strong>常用 API</strong>：<code>setItem(k, v)</code>、<code>getItem(k)</code>、<code>removeItem(k)</code>、<code>clear()</code>、<code>key(i)</code>、<code>length</code>。也可用属性写法 <code>localStorage.a = '3'</code>。</p>\n</li>\n<li>\n<p><strong>相对 Cookie</strong>：Cookie 每次请求都带给服务器，不适合存大量数据；Storage 只在需要时用 JS 读写，减轻带宽、提升性能。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<p>只能存字符串，对象需 <code>JSON.stringify</code> / <code>parse</code>。同源的多个标签页共享 <code>localStorage</code>，可用 <code>storage</code> 事件监听其它文档的改动（本页自己的写入不会触发该事件）。</p>\n<h3>注意</h3>\n<ol>\n<li>敏感信息（token）存在 Storage 有 XSS 风险，需权衡。</li>\n<li>隐私模式 / 用户禁用可能抛错，读写要 try-catch。</li>\n<li><code>sessionStorage</code> 刷新还在，新开标签是新会话。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/08.localStorage.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage"
+      ]
+    },
+    {
+      "id": "frontend-js-09",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "性能"
+      ],
+      "difficulty": "medium",
+      "title": "防抖 debounce 与节流 throttle",
+      "question": "防抖和节流的区别是什么？如何用 `setTimeout`/`clearTimeout` 实现？各适用什么场景？",
+      "answer": "1. **共同目的**：高频事件里减少函数执行次数，做性能优化。\n\n2. **防抖 debounce**：每次触发都**重置计时**；只在**最后一次触发后再等待 wait 毫秒**才执行。连续触发则一直推迟。\n\n```js\nfunction debounce(func, wait) {\n  let timeout = null;\n  return function () {\n    let context = this;\n    let args = arguments;\n    if (timeout) clearTimeout(timeout);\n    timeout = setTimeout(() => {\n      func.apply(context, args);\n    }, wait);\n  };\n}\n```\n\n3. **节流 throttle**：一个时间窗口内**最多执行一次**。窗口内再触发直接忽略，到期才跑（下面是定时器版）。\n\n```js\nfunction throttle(func, wait) {\n  let timeout = null;\n  return function () {\n    let context = this;\n    let args = arguments;\n    if (!timeout) {\n      timeout = setTimeout(() => {\n        timeout = null;\n        func.apply(context, args);\n      }, wait);\n    }\n  };\n}\n```\n\n4. **场景对照**\n   - **防抖**：搜索框输入完再请求；按钮防连点提交；窗口 `resize` 结束后再算布局；表单校验。\n   - **节流**：滚动加载更多、拖拽 `mousemove`、射击间隔、监听 scroll 判断触底。\n\n### 解释与扩展\n\n口诀：**防抖等你停手；节流按节拍执行**。还可用时间戳实现「立即执行」的节流。闭包里保存 `this` 和 `arguments`，用 `apply` 保证回调里 this 正确。\n\n### 注意\n\n1. 搜索联想：输入过程用防抖减请求；若要输入时定期出建议也可用节流，题目里两者都可能被提到。\n2. 滚动：节流控制频率；若只要「停滚后再算」则用防抖。\n3. 组件卸载时要清 timer，避免泄漏。",
+      "questionHtml": "<p>防抖和节流的区别是什么？如何用 <code>setTimeout</code>/<code>clearTimeout</code> 实现？各适用什么场景？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>共同目的</strong>：高频事件里减少函数执行次数，做性能优化。</p>\n</li>\n<li>\n<p><strong>防抖 debounce</strong>：每次触发都<strong>重置计时</strong>；只在<strong>最后一次触发后再等待 wait 毫秒</strong>才执行。连续触发则一直推迟。</p>\n</li>\n</ol>\n<pre><code class=\"language-js\">function debounce(func, wait) {\n  let timeout = null;\n  return function () {\n    let context = this;\n    let args = arguments;\n    if (timeout) clearTimeout(timeout);\n    timeout = setTimeout(() =&gt; {\n      func.apply(context, args);\n    }, wait);\n  };\n}\n</code></pre>\n<ol start=\"3\">\n<li><strong>节流 throttle</strong>：一个时间窗口内<strong>最多执行一次</strong>。窗口内再触发直接忽略，到期才跑（下面是定时器版）。</li>\n</ol>\n<pre><code class=\"language-js\">function throttle(func, wait) {\n  let timeout = null;\n  return function () {\n    let context = this;\n    let args = arguments;\n    if (!timeout) {\n      timeout = setTimeout(() =&gt; {\n        timeout = null;\n        func.apply(context, args);\n      }, wait);\n    }\n  };\n}\n</code></pre>\n<ol start=\"4\">\n<li><strong>场景对照</strong>\n<ul>\n<li><strong>防抖</strong>：搜索框输入完再请求；按钮防连点提交；窗口 <code>resize</code> 结束后再算布局；表单校验。</li>\n<li><strong>节流</strong>：滚动加载更多、拖拽 <code>mousemove</code>、射击间隔、监听 scroll 判断触底。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<p>口诀：<strong>防抖等你停手；节流按节拍执行</strong>。还可用时间戳实现「立即执行」的节流。闭包里保存 <code>this</code> 和 <code>arguments</code>，用 <code>apply</code> 保证回调里 this 正确。</p>\n<h3>注意</h3>\n<ol>\n<li>搜索联想：输入过程用防抖减请求；若要输入时定期出建议也可用节流，题目里两者都可能被提到。</li>\n<li>滚动：节流控制频率；若只要「停滚后再算」则用防抖。</li>\n<li>组件卸载时要清 timer，避免泄漏。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/09.debounce-throttle.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Glossary/Debounce"
+      ]
+    },
+    {
+      "id": "frontend-js-10",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "类型"
+      ],
+      "difficulty": "easy",
+      "title": "比 typeof 更准确的类型判断",
+      "question": "为什么 `typeof` 不够用？如何更准确地判断 JS 数据类型？",
+      "answer": "1. **`typeof` 局限**：`typeof null === 'object'`；数组、普通对象、日期都是 `'object'`；无法区分 `Array` / `Date` / `RegExp` 等。\n\n2. **更准确**：`Object.prototype.toString.call(value)`，返回 `[object Type]`。\n\n| 值 | toString.call |\n|---|---|\n| 数字 | `[object Number]` |\n| 字符串 | `[object String]` |\n| 布尔 | `[object Boolean]` |\n| undefined | `[object Undefined]` |\n| null | `[object Null]` |\n| 数组 | `[object Array]` |\n| 函数 | `[object Function]` |\n| Date | `[object Date]` |\n| RegExp | `[object RegExp]` |\n| 普通对象 | `[object Object]` |\n\n3. **封装**\n\n```js\nfunction type(o) {\n  var s = Object.prototype.toString.call(o);\n  return s.match(/\\[object (.*?)]/)[1].toLowerCase();\n}\ntype([]);    // \"array\"\ntype(null);  // \"null\"\n```\n\n可再挂 `type.isArray` 等方法。\n\n### 解释与扩展\n\n还可用 `Array.isArray`、`value instanceof Ctor`（跨 iframe 可能失败）。`toString` 借原型方法，避免实例重写 `toString`。面试也可提 `Symbol.toStringTag` 会改变部分结果。\n\n### 注意\n\n1. 必须 `.call(o)`，直接 `o.toString()` 对数组会变成 join。\n2. 包装对象 `new Number(1)` 的 typeof 是 object，toString 仍是 Number。\n3. 不要用 `== null` 当类型判断，那只判断 null/undefined。",
+      "questionHtml": "<p>为什么 <code>typeof</code> 不够用？如何更准确地判断 JS 数据类型？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong><code>typeof</code> 局限</strong>：<code>typeof null === 'object'</code>；数组、普通对象、日期都是 <code>'object'</code>；无法区分 <code>Array</code> / <code>Date</code> / <code>RegExp</code> 等。</p>\n</li>\n<li>\n<p><strong>更准确</strong>：<code>Object.prototype.toString.call(value)</code>，返回 <code>[object Type]</code>。</p>\n</li>\n</ol>\n<table>\n<thead>\n<tr>\n<th>值</th>\n<th>toString.call</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>数字</td>\n<td><code>[object Number]</code></td>\n</tr>\n<tr>\n<td>字符串</td>\n<td><code>[object String]</code></td>\n</tr>\n<tr>\n<td>布尔</td>\n<td><code>[object Boolean]</code></td>\n</tr>\n<tr>\n<td>undefined</td>\n<td><code>[object Undefined]</code></td>\n</tr>\n<tr>\n<td>null</td>\n<td><code>[object Null]</code></td>\n</tr>\n<tr>\n<td>数组</td>\n<td><code>[object Array]</code></td>\n</tr>\n<tr>\n<td>函数</td>\n<td><code>[object Function]</code></td>\n</tr>\n<tr>\n<td>Date</td>\n<td><code>[object Date]</code></td>\n</tr>\n<tr>\n<td>RegExp</td>\n<td><code>[object RegExp]</code></td>\n</tr>\n<tr>\n<td>普通对象</td>\n<td><code>[object Object]</code></td>\n</tr>\n</tbody>\n</table>\n<ol start=\"3\">\n<li><strong>封装</strong></li>\n</ol>\n<pre><code class=\"language-js\">function type(o) {\n  var s = Object.prototype.toString.call(o);\n  return s.match(/\\[object (.*?)]/)[1].toLowerCase();\n}\ntype([]);    // &quot;array&quot;\ntype(null);  // &quot;null&quot;\n</code></pre>\n<p>可再挂 <code>type.isArray</code> 等方法。</p>\n<h3>解释与扩展</h3>\n<p>还可用 <code>Array.isArray</code>、<code>value instanceof Ctor</code>（跨 iframe 可能失败）。<code>toString</code> 借原型方法，避免实例重写 <code>toString</code>。面试也可提 <code>Symbol.toStringTag</code> 会改变部分结果。</p>\n<h3>注意</h3>\n<ol>\n<li>必须 <code>.call(o)</code>，直接 <code>o.toString()</code> 对数组会变成 join。</li>\n<li>包装对象 <code>new Number(1)</code> 的 typeof 是 object，toString 仍是 Number。</li>\n<li>不要用 <code>== null</code> 当类型判断，那只判断 null/undefined。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/10.type-check.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/toString"
+      ]
+    },
+    {
+      "id": "frontend-js-11",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "事件循环",
+        "异步"
+      ],
+      "difficulty": "medium",
+      "title": "浏览器事件循环 Event Loop",
+      "question": "请简述 JavaScript 的单线程模型与事件循环。同步任务、异步任务、任务队列如何配合？",
+      "answer": "1. **单线程**：JS **主线程同时只执行一个任务**。设计原因是避免多线程同时改 DOM 的复杂锁。引擎后台可有其它线程，但脚本逻辑在主线程。耗时同步会卡住页面。\n\n2. **同步 vs 异步**\n   - **同步任务**：在主线程（调用栈）上排队，前一个结束才到下一个。\n   - **异步任务**：先挂起，不阻塞后面代码；完成后以**回调**形式进入**任务队列**，等主线程空闲再执行。Ajax 可同步也可异步，由开发者选择。\n\n3. **事件循环**：主线程先跑完所有同步任务 → 查看任务队列里到期的异步回调 → 取一个进栈执行 → 再检查……循环往复。引擎不断检查「挂起的异步是否可进入主线程」，即 **Event Loop**。没有回调的异步一般不会作为任务重新进主线程。\n\n```mermaid\nflowchart LR\n  stack[\"调用栈 同步任务\"] --> empty[\"栈空\"]\n  empty --> queue[\"任务队列\"]\n  queue --> stack\n```\n\n4. **扩展：微任务 vs 宏任务**（笔记基础之上）\n   - 一轮循环：同步执行完后，先清空 **微任务**（如 `Promise.then`、`queueMicrotask`），再取一个 **宏任务**（如 `setTimeout`、I/O、部分 UI 事件）。\n   - `Promise.resolve().then(fn)` 在本轮同步之后、下一个 `setTimeout(fn,0)` 之前执行。\n\n### 解释与扩展\n\n异步常见写法：回调、事件监听、Promise。长时间计算仍会阻塞；IO 等待适合异步。HTML5 **Web Worker** 可开子线程，但不能操作 DOM，不改变「主线程单线程」本质。Node 能高并发也依赖事件循环而非每请求一线程。\n\n### 注意\n\n1. `setTimeout(fn, 0)` 不是「立即」，而是尽快进入宏任务队列。\n2. 死循环会饿死队列，定时器和 Promise 回调都无法跑。\n3. 渲染时机与 `requestAnimationFrame` 常夹在帧循环里，深入问再展开。",
+      "questionHtml": "<p>请简述 JavaScript 的单线程模型与事件循环。同步任务、异步任务、任务队列如何配合？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>单线程</strong>：JS <strong>主线程同时只执行一个任务</strong>。设计原因是避免多线程同时改 DOM 的复杂锁。引擎后台可有其它线程，但脚本逻辑在主线程。耗时同步会卡住页面。</p>\n</li>\n<li>\n<p><strong>同步 vs 异步</strong></p>\n<ul>\n<li><strong>同步任务</strong>：在主线程（调用栈）上排队，前一个结束才到下一个。</li>\n<li><strong>异步任务</strong>：先挂起，不阻塞后面代码；完成后以<strong>回调</strong>形式进入<strong>任务队列</strong>，等主线程空闲再执行。Ajax 可同步也可异步，由开发者选择。</li>\n</ul>\n</li>\n<li>\n<p><strong>事件循环</strong>：主线程先跑完所有同步任务 → 查看任务队列里到期的异步回调 → 取一个进栈执行 → 再检查……循环往复。引擎不断检查「挂起的异步是否可进入主线程」，即 <strong>Event Loop</strong>。没有回调的异步一般不会作为任务重新进主线程。</p>\n</li>\n</ol>\n<pre><code class=\"language-mermaid\">flowchart LR\n  stack[&quot;调用栈 同步任务&quot;] --&gt; empty[&quot;栈空&quot;]\n  empty --&gt; queue[&quot;任务队列&quot;]\n  queue --&gt; stack\n</code></pre>\n<ol start=\"4\">\n<li><strong>扩展：微任务 vs 宏任务</strong>（笔记基础之上）\n<ul>\n<li>一轮循环：同步执行完后，先清空 <strong>微任务</strong>（如 <code>Promise.then</code>、<code>queueMicrotask</code>），再取一个 <strong>宏任务</strong>（如 <code>setTimeout</code>、I/O、部分 UI 事件）。</li>\n<li><code>Promise.resolve().then(fn)</code> 在本轮同步之后、下一个 <code>setTimeout(fn,0)</code> 之前执行。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<p>异步常见写法：回调、事件监听、Promise。长时间计算仍会阻塞；IO 等待适合异步。HTML5 <strong>Web Worker</strong> 可开子线程，但不能操作 DOM，不改变「主线程单线程」本质。Node 能高并发也依赖事件循环而非每请求一线程。</p>\n<h3>注意</h3>\n<ol>\n<li><code>setTimeout(fn, 0)</code> 不是「立即」，而是尽快进入宏任务队列。</li>\n<li>死循环会饿死队列，定时器和 Promise 回调都无法跑。</li>\n<li>渲染时机与 <code>requestAnimationFrame</code> 常夹在帧循环里，深入问再展开。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/11.event-loop.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Event_loop"
+      ]
+    },
+    {
+      "id": "frontend-js-12",
+      "type": "frontend",
+      "category": "js",
+      "categoryName": "JavaScript",
+      "tags": [
+        "JavaScript",
+        "数组"
+      ],
+      "difficulty": "medium",
+      "title": "数组去重的常见方法与性能",
+      "question": "数组如何去重？有哪些写法，性能大致如何？",
+      "answer": "1. **`indexOf` + `filter`**：`arr.filter((item, i) => arr.indexOf(item) === i)`。实现简单，大数据量慢（约 O(n²)）。\n\n2. **双层循环 + `splice`**：发现重复就删。要同步改 `length` 和下标。性能往往最差。\n\n3. **`includes` 推入新数组**：`!result.includes(i) && result.push(i)`。同样偏慢。\n\n4. **排序后相邻比较**（ES5 里相对快）：`sort` 后只跟前一项比，不同则推入。注意 `sort` 会改原数组，且对象/NaN 语义要单独考虑。\n\n5. **`Set`**（简洁、快）：`Array.from(new Set(arr))` 或 `[...new Set(arr)]`。\n\n6. **对象哈希**（笔记实测往往最快）：用对象键记录是否出现过，`for...of` 扫一遍。\n\n```js\nlet result = [];\nlet obj = {};\nfor (let i of arr) {\n  if (!obj[i]) {\n    result.push(i);\n    obj[i] = 1;\n  }\n}\n```\n\n### 解释与扩展\n\n面试可先写 `Set`，再提哈希表一遍扫描、以及 `indexOf` 的平方复杂度。对象键会把数字转成字符串，`1` 和 `'1'` 会被当成同一个；需要区分类型时用 `Map`。\n\n### 注意\n\n1. `Set` 按 SameValueZero，可去重 `NaN`，但对象是引用相等。\n2. 哈希法对 `obj[i]` 会走 toString，复杂类型会碰撞。\n3. 排序法不稳定依赖元素可比较，对象数组不能这么去重。",
+      "questionHtml": "<p>数组如何去重？有哪些写法，性能大致如何？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong><code>indexOf</code> + <code>filter</code></strong>：<code>arr.filter((item, i) =&gt; arr.indexOf(item) === i)</code>。实现简单，大数据量慢（约 O(n²)）。</p>\n</li>\n<li>\n<p><strong>双层循环 + <code>splice</code></strong>：发现重复就删。要同步改 <code>length</code> 和下标。性能往往最差。</p>\n</li>\n<li>\n<p><strong><code>includes</code> 推入新数组</strong>：<code>!result.includes(i) &amp;&amp; result.push(i)</code>。同样偏慢。</p>\n</li>\n<li>\n<p><strong>排序后相邻比较</strong>（ES5 里相对快）：<code>sort</code> 后只跟前一项比，不同则推入。注意 <code>sort</code> 会改原数组，且对象/NaN 语义要单独考虑。</p>\n</li>\n<li>\n<p><strong><code>Set</code></strong>（简洁、快）：<code>Array.from(new Set(arr))</code> 或 <code>[...new Set(arr)]</code>。</p>\n</li>\n<li>\n<p><strong>对象哈希</strong>（笔记实测往往最快）：用对象键记录是否出现过，<code>for...of</code> 扫一遍。</p>\n</li>\n</ol>\n<pre><code class=\"language-js\">let result = [];\nlet obj = {};\nfor (let i of arr) {\n  if (!obj[i]) {\n    result.push(i);\n    obj[i] = 1;\n  }\n}\n</code></pre>\n<h3>解释与扩展</h3>\n<p>面试可先写 <code>Set</code>，再提哈希表一遍扫描、以及 <code>indexOf</code> 的平方复杂度。对象键会把数字转成字符串，<code>1</code> 和 <code>'1'</code> 会被当成同一个；需要区分类型时用 <code>Map</code>。</p>\n<h3>注意</h3>\n<ol>\n<li><code>Set</code> 按 SameValueZero，可去重 <code>NaN</code>，但对象是引用相等。</li>\n<li>哈希法对 <code>obj[i]</code> 会走 toString，复杂类型会碰撞。</li>\n<li>排序法不稳定依赖元素可比较，对象数组不能这么去重。</li>\n</ol>\n",
+      "sourcePath": "frontend/js/12.array-dedup.md",
+      "reference": [
+        "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set"
+      ]
+    },
+    {
+      "id": "frontend-react-01",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "JSX"
+      ],
+      "difficulty": "easy",
+      "title": "什么是 JSX？它和 React.createElement 是什么关系？",
+      "question": "什么是 JSX？为什么 React 使用 JSX？它如何嵌入表达式、最终编译成什么？",
+      "answer": "1. **定义**：用类似模板的语法描述 UI，是 JS 的**语法糖**，本质仍是 JS。编译后变成 `React.createElement(type, props, ...children)`，求值得到普通 JS 对象。\n\n2. **为何使用**：把标记和逻辑放在同一个组件里，实现关注点分离；视觉上更直观。React 不强制 JSX，但实践中几乎都用。\n\n3. **嵌入表达式**：`{ }` 内可放变量、运算、函数调用等任意 JS 表达式。属性：字符串用引号，变量用 `{user.avatarUrl}`。属性名 **camelCase**（如 `tabIndex`、`className`）。\n\n4. **子元素**：标签可嵌套多个子节点；DOM 信息可归纳为标签名、属性、子元素三部分。\n\n### 解释与扩展\n\n```js\nconst element = <h1>Hello world</h1>\n// 等价于\nReact.createElement('h1', null, 'Hello world')\n```\n\n- JSX 可作为值：赋值、传参、作为函数返回值。\n- `ReactDOM.render(element, document.getElementById('root'))` 把它挂到真实 DOM。\n- 需 Babel 转换；现代工具链默认已配。\n\n### 注意\n\n- 相邻 JSX 需要单一根（或 Fragment）。\n- 小写标签当原生 DOM，**组件名必须大写**。\n- 不要用引号包表达式：`src=\"{url}\"` 是字符串而不是变量。",
+      "questionHtml": "<p>什么是 JSX？为什么 React 使用 JSX？它如何嵌入表达式、最终编译成什么？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>定义</strong>：用类似模板的语法描述 UI，是 JS 的<strong>语法糖</strong>，本质仍是 JS。编译后变成 <code>React.createElement(type, props, ...children)</code>，求值得到普通 JS 对象。</p>\n</li>\n<li>\n<p><strong>为何使用</strong>：把标记和逻辑放在同一个组件里，实现关注点分离；视觉上更直观。React 不强制 JSX，但实践中几乎都用。</p>\n</li>\n<li>\n<p><strong>嵌入表达式</strong>：<code>{ }</code> 内可放变量、运算、函数调用等任意 JS 表达式。属性：字符串用引号，变量用 <code>{user.avatarUrl}</code>。属性名 <strong>camelCase</strong>（如 <code>tabIndex</code>、<code>className</code>）。</p>\n</li>\n<li>\n<p><strong>子元素</strong>：标签可嵌套多个子节点；DOM 信息可归纳为标签名、属性、子元素三部分。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-js\">const element = &lt;h1&gt;Hello world&lt;/h1&gt;\n// 等价于\nReact.createElement('h1', null, 'Hello world')\n</code></pre>\n<ul>\n<li>JSX 可作为值：赋值、传参、作为函数返回值。</li>\n<li><code>ReactDOM.render(element, document.getElementById('root'))</code> 把它挂到真实 DOM。</li>\n<li>需 Babel 转换；现代工具链默认已配。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>相邻 JSX 需要单一根（或 Fragment）。</li>\n<li>小写标签当原生 DOM，<strong>组件名必须大写</strong>。</li>\n<li>不要用引号包表达式：<code>src=&quot;{url}&quot;</code> 是字符串而不是变量。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/01.jsx.md",
+      "reference": [
+        "https://zh-hans.react.dev/learn/writing-markup-with-jsx"
+      ]
+    },
+    {
+      "id": "frontend-react-02",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "props"
+      ],
+      "difficulty": "easy",
+      "title": "React 的 props 是什么？函数组件和 class 组件如何接收？",
+      "question": "什么是 props？父子组件如何传值？使用时有哪些注意点？",
+      "answer": "1. **props**：父通过 JSX 属性传入的只读配置。函数组件用参数 `props`，class 用 `this.props`。缺省可用 `this.props.name || '点击'` 这类默认值。\n\n2. **传值**：`<Welcome name=\"Sara\" />` 或 `<Btn name=\"登录\" color=\"hotpink\" />`。数字、对象、函数用 `{ }`。所有属性组成一个 props 对象。\n\n3. **两种组件等效**：`function Welcome(props) { return <h1>{props.name}</h1> }` 与 `class Welcome extends React.Component { render() { return <h1>{this.props.name}</h1> } }`。\n\n4. **事件差异**：class 里常见 `onClick={() => this.props.onClick()}`；函数组件 `onClick={props.onClick}`（不要写成调用结果）。\n\n### 解释与扩展\n\n- 组件名必须大写，否则被当成原生标签。\n- 可组合复用：同一 `Welcome` 传不同 `name`。\n- props 单向流动，子不能改父的 props 对象来「通知」父，应回调函数（类似 Vue 的 $emit）。\n\n### 注意\n\n- props 应视为只读；要变的数据放 state。\n- 把函数当 props 时注意 class 方法的 `this`（bind 或箭头函数）。\n- 展开 `{...obj}` 会把多余字段也传下去，注意是否落到 DOM。",
+      "questionHtml": "<p>什么是 props？父子组件如何传值？使用时有哪些注意点？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>props</strong>：父通过 JSX 属性传入的只读配置。函数组件用参数 <code>props</code>，class 用 <code>this.props</code>。缺省可用 <code>this.props.name || '点击'</code> 这类默认值。</p>\n</li>\n<li>\n<p><strong>传值</strong>：<code>&lt;Welcome name=&quot;Sara&quot; /&gt;</code> 或 <code>&lt;Btn name=&quot;登录&quot; color=&quot;hotpink&quot; /&gt;</code>。数字、对象、函数用 <code>{ }</code>。所有属性组成一个 props 对象。</p>\n</li>\n<li>\n<p><strong>两种组件等效</strong>：<code>function Welcome(props) { return &lt;h1&gt;{props.name}&lt;/h1&gt; }</code> 与 <code>class Welcome extends React.Component { render() { return &lt;h1&gt;{this.props.name}&lt;/h1&gt; } }</code>。</p>\n</li>\n<li>\n<p><strong>事件差异</strong>：class 里常见 <code>onClick={() =&gt; this.props.onClick()}</code>；函数组件 <code>onClick={props.onClick}</code>（不要写成调用结果）。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>组件名必须大写，否则被当成原生标签。</li>\n<li>可组合复用：同一 <code>Welcome</code> 传不同 <code>name</code>。</li>\n<li>props 单向流动，子不能改父的 props 对象来「通知」父，应回调函数（类似 Vue 的 $emit）。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>props 应视为只读；要变的数据放 state。</li>\n<li>把函数当 props 时注意 class 方法的 <code>this</code>（bind 或箭头函数）。</li>\n<li>展开 <code>{...obj}</code> 会把多余字段也传下去，注意是否落到 DOM。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/02.props.md",
+      "reference": [
+        "https://zh-hans.react.dev/learn/passing-props-to-a-component"
+      ]
+    },
+    {
+      "id": "frontend-react-03",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "state",
+        "setState"
+      ],
+      "difficulty": "medium",
+      "title": "React 的 state 和 setState 如何工作？事件处理为什么要 bind this？",
+      "question": "class 组件中 state 是什么？`setState` 做什么？为什么 `onClick={this.handleClick.bind(this)}`？",
+      "answer": "1. **state**：组件内部私有、完全受控的状态（类似 Vue 的 `data`）。在 `constructor` 里 `this.state = { num: 0 }`。state 变则重新 `render`。\n\n2. **setState**：传入对象（或部分字段），触发更新并重新渲染。如点击 +1：`this.setState({ num: this.state.num + 1 })`；切换显隐：`this.setState({ show: !this.state.show })`。\n\n3. **bind this**：class 方法默认不是自动绑定实例。作为事件回调抽出调用时 `this` 为 `undefined`。常用：`onClick={this.handleClick.bind(this)}`、构造函数里 `this.handleClick = this.handleClick.bind(this)`，或类字段箭头函数。\n\n4. **更新特点**：多次 `setState` 对象形式会**合并（merge）**到当前 state，然后走更新流程触发 render（可能批处理）。\n\n### 解释与扩展\n\n- 构造函数要 `super(props)`，才能在 constructor 里用 props。\n- 不要直接 `this.state.num++` 再期望视图更新，必须走 `setState`。\n- 事件名 camelCase，传入函数而不是字符串：`onClick={handler}`。\n\n### 注意\n\n- `setState` 可能异步，紧接着读 `this.state` 不一定是新值；需要基于上一次结果时用函数式 `setState((s) => ...)`。\n- `render` 里禁止 `setState`，否则死循环。\n- 对象形式是**浅合并**，嵌套对象要自己展开。",
+      "questionHtml": "<p>class 组件中 state 是什么？<code>setState</code> 做什么？为什么 <code>onClick={this.handleClick.bind(this)}</code>？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>state</strong>：组件内部私有、完全受控的状态（类似 Vue 的 <code>data</code>）。在 <code>constructor</code> 里 <code>this.state = { num: 0 }</code>。state 变则重新 <code>render</code>。</p>\n</li>\n<li>\n<p><strong>setState</strong>：传入对象（或部分字段），触发更新并重新渲染。如点击 +1：<code>this.setState({ num: this.state.num + 1 })</code>；切换显隐：<code>this.setState({ show: !this.state.show })</code>。</p>\n</li>\n<li>\n<p><strong>bind this</strong>：class 方法默认不是自动绑定实例。作为事件回调抽出调用时 <code>this</code> 为 <code>undefined</code>。常用：<code>onClick={this.handleClick.bind(this)}</code>、构造函数里 <code>this.handleClick = this.handleClick.bind(this)</code>，或类字段箭头函数。</p>\n</li>\n<li>\n<p><strong>更新特点</strong>：多次 <code>setState</code> 对象形式会**合并（merge）**到当前 state，然后走更新流程触发 render（可能批处理）。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>构造函数要 <code>super(props)</code>，才能在 constructor 里用 props。</li>\n<li>不要直接 <code>this.state.num++</code> 再期望视图更新，必须走 <code>setState</code>。</li>\n<li>事件名 camelCase，传入函数而不是字符串：<code>onClick={handler}</code>。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li><code>setState</code> 可能异步，紧接着读 <code>this.state</code> 不一定是新值；需要基于上一次结果时用函数式 <code>setState((s) =&gt; ...)</code>。</li>\n<li><code>render</code> 里禁止 <code>setState</code>，否则死循环。</li>\n<li>对象形式是<strong>浅合并</strong>，嵌套对象要自己展开。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/03.state-setstate.md",
+      "reference": [
+        "https://zh-hans.react.dev/reference/react/Component#setstate"
+      ]
+    },
+    {
+      "id": "frontend-react-04",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "生命周期"
+      ],
+      "difficulty": "medium",
+      "title": "React class 组件挂载和更新阶段有哪些生命周期？",
+      "question": "请说明 React class 组件首次挂载、更新、卸载的生命周期顺序。`componentDidMount` 和 `componentWillUnmount` 分别适合做什么？",
+      "answer": "1. **首次挂载**：`constructor`（只一次，初始化 state）→ `componentWillMount` → `render`（必须，返回 JSX，不可改 state）→ `componentDidMount`（子组件已挂上，可用 refs）。\n\n2. **更新**：`setState` 或 props 变化。`shouldComponentUpdate(nextProps, nextState)` 返回 bool 决定是否继续 → `componentWillUpdate` → `render` → `componentDidUpdate`。子组件在父 render 时还会走 `componentWillReceiveProps`。\n\n3. **卸载**：`componentWillUnmount`。DidMount 里注册的定时器、订阅要在这里清掉。\n\n4. **典型**：Clock 在 DidMount 里 `setInterval`，WillUnmount 里 `clearInterval`。挂载是第一次插入 DOM，卸载是从 DOM 删除。\n\n### 解释与扩展\n\n- 同一 DOM 节点上的 `<Clock />` 只创建一个 class 实例，所以能用 state 和生命周期。\n- `shouldComponentUpdate` 返回 `false` 可跳过渲染（性能优化）。\n- 首次走 WillMount/DidMount；之后对应 WillUpdate/DidUpdate。\n- 新版应用更推荐 Hooks；面试 class 题仍要能画这条链。部分 Will* 已废弃（UNSAFE_），口述时点明即可。\n\n### 注意\n\n- `render` 必须纯，不能改 state、不能发请求。\n- `componentWillReceiveProps` 父每次 render 子都会调，即使 props 没变。\n- 卸载后还 `setState` 会告警，必须清副作用。",
+      "questionHtml": "<p>请说明 React class 组件首次挂载、更新、卸载的生命周期顺序。<code>componentDidMount</code> 和 <code>componentWillUnmount</code> 分别适合做什么？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>首次挂载</strong>：<code>constructor</code>（只一次，初始化 state）→ <code>componentWillMount</code> → <code>render</code>（必须，返回 JSX，不可改 state）→ <code>componentDidMount</code>（子组件已挂上，可用 refs）。</p>\n</li>\n<li>\n<p><strong>更新</strong>：<code>setState</code> 或 props 变化。<code>shouldComponentUpdate(nextProps, nextState)</code> 返回 bool 决定是否继续 → <code>componentWillUpdate</code> → <code>render</code> → <code>componentDidUpdate</code>。子组件在父 render 时还会走 <code>componentWillReceiveProps</code>。</p>\n</li>\n<li>\n<p><strong>卸载</strong>：<code>componentWillUnmount</code>。DidMount 里注册的定时器、订阅要在这里清掉。</p>\n</li>\n<li>\n<p><strong>典型</strong>：Clock 在 DidMount 里 <code>setInterval</code>，WillUnmount 里 <code>clearInterval</code>。挂载是第一次插入 DOM，卸载是从 DOM 删除。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>同一 DOM 节点上的 <code>&lt;Clock /&gt;</code> 只创建一个 class 实例，所以能用 state 和生命周期。</li>\n<li><code>shouldComponentUpdate</code> 返回 <code>false</code> 可跳过渲染（性能优化）。</li>\n<li>首次走 WillMount/DidMount；之后对应 WillUpdate/DidUpdate。</li>\n<li>新版应用更推荐 Hooks；面试 class 题仍要能画这条链。部分 Will* 已废弃（UNSAFE_），口述时点明即可。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li><code>render</code> 必须纯，不能改 state、不能发请求。</li>\n<li><code>componentWillReceiveProps</code> 父每次 render 子都会调，即使 props 没变。</li>\n<li>卸载后还 <code>setState</code> 会告警，必须清副作用。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/04.lifecycle.md",
+      "reference": [
+        "https://zh-hans.react.dev/reference/react/Component"
+      ]
+    },
+    {
+      "id": "frontend-react-05",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "Context"
+      ],
+      "difficulty": "medium",
+      "title": "React Context 解决什么问题？旧版 API 如何跨级传值？",
+      "question": "为什么需要 Context？如何实现越级传递 props？（可按笔记中的 legacy API 回答，并补充现代写法）",
+      "answer": "1. **动机**：避免中间层无意义地把 props 一层层往下传（prop drilling），实现**越级**传值。\n\n2. **笔记中的旧 API（0.14+ 实验）**：祖先实现 `getChildContext()` 返回数据，并声明 `childContextTypes`；后代声明 `contextTypes`，用 `this.context.hello` 读取。中间组件不用接力 props。\n\n3. **现代 API**：`React.createContext`，祖先 `<MyContext.Provider value={...}>`，后代 `useContext(MyContext)` 或 `MyContext.Consumer`。\n\n### 解释与扩展\n\n- 旧 API 需要 `prop-types` 声明 context 字段类型，否则拿不到。\n- Context 适合主题、当前用户、语言等「树的一枝都需要」的数据；频繁变化的数据可能拖累所有消费者。\n- Redux 的 Provider 也是基于 Context 把 store 注入子树。\n\n### 注意\n\n- 笔记写明旧 Context 实验性强、不推荐；面试应能说新旧两套，项目用新 API。\n- 未匹配的 `contextTypes` / 未包 Provider 时读到的是默认值或空。\n- 不要用 Context 代替所有状态管理；局部 state 仍更清晰。",
+      "questionHtml": "<p>为什么需要 Context？如何实现越级传递 props？（可按笔记中的 legacy API 回答，并补充现代写法）</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>动机</strong>：避免中间层无意义地把 props 一层层往下传（prop drilling），实现<strong>越级</strong>传值。</p>\n</li>\n<li>\n<p><strong>笔记中的旧 API（0.14+ 实验）</strong>：祖先实现 <code>getChildContext()</code> 返回数据，并声明 <code>childContextTypes</code>；后代声明 <code>contextTypes</code>，用 <code>this.context.hello</code> 读取。中间组件不用接力 props。</p>\n</li>\n<li>\n<p><strong>现代 API</strong>：<code>React.createContext</code>，祖先 <code>&lt;MyContext.Provider value={...}&gt;</code>，后代 <code>useContext(MyContext)</code> 或 <code>MyContext.Consumer</code>。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>旧 API 需要 <code>prop-types</code> 声明 context 字段类型，否则拿不到。</li>\n<li>Context 适合主题、当前用户、语言等「树的一枝都需要」的数据；频繁变化的数据可能拖累所有消费者。</li>\n<li>Redux 的 Provider 也是基于 Context 把 store 注入子树。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>笔记写明旧 Context 实验性强、不推荐；面试应能说新旧两套，项目用新 API。</li>\n<li>未匹配的 <code>contextTypes</code> / 未包 Provider 时读到的是默认值或空。</li>\n<li>不要用 Context 代替所有状态管理；局部 state 仍更清晰。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/05.context.md",
+      "reference": [
+        "https://zh-hans.react.dev/learn/passing-data-deeply-with-context"
+      ]
+    },
+    {
+      "id": "frontend-react-06",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "Hooks",
+        "useState"
+      ],
+      "difficulty": "easy",
+      "title": "useState 做了什么？和 class 的 this.state / setState 有何不同？",
+      "question": "`useState` 的参数和返回值是什么？为什么函数组件退出后 state 还能保留？和 class 的 setState 合并策略有何不同？",
+      "answer": "1. **模式**：`const [count, setCount] = useState(0)`。参数是**初始 state**；返回当前值 + 更新函数。不必是对象，数字、字符串、数组都可以。\n\n2. **为何叫 use 不叫 create**：state 只在首次渲染创建，之后返回当前值。函数执行结束局部变量会消失，**state 由 React 在重渲染间记住**。\n\n3. **多个 state**：多次调用 `useState`，或一个 state 存对象。更新是**替换整个该 state 变量，不是浅合并**（与 class `this.setState` 不同）。\n\n4. **限制**：Hook 在 class 内部不起作用；用来在函数组件里取代 class 的 state。\n\n### 解释与扩展\n\n- 点击：`setCount(count + 1)` 类似 `this.setState({ count: this.state.count + 1 })`。\n- 相关数据可放同一对象；字段彼此独立则拆开，可读性更好。逻辑复杂可上 `useReducer`。\n- 初始值若计算贵，可用惰性函数 `useState(() => ...)`（面试加分）。\n\n### 注意\n\n- 直接改 `count++` 或改对象内部不调用 setter，不会触发渲染。\n- 对象 state 要更新时展开：`setUser({ ...user, name })`。\n- Hook 调用顺序必须稳定（见 Hook 规则题）。",
+      "questionHtml": "<p><code>useState</code> 的参数和返回值是什么？为什么函数组件退出后 state 还能保留？和 class 的 setState 合并策略有何不同？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>模式</strong>：<code>const [count, setCount] = useState(0)</code>。参数是<strong>初始 state</strong>；返回当前值 + 更新函数。不必是对象，数字、字符串、数组都可以。</p>\n</li>\n<li>\n<p><strong>为何叫 use 不叫 create</strong>：state 只在首次渲染创建，之后返回当前值。函数执行结束局部变量会消失，<strong>state 由 React 在重渲染间记住</strong>。</p>\n</li>\n<li>\n<p><strong>多个 state</strong>：多次调用 <code>useState</code>，或一个 state 存对象。更新是<strong>替换整个该 state 变量，不是浅合并</strong>（与 class <code>this.setState</code> 不同）。</p>\n</li>\n<li>\n<p><strong>限制</strong>：Hook 在 class 内部不起作用；用来在函数组件里取代 class 的 state。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>点击：<code>setCount(count + 1)</code> 类似 <code>this.setState({ count: this.state.count + 1 })</code>。</li>\n<li>相关数据可放同一对象；字段彼此独立则拆开，可读性更好。逻辑复杂可上 <code>useReducer</code>。</li>\n<li>初始值若计算贵，可用惰性函数 <code>useState(() =&gt; ...)</code>（面试加分）。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>直接改 <code>count++</code> 或改对象内部不调用 setter，不会触发渲染。</li>\n<li>对象 state 要更新时展开：<code>setUser({ ...user, name })</code>。</li>\n<li>Hook 调用顺序必须稳定（见 Hook 规则题）。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/06.useState.md",
+      "reference": [
+        "https://zh-hans.react.dev/reference/react/useState"
+      ]
+    },
+    {
+      "id": "frontend-react-07",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "Hooks",
+        "useEffect"
+      ],
+      "difficulty": "medium",
+      "title": "useEffect 如何对应 class 生命周期？cleanup 和依赖数组怎么用？",
+      "question": "`useEffect` 相当于哪些 class 生命周期？什么是需要清除的副作用？依赖数组 `[]` 和 `[count]` 有何区别？",
+      "answer": "1. **对应关系**：可看作 `componentDidMount`、`componentDidUpdate`、`componentWillUnmount` 的**组合**。默认在**每次渲染之后**（含首次）执行 effect；React 保证此时 DOM 已更新。\n\n2. **副作用**：请求、订阅、改 DOM（如 `document.title`）等。class 里常在 DidMount 和 DidUpdate **写两遍相同代码**；effect 按「每次渲染后」思考即可。\n\n3. **cleanup**：effect 可返回清除函数。订阅在 effect 里注册，在下次 effect 前及卸载时解除，避免泄漏。与 WillUnmount「只在卸载清一次」不同，更新前也会清。\n\n4. **依赖**：第二参数数组。`[count]` 仅 count 变才重跑；`[]` 近似只在挂载/卸载跑（闭包里的 props/state 会是初始值）。\n\n### 解释与扩展\n\n- 多个 effect 可拆分关注点（改标题 vs 订阅好友状态）。\n- `useEffect` 不阻塞浏览器绘制；要同步量布局用 `useLayoutEffect`。\n- 依赖必须包含 effect 用到的外部可变值，否则会读到过期闭包。推荐 `eslint-plugin-react-hooks` 的 `exhaustive-deps`。\n\n### 注意\n\n- 忘记在 DidUpdate 处理 props 变化是 class 常见 bug；effect 每次按依赖重订阅就是为了避免这个。\n- 不要把 `[]` 当万能，漏依赖会出很难查的 bug。\n- render 阶段不要做副作用，全部放进 effect。",
+      "questionHtml": "<p><code>useEffect</code> 相当于哪些 class 生命周期？什么是需要清除的副作用？依赖数组 <code>[]</code> 和 <code>[count]</code> 有何区别？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>对应关系</strong>：可看作 <code>componentDidMount</code>、<code>componentDidUpdate</code>、<code>componentWillUnmount</code> 的<strong>组合</strong>。默认在<strong>每次渲染之后</strong>（含首次）执行 effect；React 保证此时 DOM 已更新。</p>\n</li>\n<li>\n<p><strong>副作用</strong>：请求、订阅、改 DOM（如 <code>document.title</code>）等。class 里常在 DidMount 和 DidUpdate <strong>写两遍相同代码</strong>；effect 按「每次渲染后」思考即可。</p>\n</li>\n<li>\n<p><strong>cleanup</strong>：effect 可返回清除函数。订阅在 effect 里注册，在下次 effect 前及卸载时解除，避免泄漏。与 WillUnmount「只在卸载清一次」不同，更新前也会清。</p>\n</li>\n<li>\n<p><strong>依赖</strong>：第二参数数组。<code>[count]</code> 仅 count 变才重跑；<code>[]</code> 近似只在挂载/卸载跑（闭包里的 props/state 会是初始值）。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>多个 effect 可拆分关注点（改标题 vs 订阅好友状态）。</li>\n<li><code>useEffect</code> 不阻塞浏览器绘制；要同步量布局用 <code>useLayoutEffect</code>。</li>\n<li>依赖必须包含 effect 用到的外部可变值，否则会读到过期闭包。推荐 <code>eslint-plugin-react-hooks</code> 的 <code>exhaustive-deps</code>。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>忘记在 DidUpdate 处理 props 变化是 class 常见 bug；effect 每次按依赖重订阅就是为了避免这个。</li>\n<li>不要把 <code>[]</code> 当万能，漏依赖会出很难查的 bug。</li>\n<li>render 阶段不要做副作用，全部放进 effect。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/07.useEffect.md",
+      "reference": [
+        "https://zh-hans.react.dev/reference/react/useEffect"
+      ]
+    },
+    {
+      "id": "frontend-react-08",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "Hooks"
+      ],
+      "difficulty": "medium",
+      "title": "React Hooks 有哪些使用规则？为什么只能在顶层调用？",
+      "question": "使用 Hook 必须遵守哪两条规则？React 如何把 state 和某次 `useState` 对应起来？条件逻辑应写在哪里？",
+      "answer": "1. **只在最顶层调用**：不要在循环、条件、嵌套函数里调用 Hook，且放在任何 `return` 之前。保证每次渲染**调用顺序相同**。\n\n2. **只在 React 函数中调用**：函数组件，或自定义 Hook。不要在普通 JS 函数里调。\n\n3. **对应关系**：React **靠调用顺序**把 state 对上每一次 `useState` / `useEffect`。顺序乱了就会错位。\n\n4. **条件 effect**：判断写在 Hook **内部**，而不是用 if 包住 `useEffect`。\n\n### 解释与扩展\n\n```jsx\nuseEffect(function persistForm() {\n  if (name !== '') {\n    localStorage.setItem('formData', name)\n  }\n})\n```\n\n- 用 `eslint-plugin-react-hooks`：`rules-of-hooks` 为 error，`exhaustive-deps` 为 warn。\n- 自定义 Hook 也必须遵守同样规则，这样内部的 Hook 顺序仍然稳定。\n\n### 注意\n\n- 早期 return 写在 Hook 前面会破坏顺序，属于违规。\n- 两条规则是面试高频；能讲清「顺序即身份」即可。",
+      "questionHtml": "<p>使用 Hook 必须遵守哪两条规则？React 如何把 state 和某次 <code>useState</code> 对应起来？条件逻辑应写在哪里？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>只在最顶层调用</strong>：不要在循环、条件、嵌套函数里调用 Hook，且放在任何 <code>return</code> 之前。保证每次渲染<strong>调用顺序相同</strong>。</p>\n</li>\n<li>\n<p><strong>只在 React 函数中调用</strong>：函数组件，或自定义 Hook。不要在普通 JS 函数里调。</p>\n</li>\n<li>\n<p><strong>对应关系</strong>：React <strong>靠调用顺序</strong>把 state 对上每一次 <code>useState</code> / <code>useEffect</code>。顺序乱了就会错位。</p>\n</li>\n<li>\n<p><strong>条件 effect</strong>：判断写在 Hook <strong>内部</strong>，而不是用 if 包住 <code>useEffect</code>。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-jsx\">useEffect(function persistForm() {\n  if (name !== '') {\n    localStorage.setItem('formData', name)\n  }\n})\n</code></pre>\n<ul>\n<li>用 <code>eslint-plugin-react-hooks</code>：<code>rules-of-hooks</code> 为 error，<code>exhaustive-deps</code> 为 warn。</li>\n<li>自定义 Hook 也必须遵守同样规则，这样内部的 Hook 顺序仍然稳定。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>早期 return 写在 Hook 前面会破坏顺序，属于违规。</li>\n<li>两条规则是面试高频；能讲清「顺序即身份」即可。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/08.hook-rules.md",
+      "reference": [
+        "https://zh-hans.react.dev/warnings/invalid-hook-call-warning"
+      ]
+    },
+    {
+      "id": "frontend-react-09",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "Redux"
+      ],
+      "difficulty": "medium",
+      "title": "Redux 的三条原则是什么？state、action、reducer 如何配合？",
+      "question": "Redux 是什么？三条原则是什么？为什么说组件不应自己长期持有业务 state？",
+      "answer": "1. **定位**：JS 状态容器，提供可预测的状态管理；在 React 里做组件间数据流。是对 Flux 的简化，reducer 来自纯函数思想。\n\n2. **三条原则**\n   - 整个应用的 state 以对象树存在**单一 store**。\n   - 改变 state 的唯一方式是 **dispatch 一个 action**（描述发生了什么的对象）。\n   - 用纯函数 **reducer** 描述 action 如何算出新 state：`(state, action) => newState`。\n\n3. **数据流**：View 派发 action → reducer 计算新 state 写入 store → 订阅的组件更新。组件尽量不私藏应共享的业务数据。\n\n### 解释与扩展\n\n- 纯函数：相同输入相同输出、无副作用，便于测试和时间旅行调试。\n- 作者名言：props 还用不好就不要急着学 Redux。局部 UI 状态不必进 store。\n- 异步副作用需中间件（笔记中的 Thunk）：action 可以是函数，内部再 dispatch。\n\n### 注意\n\n- reducer 里不要改原对象，应返回新对象/新引用。\n- 不是所有 React 项目都需要 Redux；简单父子传参即可。\n- 面试把「单 store、dispatch action、纯 reducer」三点说全。",
+      "questionHtml": "<p>Redux 是什么？三条原则是什么？为什么说组件不应自己长期持有业务 state？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>定位</strong>：JS 状态容器，提供可预测的状态管理；在 React 里做组件间数据流。是对 Flux 的简化，reducer 来自纯函数思想。</p>\n</li>\n<li>\n<p><strong>三条原则</strong></p>\n<ul>\n<li>整个应用的 state 以对象树存在<strong>单一 store</strong>。</li>\n<li>改变 state 的唯一方式是 <strong>dispatch 一个 action</strong>（描述发生了什么的对象）。</li>\n<li>用纯函数 <strong>reducer</strong> 描述 action 如何算出新 state：<code>(state, action) =&gt; newState</code>。</li>\n</ul>\n</li>\n<li>\n<p><strong>数据流</strong>：View 派发 action → reducer 计算新 state 写入 store → 订阅的组件更新。组件尽量不私藏应共享的业务数据。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>纯函数：相同输入相同输出、无副作用，便于测试和时间旅行调试。</li>\n<li>作者名言：props 还用不好就不要急着学 Redux。局部 UI 状态不必进 store。</li>\n<li>异步副作用需中间件（笔记中的 Thunk）：action 可以是函数，内部再 dispatch。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>reducer 里不要改原对象，应返回新对象/新引用。</li>\n<li>不是所有 React 项目都需要 Redux；简单父子传参即可。</li>\n<li>面试把「单 store、dispatch action、纯 reducer」三点说全。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/09.redux-basics.md",
+      "reference": [
+        "https://redux.js.org/understanding/thinking-in-redux/three-principles"
+      ]
+    },
+    {
+      "id": "frontend-react-10",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "Redux",
+        "react-redux"
+      ],
+      "difficulty": "medium",
+      "title": "react-redux 的 Provider 和 connect 如何把组件接到 store？",
+      "question": "React 组件和 Redux store 默认没有关系，如何连接？`Provider` 和 `connect` / `mapStateToProps` 分别做什么？",
+      "answer": "1. **react-redux**：官方绑定。核心接口 **Provider** 和 **connect**。\n\n2. **Provider**：`<Provider store={store}>` 包住应用。只有被包住的子树里 `connect` 才能拿到 store（底层是 Context）。\n\n3. **connect**：`connect(mapStateToProps, mapDispatchToProps)(Component)`。把 store 的一部分映射为当前组件 props。\n\n4. **mapStateToProps**：`(state) => ({ comments: state.comments })`，映射后组件用 `this.props.comments`。store 数据很多，这里做选取。\n\n### 解释与扩展\n\n- 只有 connect 没有 Provider 会找不到 store。\n- 发 action 可通过 `mapDispatchToProps` 或 `this.props.dispatch`，不必每个组件 import store。\n- 现代写法多用 `useSelector` / `useDispatch`，原理仍是订阅 store + Context。\n\n### 注意\n\n- `mapStateToProps` 返回新对象会触发重渲染，选取粒度要合适。\n- connect 柯里化两个括号；装饰器 `@connect` 曾出现过，不稳定，了解即可。",
+      "questionHtml": "<p>React 组件和 Redux store 默认没有关系，如何连接？<code>Provider</code> 和 <code>connect</code> / <code>mapStateToProps</code> 分别做什么？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>react-redux</strong>：官方绑定。核心接口 <strong>Provider</strong> 和 <strong>connect</strong>。</p>\n</li>\n<li>\n<p><strong>Provider</strong>：<code>&lt;Provider store={store}&gt;</code> 包住应用。只有被包住的子树里 <code>connect</code> 才能拿到 store（底层是 Context）。</p>\n</li>\n<li>\n<p><strong>connect</strong>：<code>connect(mapStateToProps, mapDispatchToProps)(Component)</code>。把 store 的一部分映射为当前组件 props。</p>\n</li>\n<li>\n<p><strong>mapStateToProps</strong>：<code>(state) =&gt; ({ comments: state.comments })</code>，映射后组件用 <code>this.props.comments</code>。store 数据很多，这里做选取。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>只有 connect 没有 Provider 会找不到 store。</li>\n<li>发 action 可通过 <code>mapDispatchToProps</code> 或 <code>this.props.dispatch</code>，不必每个组件 import store。</li>\n<li>现代写法多用 <code>useSelector</code> / <code>useDispatch</code>，原理仍是订阅 store + Context。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li><code>mapStateToProps</code> 返回新对象会触发重渲染，选取粒度要合适。</li>\n<li>connect 柯里化两个括号；装饰器 <code>@connect</code> 曾出现过，不稳定，了解即可。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/10.connect.md",
+      "reference": [
+        "https://react-redux.js.org/api/provider",
+        "https://react-redux.js.org/api/connect"
+      ]
+    },
+    {
+      "id": "frontend-react-11",
+      "type": "frontend",
+      "category": "react",
+      "categoryName": "React",
+      "tags": [
+        "React",
+        "React Router"
+      ],
+      "difficulty": "medium",
+      "title": "React Router 如何配置？BrowserRouter、Route、Link 以及 history 是什么？",
+      "question": "React Router 如何实现 SPA 路由？`BrowserRouter` 和 hash 有何不同？`Route`、`Link`、`Switch`、`withRouter` 怎么用？",
+      "answer": "1. **定位**：官方路由库，通过管理 URL 切换组件和状态。Web 端常用 `react-router-dom`。\n\n2. **基本结构**：最外层 `BrowserRouter`（笔记里常 `as Router`）。`Route` 的 `path` 匹配 URL，`component` 指定组件；`exact` 精确匹配。`Link to=\"/home\"` 声明式跳转。\n\n3. **history**：监听地址栏并把 URL 解析成对象。常见：`BrowserRouter`（History API，无 `#` 的正常路径）、hash（`#` 切换）、内存 history（服务端/测试）。放在顶层后，被匹配的组件 props 上有 `history`、`location`、`match`。\n\n4. **其它**：`Switch` 只渲染第一个匹配的 Route/Redirect；不在路由树上的组件用 `withRouter` 注入路由 props。\n\n### 解释与扩展\n\n- `history.push` / `goBack` 做编程式导航；`match.params` 拿动态段。\n- 条件渲染路由可用 `Route render={({ location }) => ...}`。\n- 与 Vue Router 对比：都是 SPA 路由；React 用组件组合，Vue 用 `router-view` + 配置表。\n\n### 注意\n\n- BrowserRouter 生产环境同样需要服务端 fallback，否则刷新 404。\n- v6 API 改为 `Routes`/`Route element={}`，面试按项目版本说；笔记是 v4/v5 风格（`component`、`Switch`）。\n- `Link` 不要用成普通 `<a>` 否则整页刷新。",
+      "questionHtml": "<p>React Router 如何实现 SPA 路由？<code>BrowserRouter</code> 和 hash 有何不同？<code>Route</code>、<code>Link</code>、<code>Switch</code>、<code>withRouter</code> 怎么用？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>定位</strong>：官方路由库，通过管理 URL 切换组件和状态。Web 端常用 <code>react-router-dom</code>。</p>\n</li>\n<li>\n<p><strong>基本结构</strong>：最外层 <code>BrowserRouter</code>（笔记里常 <code>as Router</code>）。<code>Route</code> 的 <code>path</code> 匹配 URL，<code>component</code> 指定组件；<code>exact</code> 精确匹配。<code>Link to=&quot;/home&quot;</code> 声明式跳转。</p>\n</li>\n<li>\n<p><strong>history</strong>：监听地址栏并把 URL 解析成对象。常见：<code>BrowserRouter</code>（History API，无 <code>#</code> 的正常路径）、hash（<code>#</code> 切换）、内存 history（服务端/测试）。放在顶层后，被匹配的组件 props 上有 <code>history</code>、<code>location</code>、<code>match</code>。</p>\n</li>\n<li>\n<p><strong>其它</strong>：<code>Switch</code> 只渲染第一个匹配的 Route/Redirect；不在路由树上的组件用 <code>withRouter</code> 注入路由 props。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li><code>history.push</code> / <code>goBack</code> 做编程式导航；<code>match.params</code> 拿动态段。</li>\n<li>条件渲染路由可用 <code>Route render={({ location }) =&gt; ...}</code>。</li>\n<li>与 Vue Router 对比：都是 SPA 路由；React 用组件组合，Vue 用 <code>router-view</code> + 配置表。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>BrowserRouter 生产环境同样需要服务端 fallback，否则刷新 404。</li>\n<li>v6 API 改为 <code>Routes</code>/<code>Route element={}</code>，面试按项目版本说；笔记是 v4/v5 风格（<code>component</code>、<code>Switch</code>）。</li>\n<li><code>Link</code> 不要用成普通 <code>&lt;a&gt;</code> 否则整页刷新。</li>\n</ul>\n",
+      "sourcePath": "frontend/react/11.react-router.md",
+      "reference": [
+        "https://reactrouter.com/"
+      ]
+    },
+    {
+      "id": "frontend-ts-01",
+      "type": "frontend",
+      "category": "ts",
+      "categoryName": "TypeScript",
+      "tags": [
+        "TypeScript",
+        "基础类型"
+      ],
+      "difficulty": "easy",
+      "title": "TypeScript 有哪些基础类型？类型注解、推断和断言分别是什么？",
+      "question": "请介绍 TypeScript 的基础类型，并说明类型注解、类型推断、类型断言的区别。类型检查发生在什么阶段？",
+      "answer": "1. **基础类型**：与 JS 对齐的有 `boolean`、`number`、`string`、数组（`T[]` / `Array<T>`）、`null`、`undefined`、`object`；TS 补充了元组、`enum`、`any`、`void`、`never`。\n\n2. **类型注解**：显式写出类型，如 `let isDone: boolean = false`。编译器按注解做检查。\n\n3. **类型推断**：未写注解时，TS 根据初始化、默认参数、返回值等自动推断，如 `let x = 3` 推断为 `number`。\n\n4. **类型断言**：程序员比编译器更清楚类型时，用 `<string>value` 或 `value as string` 告诉编译器。**只在编译期生效**，不做运行时转换或检查。JSX 里只能用 `as`。\n\n### 解释与扩展\n\n- **数组 vs 元组**：`number[]` 元素同类型；`[string, number]` 长度与各位置类型固定。TS 3.1 后访问越界元素会报错。\n- **enum**：给一组数值起名字，默认从 0 编号，也可反向由值查名字。\n- **any**：跳过检查，适合改写旧代码或类型未知的动态数据，会丢失类型信息。\n- **void**：通常作无返回值函数的返回类型。\n- **never**：永不返回（抛错、死循环）；是任何类型的子类型，`any` 也不能赋给 `never`。\n- **object**：非原始类型。默认 `null`/`undefined` 是所有类型的子类型；开启 `--strictNullChecks` 后需用联合类型显式包含。\n\n### 注意\n\n- TS 类型是**编译期**的：编译成 JS 后注解和断言都会擦除，运行时没有这些类型。\n- 断言不是类型转换，滥用会把错误推迟到运行时。\n- 面试可顺带对比：注解是「我声明」、推断是「编译器猜」、断言是「请相信我」。",
+      "questionHtml": "<p>请介绍 TypeScript 的基础类型，并说明类型注解、类型推断、类型断言的区别。类型检查发生在什么阶段？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>基础类型</strong>：与 JS 对齐的有 <code>boolean</code>、<code>number</code>、<code>string</code>、数组（<code>T[]</code> / <code>Array&lt;T&gt;</code>）、<code>null</code>、<code>undefined</code>、<code>object</code>；TS 补充了元组、<code>enum</code>、<code>any</code>、<code>void</code>、<code>never</code>。</p>\n</li>\n<li>\n<p><strong>类型注解</strong>：显式写出类型，如 <code>let isDone: boolean = false</code>。编译器按注解做检查。</p>\n</li>\n<li>\n<p><strong>类型推断</strong>：未写注解时，TS 根据初始化、默认参数、返回值等自动推断，如 <code>let x = 3</code> 推断为 <code>number</code>。</p>\n</li>\n<li>\n<p><strong>类型断言</strong>：程序员比编译器更清楚类型时，用 <code>&lt;string&gt;value</code> 或 <code>value as string</code> 告诉编译器。<strong>只在编译期生效</strong>，不做运行时转换或检查。JSX 里只能用 <code>as</code>。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li><strong>数组 vs 元组</strong>：<code>number[]</code> 元素同类型；<code>[string, number]</code> 长度与各位置类型固定。TS 3.1 后访问越界元素会报错。</li>\n<li><strong>enum</strong>：给一组数值起名字，默认从 0 编号，也可反向由值查名字。</li>\n<li><strong>any</strong>：跳过检查，适合改写旧代码或类型未知的动态数据，会丢失类型信息。</li>\n<li><strong>void</strong>：通常作无返回值函数的返回类型。</li>\n<li><strong>never</strong>：永不返回（抛错、死循环）；是任何类型的子类型，<code>any</code> 也不能赋给 <code>never</code>。</li>\n<li><strong>object</strong>：非原始类型。默认 <code>null</code>/<code>undefined</code> 是所有类型的子类型；开启 <code>--strictNullChecks</code> 后需用联合类型显式包含。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>TS 类型是<strong>编译期</strong>的：编译成 JS 后注解和断言都会擦除，运行时没有这些类型。</li>\n<li>断言不是类型转换，滥用会把错误推迟到运行时。</li>\n<li>面试可顺带对比：注解是「我声明」、推断是「编译器猜」、断言是「请相信我」。</li>\n</ul>\n",
+      "sourcePath": "frontend/ts/01.basic-types.md",
+      "reference": [
+        "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+        "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions"
+      ]
+    },
+    {
+      "id": "frontend-ts-02",
+      "type": "frontend",
+      "category": "ts",
+      "categoryName": "TypeScript",
+      "tags": [
+        "TypeScript",
+        "接口"
+      ],
+      "difficulty": "easy",
+      "title": "TypeScript 接口如何描述对象？可选、只读、索引签名和 implements 怎么用？",
+      "question": "TypeScript 中接口的作用是什么？如何定义可选属性、只读属性、索引签名？类如何 `implements` 接口？",
+      "answer": "1. **接口**：为对象的「外形」命名，做结构性类型检查（鸭式辨型）。只要形状匹配即可，不必显式声明 implements（函数参数场景）。\n\n2. **可选属性**：属性名后加 `?`，如 `color?: string`。可预定义可能存在的字段，并捕获拼写错误。\n\n3. **只读属性**：`readonly x: number`，创建后不可再赋值。数组可用 `ReadonlyArray<T>`。变量用 `const`，对象属性用 `readonly`。\n\n4. **索引签名**：`[index: number]: string` 或 `[propName: string]: any`，描述「用索引取值」的字典/数组形态；也可用来允许额外属性。\n\n5. **implements**：类用 `implements` 强制符合接口契约，检查的是**实例公共部分**，不检查构造函数（静态部分）。\n\n### 解释与扩展\n\n- 对象字面量会做**额外属性检查**；拼错字段名会报错。绕过可用断言、索引签名，或先赋给中间变量（简单场景不建议绕过）。\n- 接口还能描述**函数类型**（调用签名）、可索引类型；可继承多个接口。\n- 数字索引的返回类型必须是字符串索引返回类型的子类型（因为 JS 会把数字索引转成字符串）。\n- 混合类型：同一对象既可当函数调用，又带属性和方法（axios 实例就是典型）。\n\n### 注意\n\n- `implements` 只约束实例，构造器签名要单独用接口传给工厂函数（如 `new (h, m) => ClockInterface`）。\n- 接口继承带 `private`/`protected` 的类时，只有该类的子类才能实现该接口。",
+      "questionHtml": "<p>TypeScript 中接口的作用是什么？如何定义可选属性、只读属性、索引签名？类如何 <code>implements</code> 接口？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>接口</strong>：为对象的「外形」命名，做结构性类型检查（鸭式辨型）。只要形状匹配即可，不必显式声明 implements（函数参数场景）。</p>\n</li>\n<li>\n<p><strong>可选属性</strong>：属性名后加 <code>?</code>，如 <code>color?: string</code>。可预定义可能存在的字段，并捕获拼写错误。</p>\n</li>\n<li>\n<p><strong>只读属性</strong>：<code>readonly x: number</code>，创建后不可再赋值。数组可用 <code>ReadonlyArray&lt;T&gt;</code>。变量用 <code>const</code>，对象属性用 <code>readonly</code>。</p>\n</li>\n<li>\n<p><strong>索引签名</strong>：<code>[index: number]: string</code> 或 <code>[propName: string]: any</code>，描述「用索引取值」的字典/数组形态；也可用来允许额外属性。</p>\n</li>\n<li>\n<p><strong>implements</strong>：类用 <code>implements</code> 强制符合接口契约，检查的是<strong>实例公共部分</strong>，不检查构造函数（静态部分）。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>对象字面量会做<strong>额外属性检查</strong>；拼错字段名会报错。绕过可用断言、索引签名，或先赋给中间变量（简单场景不建议绕过）。</li>\n<li>接口还能描述<strong>函数类型</strong>（调用签名）、可索引类型；可继承多个接口。</li>\n<li>数字索引的返回类型必须是字符串索引返回类型的子类型（因为 JS 会把数字索引转成字符串）。</li>\n<li>混合类型：同一对象既可当函数调用，又带属性和方法（axios 实例就是典型）。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li><code>implements</code> 只约束实例，构造器签名要单独用接口传给工厂函数（如 <code>new (h, m) =&gt; ClockInterface</code>）。</li>\n<li>接口继承带 <code>private</code>/<code>protected</code> 的类时，只有该类的子类才能实现该接口。</li>\n</ul>\n",
+      "sourcePath": "frontend/ts/02.interface.md",
+      "reference": [
+        "https://www.typescriptlang.org/docs/handbook/2/objects.html"
+      ]
+    },
+    {
+      "id": "frontend-ts-03",
+      "type": "frontend",
+      "category": "ts",
+      "categoryName": "TypeScript",
+      "tags": [
+        "TypeScript",
+        "泛型"
+      ],
+      "difficulty": "medium",
+      "title": "为什么要用泛型而不是 any？如何给函数、类和 axios 响应加泛型？",
+      "question": "TypeScript 泛型解决什么问题？和 `any` 比有什么优势？如何在函数、类以及 axios 响应数据上使用泛型？",
+      "answer": "1. **问题**：组件要支持「当前和未来」多种类型，同时保持类型关系（传入什么就返回什么）。\n\n2. **优于 any**：`identity(arg: any): any` 能接收任意类型，但丢失「入参与返回值相同」的信息。泛型用类型变量 `T` 捕获类型：`function identity<T>(arg: T): T`。\n\n3. **泛型函数**：可显式传 `identity<string>('x')`，更常见靠**类型推论** `identity('x')`。函数体内必须把 `T` 当成任意类型用；要访问 `.length` 可写成 `T[]` 或 `T extends Lengthwise`。\n\n4. **泛型类**：`class GenericNumber<T> { zeroValue: T; add: (x: T, y: T) => T }`。泛型作用在**实例部分**，静态属性不能用该类的 `T`。\n\n5. **axios 响应泛型**：后端 data 形状用接口描述，请求方法带 `T`，如 `AxiosResponse<T>`、`axios.get<ResponseData<User>>(url)`，调用方可推断 `code` / `result` / `message` 及 `result` 的具体字段。\n\n### 解释与扩展\n\n- 泛型可放在调用签名上（仍是泛型函数），也可放在接口/类上（使用时锁定 `GenericIdentityFn<number>`）。\n- 约束：`T extends Lengthwise`；也可用 `K extends keyof T` 保证 key 存在。\n- 实践：`getUser<T>() { return axios.get<ResponseData<T>>('/path').then(res => res.data) }`，再 `await getUser<User>()`。\n\n### 注意\n\n- 无法创建泛型枚举、泛型命名空间。\n- 编译器推不出 `T` 时必须显式传入。\n- `any` 不是泛型的替代品，只是放弃检查。",
+      "questionHtml": "<p>TypeScript 泛型解决什么问题？和 <code>any</code> 比有什么优势？如何在函数、类以及 axios 响应数据上使用泛型？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>问题</strong>：组件要支持「当前和未来」多种类型，同时保持类型关系（传入什么就返回什么）。</p>\n</li>\n<li>\n<p><strong>优于 any</strong>：<code>identity(arg: any): any</code> 能接收任意类型，但丢失「入参与返回值相同」的信息。泛型用类型变量 <code>T</code> 捕获类型：<code>function identity&lt;T&gt;(arg: T): T</code>。</p>\n</li>\n<li>\n<p><strong>泛型函数</strong>：可显式传 <code>identity&lt;string&gt;('x')</code>，更常见靠<strong>类型推论</strong> <code>identity('x')</code>。函数体内必须把 <code>T</code> 当成任意类型用；要访问 <code>.length</code> 可写成 <code>T[]</code> 或 <code>T extends Lengthwise</code>。</p>\n</li>\n<li>\n<p><strong>泛型类</strong>：<code>class GenericNumber&lt;T&gt; { zeroValue: T; add: (x: T, y: T) =&gt; T }</code>。泛型作用在<strong>实例部分</strong>，静态属性不能用该类的 <code>T</code>。</p>\n</li>\n<li>\n<p><strong>axios 响应泛型</strong>：后端 data 形状用接口描述，请求方法带 <code>T</code>，如 <code>AxiosResponse&lt;T&gt;</code>、<code>axios.get&lt;ResponseData&lt;User&gt;&gt;(url)</code>，调用方可推断 <code>code</code> / <code>result</code> / <code>message</code> 及 <code>result</code> 的具体字段。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>泛型可放在调用签名上（仍是泛型函数），也可放在接口/类上（使用时锁定 <code>GenericIdentityFn&lt;number&gt;</code>）。</li>\n<li>约束：<code>T extends Lengthwise</code>；也可用 <code>K extends keyof T</code> 保证 key 存在。</li>\n<li>实践：<code>getUser&lt;T&gt;() { return axios.get&lt;ResponseData&lt;T&gt;&gt;('/path').then(res =&gt; res.data) }</code>，再 <code>await getUser&lt;User&gt;()</code>。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>无法创建泛型枚举、泛型命名空间。</li>\n<li>编译器推不出 <code>T</code> 时必须显式传入。</li>\n<li><code>any</code> 不是泛型的替代品，只是放弃检查。</li>\n</ul>\n",
+      "sourcePath": "frontend/ts/03.generics.md",
+      "reference": [
+        "https://www.typescriptlang.org/docs/handbook/2/generics.html"
+      ]
+    },
+    {
+      "id": "frontend-ts-04",
+      "type": "frontend",
+      "category": "ts",
+      "categoryName": "TypeScript",
+      "tags": [
+        "TypeScript",
+        "联合类型",
+        "类型保护"
+      ],
+      "difficulty": "medium",
+      "title": "什么是联合类型？如何用类型保护收窄类型？",
+      "question": "什么是联合类型？为什么联合类型上只能访问共有成员？有哪些类型保护手段？",
+      "answer": "1. **联合类型**：值可以是几种类型之一，用 `|` 分隔，如 `string | number`。比 `any` 更安全：非法类型在编译期就会报错。\n\n2. **共有成员**：类型为 `A | B` 时，只能访问 A 和 B **都有**的成员。`Fish | Bird` 可以 `layEggs()`，不能直接 `swim()`，因为运行时可能是 Bird。\n\n3. **类型保护**：运行时检查，在某个作用域把类型收窄。常见：\n   - **自定义类型谓词**：`function isFish(pet: Fish | Bird): pet is Fish`\n   - **typeof**：`typeof v === 'number' | 'string' | 'boolean' | 'symbol'`\n   - **instanceof**：按构造函数收窄类实例\n   - **类型断言**：`(pet as Fish).swim()`（需反复断言，不如谓词）\n\n### 解释与扩展\n\n- `padLeft` 若把 padding 标成 `any`，传入 `true` 也能编译通过、运行时报错；改成 `string | number` 则编译期拦截。\n- 谓词 `parameterName is Type` 中的参数名必须来自当前函数签名。`if (isFish(pet))` 的 else 分支会被推断为另一侧类型。\n- 可空类型在 `--strictNullChecks` 下用 `string | null` 表示；可用 `=== null`、短路 `sn || 'default'`，或非空断言 `name!` 去掉 null。\n\n### 注意\n\n- 只有特定形式的 `typeof` 比较会被识别为类型保护。\n- 嵌套函数里编译器往往无法自动去掉 null，需 `!` 或重构。\n- 字符串字面量联合（如 `'ease-in' | 'ease-out'`）常配合类型保护，实现类似枚举的约束。",
+      "questionHtml": "<p>什么是联合类型？为什么联合类型上只能访问共有成员？有哪些类型保护手段？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>联合类型</strong>：值可以是几种类型之一，用 <code>|</code> 分隔，如 <code>string | number</code>。比 <code>any</code> 更安全：非法类型在编译期就会报错。</p>\n</li>\n<li>\n<p><strong>共有成员</strong>：类型为 <code>A | B</code> 时，只能访问 A 和 B <strong>都有</strong>的成员。<code>Fish | Bird</code> 可以 <code>layEggs()</code>，不能直接 <code>swim()</code>，因为运行时可能是 Bird。</p>\n</li>\n<li>\n<p><strong>类型保护</strong>：运行时检查，在某个作用域把类型收窄。常见：</p>\n<ul>\n<li><strong>自定义类型谓词</strong>：<code>function isFish(pet: Fish | Bird): pet is Fish</code></li>\n<li><strong>typeof</strong>：<code>typeof v === 'number' | 'string' | 'boolean' | 'symbol'</code></li>\n<li><strong>instanceof</strong>：按构造函数收窄类实例</li>\n<li><strong>类型断言</strong>：<code>(pet as Fish).swim()</code>（需反复断言，不如谓词）</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li><code>padLeft</code> 若把 padding 标成 <code>any</code>，传入 <code>true</code> 也能编译通过、运行时报错；改成 <code>string | number</code> 则编译期拦截。</li>\n<li>谓词 <code>parameterName is Type</code> 中的参数名必须来自当前函数签名。<code>if (isFish(pet))</code> 的 else 分支会被推断为另一侧类型。</li>\n<li>可空类型在 <code>--strictNullChecks</code> 下用 <code>string | null</code> 表示；可用 <code>=== null</code>、短路 <code>sn || 'default'</code>，或非空断言 <code>name!</code> 去掉 null。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>只有特定形式的 <code>typeof</code> 比较会被识别为类型保护。</li>\n<li>嵌套函数里编译器往往无法自动去掉 null，需 <code>!</code> 或重构。</li>\n<li>字符串字面量联合（如 <code>'ease-in' | 'ease-out'</code>）常配合类型保护，实现类似枚举的约束。</li>\n</ul>\n",
+      "sourcePath": "frontend/ts/04.union-type-guard.md",
+      "reference": [
+        "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      ]
+    },
+    {
+      "id": "frontend-ts-05",
+      "type": "frontend",
+      "category": "ts",
+      "categoryName": "TypeScript",
+      "tags": [
+        "TypeScript",
+        "交叉类型",
+        "函数重载"
+      ],
+      "difficulty": "medium",
+      "title": "TypeScript 交叉类型和函数重载分别解决什么问题？",
+      "question": "什么是交叉类型？和联合类型有何不同？TypeScript 函数重载如何声明？还有哪些常用高级类型手段？",
+      "answer": "1. **交叉类型**：`T & U` 把多个类型合并成一个，对象同时拥有各类型的成员。常见于 mixin：`extend<T, U>(first: T, second: U): T & U`。\n\n2. **与联合对比**：联合是「或」（`string | number` 只能是其中之一）；交叉是「且」（`Person & Loggable` 既有 name 又能 log）。\n\n3. **函数重载**：为同一函数提供多份类型签名，编译器按列表从上到下匹配。实现签名（如 `function pickCard(x): any`）**不算**重载列表的一部分。最精确的定义要写在最前面。\n\n4. **其它**：字符串字面量类型、可空联合、`strictNullChecks` 下可选参数自动带 `| undefined`。\n\n### 解释与扩展\n\n- JS 函数常按参数类型返回不同结果（数组进则返回索引，数字进则返回牌对象）。重载把这种动态行为纳入类型系统。\n- 交叉类型适合 JS 里不典型的 OOP（混入、插件对象）。\n- 接口继承多个接口，效果上也是成员合成，和交叉类似但写在类型声明侧。\n\n### 注意\n\n- 重载匹配顺序很重要，宽泛签名放前面会挡住精确签名。\n- 交叉后若属性同名且类型冲突，结果可能变成 `never`，使用前要理清字段。\n- 面试常把交叉 / 联合 / 保护 / 重载放在一道「高级类型」里串讲。",
+      "questionHtml": "<p>什么是交叉类型？和联合类型有何不同？TypeScript 函数重载如何声明？还有哪些常用高级类型手段？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>交叉类型</strong>：<code>T &amp; U</code> 把多个类型合并成一个，对象同时拥有各类型的成员。常见于 mixin：<code>extend&lt;T, U&gt;(first: T, second: U): T &amp; U</code>。</p>\n</li>\n<li>\n<p><strong>与联合对比</strong>：联合是「或」（<code>string | number</code> 只能是其中之一）；交叉是「且」（<code>Person &amp; Loggable</code> 既有 name 又能 log）。</p>\n</li>\n<li>\n<p><strong>函数重载</strong>：为同一函数提供多份类型签名，编译器按列表从上到下匹配。实现签名（如 <code>function pickCard(x): any</code>）<strong>不算</strong>重载列表的一部分。最精确的定义要写在最前面。</p>\n</li>\n<li>\n<p><strong>其它</strong>：字符串字面量类型、可空联合、<code>strictNullChecks</code> 下可选参数自动带 <code>| undefined</code>。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>JS 函数常按参数类型返回不同结果（数组进则返回索引，数字进则返回牌对象）。重载把这种动态行为纳入类型系统。</li>\n<li>交叉类型适合 JS 里不典型的 OOP（混入、插件对象）。</li>\n<li>接口继承多个接口，效果上也是成员合成，和交叉类似但写在类型声明侧。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>重载匹配顺序很重要，宽泛签名放前面会挡住精确签名。</li>\n<li>交叉后若属性同名且类型冲突，结果可能变成 <code>never</code>，使用前要理清字段。</li>\n<li>面试常把交叉 / 联合 / 保护 / 重载放在一道「高级类型」里串讲。</li>\n</ul>\n",
+      "sourcePath": "frontend/ts/05.advanced-types.md",
+      "reference": [
+        "https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types",
+        "https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads"
+      ]
+    },
+    {
+      "id": "frontend-ts-06",
+      "type": "frontend",
+      "category": "ts",
+      "categoryName": "TypeScript",
+      "tags": [
+        "TypeScript",
+        "类型推断"
+      ],
+      "difficulty": "medium",
+      "title": "TypeScript 在哪些场景会做类型推断？什么是最佳通用类型？",
+      "question": "TypeScript 类型推断发生在哪些地方？什么是最佳通用类型和上下文类型？",
+      "answer": "1. **基础推断**：未写明类型时，TS 会补全类型。典型场景：**初始化变量和成员**、**设置默认参数**、**决定函数返回值**。如 `let x = 3` → `number`。\n\n2. **最佳通用类型**：从多个表达式推断时，取能兼容所有候选的类型。`let x = [0, 1, null]` 会考虑 `number` 和 `null`。\n\n3. **没有公共超类型时**：`[new Bee(), new Lion()]` 期望是 `Animal[]`，但数组里没有 `Animal` 实例，会推断成 `(Bee | Lion)[]`。需要时显式写 `let zoo: Animal[] = [...]`。\n\n4. **上下文类型**：根据表达式**所在位置**反推，如赋值给 `window.onmousedown` 时，右侧函数参数会按事件类型检查。若函数自己写了参数注解，则忽略上下文类型。\n\n### 解释与扩展\n\n- 函数完整类型也可「按上下文归类」：一边写了 `(x: number, y: number) => number`，另一边参数可省略注解。\n- 上下文类型常出现在：函数参数、赋值右侧、类型断言、对象成员、数组字面量、return。它也会作为最佳通用类型的**候选**。例如 `createZoo(): Animal[]` 的 return `[new Bee(), new Lion()]` 会选出 `Animal`。\n- 泛型调用里不写 `<>` 时，同样依赖从实参推断 `T`。\n\n### 注意\n\n- 推断失败或不够精确时，应显式注解，不要依赖「猜对」。\n- 上下文类型被明确注解覆盖后，访问不存在的属性可能不再报错（如把 mouseEvent 标成 `any`）。\n- 最佳通用类型取自候选，不会凭空发明一个没出现过的基类（除非上下文提供了该基类）。",
+      "questionHtml": "<p>TypeScript 类型推断发生在哪些地方？什么是最佳通用类型和上下文类型？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>基础推断</strong>：未写明类型时，TS 会补全类型。典型场景：<strong>初始化变量和成员</strong>、<strong>设置默认参数</strong>、<strong>决定函数返回值</strong>。如 <code>let x = 3</code> → <code>number</code>。</p>\n</li>\n<li>\n<p><strong>最佳通用类型</strong>：从多个表达式推断时，取能兼容所有候选的类型。<code>let x = [0, 1, null]</code> 会考虑 <code>number</code> 和 <code>null</code>。</p>\n</li>\n<li>\n<p><strong>没有公共超类型时</strong>：<code>[new Bee(), new Lion()]</code> 期望是 <code>Animal[]</code>，但数组里没有 <code>Animal</code> 实例，会推断成 <code>(Bee | Lion)[]</code>。需要时显式写 <code>let zoo: Animal[] = [...]</code>。</p>\n</li>\n<li>\n<p><strong>上下文类型</strong>：根据表达式<strong>所在位置</strong>反推，如赋值给 <code>window.onmousedown</code> 时，右侧函数参数会按事件类型检查。若函数自己写了参数注解，则忽略上下文类型。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>函数完整类型也可「按上下文归类」：一边写了 <code>(x: number, y: number) =&gt; number</code>，另一边参数可省略注解。</li>\n<li>上下文类型常出现在：函数参数、赋值右侧、类型断言、对象成员、数组字面量、return。它也会作为最佳通用类型的<strong>候选</strong>。例如 <code>createZoo(): Animal[]</code> 的 return <code>[new Bee(), new Lion()]</code> 会选出 <code>Animal</code>。</li>\n<li>泛型调用里不写 <code>&lt;&gt;</code> 时，同样依赖从实参推断 <code>T</code>。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>推断失败或不够精确时，应显式注解，不要依赖「猜对」。</li>\n<li>上下文类型被明确注解覆盖后，访问不存在的属性可能不再报错（如把 mouseEvent 标成 <code>any</code>）。</li>\n<li>最佳通用类型取自候选，不会凭空发明一个没出现过的基类（除非上下文提供了该基类）。</li>\n</ul>\n",
+      "sourcePath": "frontend/ts/06.type-inference.md",
+      "reference": [
+        "https://www.typescriptlang.org/docs/handbook/type-inference.html"
+      ]
+    },
+    {
+      "id": "frontend-vue-01",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "MVVM"
+      ],
+      "difficulty": "easy",
+      "title": "什么是 MVVM？Vue 里 Model、View、ViewModel 如何协作？",
+      "question": "什么是 MVVM 模式？结合 Vue 说明数据如何驱动视图、视图如何回写数据。",
+      "answer": "1. **MVVM**：M 是 Model（数据模型），V 是 View（视图），VM 是 ViewModel（视图模型）。\n\n2. **数据 → 视图**：Model 通过 Data Bindings（响应式绑定）渲染到 View。\n\n3. **视图 → 数据**：用户在页面上操作时，DOM listeners 监听变化，再更新 Model。\n\n4. **Vue 中的对应**：`data` 等是 Model；模板/`el` 挂载的 DOM 是 View；Vue 实例（响应式系统 + 指令）扮演 VM，把两边同步起来。\n\n### 解释与扩展\n\n- 和 MVC 比，VM 承担了大量绑定与监听，业务代码较少直接操作 DOM。\n- Vue 2 用 `Object.defineProperty` 做依赖收集（笔记语境为 Vue 2）；改数据会触发视图更新。\n- 面试可补一句：单向数据流（props 下行）与双向绑定（`v-model`）是机制上的补充，不否定 MVVM。\n\n### 注意\n\n- 不要把 Vue 说成「只是模板引擎」；核心是 VM 对数据和视图的自动同步。\n- 复杂跨组件状态仍可能用 Vuex，那是对 Model 层的集中，不是推翻 MVVM。",
+      "questionHtml": "<p>什么是 MVVM 模式？结合 Vue 说明数据如何驱动视图、视图如何回写数据。</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>MVVM</strong>：M 是 Model（数据模型），V 是 View（视图），VM 是 ViewModel（视图模型）。</p>\n</li>\n<li>\n<p><strong>数据 → 视图</strong>：Model 通过 Data Bindings（响应式绑定）渲染到 View。</p>\n</li>\n<li>\n<p><strong>视图 → 数据</strong>：用户在页面上操作时，DOM listeners 监听变化，再更新 Model。</p>\n</li>\n<li>\n<p><strong>Vue 中的对应</strong>：<code>data</code> 等是 Model；模板/<code>el</code> 挂载的 DOM 是 View；Vue 实例（响应式系统 + 指令）扮演 VM，把两边同步起来。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>和 MVC 比，VM 承担了大量绑定与监听，业务代码较少直接操作 DOM。</li>\n<li>Vue 2 用 <code>Object.defineProperty</code> 做依赖收集（笔记语境为 Vue 2）；改数据会触发视图更新。</li>\n<li>面试可补一句：单向数据流（props 下行）与双向绑定（<code>v-model</code>）是机制上的补充，不否定 MVVM。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>不要把 Vue 说成「只是模板引擎」；核心是 VM 对数据和视图的自动同步。</li>\n<li>复杂跨组件状态仍可能用 Vuex，那是对 Model 层的集中，不是推翻 MVVM。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/01.mvvm.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/guide/"
+      ]
+    },
+    {
+      "id": "frontend-vue-02",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "生命周期"
+      ],
+      "difficulty": "medium",
+      "title": "Vue 2 生命周期钩子有哪些？created 和 mounted 时 $el、data 分别是什么状态？",
+      "question": "请按顺序说出 Vue 2 实例生命周期钩子，并说明 `beforeCreate` / `created` / `beforeMount` / `mounted` 时 `this.$el` 与 `data` 的状态。什么时候发请求比较合适？",
+      "answer": "1. **创建**：`beforeCreate` → `created` → `beforeMount` → `mounted`。\n2. **更新**：`beforeUpdate` → `updated`（data 变化后，虚拟 DOM 重新渲染并打补丁）。\n3. **销毁**：`beforeDestroy` → `destroyed`（调用 `vm.$destroy()`）。\n\n4. **$el / data 状态**\n   - **beforeCreate**：`$el`、`$data`、`msg` 均为 `undefined`。\n   - **created**：`$data` 与 `msg` 已初始化；**`$el` 仍是 `undefined`**（有 data，无 $el）。\n   - **beforeMount**：已有 `$el`，内容仍是模板占位如 `{{msg}}`。\n   - **mounted**：`$el` 已是渲染后的真实 DOM（如文案已替换）。\n\n### 解释与扩展\n\n- 钩子就是实例在某一时间点**自动执行**的函数。\n- 父子挂载：`父 beforeCreate → 父 created → 父 beforeMount → 子完整挂载到 mounted → 父 mounted`。\n- 接口请求：常在 **created**（已有 data，不依赖 DOM）或 **mounted**（需要操作 DOM / `$el` 时）。\n- 定时器、全局事件在 `beforeDestroy` 里清掉，避免泄漏。\n\n### 注意\n\n- 不要在 `beforeCreate` 里用 `this.xxx` 访问 data。\n- `updated` 里改 data 可能再次触发更新，小心死循环。\n- 面试若追问 Vue 3：对应 `setup` / `onMounted` 等 Composition API，本题按 Vue 2 答即可。",
+      "questionHtml": "<p>请按顺序说出 Vue 2 实例生命周期钩子，并说明 <code>beforeCreate</code> / <code>created</code> / <code>beforeMount</code> / <code>mounted</code> 时 <code>this.$el</code> 与 <code>data</code> 的状态。什么时候发请求比较合适？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>创建</strong>：<code>beforeCreate</code> → <code>created</code> → <code>beforeMount</code> → <code>mounted</code>。</p>\n</li>\n<li>\n<p><strong>更新</strong>：<code>beforeUpdate</code> → <code>updated</code>（data 变化后，虚拟 DOM 重新渲染并打补丁）。</p>\n</li>\n<li>\n<p><strong>销毁</strong>：<code>beforeDestroy</code> → <code>destroyed</code>（调用 <code>vm.$destroy()</code>）。</p>\n</li>\n<li>\n<p><strong>$el / data 状态</strong></p>\n<ul>\n<li><strong>beforeCreate</strong>：<code>$el</code>、<code>$data</code>、<code>msg</code> 均为 <code>undefined</code>。</li>\n<li><strong>created</strong>：<code>$data</code> 与 <code>msg</code> 已初始化；<strong><code>$el</code> 仍是 <code>undefined</code></strong>（有 data，无 $el）。</li>\n<li><strong>beforeMount</strong>：已有 <code>$el</code>，内容仍是模板占位如 <code>{{msg}}</code>。</li>\n<li><strong>mounted</strong>：<code>$el</code> 已是渲染后的真实 DOM（如文案已替换）。</li>\n</ul>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>钩子就是实例在某一时间点<strong>自动执行</strong>的函数。</li>\n<li>父子挂载：<code>父 beforeCreate → 父 created → 父 beforeMount → 子完整挂载到 mounted → 父 mounted</code>。</li>\n<li>接口请求：常在 <strong>created</strong>（已有 data，不依赖 DOM）或 <strong>mounted</strong>（需要操作 DOM / <code>$el</code> 时）。</li>\n<li>定时器、全局事件在 <code>beforeDestroy</code> 里清掉，避免泄漏。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>不要在 <code>beforeCreate</code> 里用 <code>this.xxx</code> 访问 data。</li>\n<li><code>updated</code> 里改 data 可能再次触发更新，小心死循环。</li>\n<li>面试若追问 Vue 3：对应 <code>setup</code> / <code>onMounted</code> 等 Composition API，本题按 Vue 2 答即可。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/02.lifecycle.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90"
+      ]
+    },
+    {
+      "id": "frontend-vue-03",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "computed",
+        "watch"
+      ],
+      "difficulty": "easy",
+      "title": "Vue 中 computed、methods、watch 有什么区别？如何选择？",
+      "question": "计算属性、方法和侦听属性的区别是什么？三者都能实现同一功能时优先用哪个？watch 更适合什么场景？",
+      "answer": "1. **computed**：基于响应式依赖**缓存**。依赖不变则多次访问不重新计算。适合由已有 data 派生展示值。\n\n2. **methods**：每次触发重新渲染都会**再次执行**。适合点击等行为，或必须每次算的逻辑。\n\n3. **watch**：观察某数据变化再执行回调。也有缓存，但写法通常比 computed 复杂。**适合异步操作或开销较大的操作**（请求、防抖后发事件）。\n\n4. **选择**：同一功能三者都能做时，**优先 computed**。\n\n### 解释与扩展\n\n- computed 默认 getter，也可写 setter。模板里当属性用，不要当函数调用。\n- watch 可 `immediate`、`deep`；Vue 2 里 `$watch` 可包一层 debounce 再 `$emit`。\n- methods 里改 data 会再次渲染，注意不要在渲染路径里做重计算（应放到 computed）。\n\n### 注意\n\n- computed 不要有副作用（改别的状态、请求）；副作用放 watch / methods。\n- 侦听对象要深比较时用 `deep: true`，性能更差。\n- 「有缓存」不等于 watch 比 computed 更好；缓存 + 声明式派生才是 computed 的优势。",
+      "questionHtml": "<p>计算属性、方法和侦听属性的区别是什么？三者都能实现同一功能时优先用哪个？watch 更适合什么场景？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>computed</strong>：基于响应式依赖<strong>缓存</strong>。依赖不变则多次访问不重新计算。适合由已有 data 派生展示值。</p>\n</li>\n<li>\n<p><strong>methods</strong>：每次触发重新渲染都会<strong>再次执行</strong>。适合点击等行为，或必须每次算的逻辑。</p>\n</li>\n<li>\n<p><strong>watch</strong>：观察某数据变化再执行回调。也有缓存，但写法通常比 computed 复杂。<strong>适合异步操作或开销较大的操作</strong>（请求、防抖后发事件）。</p>\n</li>\n<li>\n<p><strong>选择</strong>：同一功能三者都能做时，<strong>优先 computed</strong>。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>computed 默认 getter，也可写 setter。模板里当属性用，不要当函数调用。</li>\n<li>watch 可 <code>immediate</code>、<code>deep</code>；Vue 2 里 <code>$watch</code> 可包一层 debounce 再 <code>$emit</code>。</li>\n<li>methods 里改 data 会再次渲染，注意不要在渲染路径里做重计算（应放到 computed）。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>computed 不要有副作用（改别的状态、请求）；副作用放 watch / methods。</li>\n<li>侦听对象要深比较时用 <code>deep: true</code>，性能更差。</li>\n<li>「有缓存」不等于 watch 比 computed 更好；缓存 + 声明式派生才是 computed 的优势。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/03.computed-methods-watch.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95"
+      ]
+    },
+    {
+      "id": "frontend-vue-04",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "指令"
+      ],
+      "difficulty": "easy",
+      "title": "v-if 和 v-show 有什么区别？如何选择？",
+      "question": "`v-if` 和 `v-show` 的区别是什么？频繁切换时该用哪个？",
+      "answer": "1. **v-if**：真正的条件渲染。条件为假时**不把元素渲染进 DOM**（销毁/重建，含内部组件生命周期）。\n\n2. **v-show**：无论条件如何都会渲染到 DOM，只切换 CSS `display`。\n\n3. **选择**：需要**非常频繁切换**用 `v-show`；运行时条件**很少改变**用 `v-if`。\n\n### 解释与扩展\n\n- `v-if` 可配 `v-else` / `v-else-if`；与 `v-for` 同节点时，Vue 2 中 `v-for` 优先级更高（官方不建议同用）。\n- `v-show` 不能用在 `<template>` 上，也不支持 `v-else`。\n- `v-if` 初始为假时有惰性：直到第一次为真才开始渲染，首次开销可能更高。\n\n### 注意\n\n- 权限控制、不该出现在 DOM 里的内容用 `v-if`，不要只用 `v-show` 藏起来。\n- 带内部状态的组件用 `v-if` 切换会重置状态；要保状态用 `v-show` 或 `<keep-alive>`。",
+      "questionHtml": "<p><code>v-if</code> 和 <code>v-show</code> 的区别是什么？频繁切换时该用哪个？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>v-if</strong>：真正的条件渲染。条件为假时<strong>不把元素渲染进 DOM</strong>（销毁/重建，含内部组件生命周期）。</p>\n</li>\n<li>\n<p><strong>v-show</strong>：无论条件如何都会渲染到 DOM，只切换 CSS <code>display</code>。</p>\n</li>\n<li>\n<p><strong>选择</strong>：需要<strong>非常频繁切换</strong>用 <code>v-show</code>；运行时条件<strong>很少改变</strong>用 <code>v-if</code>。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li><code>v-if</code> 可配 <code>v-else</code> / <code>v-else-if</code>；与 <code>v-for</code> 同节点时，Vue 2 中 <code>v-for</code> 优先级更高（官方不建议同用）。</li>\n<li><code>v-show</code> 不能用在 <code>&lt;template&gt;</code> 上，也不支持 <code>v-else</code>。</li>\n<li><code>v-if</code> 初始为假时有惰性：直到第一次为真才开始渲染，首次开销可能更高。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>权限控制、不该出现在 DOM 里的内容用 <code>v-if</code>，不要只用 <code>v-show</code> 藏起来。</li>\n<li>带内部状态的组件用 <code>v-if</code> 切换会重置状态；要保状态用 <code>v-show</code> 或 <code>&lt;keep-alive&gt;</code>。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/04.v-if-v-show.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/guide/conditional.html#v-if-vs-v-show"
+      ]
+    },
+    {
+      "id": "frontend-vue-05",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "组件通信"
+      ],
+      "difficulty": "easy",
+      "title": "Vue 2 父子组件如何通信？props 和 $emit 怎么配合？",
+      "question": "Vue 2 中父组件如何给子组件传值、子组件如何通知父组件？为什么强调单向数据流？",
+      "answer": "1. **父 → 子**：父用 `v-bind` 把数据绑到子组件标签上；子用 `props` 声明并接收。不用 `v-bind` 传入的是字符串，用 `v-bind` 传入的是表达式。\n\n2. **子 → 父**：子 `this.$emit('fnX', value)` 派发自定义事件（可带多个值）；父 `@fnX=\"fnY\"` 监听，在 `fnY` 里拿值。\n\n3. **单向数据流**：prop 只能下行。父更新会流到子，子**不能直接改** prop，避免数据流混乱。\n\n4. **改 prop 的正确方式**：当初始值用则拷到本地 `data`；当要转换则用 `computed`。要改父状态必须 `$emit` 让父改。\n\n### 解释与扩展\n\n- props 可以是数组，或对象（类型、默认值、校验）。模板 HTML 用 kebab-case，JS 里可用 camelCase。\n- 组件标签上的 `v-on` 绑定的是**自定义事件**，不是原生 DOM 事件；子组件内部原生 click 再 `$emit` 才能触发父监听。需要原生可用 `.native`。\n- 兄弟组件可「子1 emit → 父 data → 子2 props」，或 EventBus / Vuex。\n\n### 注意\n\n- 对象/数组作为 prop 时，子改内部字段父也会变（引用），仍视为反模式，应 emit。\n- `v-model` 本质是 `:value` + `@input` 的语法糖。",
+      "questionHtml": "<p>Vue 2 中父组件如何给子组件传值、子组件如何通知父组件？为什么强调单向数据流？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>父 → 子</strong>：父用 <code>v-bind</code> 把数据绑到子组件标签上；子用 <code>props</code> 声明并接收。不用 <code>v-bind</code> 传入的是字符串，用 <code>v-bind</code> 传入的是表达式。</p>\n</li>\n<li>\n<p><strong>子 → 父</strong>：子 <code>this.$emit('fnX', value)</code> 派发自定义事件（可带多个值）；父 <code>@fnX=&quot;fnY&quot;</code> 监听，在 <code>fnY</code> 里拿值。</p>\n</li>\n<li>\n<p><strong>单向数据流</strong>：prop 只能下行。父更新会流到子，子<strong>不能直接改</strong> prop，避免数据流混乱。</p>\n</li>\n<li>\n<p><strong>改 prop 的正确方式</strong>：当初始值用则拷到本地 <code>data</code>；当要转换则用 <code>computed</code>。要改父状态必须 <code>$emit</code> 让父改。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>props 可以是数组，或对象（类型、默认值、校验）。模板 HTML 用 kebab-case，JS 里可用 camelCase。</li>\n<li>组件标签上的 <code>v-on</code> 绑定的是<strong>自定义事件</strong>，不是原生 DOM 事件；子组件内部原生 click 再 <code>$emit</code> 才能触发父监听。需要原生可用 <code>.native</code>。</li>\n<li>兄弟组件可「子1 emit → 父 data → 子2 props」，或 EventBus / Vuex。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>对象/数组作为 prop 时，子改内部字段父也会变（引用），仍视为反模式，应 emit。</li>\n<li><code>v-model</code> 本质是 <code>:value</code> + <code>@input</code> 的语法糖。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/05.component-communication.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/guide/components.html#%E7%9B%91%E5%90%AC%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6",
+        "https://cn.vuejs.org/v2/guide/components-props.html"
+      ]
+    },
+    {
+      "id": "frontend-vue-06",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "EventBus"
+      ],
+      "difficulty": "medium",
+      "title": "什么是 EventBus？Vue 2 如何做非父子组件通信？",
+      "question": "非父子（含兄弟、跨层级）组件如何传值？EventBus 的原理和注意点是什么？",
+      "answer": "1. **可选方案**：层层 props/$emit、**EventBus（发布订阅）**、Vuex。嵌套深时 Bus 或 Vuex 更省事。\n\n2. **实现**：`Vue.prototype.bus = new Vue()`，所有实例共享同一个 Vue 实例当总线。发送：`this.bus.$emit('change', payload)`；接收：在 `mounted` 里 `this.bus.$on('change', handler)`。\n\n3. **适用**：不限于兄弟，任意关系组件都可订阅同一事件名。本质是观察者模式。\n\n### 解释与扩展\n\n- 兄弟传值也可走父组件中转：子1 `$emit` → 父改 data → 子2 props。\n- 大型应用优先 Vuex，Bus 适合轻量、临时解耦。\n- 销毁时 `$off`，否则实例销毁后回调仍在，造成泄漏或报错。\n\n### 注意\n\n- 事件名要约定好，全局 Bus 容易命名冲突、难以追踪。\n- Vue 3 移除了实例 `$on/$off`，官方不再推荐 EventBus；本题按 Vue 2 笔记回答。\n- 箭头函数订阅时注意 `this` 指向；示例里用箭头函数保证改的是当前组件 data。",
+      "questionHtml": "<p>非父子（含兄弟、跨层级）组件如何传值？EventBus 的原理和注意点是什么？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>可选方案</strong>：层层 props/$emit、<strong>EventBus（发布订阅）</strong>、Vuex。嵌套深时 Bus 或 Vuex 更省事。</p>\n</li>\n<li>\n<p><strong>实现</strong>：<code>Vue.prototype.bus = new Vue()</code>，所有实例共享同一个 Vue 实例当总线。发送：<code>this.bus.$emit('change', payload)</code>；接收：在 <code>mounted</code> 里 <code>this.bus.$on('change', handler)</code>。</p>\n</li>\n<li>\n<p><strong>适用</strong>：不限于兄弟，任意关系组件都可订阅同一事件名。本质是观察者模式。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>兄弟传值也可走父组件中转：子1 <code>$emit</code> → 父改 data → 子2 props。</li>\n<li>大型应用优先 Vuex，Bus 适合轻量、临时解耦。</li>\n<li>销毁时 <code>$off</code>，否则实例销毁后回调仍在，造成泄漏或报错。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>事件名要约定好，全局 Bus 容易命名冲突、难以追踪。</li>\n<li>Vue 3 移除了实例 <code>$on/$off</code>，官方不再推荐 EventBus；本题按 Vue 2 笔记回答。</li>\n<li>箭头函数订阅时注意 <code>this</code> 指向；示例里用箭头函数保证改的是当前组件 data。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/06.event-bus.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/guide/components.html"
+      ]
+    },
+    {
+      "id": "frontend-vue-07",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "slot"
+      ],
+      "difficulty": "medium",
+      "title": "Vue 2 插槽有哪些用法？默认插槽、具名插槽和作用域插槽如何区分？",
+      "question": "什么是插槽？默认插槽、具名插槽、作用域插槽分别怎么用？（按 Vue 2，可提到 2.6 的 `v-slot`）",
+      "answer": "1. **插槽**：父组件写在子组件标签里的内容，由子组件模板中的 `<slot>` 出口渲染。slot 内可写**默认内容**，父未传入时才显示。\n\n2. **具名插槽**：子 `<slot name=\"header\">`；父侧旧语法 `slot=\"header\"`，2.6+ 用 `<template v-slot:header>`（缩写 `#header`）。未具名的走默认插槽。\n\n3. **作用域插槽**：数据由**子组件**提供（绑在 `<slot>` 上的 attribute，即插槽 prop），**父组件决定渲染什么**，并可二次处理数据。2.6 前 `slot-scope`，之后 `v-slot:default=\"slotProps\"`。\n\n### 解释与扩展\n\n- `v-slot` 一般只能写在 `<template>` 上。\n- 多个插槽时默认插槽名 `default` 不能乱省略。缩写 `#` 必须带插槽名，`#=\"{ user }\"` 无效，应 `#default=\"{ user }\"`。\n- 典型场景：表格列自定义、列表项模板、布局的 header/footer。\n\n### 注意\n\n- 2.6 起 `slot` / `slot-scope` attribute 已废弃，新项目用 `v-slot`。\n- 作用域插槽不是「父把数据传给子」，方向与 props 相反：子提供数据，父提供结构。",
+      "questionHtml": "<p>什么是插槽？默认插槽、具名插槽、作用域插槽分别怎么用？（按 Vue 2，可提到 2.6 的 <code>v-slot</code>）</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>插槽</strong>：父组件写在子组件标签里的内容，由子组件模板中的 <code>&lt;slot&gt;</code> 出口渲染。slot 内可写<strong>默认内容</strong>，父未传入时才显示。</p>\n</li>\n<li>\n<p><strong>具名插槽</strong>：子 <code>&lt;slot name=&quot;header&quot;&gt;</code>；父侧旧语法 <code>slot=&quot;header&quot;</code>，2.6+ 用 <code>&lt;template v-slot:header&gt;</code>（缩写 <code>#header</code>）。未具名的走默认插槽。</p>\n</li>\n<li>\n<p><strong>作用域插槽</strong>：数据由<strong>子组件</strong>提供（绑在 <code>&lt;slot&gt;</code> 上的 attribute，即插槽 prop），<strong>父组件决定渲染什么</strong>，并可二次处理数据。2.6 前 <code>slot-scope</code>，之后 <code>v-slot:default=&quot;slotProps&quot;</code>。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li><code>v-slot</code> 一般只能写在 <code>&lt;template&gt;</code> 上。</li>\n<li>多个插槽时默认插槽名 <code>default</code> 不能乱省略。缩写 <code>#</code> 必须带插槽名，<code>#=&quot;{ user }&quot;</code> 无效，应 <code>#default=&quot;{ user }&quot;</code>。</li>\n<li>典型场景：表格列自定义、列表项模板、布局的 header/footer。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>2.6 起 <code>slot</code> / <code>slot-scope</code> attribute 已废弃，新项目用 <code>v-slot</code>。</li>\n<li>作用域插槽不是「父把数据传给子」，方向与 props 相反：子提供数据，父提供结构。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/07.slot.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/guide/components-slots.html"
+      ]
+    },
+    {
+      "id": "frontend-vue-08",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "mixin"
+      ],
+      "difficulty": "medium",
+      "title": "Vue mixin 是什么？选项如何合并？有哪些缺点？",
+      "question": "什么是混入（mixin）？和组件选项冲突时如何合并？实际项目里怎么用？",
+      "answer": "1. **定义**：把组件可复用的选项（`data`、`created`、`methods` 等）抽到对象里，通过 `mixins: [myMixin]` 混入。多个组件共享同一段逻辑。\n\n2. **合并策略**\n   - **data**：递归合并，**冲突时组件数据优先**。\n   - **钩子**：合并成数组，**都执行**；**混入钩子先于组件钩子**。\n   - **methods / components / directives**：同名时**取组件的**。\n\n3. **示例**：抽出 `playlistMixin`，组件必须实现 `handlePlaylist`；mixin 里放 computed、mounted、watch，组件覆盖同名方法做差异化。\n\n### 解释与扩展\n\n- 可通过 `this.$options` 查看合并后的选项。`Vue.extend` 用同一套合并策略。\n- mixin 里故意 `throw` 可强制组件实现某方法（类似抽象方法）。\n- Vue 3 更推荐 Composition API / composable 做复用，面试仍要会 mixin。\n\n### 注意\n\n- 来源不清晰、命名冲突、隐式依赖 `this`，是 mixin 的通病。\n- 全局 `Vue.mixin` 影响每个组件，更难排查，慎用。",
+      "questionHtml": "<p>什么是混入（mixin）？和组件选项冲突时如何合并？实际项目里怎么用？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>定义</strong>：把组件可复用的选项（<code>data</code>、<code>created</code>、<code>methods</code> 等）抽到对象里，通过 <code>mixins: [myMixin]</code> 混入。多个组件共享同一段逻辑。</p>\n</li>\n<li>\n<p><strong>合并策略</strong></p>\n<ul>\n<li><strong>data</strong>：递归合并，<strong>冲突时组件数据优先</strong>。</li>\n<li><strong>钩子</strong>：合并成数组，<strong>都执行</strong>；<strong>混入钩子先于组件钩子</strong>。</li>\n<li><strong>methods / components / directives</strong>：同名时<strong>取组件的</strong>。</li>\n</ul>\n</li>\n<li>\n<p><strong>示例</strong>：抽出 <code>playlistMixin</code>，组件必须实现 <code>handlePlaylist</code>；mixin 里放 computed、mounted、watch，组件覆盖同名方法做差异化。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>可通过 <code>this.$options</code> 查看合并后的选项。<code>Vue.extend</code> 用同一套合并策略。</li>\n<li>mixin 里故意 <code>throw</code> 可强制组件实现某方法（类似抽象方法）。</li>\n<li>Vue 3 更推荐 Composition API / composable 做复用，面试仍要会 mixin。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>来源不清晰、命名冲突、隐式依赖 <code>this</code>，是 mixin 的通病。</li>\n<li>全局 <code>Vue.mixin</code> 影响每个组件，更难排查，慎用。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/08.mixin.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/guide/mixins.html"
+      ]
+    },
+    {
+      "id": "frontend-vue-09",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "Vue Router"
+      ],
+      "difficulty": "medium",
+      "title": "Vue Router 的 history 模式是什么？如何做路由懒加载？",
+      "question": "Vue Router 如何配置？`mode: 'history'` 和 hash 有何区别？路由懒加载怎么写、有什么好处？",
+      "answer": "1. **基本用法**：`Vue.use(Router)`，`new Router({ routes })` 注入根实例。`<router-view>` 渲染匹配组件；`<router-link to=\"...\">` 代替 `<a>` 做声明式跳转。\n\n2. **history 模式**：`mode: 'history'`，URL 无 `#`，如 `/user/1`。依赖 HTML5 History API。hash 模式用 `#/path`，兼容好、不需服务端配合。\n\n3. **动态路由**：`path: '/user/:id'`，组件内 `this.$route.params.id`。另有 `redirect`、`alias`（别名不改匹配到的路由记录）。\n\n4. **懒加载**：`const Home = () => import('@/components/Home')`，替代顶部同步 `import`。打包出的 app.js 更小，进入对应路由再加载该 chunk。\n\n### 解释与扩展\n\n- history 需要服务端把所有前端路由 fallback 到 `index.html`，否则刷新 404。\n- 懒加载本质是 webpack/rollup 的动态 import 分包。\n- SPA 靠 URL 与 router 管理组件切换和状态，和 React Router 角色类似。\n\n### 注意\n\n- 开发用 history 时，webpack-dev-server 通常已配 historyApiFallback；生产 Nginx 要自己配。\n- 路由组件同步引入会导致首包过大，列表页、详情页适合懒加载。",
+      "questionHtml": "<p>Vue Router 如何配置？<code>mode: 'history'</code> 和 hash 有何区别？路由懒加载怎么写、有什么好处？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>基本用法</strong>：<code>Vue.use(Router)</code>，<code>new Router({ routes })</code> 注入根实例。<code>&lt;router-view&gt;</code> 渲染匹配组件；<code>&lt;router-link to=&quot;...&quot;&gt;</code> 代替 <code>&lt;a&gt;</code> 做声明式跳转。</p>\n</li>\n<li>\n<p><strong>history 模式</strong>：<code>mode: 'history'</code>，URL 无 <code>#</code>，如 <code>/user/1</code>。依赖 HTML5 History API。hash 模式用 <code>#/path</code>，兼容好、不需服务端配合。</p>\n</li>\n<li>\n<p><strong>动态路由</strong>：<code>path: '/user/:id'</code>，组件内 <code>this.$route.params.id</code>。另有 <code>redirect</code>、<code>alias</code>（别名不改匹配到的路由记录）。</p>\n</li>\n<li>\n<p><strong>懒加载</strong>：<code>const Home = () =&gt; import('@/components/Home')</code>，替代顶部同步 <code>import</code>。打包出的 app.js 更小，进入对应路由再加载该 chunk。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>history 需要服务端把所有前端路由 fallback 到 <code>index.html</code>，否则刷新 404。</li>\n<li>懒加载本质是 webpack/rollup 的动态 import 分包。</li>\n<li>SPA 靠 URL 与 router 管理组件切换和状态，和 React Router 角色类似。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>开发用 history 时，webpack-dev-server 通常已配 historyApiFallback；生产 Nginx 要自己配。</li>\n<li>路由组件同步引入会导致首包过大，列表页、详情页适合懒加载。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/09.vue-router.md",
+      "reference": [
+        "https://router.vuejs.org/zh/guide/essentials/history-mode.html",
+        "https://router.vuejs.org/zh/guide/advanced/lazy-loading.html"
+      ]
+    },
+    {
+      "id": "frontend-vue-10",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "Vuex"
+      ],
+      "difficulty": "medium",
+      "title": "Vuex 的 state、mutation、action 分别做什么？如何改状态？",
+      "question": "什么是 Vuex？state、mutation、action 的职责是什么？为什么改 state 必须提交 mutation？",
+      "answer": "1. **Vuex**：专为 Vue 的状态管理，类似 Redux。根实例注入 `store`，组件用 `this.$store.state`。\n\n2. **state**：唯一状态树（可 modules 拆分）。读取建议放在 **computed** 里，保持响应式。\n\n3. **mutation**：改变 state 的**唯一方法**。同步函数：`(state, payload) => { ... }`。组件 `this.$store.commit(type, payload)`，或 `mapMutations`。\n\n4. **action**：不直接改 state，而是 **commit mutation**；可包含**任意异步**（请求、setTimeout）。`dispatch` 触发，可用 `mapActions`。类似 Redux Thunk。\n\n### 解释与扩展\n\n- 常用常量文件 `mutation-types.js` 避免魔法字符串。\n- action 的 context 有 `commit` / `state` / `getters`；可解构 `({ commit })`。\n- `dispatch` 可返回 Promise，便于组合多个异步 action（也可用 async/await）。\n- mutation 必须同步，便于调试时时间旅行；异步副作用放 action。\n\n### 注意\n\n- 组件里直接 `this.$store.state.xx =` 能改但破坏规范，devtools 无法追踪。\n- 不要在 mutation 里发请求。\n- 模块化后注意 `namespaced`，commit/dispatch 可能要加模块前缀。",
+      "questionHtml": "<p>什么是 Vuex？state、mutation、action 的职责是什么？为什么改 state 必须提交 mutation？</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>Vuex</strong>：专为 Vue 的状态管理，类似 Redux。根实例注入 <code>store</code>，组件用 <code>this.$store.state</code>。</p>\n</li>\n<li>\n<p><strong>state</strong>：唯一状态树（可 modules 拆分）。读取建议放在 <strong>computed</strong> 里，保持响应式。</p>\n</li>\n<li>\n<p><strong>mutation</strong>：改变 state 的<strong>唯一方法</strong>。同步函数：<code>(state, payload) =&gt; { ... }</code>。组件 <code>this.$store.commit(type, payload)</code>，或 <code>mapMutations</code>。</p>\n</li>\n<li>\n<p><strong>action</strong>：不直接改 state，而是 <strong>commit mutation</strong>；可包含<strong>任意异步</strong>（请求、setTimeout）。<code>dispatch</code> 触发，可用 <code>mapActions</code>。类似 Redux Thunk。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<ul>\n<li>常用常量文件 <code>mutation-types.js</code> 避免魔法字符串。</li>\n<li>action 的 context 有 <code>commit</code> / <code>state</code> / <code>getters</code>；可解构 <code>({ commit })</code>。</li>\n<li><code>dispatch</code> 可返回 Promise，便于组合多个异步 action（也可用 async/await）。</li>\n<li>mutation 必须同步，便于调试时时间旅行；异步副作用放 action。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>组件里直接 <code>this.$store.state.xx =</code> 能改但破坏规范，devtools 无法追踪。</li>\n<li>不要在 mutation 里发请求。</li>\n<li>模块化后注意 <code>namespaced</code>，commit/dispatch 可能要加模块前缀。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/10.vuex.md",
+      "reference": [
+        "https://vuex.vuejs.org/zh/guide/"
+      ]
+    },
+    {
+      "id": "frontend-vue-11",
+      "type": "frontend",
+      "category": "vue",
+      "categoryName": "Vue",
+      "tags": [
+        "Vue",
+        "防抖"
+      ],
+      "difficulty": "easy",
+      "title": "在 Vue 里如何封装和使用防抖？为什么 watch 查询条件时要用防抖？",
+      "question": "搜索框输入时如何避免频繁请求接口？请写出 Vue 中常用的 debounce 封装，并说明为何不直接在 watch 里请求。",
+      "answer": "1. **场景**：query 每变一次就请求，快速输入会造成大量无效请求，需要防抖：停止输入一段时间后再执行。\n\n2. **封装**：闭包保存 `timer`，每次调用先 `clearTimeout`，再 `setTimeout` 到期后 `func.apply(this, args)`。\n\n3. **在 Vue 中使用**：`created` 里 `this.$watch('query', debounce((newQuery) => { this.$emit('query', newQuery) }, 200))`，而不是在 watch 选项里直接打接口。\n\n### 解释与扩展\n\n```js\nexport function debounce(func, delay) {\n  let timer\n  return function (...args) {\n    if (timer) clearTimeout(timer)\n    timer = setTimeout(() => {\n      func.apply(this, args)\n    }, delay)\n  }\n}\n```\n\n- 防抖：延迟执行，只认最后一次；节流：固定间隔至少执行一次。搜索用防抖，滚动用节流更常见。\n- `apply(this, args)` 保证回调里的 `this` 和参数不丢。\n\n### 注意\n\n- 组件销毁前应取消未完成的 timer，避免卸载后 setState/请求。\n- 不要把 debounce 写在 `methods` 里每次渲染新建（或每次 watch 重新包一层），应一次创建、复用同一函数引用。\n- 防抖延迟要权衡体验（太长显得卡，太短仍会打爆接口）。",
+      "questionHtml": "<p>搜索框输入时如何避免频繁请求接口？请写出 Vue 中常用的 debounce 封装，并说明为何不直接在 watch 里请求。</p>\n",
+      "answerHtml": "<ol>\n<li>\n<p><strong>场景</strong>：query 每变一次就请求，快速输入会造成大量无效请求，需要防抖：停止输入一段时间后再执行。</p>\n</li>\n<li>\n<p><strong>封装</strong>：闭包保存 <code>timer</code>，每次调用先 <code>clearTimeout</code>，再 <code>setTimeout</code> 到期后 <code>func.apply(this, args)</code>。</p>\n</li>\n<li>\n<p><strong>在 Vue 中使用</strong>：<code>created</code> 里 <code>this.$watch('query', debounce((newQuery) =&gt; { this.$emit('query', newQuery) }, 200))</code>，而不是在 watch 选项里直接打接口。</p>\n</li>\n</ol>\n<h3>解释与扩展</h3>\n<pre><code class=\"language-js\">export function debounce(func, delay) {\n  let timer\n  return function (...args) {\n    if (timer) clearTimeout(timer)\n    timer = setTimeout(() =&gt; {\n      func.apply(this, args)\n    }, delay)\n  }\n}\n</code></pre>\n<ul>\n<li>防抖：延迟执行，只认最后一次；节流：固定间隔至少执行一次。搜索用防抖，滚动用节流更常见。</li>\n<li><code>apply(this, args)</code> 保证回调里的 <code>this</code> 和参数不丢。</li>\n</ul>\n<h3>注意</h3>\n<ul>\n<li>组件销毁前应取消未完成的 timer，避免卸载后 setState/请求。</li>\n<li>不要把 debounce 写在 <code>methods</code> 里每次渲染新建（或每次 watch 重新包一层），应一次创建、复用同一函数引用。</li>\n<li>防抖延迟要权衡体验（太长显得卡，太短仍会打爆接口）。</li>\n</ul>\n",
+      "sourcePath": "frontend/vue/11.debounce-in-vue.md",
+      "reference": [
+        "https://cn.vuejs.org/v2/api/#vm-watch"
+      ]
     }
   ],
   "ai": [

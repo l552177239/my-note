@@ -147,11 +147,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: '/technology/',
         items: [
           { text: '技术文档',
-            link: '/pages/9a7ee40fc232253e/',
+            link: '/pages/ad247c4332211551/',
             items: [
-              { text: 'Markdown使用教程', link: '/pages/markdown-tutorial/' },
-              { text: 'yaml语法教程', link: '/pages/yaml-tutorial/' },
-              { text: 'Json基础教程', link: '/pages/json-tutorial/' },
+              { text: 'Markdown使用教程', link: '/pages/ad247c4332211551/' },
+              { text: 'yaml语法教程', link: '/pages/4e8444e2d534d14f/' },
+              { text: 'Json基础教程', link: '/pages/fdb-4e9a00c9c2/' },
             ] 
           },
           { text: 'Linux', link: '/pages/fdb-3187a9667b/' },
@@ -170,10 +170,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
       {
         text: '面试',
-        link: '/interview/',
-        items: [
-          { text: '面试题', link: '/pages/interview-practice/' },
-        ],
+        link: '/pages/interview-practice/',
+        items: [],
       },
       {
         text: '索引',
