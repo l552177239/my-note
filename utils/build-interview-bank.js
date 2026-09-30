@@ -82,10 +82,14 @@ function main() {
       return
     }
 
-    const id = buildId(file.type, file.category, file.seq, file.namePart)
+    const baseId = buildId(file.type, file.category, file.seq, file.namePart)
+    const id = seenIds.has(baseId) ? `${baseId}-${slugify(file.namePart)}` : baseId
     if (seenIds.has(id)) {
       skipped.push({ path: file.relativePath, reason: `id 冲突已跳过: ${id}` })
       return
+    }
+    if (id !== baseId) {
+      fileWarnings.push(`${file.relativePath}: 序号冲突，id 已调整为 ${id}`)
     }
     seenIds.add(id)
 
